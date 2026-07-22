@@ -102,4 +102,7 @@
     <string name="widget_noise_meter">MEDIDOR DE RUIDO</string>
     <string name="widget_orbys_translate">ORBYS TRANSLATE</string>
     <string name="widget_student_selector">SELECTOR DE ALUMNOS</string>
+    <string name="dialog_admin_disabled_title">Acción bloqueada</string>
+    <string name="dialog_admin_disabled_msg">Esta acción ha sido deshabilitada por el administrador del sistema.</string>
+    <string name="accept">Aceptar</string>
 </resources>

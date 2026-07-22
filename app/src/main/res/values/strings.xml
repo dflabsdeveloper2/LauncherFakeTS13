@@ -66,6 +66,9 @@
     <string name="google_app_drive">Drive</string>
     <string name="google_app_meet">Meet</string>
     <string name="error_disabled_by_admin">Desactivado por el admin</string>
+    <string name="dialog_admin_disabled_title">Action blocked</string>
+    <string name="dialog_admin_disabled_msg">This action has been disabled by the system administrator.</string>
+    <string name="accept">Accept</string>
 
     <!-- Dock -->
     <string name="dock_back">Back</string>

@@ -31,6 +31,7 @@ import com.orbys.launcherfakets13.databinding.FragmentCategoryBinding
 import com.orbys.launcherfakets13.domain.model.Environment
 import com.orbys.launcherfakets13.domain.model.Shortcut
 import com.orbys.launcherfakets13.services.overlay.DockOverlayService
+import com.orbys.launcherfakets13.ui.dialog.AdminDisabledDialog
 import com.orbys.launcherfakets13.ui.dialog.GoogleAppsFolderDialog
 import com.orbys.launcherfakets13.ui.picker.AppPickerActivity
 import com.orbys.launcherfakets13.util.DeviceAccountUtil
@@ -344,7 +345,7 @@ class CategoryFragment : Fragment() {
         when {
             data.disabledByAdmin -> {
                 widgetView.setOnClickListener {
-                    Toast.makeText(requireContext(), R.string.error_disabled_by_admin, Toast.LENGTH_SHORT).show()
+                    AdminDisabledDialog.newInstance().show(childFragmentManager, "admin_disabled")
                 }
                 widgetView.isClickable = true
                 widgetView.isFocusable = true

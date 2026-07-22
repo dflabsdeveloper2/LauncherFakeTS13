@@ -36,6 +36,7 @@ import com.orbys.launcherfakets13.domain.model.Environment
 import com.orbys.launcherfakets13.services.ConnectivityReceiver
 import com.orbys.launcherfakets13.services.overlay.DockOverlayService
 import com.google.android.material.dialog.MaterialAlertDialogBuilder
+import com.orbys.launcherfakets13.ui.dialog.AdminDisabledDialog
 import com.orbys.launcherfakets13.ui.dialog.EnvironmentSelectorDialog
 import com.orbys.launcherfakets13.ui.dialog.WallpaperOptionsDialog
 import com.orbys.launcherfakets13.ui.util.EnvironmentMapper
@@ -161,20 +162,7 @@ class MainActivity : AppCompatActivity() {
         }
 
         binding.ivUserProfile.setOnClickListener {
-            if(currentEnviroment == Environment.OFFICE) {
-                val intent = packageManager.getLaunchIntentForPackage("com.azure.authenticator")
-                if (intent != null) {
-                    intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK)
-                    startActivity(intent)
-                }
-            }else{
-                val intent = Intent(Settings.ACTION_ADD_ACCOUNT).apply {
-                    putExtra(Settings.EXTRA_ACCOUNT_TYPES, arrayOf("com.google"))
-                }
-                startActivity(intent)
-            }
-
-            Toast.makeText(this, R.string.user_profile, Toast.LENGTH_SHORT).show()
+            AdminDisabledDialog.newInstance().show(supportFragmentManager, "admin_disabled")
         }
 
         lifecycleScope.launch {
@@ -568,7 +556,7 @@ class MainActivity : AppCompatActivity() {
     /** Dispositivo sin GMS: la barra de búsqueda simplemente abre Chrome al tocarla. */
     private fun setupSearchBar() {
         binding.searchBarContainer.setOnClickListener {
-            Toast.makeText(this, R.string.error_disabled_by_admin, Toast.LENGTH_SHORT).show()
+            AdminDisabledDialog.newInstance().show(supportFragmentManager, "admin_disabled")
         }
     }
 
