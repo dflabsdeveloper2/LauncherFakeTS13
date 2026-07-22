@@ -1,0 +1,96 @@
+<resources>
+    <string name="app_name">LauncherTs13</string>
+    <string name="go_to_settings">Aller aux Paramètres</string>
+    <string name="cancel">Annuler</string>
+    <string name="dialog_delete_shortcut_title">Supprimer le raccourci</string>
+    <string name="dialog_delete_shortcut_msg">Supprimer \"%1$s\" ?</string>
+    <string name="delete">Supprimer</string>
+    <string name="widget_picker_title">Sélectionner un widget</string>
+    <string name="widget_load_failed">Impossible de charger le widget</string>
+    <string name="widget_add_failed">Impossible d\'ajouter le widget</string>
+    <string name="dialog_delete_widget_title">Supprimer le widget</string>
+    <string name="dialog_delete_widget_msg">Supprimer ce widget ?</string>
+    <string name="add_widget">Ajouter\nun widget</string>
+    <string name="new_category">Nouvelle\ncatégorie</string>
+    <string name="dialog_new_category_title">Nouvelle catégorie</string>
+    <string name="dialog_new_category_hint">Nom de la catégorie</string>
+    <string name="create">Créer</string>
+    <string name="dialog_delete_category_title">Supprimer la catégorie</string>
+    <string name="dialog_delete_category_msg">Supprimer \"%1$s\" et tous ses raccourcis ?</string>
+    <string name="overlay_permission_title">Permission requise</string>
+    <string name="overlay_permission_msg">Pour garder le dock toujours visible, activez \"Afficher sur d\'autres applications\" dans les Paramètres.</string>
+    <string name="wallpaper_title">Fond d\'écran</string>
+    <string name="wallpaper_change">Changer le fond</string>
+    <string name="wallpaper_remove">Supprimer le fond</string>
+    <string name="wallpaper_remove_msg">Supprimer le fond d\'écran ?</string>
+    <string name="wallpaper_change_failed">Impossible de changer le fond</string>
+    <string name="notification_channel_dock">Dock</string>
+    <string name="notification_channel_dock_desc">Maintient le dock toujours visible</string>
+    <string name="notification_dock_active">LauncherTs13 — Dock actif</string>
+    <string name="default_categories">Général,Salle de classe,Travail,Collaboration</string>
+
+    <!-- Dock -->
+    <string name="dock_back">Retour</string>
+    <string name="dock_home">Accueil</string>
+    <string name="dock_recents">Récents</string>
+    <string name="dock_apps">Apps</string>
+    <string name="dock_files">Fichiers</string>
+    <string name="dock_pizarra">Tableau</string>
+    <string name="dock_browser">Navigateur</string>
+    <string name="dock_settings">Paramètres</string>
+
+    <!-- Volume / Brightness -->
+    <string name="label_volume">Volume</string>
+    <string name="label_brightness">Luminosité</string>
+
+    <!-- Profiles -->
+    <string name="profile_google_title">Éducation · Google</string>
+    <string name="profile_google_subtitle">GOOGLE WORKSPACE</string>
+    <string name="profile_office_title">Éducation · Office</string>
+    <string name="profile_office_subtitle">MICROSOFT 365</string>
+    <string name="profile_corp_title">Entreprise</string>
+    <string name="profile_corp_subtitle">SALLE DE RÉUNION</string>
+
+    <!-- Additional UI Strings -->
+    <string name="add_shortcut_title">Ajouter un raccourci</string>
+    <string name="all_apps">Toutes les apps</string>
+    <string name="config_panel_title">//CONFIGURATION DU PANNEAU</string>
+    <string name="choose_environment">Choisir l\'environnement</string>
+    <string name="environment_desc">Chaque environnement réorganise le bureau avec les applications et widgets appropriés pour cet espace de travail.</string>
+    <string name="label_eyes">Yeux</string>
+    <string name="label_touch">Tactile</string>
+    <string name="action_power_off_ops">Éteindre l\'OPS</string>
+    <string name="action_restart">Redémarrer</string>
+    <string name="action_power_off">Éteindre</string>
+    <string name="recent_apps">Applications récentes</string>
+    <string name="swipe_to_close_all">Balayez pour tout fermer</string>
+
+    <!-- Messages and Errors -->
+    <string name="error_no_multiwindow">Ne supporte pas le Multi-Window</string>
+    <string name="error_split_screen">Impossible d\'ouvrir en écran scindé</string>
+    <string name="error_app_not_found">Application non trouvée</string>
+    <string name="error_app_not_installed">Application non installée</string>
+    <string name="error_auth_ms_authenticator">Veuillez vous connecter à Microsoft Authenticator</string>
+    <string name="error_ms_authenticator_not_installed">Microsoft Authenticator n\'est pas installé</string>
+    <string name="user_profile">Profil utilisateur</string>
+
+    <!-- Widget Titles -->
+    <string name="widget_clock">HORLOGE</string>
+    <string name="widget_agenda">AGENDA</string>
+    <string name="widget_weather">MÉTÉO</string>
+    <string name="widget_focus">FOCUS</string>
+    <string name="widget_timer">MINUTEUR</string>
+    <string name="widget_videocall">APPEL VIDÉO</string>
+    <string name="widget_eshare">ESHARE</string>
+    <string name="widget_mail">E-MAIL</string>
+    <string name="widget_storage">STOCKAGE</string>
+    <string name="widget_docs">DOCUMENTS</string>
+    <string name="widget_notes">NOTES</string>
+    <string name="widget_orbys_ai">ORBYS AI</string>
+    <string name="widget_vote">VOTE</string>
+    <string name="widget_whiteboard">TABLEAU</string>
+    <string name="widget_dice">DÉ</string>
+    <string name="widget_noise_meter">SONOMÈTRE</string>
+    <string name="widget_orbys_translate">ORBYS TRANSLATE</string>
+    <string name="widget_student_selector">SÉLECTEUR D\'ÉLÈVES</string>
+</resources>

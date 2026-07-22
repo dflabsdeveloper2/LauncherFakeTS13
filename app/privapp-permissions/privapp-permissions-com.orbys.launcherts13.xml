@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  Privileged permission allowlist for LauncherTs13 (com.orbys.launcherts13).
+
+  This file is NOT packaged inside the APK. Android only grants
+  signature|privileged permissions to a priv-app when the permission is
+  explicitly allowlisted here AND this file is present on the system image at:
+
+      /system/etc/permissions/privapp-permissions-com.orbys.launcherts13.xml
+      (or /product/etc/permissions/ on projects using the product partition)
+
+  and the APK itself is installed under:
+
+      /system/priv-app/LauncherTs13/  (or /product/priv-app/LauncherTs13/)
+
+  Without this file, the signature|privileged permissions declared in
+  AndroidManifest.xml are silently denied at runtime even though the app is
+  platform-signed - see `dumpsys package com.orbys.launcherts13` for granted
+  permissions to confirm.
+
+  Keep this list in sync with the signature|privileged <uses-permission>
+  entries in app/src/main/AndroidManifest.xml.
+-->
+<permissions>
+    <privapp-permissions package="com.orbys.launcherts13">
+        <permission name="android.permission.STATUS_BAR"/>
+        <permission name="android.permission.EXPAND_STATUS_BAR"/>
+        <permission name="android.permission.INJECT_EVENTS"/>
+        <permission name="android.permission.BIND_APPWIDGET"/>
+        <permission name="android.permission.REQUEST_DELETE_PACKAGES"/>
+        <permission name="android.permission.GET_ACCOUNTS_PRIVILEGED"/>
+        <permission name="android.permission.REBOOT"/>
+    </privapp-permissions>
+</permissions>

@@ -1,0 +1,96 @@
+<resources>
+    <string name="app_name">LauncherTs13</string>
+    <string name="go_to_settings">Ves a Configuració</string>
+    <string name="cancel">Cancel·la</string>
+    <string name="dialog_delete_shortcut_title">Elimina l\'accés directe</string>
+    <string name="dialog_delete_shortcut_msg">Vols eliminar «%1$s»?</string>
+    <string name="delete">Elimina</string>
+    <string name="widget_picker_title">Selecciona el widget</string>
+    <string name="widget_load_failed">No s\'ha pogut carregar el widget</string>
+    <string name="widget_add_failed">No s\'ha pogut afegir el widget</string>
+    <string name="dialog_delete_widget_title">Elimina el widget</string>
+    <string name="dialog_delete_widget_msg">Vols eliminar aquest widget?</string>
+    <string name="add_widget">Afegeix\nwidget</string>
+    <string name="new_category">Nova\ncategoria</string>
+    <string name="dialog_new_category_title">Nova categoria</string>
+    <string name="dialog_new_category_hint">Nom de la categoria</string>
+    <string name="create">Crea</string>
+    <string name="dialog_delete_category_title">Elimina la categoria</string>
+    <string name="dialog_delete_category_msg">Vols eliminar «%1$s» i tots els seus accessos directes?</string>
+    <string name="overlay_permission_title">Permís necessari</string>
+    <string name="overlay_permission_msg">Perquè el dock sigui sempre visible, activa «Mostra sobre altres aplicacions» a Configuració.</string>
+    <string name="wallpaper_title">Fons de pantalla</string>
+    <string name="wallpaper_change">Canvia el fons</string>
+    <string name="wallpaper_remove">Elimina el fons</string>
+    <string name="wallpaper_remove_msg">Vols eliminar el fons de pantalla?</string>
+    <string name="wallpaper_change_failed">No s\'ha pogut canviar el fons</string>
+    <string name="notification_channel_dock">Dock</string>
+    <string name="notification_channel_dock_desc">Manté el dock sempre visible</string>
+    <string name="notification_dock_active">LauncherTs13 — Dock actiu</string>
+    <string name="default_categories">General,Aula,Treball,Col·laboració</string>
+
+    <!-- Dock -->
+    <string name="dock_back">Enrere</string>
+    <string name="dock_home">Inici</string>
+    <string name="dock_recents">Recents</string>
+    <string name="dock_apps">Apps</string>
+    <string name="dock_files">Fitxers</string>
+    <string name="dock_pizarra">Pissarra</string>
+    <string name="dock_browser">Navegador</string>
+    <string name="dock_settings">Configuració</string>
+
+    <!-- Volume / Brightness -->
+    <string name="label_volume">Volum</string>
+    <string name="label_brightness">Brillantor</string>
+
+    <!-- Profiles -->
+    <string name="profile_google_title">Educació · Google</string>
+    <string name="profile_google_subtitle">GOOGLE WORKSPACE</string>
+    <string name="profile_office_title">Educació · Office</string>
+    <string name="profile_office_subtitle">MICROSOFT 365</string>
+    <string name="profile_corp_title">Corporatiu</string>
+    <string name="profile_corp_subtitle">SALA D\'EMPRESA</string>
+
+    <!-- Additional UI Strings -->
+    <string name="add_shortcut_title">Afegeix accés directe</string>
+    <string name="all_apps">Totes les apps</string>
+    <string name="config_panel_title">//CONFIGURACIÓ DEL PANELL</string>
+    <string name="choose_environment">Tria l\'entorn</string>
+    <string name="environment_desc">Cada entorn reorganitza l\'escriptori amb les apps i els ginys adequats per a aquest espai de treball.</string>
+    <string name="label_eyes">Ulls</string>
+    <string name="label_touch">Tàctil</string>
+    <string name="action_power_off_ops">Apaga l\'OPS</string>
+    <string name="action_restart">Reinicia</string>
+    <string name="action_power_off">Apaga</string>
+    <string name="recent_apps">Aplicacions recents</string>
+    <string name="swipe_to_close_all">Llisca per tancar-ho tot</string>
+
+    <!-- Messages and Errors -->
+    <string name="error_no_multiwindow">No admet multi-finestra</string>
+    <string name="error_split_screen">No s\'ha pogut obrir en pantalla dividida</string>
+    <string name="error_app_not_found">No s\'ha trobat l\'aplicació</string>
+    <string name="error_app_not_installed">L\'aplicació no està instal·lada</string>
+    <string name="error_auth_ms_authenticator">Inicieu la sessió a Microsoft Authenticator</string>
+    <string name="error_ms_authenticator_not_installed">Microsoft Authenticator no està instal·lat</string>
+    <string name="user_profile">Perfil d\'usuari</string>
+
+    <!-- Widget Titles -->
+    <string name="widget_clock">RELLOTGE</string>
+    <string name="widget_agenda">AGENDA</string>
+    <string name="widget_weather">CLIMA</string>
+    <string name="widget_focus">CONCENTRACIÓ</string>
+    <string name="widget_timer">TEMPORITZADOR</string>
+    <string name="widget_videocall">VIDEO TRUCADA</string>
+    <string name="widget_eshare">ESHARE</string>
+    <string name="widget_mail">CORREU</string>
+    <string name="widget_storage">EMMAGATZEMATGE</string>
+    <string name="widget_docs">DOCUMENTS</string>
+    <string name="widget_notes">NOTES</string>
+    <string name="widget_orbys_ai">ORBYS AI</string>
+    <string name="widget_vote">VOTE</string>
+    <string name="widget_whiteboard">PISSARRA</string>
+    <string name="widget_dice">DAU</string>
+    <string name="widget_noise_meter">MESURADOR DE SOROLL</string>
+    <string name="widget_orbys_translate">ORBYS TRANSLATE</string>
+    <string name="widget_student_selector">SELECTOR D\'ALUMNES</string>
+</resources>

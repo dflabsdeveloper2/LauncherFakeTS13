@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:background="@drawable/bg_category_card"
+    android:padding="5dp"
+    android:scaleX="0.9"
+    android:scaleY="0.9"
+>
+
+    <!-- Header: title + collapse -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginHorizontal="12dp"
+        android:gravity="center_vertical">
+
+        <TextView
+            android:id="@+id/tv_category_title"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="CATEGORY"
+            android:textColor="@color/dock_text_inactive"
+            android:textSize="11sp"
+            android:textStyle="bold"
+            android:letterSpacing="0.08"
+            android:maxLines="1"
+            android:ellipsize="end" />
+
+        <ImageView
+            android:id="@+id/btn_category_collapse"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:src="@drawable/ic_minus"
+            app:tint="#9CA3AF"
+            android:contentDescription="Collapse" />
+    </LinearLayout>
+
+    <!-- Slots row top (indices 0, 1) -->
+    <LinearLayout
+        android:id="@+id/slots_row_top"
+        android:layout_width="match_parent"
+        android:layout_marginTop="8dp"
+        android:scaleX="0.9"
+        android:scaleY="0.9"
+        android:layout_height="90dp"
+        android:orientation="horizontal" />
+
+    <Space
+        android:id="@+id/rows_spacer"
+        android:layout_width="match_parent"
+        android:layout_height="8dp" />
+
+    <!-- Slots row bottom (indices 2, 3) -->
+    <LinearLayout
+        android:id="@+id/slots_row_bottom"
+        android:layout_width="match_parent"
+        android:layout_height="90dp"
+        android:scaleX="0.9"
+        android:scaleY="0.9"
+        android:orientation="horizontal" />
+
+</LinearLayout>

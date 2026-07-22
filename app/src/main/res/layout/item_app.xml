@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:gravity="center_horizontal"
+    android:orientation="vertical"
+    android:padding="4dp">
+
+    <FrameLayout
+        android:layout_width="75dp"
+        android:layout_height="55dp"
+        android:clipChildren="false"
+        android:clipToPadding="false">
+
+        <ImageView
+            android:id="@+id/iv_app_icon"
+            android:layout_width="42dp"
+            android:layout_height="42dp"
+            android:layout_gravity="center"
+            android:scaleType="fitCenter" />
+
+        <!-- Notification-count badge (CDD 3.8.1/H-SR-3) -->
+        <TextView
+            android:id="@+id/tv_notification_badge"
+            android:layout_width="wrap_content"
+            android:layout_height="16dp"
+            android:layout_gravity="top|end"
+            android:layout_marginTop="2dp"
+            android:layout_marginEnd="8dp"
+            android:background="@drawable/bg_notification_badge"
+            android:gravity="center"
+            android:includeFontPadding="false"
+            android:minWidth="16dp"
+            android:paddingHorizontal="3dp"
+            android:textColor="@color/white"
+            android:textSize="9sp"
+            android:textStyle="bold"
+            android:visibility="gone"
+            tools:ignore="HardcodedText"
+            tools:text="9"
+            tools:visibility="visible" />
+
+        <!-- Overlay actions positioned at the top -->
+        <LinearLayout
+            android:id="@+id/ll_app_actions"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="top|center_horizontal"
+            android:background="@drawable/bg_app_action_pill"
+            android:elevation="4dp"
+            android:gravity="center"
+            android:orientation="horizontal"
+            android:paddingHorizontal="4dp"
+            android:paddingVertical="2dp"
+            android:visibility="visible">
+
+            <ImageView
+                android:id="@+id/btn_action_split"
+                android:layout_width="16dp"
+                android:layout_height="16dp"
+                android:background="?attr/selectableItemBackgroundBorderless"
+                android:clickable="true"
+                android:contentDescription="@string/action_split_screen"
+                android:focusable="true"
+                android:padding="2dp"
+                android:src="@drawable/ic_split_screen"
+                app:tint="@color/black" />
+
+            <ImageView
+                android:id="@+id/btn_action_info"
+                android:layout_width="16dp"
+                android:layout_height="16dp"
+                android:layout_marginStart="2dp"
+                android:background="?attr/selectableItemBackgroundBorderless"
+                android:clickable="true"
+                android:contentDescription="@string/action_app_info"
+                android:focusable="true"
+                android:padding="2dp"
+                android:src="@drawable/ic_info"
+                app:tint="@color/black" />
+
+            <ImageView
+                android:id="@+id/btn_action_uninstall"
+                android:layout_width="16dp"
+                android:layout_height="16dp"
+                android:layout_marginStart="2dp"
+                android:background="?attr/selectableItemBackgroundBorderless"
+                android:clickable="true"
+                android:contentDescription="@string/action_uninstall"
+                android:focusable="true"
+                android:padding="2dp"
+                android:src="@drawable/ic_trash"
+                app:tint="@color/black" />
+
+            <ImageView
+                android:id="@+id/btn_action_shortcuts"
+                android:layout_width="16dp"
+                android:layout_height="16dp"
+                android:layout_marginStart="2dp"
+                android:background="?attr/selectableItemBackgroundBorderless"
+                android:clickable="true"
+                android:contentDescription="@string/action_shortcuts"
+                android:focusable="true"
+                android:padding="2dp"
+                android:src="@drawable/ic_shortcuts"
+                app:tint="@color/black" />
+
+        </LinearLayout>
+
+    </FrameLayout>
+
+    <TextView
+        android:id="@+id/tv_app_name"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
+        android:ellipsize="end"
+        android:gravity="center"
+        android:lines="1"
+        android:textColor="@color/drawer_text"
+        android:textSize="11sp" />
+
+</LinearLayout>

@@ -1,0 +1,263 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/bg_home_gradient_office">
+
+    <!-- Wallpaper layer — fills the entire background, shared backdrop for both pages -->
+    <ImageView
+        android:id="@+id/iv_wallpaper"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:scaleType="centerCrop"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <!-- Home page — categories, dock widgets, search. Left pane; slides fully off-screen to the left when Desktop (right pane) is shown -->
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/home_page_container"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <!-- Search bar: sin GMS en este dispositivo, simplemente abre Chrome al tocarla
+             (ver MainActivity.setupSearchBar
+             ()). -->
+        <LinearLayout
+            android:id="@+id/search_bar_container"
+            android:layout_width="0dp"
+            android:layout_height="30dp"
+            android:layout_marginStart="86dp"
+            android:layout_marginEnd="20dp"
+            android:background="@drawable/bg_search_bar"
+            android:clickable="true"
+            android:focusable="true"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            android:paddingStart="8dp"
+            android:paddingEnd="8dp"
+            app:layout_constraintBottom_toBottomOf="@+id/profile_selector_card"
+            app:layout_constraintEnd_toStartOf="@+id/profile_selector_card"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/profile_selector_card">
+
+            <ImageView
+                android:layout_width="18dp"
+                android:layout_height="18dp"
+                android:layout_marginEnd="10dp"
+                android:contentDescription="@null"
+                android:src="@drawable/google_color_svgrepo_com"
+               />
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:ellipsize="end"
+                android:maxLines="1"
+                android:text="@string/search_hint"
+                android:textColor="@color/dock_text_inactive"
+                android:textSize="13sp" />
+
+            <ImageView
+                android:layout_width="18dp"
+                android:layout_height="18dp"
+                android:layout_marginEnd="10dp"
+                android:contentDescription="@null"
+                android:src="@drawable/mic_svgrepo_com_2_"
+                />
+
+            <ImageView
+                android:layout_width="18dp"
+                android:layout_height="18dp"
+                android:layout_marginEnd="10dp"
+                android:contentDescription="@null"
+                android:src="@drawable/ic_cat_mail"
+                />
+
+        </LinearLayout>
+
+        <!-- Connectivity Icons -->
+        <LinearLayout
+            android:id="@+id/connectivity_container"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="24dp"
+            android:layout_marginBottom="24dp"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent">
+
+            <ImageView
+                android:id="@+id/iv_usb"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:layout_marginEnd="8dp"
+                android:src="@drawable/ic_usb"
+                android:visibility="visible"
+                app:tint="@color/blue2_50_100" />
+
+            <ImageView
+                android:id="@+id/iv_ethernet"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:layout_marginEnd="8dp"
+                android:src="@drawable/ic_ethernet"
+                android:visibility="visible"
+                app:tint="@color/blue2_50_100" />
+
+            <ImageView
+                android:id="@+id/iv_wifi"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:layout_marginEnd="8dp"
+                android:src="@drawable/ic_wifi"
+                android:visibility="visible"
+                app:tint="@color/blue2_50_100" />
+
+            <ImageView
+                android:id="@+id/iv_bluetooth"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:layout_marginEnd="8dp"
+                android:src="@drawable/ic_headphones"
+                android:visibility="visible"
+                app:tint="@color/blue2_50_100" />
+
+            <ImageView
+                android:id="@+id/iv_hotspot"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:src="@drawable/ic_hotspot"
+                android:visibility="visible"
+                app:tint="@color/blue2_50_100" />
+
+        </LinearLayout>
+
+        <!-- Profile Selector -->
+        <LinearLayout
+            android:id="@+id/profile_selector_card"
+            android:layout_width="wrap_content"
+            android:layout_height="50dp"
+            android:layout_marginEnd="12dp"
+            android:background="@drawable/bg_selector_card"
+            android:clickable="true"
+            android:focusable="true"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            android:paddingStart="12dp"
+            android:paddingEnd="12dp"
+            app:layout_constraintBottom_toBottomOf="@+id/iv_user_profile"
+            app:layout_constraintEnd_toStartOf="@+id/iv_user_profile"
+            app:layout_constraintTop_toTopOf="@+id/iv_user_profile">
+
+            <ImageView
+                android:id="@+id/iv_profile_icon"
+                android:layout_width="25dp"
+                android:layout_height="25dp"
+                android:src="@drawable/ic_graduation"
+                app:tint="@color/dock_text_active" />
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="12dp"
+                android:layout_marginEnd="12dp"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/tv_profile_title"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:ellipsize="end"
+                    android:maxLines="1"
+                    android:text="@string/profile_google_title"
+                    android:textColor="@color/dock_text_active"
+                    android:textSize="13sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/tv_profile_subtitle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:ellipsize="end"
+                    android:maxLines="1"
+                    android:text="@string/profile_google_subtitle"
+                    android:textColor="@color/dock_text_inactive"
+                    android:textSize="9sp" />
+
+            </LinearLayout>
+
+            <ImageView
+                android:layout_width="15dp"
+                android:layout_height="15dp"
+                android:rotation="90"
+                android:src="@drawable/ic_tune"
+                app:tint="@color/dock_text_inactive" />
+
+        </LinearLayout>
+
+        <ImageView
+            android:id="@+id/iv_user_profile"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="24dp"
+            android:background="@drawable/bg_selector_card"
+            android:padding="8dp"
+            android:src="@drawable/ic_user_profile"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <androidx.constraintlayout.widget.Barrier
+            android:id="@+id/header_bottom_barrier"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:barrierDirection="bottom"
+            app:constraint_referenced_ids="search_bar_container,profile_selector_card,iv_user_profile" />
+
+        <!-- Category cards horizontal scroll -->
+        <androidx.fragment.app.FragmentContainerView
+            android:id="@+id/category_container_view"
+            android:name="com.orbys.launcherts13.ui.home.CategoryFragment"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/header_bottom_barrier" />
+
+        <!-- Free-form widget layer -->
+        <androidx.fragment.app.FragmentContainerView
+            android:id="@+id/widget_container_view"
+            android:name="com.orbys.launcherts13.ui.home.WidgetFragment"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <!-- Desktop page — grid-snap screen for apps + widgets. Right pane; visible by default, slides out to reveal Home on swipe right -->
+    <androidx.fragment.app.FragmentContainerView
+        android:id="@+id/desktop_container_view"
+        android:name="com.orbys.launcherts13.ui.home.DesktopFragment"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

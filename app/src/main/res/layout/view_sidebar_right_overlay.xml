@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/sidebar_root"
+    android:layout_width="wrap_content"
+    android:layout_gravity="end"
+    android:orientation="horizontal"
+    android:layout_height="wrap_content">
+
+    <!-- Drag handle: primero para que quede pegado al borde derecho cuando el panel está colapsado -->
+    <LinearLayout
+        android:id="@+id/sidebar_handle"
+        android:layout_width="10dp"
+        android:layout_height="45dp"
+        android:layout_gravity="center_vertical"
+        android:background="@drawable/bg_sidebar_handle_right"
+        android:alpha="0.5"
+        android:gravity="center"
+        android:clickable="true"
+        android:focusable="true">
+
+        <View
+            android:layout_width="2dp"
+            android:layout_height="24dp"
+            android:background="@drawable/bg_category_card"
+            android:alpha="0.8" />
+
+    </LinearLayout>
+
+    <!-- Panel de botones: segundo, a la derecha del handle, al borde de pantalla cuando expandido -->
+    <LinearLayout
+        android:id="@+id/sidebar_panel"
+        android:layout_width="35dp"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:gravity="center_horizontal"
+        android:visibility="gone"
+        android:background="@drawable/bg_side_panel_right"
+        android:paddingTop="2dp"
+        android:paddingBottom="2dp"
+        android:layout_margin="8dp">
+
+        <!-- Minimizar sidebar -->
+        <ImageView
+            android:id="@+id/sidebar_btn_collapse"
+            android:layout_width="25dp"
+            android:layout_height="25dp"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:src="@drawable/fl31"
+            android:padding="3dp"
+            android:contentDescription="Minimizar sidebar" />
+
+        <!-- Separador -->
+        <View
+            android:layout_width="25dp"
+            android:layout_height="0.7dp"
+            android:background="@color/dock_text_inactive"
+            android:layout_marginBottom="4dp" />
+
+        <!-- Atrás -->
+        <ImageView
+            android:id="@+id/sidebar_btn_back"
+            android:layout_width="25dp"
+            android:layout_height="25dp"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:padding="6dp"
+            android:src="@drawable/fl15"
+            android:contentDescription="@string/dock_back"
+            android:layout_marginBottom="3dp" />
+
+        <!-- Inicio -->
+        <ImageView
+            android:id="@+id/sidebar_btn_home"
+            android:layout_width="25dp"
+            android:layout_height="25dp"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:scaleX="0.5"
+            android:scaleY="0.5"
+            android:src="@drawable/home"
+            android:contentDescription="@string/dock_home"
+            android:layout_marginBottom="3dp" />
+
+       <!-- &lt;!&ndash; Recientes &ndash;&gt;
+        <ImageView
+            android:id="@+id/sidebar_btn_recents"
+            android:layout_width="40dp"
+            android:layout_height="36dp"
+            android:padding="7dp"
+            android:src="@drawable/backgroundapps"
+            android:contentDescription="@string/dock_recents"
+            android:layout_marginBottom="2dp" />-->
+
+        <!-- Volumen y Brillo -->
+        <ImageView
+            android:id="@+id/sidebar_btn_tune"
+            android:layout_width="25dp"
+            android:layout_height="25dp"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:src="@drawable/ic_tune"
+            android:padding="7dp"
+            android:contentDescription="Volumen y brillo"
+            android:layout_marginBottom="3dp" />
+
+        <!-- Separador -->
+        <View
+            android:layout_width="25dp"
+            android:layout_height="0.7dp"
+            android:background="@color/dock_text_inactive"
+            android:layout_marginBottom="4dp" />
+
+        <!-- Abrir/cerrar dock inferior -->
+        <ImageView
+            android:id="@+id/sidebar_btn_expand_dock"
+            android:layout_width="25dp"
+            android:layout_height="25dp"
+            android:src="@drawable/fl34"
+            android:padding="3dp"
+            android:layout_marginBottom="2dp"
+            android:contentDescription="Mostrar/ocultar dock" />
+
+    </LinearLayout>
+
+</LinearLayout>

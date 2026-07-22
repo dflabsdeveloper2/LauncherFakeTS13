@@ -1,0 +1,33 @@
+<vector xmlns:android="http://schemas.android.com/apk/res/android" android:height="30dp" android:viewportHeight="64" android:viewportWidth="64" android:width="30dp">
+      
+    <path android:fillColor="@color/dock_logo_color" android:pathData="M34.52,11.43m-5.82,0a5.82,5.82 0,1 1,11.64 0a5.82,5.82 0,1 1,-11.64 0" android:strokeColor="@color/dock_logo_color" android:strokeWidth="3"/>
+      
+    <path android:fillColor="@color/dock_logo_color" android:pathData="M53.63,31.6m-5.82,0a5.82,5.82 0,1 1,11.64 0a5.82,5.82 0,1 1,-11.64 0" android:strokeColor="@color/dock_logo_color" android:strokeWidth="3"/>
+      
+    <path android:fillColor="@color/dock_logo_color" android:pathData="M34.52,50.57m-5.82,0a5.82,5.82 0,1 1,11.64 0a5.82,5.82 0,1 1,-11.64 0" android:strokeColor="@color/dock_logo_color" android:strokeWidth="3"/>
+
+    <path android:fillColor="@color/dock_logo_color" android:pathData="M15.16,42.03m-5.82,0a5.82,5.82 0,1 1,11.64 0a5.82,5.82 0,1 1,-11.64 0" android:strokeColor="@color/dock_logo_color" android:strokeWidth="3"/>
+      
+    <path android:fillColor="@color/dock_logo_color" android:pathData="M15.16,19.27m-5.82,0a5.82,5.82 0,1 1,11.64 0a5.82,5.82 0,1 1,-11.64 0" android:strokeColor="@color/dock_logo_color" android:strokeWidth="3"/>
+      
+    <path android:fillColor="@color/dock_logo_color" android:pathData="M34.51,29.27m-4.7,0a4.7,4.7 0,1 1,9.4 0a4.7,4.7 0,1 1,-9.4 0" android:strokeColor="@color/dock_logo_color" android:strokeWidth="3"/>
+      
+    <path android:fillColor="@color/dock_logo_color" android:pathData="M20.17,16.3L28.9,12.93" android:strokeColor="@color/dock_logo_color" android:strokeWidth="3"/>
+      
+    <path android:fillColor="@color/dock_logo_color" android:pathData="M38.6,15.59L49.48,27.52" android:strokeColor="@color/dock_logo_color" android:strokeWidth="3"/>
+      
+    <path android:fillColor="@color/dock_logo_color" android:pathData="M50.07,36.2L38.67,46.49" android:strokeColor="@color/dock_logo_color" android:strokeWidth="3"/>
+      
+    <path android:fillColor="@color/dock_logo_color" android:pathData="M18.36,24.13L30.91,46.01" android:strokeColor="@color/dock_logo_color" android:strokeWidth="3"/>
+      
+    <path android:fillColor="@color/dock_logo_color" android:pathData="M20.31,44.74L28.7,48.63" android:strokeColor="@color/dock_logo_color" android:strokeWidth="3"/>
+      
+    <path android:fillColor="@color/dock_logo_color" android:pathData="M17.34,36.63L31.37,16.32" android:strokeColor="@color/dock_logo_color" android:strokeWidth="3"/>
+      
+    <path android:fillColor="@color/dock_logo_color" android:pathData="M20.52,21.55L30.34,27.1" android:strokeColor="@color/dock_logo_color" android:strokeWidth="3"/>
+      
+    <path android:fillColor="@color/dock_logo_color" android:pathData="M39.22,29.8L47.81,30.45" android:strokeColor="@color/dock_logo_color" android:strokeWidth="3"/>
+      
+    <path android:fillColor="@color/dock_logo_color" android:pathData="M34.51,33.98L34.52,44.74" android:strokeColor="@color/dock_logo_color" android:strokeWidth="3"/>
+    
+</vector>

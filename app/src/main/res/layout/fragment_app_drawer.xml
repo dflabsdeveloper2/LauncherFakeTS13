@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_marginHorizontal="42dp"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:scaleX="0.8"
+    android:scaleY="0.8"
+    android:background="@drawable/bg_drawer">
+
+    <!-- Handle -->
+    <View
+        android:layout_width="40dp"
+        android:layout_height="4dp"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="8dp"
+        android:background="@color/drawer_handle"
+        android:alpha="0.4" />
+
+    <!-- Título -->
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginBottom="12dp"
+        android:text="@string/all_apps"
+        android:textColor="@color/drawer_text"
+        android:textSize="16sp"
+        android:textStyle="bold" />
+
+    <!-- Grid de apps -->
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rv_drawer_apps"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:paddingHorizontal="8dp"
+        android:paddingBottom="24dp"
+        android:clipToPadding="false" />
+
+</LinearLayout>

@@ -1,0 +1,267 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:background="@drawable/bg_sidebar_panel"
+    android:elevation="8dp"
+    android:padding="14dp">
+
+    <!-- Volumen -->
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/label_volume"
+        android:textSize="11sp"
+        android:textColor="@color/dock_text_inactive"
+        android:textStyle="bold"
+        android:layout_marginBottom="6dp"
+        android:maxLines="1"
+        android:ellipsize="end" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center_vertical"
+        android:layout_marginBottom="14dp">
+
+        <ImageView
+            android:layout_width="18dp"
+            android:layout_height="18dp"
+            android:src="@drawable/ic_volume"
+            android:contentDescription="Icono Volumen"
+            app:tint="@color/dock_text_inactive"
+            android:layout_marginEnd="8dp" />
+
+        <SeekBar
+            android:id="@+id/sb_volume"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1" />
+
+        <ImageView
+            android:id="@+id/btn_mute"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:src="@drawable/ic_volume"
+            android:padding="3dp"
+            android:layout_marginStart="8dp"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:contentDescription="Mute"
+            app:tint="@color/dock_text_inactive" />
+
+    </LinearLayout>
+
+    <!-- Brillo -->
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/label_brightness"
+        android:textSize="11sp"
+        android:textColor="@color/dock_text_inactive"
+        android:textStyle="bold"
+        android:layout_marginBottom="6dp"
+        android:maxLines="1"
+        android:ellipsize="end" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center_vertical"
+        android:layout_marginBottom="14dp">
+
+        <ImageView
+            android:layout_width="18dp"
+            android:layout_height="18dp"
+            android:src="@drawable/ic_brightness"
+            android:contentDescription="Icono Brillo"
+            app:tint="@color/dock_text_inactive"
+            android:layout_marginEnd="8dp" />
+
+        <SeekBar
+            android:id="@+id/sb_brightness"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1" />
+
+        <ImageView
+            android:id="@+id/btn_auto_brightness"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:src="@drawable/ic_brightness"
+            android:padding="3dp"
+            android:layout_marginStart="8dp"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:contentDescription="Auto Brillo"
+            app:tint="@color/dock_text_inactive" />
+
+    </LinearLayout>
+
+    <!-- Extras (Eye Protection & Touch Sound) -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:baselineAligned="false"
+        android:layout_marginBottom="14dp">
+
+        <LinearLayout
+            android:id="@+id/btn_eyecare"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="vertical"
+            android:gravity="center"
+            android:clickable="true"
+            android:focusable="true"
+            android:background="?attr/selectableItemBackground"
+            android:padding="8dp">
+
+            <ImageView
+                android:id="@+id/iv_eyecare"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:src="@drawable/ic_eyecare"
+                app:tint="@color/dock_text_inactive"
+                android:layout_marginBottom="4dp" />
+
+            <TextView
+                android:id="@+id/tv_eyecare"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/label_eyes"
+                android:textSize="10sp"
+                android:textColor="@color/dock_text_inactive"
+                android:maxLines="1" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/btn_touchsound"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="vertical"
+            android:gravity="center"
+            android:clickable="true"
+            android:focusable="true"
+            android:background="?attr/selectableItemBackground"
+            android:padding="8dp">
+
+            <ImageView
+                android:id="@+id/iv_touchsound"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:src="@drawable/ic_touchsound"
+                app:tint="@color/dock_text_inactive"
+                android:layout_marginBottom="4dp" />
+
+            <TextView
+                android:id="@+id/tv_touchsound"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/label_touch"
+                android:textSize="10sp"
+                android:textColor="@color/dock_text_inactive"
+                android:maxLines="1" />
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <!-- Power actions (OPS, Power Off, Reboot) -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:baselineAligned="false">
+
+        <LinearLayout
+            android:id="@+id/btn_ops_off"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="vertical"
+            android:gravity="center"
+            android:clickable="true"
+            android:focusable="true"
+            android:background="?attr/selectableItemBackground"
+            android:padding="8dp">
+
+            <ImageView
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:src="@drawable/ic_ops"
+                app:tint="@color/dock_text_inactive"
+                android:layout_marginBottom="4dp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/action_power_off_ops"
+                android:textSize="10sp"
+                android:textColor="@color/dock_text_inactive"
+                android:maxLines="1" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/btn_reboot"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="vertical"
+            android:gravity="center"
+            android:clickable="true"
+            android:focusable="true"
+            android:background="?attr/selectableItemBackground"
+            android:padding="8dp">
+
+            <ImageView
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:src="@drawable/ic_refresh"
+                app:tint="@color/dock_text_inactive"
+                android:layout_marginBottom="4dp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/action_restart"
+                android:textSize="10sp"
+                android:textColor="@color/dock_text_inactive"
+                android:maxLines="1" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/btn_power_off"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="vertical"
+            android:gravity="center"
+            android:clickable="true"
+            android:focusable="true"
+            android:background="?attr/selectableItemBackground"
+            android:padding="8dp">
+
+            <ImageView
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:src="@drawable/ic_power"
+                app:tint="@color/dock_text_inactive"
+                android:layout_marginBottom="4dp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/action_power_off"
+                android:textSize="10sp"
+                android:textColor="@color/dock_text_inactive"
+                android:maxLines="1" />
+        </LinearLayout>
+
+    </LinearLayout>
+
+</LinearLayout>

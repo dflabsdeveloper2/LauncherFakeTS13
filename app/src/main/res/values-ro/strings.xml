@@ -1,0 +1,96 @@
+<resources>
+    <string name="app_name">LauncherTs13</string>
+    <string name="go_to_settings">Mergi la Setări</string>
+    <string name="cancel">Anulează</string>
+    <string name="dialog_delete_shortcut_title">Șterge scurtătura</string>
+    <string name="dialog_delete_shortcut_msg">Ștergi \"%1$s\"?</string>
+    <string name="delete">Șterge</string>
+    <string name="widget_picker_title">Selectează widget</string>
+    <string name="widget_load_failed">Widget-ul nu a putut fi încărcat</string>
+    <string name="widget_add_failed">Widget-ul nu a putut fi adăugat</string>
+    <string name="dialog_delete_widget_title">Șterge widget</string>
+    <string name="dialog_delete_widget_msg">Ștergi acest widget?</string>
+    <string name="add_widget">Adaugă\nwidget</string>
+    <string name="new_category">Categorie\nnouă</string>
+    <string name="dialog_new_category_title">Categorie nouă</string>
+    <string name="dialog_new_category_hint">Numele categoriei</string>
+    <string name="create">Creează</string>
+    <string name="dialog_delete_category_title">Șterge categoria</string>
+    <string name="dialog_delete_category_msg">Ștergi \"%1$s\" și toate scurtăturile sale?</string>
+    <string name="overlay_permission_title">Permisiune necesară</string>
+    <string name="overlay_permission_msg">Pentru ca dock-ul să fie mereu vizibil, activează „Afișare peste alte aplicații” în Setări.</string>
+    <string name="wallpaper_title">Fundal</string>
+    <string name="wallpaper_change">Schimbă fundalul</string>
+    <string name="wallpaper_remove">Elimină fundalul</string>
+    <string name="wallpaper_remove_msg">Elimini fundalul?</string>
+    <string name="wallpaper_change_failed">Fundalul nu a putut fi schimbat</string>
+    <string name="notification_channel_dock">Dock</string>
+    <string name="notification_channel_dock_desc">Păstrează dock-ul mereu vizibil</string>
+    <string name="notification_dock_active">LauncherTs13 — Dock activ</string>
+    <string name="default_categories">General,Clasă,Muncă,Colaborare</string>
+
+    <!-- Dock -->
+    <string name="dock_back">Înapoi</string>
+    <string name="dock_home">Acasă</string>
+    <string name="dock_recents">Recente</string>
+    <string name="dock_apps">Aplicații</string>
+    <string name="dock_files">Fișiere</string>
+    <string name="dock_pizarra">Tablă</string>
+    <string name="dock_browser">Browser</string>
+    <string name="dock_settings">Setări</string>
+
+    <!-- Volume / Brightness -->
+    <string name="label_volume">Volum</string>
+    <string name="label_brightness">Luminozitate</string>
+
+    <!-- Profiles -->
+    <string name="profile_google_title">Educație · Google</string>
+    <string name="profile_google_subtitle">GOOGLE WORKSPACE</string>
+    <string name="profile_office_title">Educație · Office</string>
+    <string name="profile_office_subtitle">MICROSOFT 365</string>
+    <string name="profile_corp_title">Corporativ</string>
+    <string name="profile_corp_subtitle">SALA DE AFACERI</string>
+
+    <!-- Additional UI Strings -->
+    <string name="add_shortcut_title">Adaugă scurtătură</string>
+    <string name="all_apps">Toate aplicațiile</string>
+    <string name="config_panel_title">//CONFIGURARE PANOU</string>
+    <string name="choose_environment">Alege mediul</string>
+    <string name="environment_desc">Fiecare mediu reorganizează desktop-ul cu aplicațiile și widget-urile adecvate pentru acel spațiu de lucru.</string>
+    <string name="label_eyes">Ochi</string>
+    <string name="label_touch">Tactil</string>
+    <string name="action_power_off_ops">Oprește OPS</string>
+    <string name="action_restart">Repornește</string>
+    <string name="action_power_off">Oprește</string>
+    <string name="recent_apps">Aplicații recente</string>
+    <string name="swipe_to_close_all">Glisează pentru a închide tot</string>
+
+    <!-- Messages and Errors -->
+    <string name="error_no_multiwindow">Nu suportă Multi-Window</string>
+    <string name="error_split_screen">Nu s-a putut deschide în ecran divizat</string>
+    <string name="error_app_not_found">Aplicația nu a fost găsită</string>
+    <string name="error_app_not_installed">Aplicația nu este instalată</string>
+    <string name="error_auth_ms_authenticator">Vă rugăm să vă conectați la Microsoft Authenticator</string>
+    <string name="error_ms_authenticator_not_installed">Microsoft Authenticator nu este instalat</string>
+    <string name="user_profile">Profil utilizator</string>
+
+    <!-- Widget Titles -->
+    <string name="widget_clock">CEAS</string>
+    <string name="widget_agenda">AGENDA</string>
+    <string name="widget_weather">METEO</string>
+    <string name="widget_focus">FOCUS</string>
+    <string name="widget_timer">CRONOMETRU</string>
+    <string name="widget_videocall">APEL VIDEO</string>
+    <string name="widget_eshare">ESHARE</string>
+    <string name="widget_mail">MAIL</string>
+    <string name="widget_storage">STOCARE</string>
+    <string name="widget_docs">DOCUMENTE</string>
+    <string name="widget_notes">NOTIȚE</string>
+    <string name="widget_orbys_ai">ORBYS AI</string>
+    <string name="widget_vote">VOTE</string>
+    <string name="widget_whiteboard">TABLĂ</string>
+    <string name="widget_dice">ZAR</string>
+    <string name="widget_noise_meter">SONOMETRU</string>
+    <string name="widget_orbys_translate">ORBYS TRANSLATE</string>
+    <string name="widget_student_selector">SELECTOR ELEVI</string>
+</resources>

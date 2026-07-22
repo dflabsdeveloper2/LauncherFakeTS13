@@ -1,0 +1,106 @@
+<resources>
+    <string name="app_name">LauncherTs13</string>
+    <string name="go_to_settings">Ir a Ajustes</string>
+    <string name="cancel">Cancelar</string>
+    <string name="dialog_delete_shortcut_title">Eliminar acceso directo</string>
+    <string name="dialog_delete_shortcut_msg">¿Eliminar «%1$s»?</string>
+    <string name="delete">Eliminar</string>
+    <string name="widget_picker_title">Seleccionar widget</string>
+    <string name="widget_load_failed">No se pudo cargar el widget</string>
+    <string name="widget_add_failed">No se pudo añadir el widget</string>
+    <string name="dialog_delete_widget_title">Eliminar widget</string>
+    <string name="dialog_delete_widget_msg">¿Eliminar este widget?</string>
+    <string name="desktop_add_item_title">Añadir al escritorio</string>
+    <string name="desktop_add_app">App</string>
+    <string name="desktop_add_widget">Widget</string>
+    <string name="desktop_cell_occupied">Celda ocupada</string>
+    <string name="desktop_widget_placed_elsewhere">No cabía ahí — se ha colocado en otro hueco libre</string>
+    <string name="dialog_widget_shrink_to_fit_title">No hay espacio suficiente aquí</string>
+    <string name="dialog_widget_shrink_to_fit_msg">Este widget no cabe en ningún sitio con su tamaño normal. ¿Añadirlo más pequeño (%1$d×%2$d celdas) para que quepa?</string>
+    <string name="add_smaller">Añadir más pequeño</string>
+    <string name="dialog_delete_desktop_item_title">Quitar elemento</string>
+    <string name="dialog_delete_desktop_item_msg">¿Quitar este elemento del escritorio?</string>
+    <string name="add_widget">Añadir\nwidget</string>
+    <string name="new_category">Nueva\ncategoría</string>
+    <string name="dialog_new_category_title">Nueva categoría</string>
+    <string name="dialog_new_category_hint">Nombre de la categoría</string>
+    <string name="create">Crear</string>
+    <string name="dialog_delete_category_title">Eliminar categoría</string>
+    <string name="dialog_delete_category_msg">¿Eliminar «%1$s» y todos sus accesos directos?</string>
+    <string name="overlay_permission_title">Permiso necesario</string>
+    <string name="overlay_permission_msg">Para que el dock sea siempre visible, activa «Mostrar sobre otras apps» en Ajustes.</string>
+    <string name="wallpaper_title">Fondo de pantalla</string>
+    <string name="wallpaper_change">Cambiar fondo</string>
+    <string name="wallpaper_remove">Eliminar fondo</string>
+    <string name="wallpaper_remove_msg">¿Eliminar el fondo de pantalla?</string>
+    <string name="wallpaper_change_failed">No se pudo cambiar el fondo</string>
+    <string name="notification_channel_dock">Dock</string>
+    <string name="notification_channel_dock_desc">Mantiene el dock siempre visible</string>
+    <string name="notification_dock_active">LauncherTs13 — Dock activo</string>
+    <string name="default_categories">General,Aula,Trabajo,Colaboración</string>
+
+    <!-- Dock -->
+    <string name="dock_back">Atrás</string>
+    <string name="dock_home">Inicio</string>
+    <string name="dock_recents">Recientes</string>
+    <string name="dock_apps">Apps</string>
+    <string name="dock_files">Archivos</string>
+    <string name="dock_pizarra">Pizarra</string>
+    <string name="dock_browser">Navegador</string>
+    <string name="dock_settings">Ajustes</string>
+
+    <!-- Volume / Brightness -->
+    <string name="label_volume">Volumen</string>
+    <string name="label_brightness">Brillo</string>
+
+    <!-- Profiles -->
+    <string name="profile_google_title">Educación · Google</string>
+    <string name="profile_google_subtitle">GOOGLE WORKSPACE</string>
+    <string name="profile_office_title">Educación · Office</string>
+    <string name="profile_office_subtitle">MICROSOFT 365</string>
+    <string name="profile_corp_title">Corporativo</string>
+    <string name="profile_corp_subtitle">SALA DE EMPRESA</string>
+
+    <!-- Additional UI Strings -->
+    <string name="add_shortcut_title">Añadir acceso directo</string>
+    <string name="all_apps">Todas las apps</string>
+    <string name="config_panel_title">//CONFIGURACIÓN DEL PANEL</string>
+    <string name="choose_environment">Elige el entorno</string>
+    <string name="environment_desc">Cada entorno reorganiza el escritorio con las apps y widgets adecuados para ese espacio de trabajo.</string>
+    <string name="label_eyes">Ojos</string>
+    <string name="label_touch">Táctil</string>
+    <string name="action_power_off_ops">Apagar OPS</string>
+    <string name="action_restart">Reiniciar</string>
+    <string name="action_power_off">Apagar</string>
+    <string name="recent_apps">Aplicaciones Recientes</string>
+    <string name="swipe_to_close_all">Desliza para cerrar todo</string>
+
+    <!-- Messages and Errors -->
+    <string name="error_no_multiwindow">No soporta Multi-Window</string>
+    <string name="error_split_screen">No se pudo abrir en pantalla dividida</string>
+    <string name="error_app_not_found">App no encontrada</string>
+    <string name="error_app_not_installed">App no instalada</string>
+    <string name="error_auth_ms_authenticator">Por favor, inicie sesión en Microsoft Authenticator</string>
+    <string name="error_ms_authenticator_not_installed">Microsoft Authenticator no está instalado</string>
+    <string name="user_profile">Perfil de usuario</string>
+
+    <!-- Widget Titles -->
+    <string name="widget_clock">RELOJ</string>
+    <string name="widget_agenda">AGENDA</string>
+    <string name="widget_weather">CLIMA</string>
+    <string name="widget_focus">CONCENTRACIÓN</string>
+    <string name="widget_timer">TEMPORIZADOR</string>
+    <string name="widget_videocall">VIDEOLLAMADA</string>
+    <string name="widget_eshare">ESHARE</string>
+    <string name="widget_mail">CORREO</string>
+    <string name="widget_storage">ALMACENAMIENTO</string>
+    <string name="widget_docs">DOCUMENTOS</string>
+    <string name="widget_notes">NOTAS</string>
+    <string name="widget_orbys_ai">ORBYS AI</string>
+    <string name="widget_vote">VOTE</string>
+    <string name="widget_whiteboard">PIZARRA</string>
+    <string name="widget_dice">DADO</string>
+    <string name="widget_noise_meter">MEDIDOR DE RUIDO</string>
+    <string name="widget_orbys_translate">ORBYS TRANSLATE</string>
+    <string name="widget_student_selector">SELECTOR DE ALUMNOS</string>
+</resources>

@@ -1,0 +1,10 @@
+  Standby delay ns=3000000000
+    Type     Id Active Client(pid/uid) Session Port Id S  Flags   Format Chn mask  SRate ST Usg CT  G db  L dB  R dB  VS dB  PortVol dB  PortMuted   Server FrmCnt  FrmRdy F Underruns  Flushed BitPerfect InternalMute   Latency
+  1 Effect Chains
+		- flags: 0082021C (conn. mode: postproc, insert pref: exclusive, volume mgmt: none, device indication: requires updates, input mode: not set, output mode: not set, hardware acceleration: tunneled)
+                                                         Type     Id Active Client(pid/uid) Session Port Id S  Flags   Format Chn mask  SRate ST Usg CT  G db  L dB  R dB  VS dB  PortVol dB  PortMuted   Server FrmCnt  FrmRdy F Underruns  Flushed BitPerfect InternalMute   Latency
+  0 Effect Chains
+-   0 Effect Chains
+-   0 Effect Chains
+-   0 Effect Chains
+-   0 Effect Chains

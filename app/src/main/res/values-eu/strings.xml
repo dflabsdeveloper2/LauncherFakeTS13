@@ -1,0 +1,96 @@
+<resources>
+    <string name="app_name">LauncherTs13</string>
+    <string name="go_to_settings">Joan Ezarpenetara</string>
+    <string name="cancel">Utzi</string>
+    <string name="dialog_delete_shortcut_title">Ezabatu lasterbidea</string>
+    <string name="dialog_delete_shortcut_msg">Ezabatu nahi duzu «%1$s»?</string>
+    <string name="delete">Ezabatu</string>
+    <string name="widget_picker_title">Hautatu widget-a</string>
+    <string name="widget_load_failed">Ezin izan da kargatu widget-a</string>
+    <string name="widget_add_failed">Ezin izan da gehitu widget-a</string>
+    <string name="dialog_delete_widget_title">Ezabatu widget-a</string>
+    <string name="dialog_delete_widget_msg">Ezabatu nahi duzu widget hau?</string>
+    <string name="add_widget">Gehitu\nwidget-a</string>
+    <string name="new_category">Kategoria\nberria</string>
+    <string name="dialog_new_category_title">Kategoria berria</string>
+    <string name="dialog_new_category_hint">Kategoriaren izena</string>
+    <string name="create">Sortu</string>
+    <string name="dialog_delete_category_title">Ezabatu kategoria</string>
+    <string name="dialog_delete_category_msg">Ezabatu nahi duzu «%1$s» eta bere lasterbide guztiak?</string>
+    <string name="overlay_permission_title">Baimena behar da</string>
+    <string name="overlay_permission_msg">Dock-a beti ikusgai egon dadin, aktibatu «Bistaratu beste aplikazioen gainean» Ezarpenetan.</string>
+    <string name="wallpaper_title">Hondo-irudia</string>
+    <string name="wallpaper_change">Aldatu hondoa</string>
+    <string name="wallpaper_remove">Kendu hondoa</string>
+    <string name="wallpaper_remove_msg">Kendu nahi duzu hondo-irudia?</string>
+    <string name="wallpaper_change_failed">Ezin izan da aldatu hondoa</string>
+    <string name="notification_channel_dock">Dock-a</string>
+    <string name="notification_channel_dock_desc">Dock-a beti ikusgai mantentzen du</string>
+    <string name="notification_dock_active">LauncherTs13 — Dock-a aktibo</string>
+    <string name="default_categories">Orokorra,Gela,Lana,Elkarlana</string>
+
+    <!-- Dock -->
+    <string name="dock_back">Atzera</string>
+    <string name="dock_home">Hasiera</string>
+    <string name="dock_recents">Azkenak</string>
+    <string name="dock_apps">Aplikazioak</string>
+    <string name="dock_files">Fitxategiak</string>
+    <string name="dock_pizarra">Arraultza</string>
+    <string name="dock_browser">Nabigatzailea</string>
+    <string name="dock_settings">Ezarpenak</string>
+
+    <!-- Volume / Brightness -->
+    <string name="label_volume">Bolumena</string>
+    <string name="label_brightness">Argitasuna</string>
+
+    <!-- Profiles -->
+    <string name="profile_google_title">Hezkuntza · Google</string>
+    <string name="profile_google_subtitle">GOOGLE WORKSPACE</string>
+    <string name="profile_office_title">Hezkuntza · Office</string>
+    <string name="profile_office_subtitle">MICROSOFT 365</string>
+    <string name="profile_corp_title">Korporatiboa</string>
+    <string name="profile_corp_subtitle">ENPRESA-GELA</string>
+
+    <!-- Additional UI Strings -->
+    <string name="add_shortcut_title">Gehitu lasterbidea</string>
+    <string name="all_apps">Aplikazio guztiak</string>
+    <string name="config_panel_title">//PANELAREN KONFIGURAZIOA</string>
+    <string name="choose_environment">Hautatu ingurunea</string>
+    <string name="environment_desc">Ingurune bakoitzak mahaigaina berrantolatzen du lan-eremu horretarako aplikazio eta widget egokiekin.</string>
+    <string name="label_eyes">Begiak</string>
+    <string name="label_touch">Taktila</string>
+    <string name="action_power_off_ops">Itzali OPS</string>
+    <string name="action_restart">Berrabiarazi</string>
+    <string name="action_power_off">Itzali</string>
+    <string name="recent_apps">Azken aplikazioak</string>
+    <string name="swipe_to_close_all">Irristatu dena ixteko</string>
+
+    <!-- Messages and Errors -->
+    <string name="error_no_multiwindow">Ez du onartzen Multi-Window</string>
+    <string name="error_split_screen">Ezin izan da ireki pantaila zatituan</string>
+    <string name="error_app_not_found">Aplikazioa ez da aurkitu</string>
+    <string name="error_app_not_installed">Aplikazioa ez dago instalatuta</string>
+    <string name="error_auth_ms_authenticator">Mesedez, hasi saioa Microsoft Authenticator-en</string>
+    <string name="error_ms_authenticator_not_installed">Microsoft Authenticator ez dago instalatuta</string>
+    <string name="user_profile">Erabiltzaile-profila</string>
+
+    <!-- Widget Titles -->
+    <string name="widget_clock">ERLOJUA</string>
+    <string name="widget_agenda">AGENDA</string>
+    <string name="widget_weather">EGURALDIA</string>
+    <string name="widget_focus">KONTZENTRAZIOA</string>
+    <string name="widget_timer">TEMPORIZADOREA</string>
+    <string name="widget_videocall">BIDEO-DEIA</string>
+    <string name="widget_eshare">ESHARE</string>
+    <string name="widget_mail">POSTA</string>
+    <string name="widget_storage">BILTEGIRATZEA</string>
+    <string name="widget_docs">DOKUMENTUAK</string>
+    <string name="widget_notes">OHARRAK</string>
+    <string name="widget_orbys_ai">ORBYS AI</string>
+    <string name="widget_vote">VOTE</string>
+    <string name="widget_whiteboard">ARRAULTZA</string>
+    <string name="widget_dice">DADOA</string>
+    <string name="widget_noise_meter">ZARATA NEURGAILUA</string>
+    <string name="widget_orbys_translate">ORBYS TRANSLATE</string>
+    <string name="widget_student_selector">IKASLE HAUTATZAILEA</string>
+</resources>

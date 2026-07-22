@@ -1,0 +1,7 @@
+<vector xmlns:android="http://schemas.android.com/apk/res/android" android:height="30dp" android:viewportHeight="64" android:viewportWidth="64" android:width="30dp">
+      
+    <path android:fillColor="@color/dock_logo_color" android:pathData="M16,14L48,14A4,4 0,0 1,52 18L52,46A4,4 0,0 1,48 50L16,50A4,4 0,0 1,12 46L12,18A4,4 0,0 1,16 14z" android:strokeColor="@color/dock_logo_color" android:strokeWidth="4"/>
+      
+    <path android:fillColor="@color/dock_logo_color" android:pathData="M20,10v8M44,10v8M12,24h40" android:strokeColor="@color/dock_logo_color" android:strokeWidth="4"/>
+    
+</vector>

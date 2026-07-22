@@ -1,0 +1,96 @@
+<resources>
+    <string name="app_name">LauncherTs13</string>
+    <string name="go_to_settings">Ga naar Instellingen</string>
+    <string name="cancel">Annuleren</string>
+    <string name="dialog_delete_shortcut_title">Snelkoppeling verwijderen</string>
+    <string name="dialog_delete_shortcut_msg">\"%1$s\" verwijderen?</string>
+    <string name="delete">Verwijderen</string>
+    <string name="widget_picker_title">Selecteer widget</string>
+    <string name="widget_load_failed">Kan widget niet laden</string>
+    <string name="widget_add_failed">Kan widget niet toevoegen</string>
+    <string name="dialog_delete_widget_title">Widget verwijderen</string>
+    <string name="dialog_delete_widget_msg">Deze widget verwijderen?</string>
+    <string name="add_widget">Widget\ntoevoegen</string>
+    <string name="new_category">Nieuwe\ncategorie</string>
+    <string name="dialog_new_category_title">Nieuwe categorie</string>
+    <string name="dialog_new_category_hint">Categorienaam</string>
+    <string name="create">Aanmaken</string>
+    <string name="dialog_delete_category_title">Categorie verwijderen</string>
+    <string name="dialog_delete_category_msg">\"%1$s\" en alle bijbehorende snelkoppelingen verwijderen?</string>
+    <string name="overlay_permission_title">Toestemming vereist</string>
+    <string name="overlay_permission_msg">Om de dock altijd zichtbaar te houden, schakel \"Weergeven over andere apps\" in bij Instellingen.</string>
+    <string name="wallpaper_title">Achtergrond</string>
+    <string name="wallpaper_change">Achtergrond wijzigen</string>
+    <string name="wallpaper_remove">Achtergrond verwijderen</string>
+    <string name="wallpaper_remove_msg">Achtergrond verwijderen?</string>
+    <string name="wallpaper_change_failed">Kan achtergrond niet wijzigen</string>
+    <string name="notification_channel_dock">Dock</string>
+    <string name="notification_channel_dock_desc">Houdt de dock altijd zichtbaar</string>
+    <string name="notification_dock_active">LauncherTs13 — Dock actief</string>
+    <string name="default_categories">Algemeen,Klaslokaal,Werk,Samenwerking</string>
+
+    <!-- Dock -->
+    <string name="dock_back">Terug</string>
+    <string name="dock_home">Home</string>
+    <string name="dock_recents">Recent</string>
+    <string name="dock_apps">Apps</string>
+    <string name="dock_files">Bestanden</string>
+    <string name="dock_pizarra">Whiteboard</string>
+    <string name="dock_browser">Browser</string>
+    <string name="dock_settings">Instellingen</string>
+
+    <!-- Volume / Brightness -->
+    <string name="label_volume">Volume</string>
+    <string name="label_brightness">Helderheid</string>
+
+    <!-- Profiles -->
+    <string name="profile_google_title">Onderwijs · Google</string>
+    <string name="profile_google_subtitle">GOOGLE WORKSPACE</string>
+    <string name="profile_office_title">Onderwijs · Office</string>
+    <string name="profile_office_subtitle">MICROSOFT 365</string>
+    <string name="profile_corp_title">Zakelijk</string>
+    <string name="profile_corp_subtitle">VERGADERZAAL</string>
+
+    <!-- Additional UI Strings -->
+    <string name="add_shortcut_title">Snelkoppeling toevoegen</string>
+    <string name="all_apps">Alle apps</string>
+    <string name="config_panel_title">//PANEELCONFIGURATIE</string>
+    <string name="choose_environment">Kies omgeving</string>
+    <string name="environment_desc">Elke omgeving deelt het bureaublad opnieuw in met de juiste apps en widgets voor die werkruimte.</string>
+    <string name="label_eyes">Ogen</string>
+    <string name="label_touch">Touch</string>
+    <string name="action_power_off_ops">OPS uitschakelen</string>
+    <string name="action_restart">Opnieuw opstarten</string>
+    <string name="action_power_off">Uitschakelen</string>
+    <string name="recent_apps">Recente toepassingen</string>
+    <string name="swipe_to_close_all">Veegh om alles te sluiten</string>
+
+    <!-- Messages and Errors -->
+    <string name="error_no_multiwindow">Ondersteunt geen Multi-Window</string>
+    <string name="error_split_screen">Kon niet worden geopend in gesplitst scherm</string>
+    <string name="error_app_not_found">App niet gevonden</string>
+    <string name="error_app_not_installed">App niet geïnstalleerd</string>
+    <string name="error_auth_ms_authenticator">Meld u aan bij Microsoft Authenticator</string>
+    <string name="error_ms_authenticator_not_installed">Microsoft Authenticator is niet geïnstalleerd</string>
+    <string name="user_profile">Gebruikersprofiel</string>
+
+    <!-- Widget Titles -->
+    <string name="widget_clock">KLOK</string>
+    <string name="widget_agenda">AGENDA</string>
+    <string name="widget_weather">WEER</string>
+    <string name="widget_focus">FOCUS</string>
+    <string name="widget_timer">TIMER</string>
+    <string name="widget_videocall">VIDEOOPROEP</string>
+    <string name="widget_eshare">ESHARE</string>
+    <string name="widget_mail">MAIL</string>
+    <string name="widget_storage">OPSLAG</string>
+    <string name="widget_docs">DOCUMENTEN</string>
+    <string name="widget_notes">NOTITIES</string>
+    <string name="widget_orbys_ai">ORBYS AI</string>
+    <string name="widget_vote">VOTE</string>
+    <string name="widget_whiteboard">WHITEBOARD</string>
+    <string name="widget_dice">DOBBELSTEEN</string>
+    <string name="widget_noise_meter">GELUIDSMETER</string>
+    <string name="widget_orbys_translate">ORBYS TRANSLATE</string>
+    <string name="widget_student_selector">STUDENT SELECTOR</string>
+</resources>

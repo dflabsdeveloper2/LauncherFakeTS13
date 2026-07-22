@@ -1,0 +1,96 @@
+<resources>
+    <string name="app_name">LauncherTs13</string>
+    <string name="go_to_settings">Перейти в настройки</string>
+    <string name="cancel">Отмена</string>
+    <string name="dialog_delete_shortcut_title">Удалить ярлык</string>
+    <string name="dialog_delete_shortcut_msg">Удалить \"%1$s\"?</string>
+    <string name="delete">Удалить</string>
+    <string name="widget_picker_title">Выберите виджет</string>
+    <string name="widget_load_failed">Не удалось загрузить виджет</string>
+    <string name="widget_add_failed">Не удалось добавить виджет</string>
+    <string name="dialog_delete_widget_title">Удалить виджет</string>
+    <string name="dialog_delete_widget_msg">Удалить этот виджет?</string>
+    <string name="add_widget">Добавить\nвиджет</string>
+    <string name="new_category">Новая\nкатегория</string>
+    <string name="dialog_new_category_title">Новая категория</string>
+    <string name="dialog_new_category_hint">Имя категории</string>
+    <string name="create">Создать</string>
+    <string name="dialog_delete_category_title">Удалить категорию</string>
+    <string name="dialog_delete_category_msg">Удалить \"%1$s\" и все связанные ярлыки?</string>
+    <string name="overlay_permission_title">Требуется разрешение</string>
+    <string name="overlay_permission_msg">Чтобы док-панель всегда была видна, включите «Отображение поверх других приложений» в настройках.</string>
+    <string name="wallpaper_title">Обои</string>
+    <string name="wallpaper_change">Изменить обои</string>
+    <string name="wallpaper_remove">Удалить обои</string>
+    <string name="wallpaper_remove_msg">Удалить обои?</string>
+    <string name="wallpaper_change_failed">Не удалось изменить обои</string>
+    <string name="notification_channel_dock">Док-панель</string>
+    <string name="notification_channel_dock_desc">Поддерживает док-панель всегда видимой</string>
+    <string name="notification_dock_active">LauncherTs13 — док-панель активна</string>
+    <string name="default_categories">Общие,Класс,Работа,Сотрудничество</string>
+
+    <!-- Dock -->
+    <string name="dock_back">Назад</string>
+    <string name="dock_home">Главная</string>
+    <string name="dock_recents">Недавние</string>
+    <string name="dock_apps">Приложения</string>
+    <string name="dock_files">Файлы</string>
+    <string name="dock_pizarra">Доска</string>
+    <string name="dock_browser">Браузер</string>
+    <string name="dock_settings">Настройки</string>
+
+    <!-- Volume / Brightness -->
+    <string name="label_volume">Громкость</string>
+    <string name="label_brightness">Яркость</string>
+
+    <!-- Profiles -->
+    <string name="profile_google_title">Образование · Google</string>
+    <string name="profile_google_subtitle">GOOGLE WORKSPACE</string>
+    <string name="profile_office_title">Образование · Office</string>
+    <string name="profile_office_subtitle">MICROSOFT 365</string>
+    <string name="profile_corp_title">Корпоративный</string>
+    <string name="profile_corp_subtitle">КОНФЕРЕНЦ-ЗАЛ</string>
+
+    <!-- Additional UI Strings -->
+    <string name="add_shortcut_title">Добавить ярлык</string>
+    <string name="all_apps">Все приложения</string>
+    <string name="config_panel_title">//КОНФИГУРАЦИЯ ПАНЕЛИ</string>
+    <string name="choose_environment">Выберите среду</string>
+    <string name="environment_desc">Каждая среда реорганизует рабочий стол с соответствующими приложениями и виджетами для этого рабочего пространства.</string>
+    <string name="label_eyes">Глаза</string>
+    <string name="label_touch">Сенсор</string>
+    <string name="action_power_off_ops">Выключить OPS</string>
+    <string name="action_restart">Перезагрузка</string>
+    <string name="action_power_off">Выключить</string>
+    <string name="recent_apps">Недавние приложения</string>
+    <string name="swipe_to_close_all">Проведите, чтобы закрыть все</string>
+
+    <!-- Messages and Errors -->
+    <string name="error_no_multiwindow">Не поддерживает многооконный режим</string>
+    <string name="error_split_screen">Не удалось открыть в режиме разделенного экрана</string>
+    <string name="error_app_not_found">Приложение не найдено</string>
+    <string name="error_app_not_installed">Приложение не установлено</string>
+    <string name="error_auth_ms_authenticator">Пожалуйста, войдите в Microsoft Authenticator</string>
+    <string name="error_ms_authenticator_not_installed">Microsoft Authenticator не установлен</string>
+    <string name="user_profile">Профиль пользователя</string>
+
+    <!-- Widget Titles -->
+    <string name="widget_clock">ЧАСЫ</string>
+    <string name="widget_agenda">ПОВЕСТКА</string>
+    <string name="widget_weather">ПОГОДА</string>
+    <string name="widget_focus">ФОКУС</string>
+    <string name="widget_timer">ТАЙМЕР</string>
+    <string name="widget_videocall">ВИДЕОЗВОНОК</string>
+    <string name="widget_eshare">ESHARE</string>
+    <string name="widget_mail">ПОЧТА</string>
+    <string name="widget_storage">ХРАНИЛИЩЕ</string>
+    <string name="widget_docs">ДОКУМЕНТЫ</string>
+    <string name="widget_notes">ЗАМЕТКИ</string>
+    <string name="widget_orbys_ai">ORBYS AI</string>
+    <string name="widget_vote">ГОЛОСОВАНИЕ</string>
+    <string name="widget_whiteboard">ДОСКА</string>
+    <string name="widget_dice">КУБИК</string>
+    <string name="widget_noise_meter">ШУМОМЕР</string>
+    <string name="widget_orbys_translate">ORBYS TRANSLATE</string>
+    <string name="widget_student_selector">ВЫБОР УЧЕНИКА</string>
+</resources>

@@ -1,0 +1,164 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:sharedUserId="android.uid.system">
+
+    <!-- Networking -->
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+
+    <!-- Packages / Apps -->
+    <uses-permission android:name="android.permission.QUERY_ALL_PACKAGES" />
+    <uses-permission android:name="android.permission.REQUEST_DELETE_PACKAGES" />
+
+    <!-- Storage -->
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.READ_MEDIA_IMAGES" />
+    <uses-permission android:name="android.permission.MANAGE_EXTERNAL_STORAGE" />
+
+    <!-- System / UI -->
+    <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW" />
+    <uses-permission android:name="android.permission.WRITE_SETTINGS" />
+    <uses-permission android:name="android.permission.SET_WALLPAPER" />
+    <uses-permission android:name="android.permission.POST_NOTIFICATIONS" />
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
+    <uses-permission android:name="android.permission.INJECT_EVENTS" />
+    <uses-permission android:name="android.permission.STATUS_BAR" />
+    <uses-permission android:name="android.permission.EXPAND_STATUS_BAR" />
+
+    <!-- Services / Features -->
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE_SPECIAL_USE" />
+    <uses-permission android:name="android.permission.BIND_APPWIDGET" />
+    <uses-permission android:name="android.permission.BLUETOOTH" />
+
+    <uses-permission android:name="android.permission.GET_ACCOUNTS" />
+    <uses-permission android:name="android.permission.GET_ACCOUNTS_PRIVILEGED" />
+    <uses-permission android:name="android.permission.REBOOT" tools:ignore="ProtectedPermissions" />
+
+    <!-- Hardware Features -->
+    <uses-feature
+        android:name="android.hardware.usb.host"
+        android:required="false" />
+
+    <!-- CDD C-1-1: launcher requiere la feature de home screen. Nota: esto declara
+         que ESTA app la necesita, pero NO hace que el dispositivo la reporte via
+         hasSystemFeature() — eso depende de la config de la imagen de sistema
+         (normalmente ya viene por defecto en builds AOSP de tipo handheld). -->
+    <uses-feature
+        android:name="android.software.home_screen"
+        android:required="true" />
+
+    <!-- CDD 3.8.2/C-1-1: el launcher soporta AppWidgets de terceros (añadir/mover/
+         redimensionar/quitar en el Desktop, más el flujo de pin de PinItemConfirmActivity). -->
+    <uses-feature
+        android:name="android.software.app_widgets"
+        android:required="true" />
+
+    <queries>
+        <intent>
+            <action android:name="android.intent.action.MAIN" />
+            <category android:name="android.intent.category.LAUNCHER" />
+        </intent>
+        <intent>
+            <action android:name="android.intent.action.DIAL" />
+        </intent>
+        <intent>
+            <action android:name="android.intent.action.VIEW" />
+            <category android:name="android.intent.category.BROWSABLE" />
+        </intent>
+        <package android:name="com.android.settings" />
+        <package android:name="com.skg.settings" />
+        <package android:name="com.google.android.settings" />
+    </queries>
+
+    <uses-permission android:name="android.permission.SET_WALLPAPER_HINTS" />
+
+    <application
+        android:name=".LauncherApp"
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.LauncherTs13">
+
+        <!-- Home Activity -->
+        <activity
+            android:name=".ui.home.MainActivity"
+            android:exported="true"
+            android:launchMode="singleTask"
+            android:stateNotNeeded="true"
+            android:windowSoftInputMode="adjustPan">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.HOME" />
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <!-- App Drawer -->
+        <activity
+            android:name=".ui.drawer.AppMenuActivity"
+            android:exported="false"
+            android:launchMode="singleTop"
+            android:theme="@style/Theme.LauncherTs13.Transparent" />
+
+        <!-- App Picker (returns selected app as shortcut) -->
+        <activity
+            android:name=".ui.picker.AppPickerActivity"
+            android:exported="false"
+            android:launchMode="singleTop"
+            android:theme="@style/Theme.LauncherTs13.Transparent"
+            android:windowSoftInputMode="adjustResize" />
+
+        <!-- CDD 3.8.1/H-SR-1: confirmación de ShortcutManager.requestPinShortcut() y
+             AppWidgetManager.requestPinAppWidget() de apps de terceros -->
+        <activity
+            android:name=".ui.shortcut.PinItemConfirmActivity"
+            android:exported="true"
+            android:launchMode="singleTop"
+            android:theme="@style/Theme.LauncherTs13.Transparent">
+            <intent-filter>
+                <action android:name="android.content.pm.action.CONFIRM_PIN_SHORTCUT" />
+            </intent-filter>
+            <intent-filter>
+                <action android:name="android.content.pm.action.CONFIRM_PIN_APPWIDGET" />
+            </intent-filter>
+        </activity>
+
+        <!-- Overlay Service -->
+        <service
+            android:name=".services.overlay.DockOverlayService"
+            android:exported="false"
+            android:foregroundServiceType="specialUse">
+            <property
+                android:name="android.app.PROPERTY_SPECIAL_USE_FGS_SUBTYPE"
+                android:value="launcher_overlay_dock" />
+        </service>
+
+        <!-- Remaps AppWidget IDs after a backup restore, so saved widgets survive it -->
+        <receiver
+            android:name=".services.WidgetRestoreReceiver"
+            android:exported="false">
+            <intent-filter>
+                <action android:name="android.appwidget.action.APPWIDGET_HOST_RESTORED" />
+            </intent-filter>
+        </receiver>
+
+        <!-- CDD 3.8.1/H-SR-3: badges de notificación en los iconos de apps. Requiere que el
+             usuario conceda acceso a notificaciones desde Ajustes (ver MainActivity). -->
+        <service
+            android:name=".services.LauncherNotificationListenerService"
+            android:exported="true"
+            android:permission="android.permission.BIND_NOTIFICATION_LISTENER_SERVICE">
+            <intent-filter>
+                <action android:name="android.service.notification.NotificationListenerService" />
+            </intent-filter>
+        </service>
+
+    </application>
+
+</manifest>
