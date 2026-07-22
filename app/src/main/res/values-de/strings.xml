@@ -1,5 +1,4 @@
 <resources>
-    <string name="app_name">LauncherTs13</string>
     <string name="go_to_settings">Zu den Einstellungen</string>
     <string name="cancel">Abbrechen</string>
     <string name="dialog_delete_shortcut_title">Verknüpfung löschen</string>
@@ -26,7 +25,7 @@
     <string name="wallpaper_change_failed">Hintergrund konnte nicht geändert werden</string>
     <string name="notification_channel_dock">Dock</string>
     <string name="notification_channel_dock_desc">Hält das Dock immer sichtbar</string>
-    <string name="notification_dock_active">LauncherTs13 — Dock aktiv</string>
+    <string name="notification_dock_active">LauncherFakeTs13 — Dock aktiv</string>
     <string name="default_categories">Allgemein,Klassenzimmer,Arbeit,Zusammenarbeit</string>
 
     <!-- Dock -->

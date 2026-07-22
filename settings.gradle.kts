@@ -22,6 +22,6 @@ dependencyResolutionManagement {
     }
 }
 
-rootProject.name = "LauncherTs13"
+rootProject.name = "LauncherFakeTS13"
 include(":app")
  

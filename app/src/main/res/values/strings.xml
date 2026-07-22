@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">LauncherTs13</string>
+    <string name="app_name" translatable="false">LauncherFakeTs13</string>
     <string name="search_hint">Buscar en Google</string>
     <string name="no_shortcuts_available">This app has no quick shortcuts</string>
     <string name="action_split_screen">Split screen</string>
@@ -55,7 +55,7 @@
     <string name="wallpaper_change_failed">Could not change wallpaper</string>
     <string name="notification_channel_dock">Dock</string>
     <string name="notification_channel_dock_desc">Keeps the dock always visible</string>
-    <string name="notification_dock_active">LauncherTs13 — Dock active</string>
+    <string name="notification_dock_active">LauncherFakeTs13 — Dock active</string>
     <string name="default_categories">General,Aula,Trabajo,Colaboración</string>
     <string name="play_store">Play Store</string>
     <string name="google_apps_folder_title">Google apps</string>

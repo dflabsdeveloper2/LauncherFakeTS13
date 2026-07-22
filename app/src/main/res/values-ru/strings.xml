@@ -1,5 +1,4 @@
 <resources>
-    <string name="app_name">LauncherTs13</string>
     <string name="go_to_settings">Перейти в настройки</string>
     <string name="cancel">Отмена</string>
     <string name="dialog_delete_shortcut_title">Удалить ярлык</string>
@@ -26,7 +25,7 @@
     <string name="wallpaper_change_failed">Не удалось изменить обои</string>
     <string name="notification_channel_dock">Док-панель</string>
     <string name="notification_channel_dock_desc">Поддерживает док-панель всегда видимой</string>
-    <string name="notification_dock_active">LauncherTs13 — док-панель активна</string>
+    <string name="notification_dock_active">LauncherFakeTs13 — док-панель активна</string>
     <string name="default_categories">Общие,Класс,Работа,Сотрудничество</string>
 
     <!-- Dock -->

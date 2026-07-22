@@ -22,7 +22,7 @@
   entries in app/src/main/AndroidManifest.xml.
 -->
 <permissions>
-    <privapp-permissions package="com.orbys.launcherts13">
+    <privapp-permissions package="com.orbys.launcherfakets13">
         <permission name="android.permission.STATUS_BAR"/>
         <permission name="android.permission.EXPAND_STATUS_BAR"/>
         <permission name="android.permission.INJECT_EVENTS"/>

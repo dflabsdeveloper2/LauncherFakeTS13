@@ -228,7 +228,7 @@
         <!-- Category cards horizontal scroll -->
         <androidx.fragment.app.FragmentContainerView
             android:id="@+id/category_container_view"
-            android:name="com.orbys.launcherts13.ui.home.CategoryFragment"
+            android:name="com.orbys.launcherfakets13.ui.home.CategoryFragment"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginTop="8dp"
@@ -239,7 +239,7 @@
         <!-- Free-form widget layer -->
         <androidx.fragment.app.FragmentContainerView
             android:id="@+id/widget_container_view"
-            android:name="com.orbys.launcherts13.ui.home.WidgetFragment"
+            android:name="com.orbys.launcherfakets13.ui.home.WidgetFragment"
             android:layout_width="0dp"
             android:layout_height="0dp"
             app:layout_constraintBottom_toBottomOf="parent"
@@ -252,7 +252,7 @@
     <!-- Desktop page — grid-snap screen for apps + widgets. Right pane; visible by default, slides out to reveal Home on swipe right -->
     <androidx.fragment.app.FragmentContainerView
         android:id="@+id/desktop_container_view"
-        android:name="com.orbys.launcherts13.ui.home.DesktopFragment"
+        android:name="com.orbys.launcherfakets13.ui.home.DesktopFragment"
         android:layout_width="0dp"
         android:layout_height="0dp"
         app:layout_constraintBottom_toBottomOf="parent"

@@ -1,5 +1,4 @@
 <resources>
-    <string name="app_name">LauncherTs13</string>
     <string name="go_to_settings">Ga naar Instellingen</string>
     <string name="cancel">Annuleren</string>
     <string name="dialog_delete_shortcut_title">Snelkoppeling verwijderen</string>
@@ -26,7 +25,7 @@
     <string name="wallpaper_change_failed">Kan achtergrond niet wijzigen</string>
     <string name="notification_channel_dock">Dock</string>
     <string name="notification_channel_dock_desc">Houdt de dock altijd zichtbaar</string>
-    <string name="notification_dock_active">LauncherTs13 — Dock actief</string>
+    <string name="notification_dock_active">LauncherFakeTs13 — Dock actief</string>
     <string name="default_categories">Algemeen,Klaslokaal,Werk,Samenwerking</string>
 
     <!-- Dock -->
