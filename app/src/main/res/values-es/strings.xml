@@ -82,6 +82,7 @@
     <string name="error_auth_ms_authenticator">Por favor, inicie sesión en Microsoft Authenticator</string>
     <string name="error_ms_authenticator_not_installed">Microsoft Authenticator no está instalado</string>
     <string name="user_profile">Perfil de usuario</string>
+    <string name="exit_test_mode">Salir Modo Prueba</string>
 
     <!-- Widget Titles -->
     <string name="widget_clock">RELOJ</string>

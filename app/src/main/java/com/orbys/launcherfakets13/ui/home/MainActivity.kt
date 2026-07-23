@@ -1,7 +1,6 @@
 package com.orbys.launcherfakets13.ui.home
 
 import android.app.WallpaperManager
-import android.app.role.RoleManager
 import android.appwidget.AppWidgetManager
 import android.appwidget.AppWidgetProviderInfo
 import android.content.BroadcastReceiver
@@ -34,6 +33,7 @@ import com.orbys.launcherfakets13.R
 import com.orbys.launcherfakets13.databinding.ActivityMainBinding
 import com.orbys.launcherfakets13.domain.model.Environment
 import com.orbys.launcherfakets13.services.ConnectivityReceiver
+import com.orbys.launcherfakets13.services.Broadcaster
 import com.orbys.launcherfakets13.services.overlay.DockOverlayService
 import com.google.android.material.dialog.MaterialAlertDialogBuilder
 import com.orbys.launcherfakets13.ui.dialog.AdminDisabledDialog
@@ -70,9 +70,6 @@ class MainActivity : AppCompatActivity() {
 
     // ── Activity result launchers ─────────────────────────────────────────────
 
-    private val roleRequestLauncher = registerForActivityResult(
-        ActivityResultContracts.StartActivityForResult()
-    ) { }
 
     private val overlayPermissionLauncher = registerForActivityResult(
         ActivityResultContracts.StartActivityForResult()
@@ -110,10 +107,6 @@ class MainActivity : AppCompatActivity() {
 
         // Home es la página visible por defecto; Desktop queda aparcado fuera de pantalla a la derecha.
         binding.desktopContainerView.translationX = resources.displayMetrics.widthPixels.toFloat()
-
-        requestDefaultLauncherRoleIfNeeded()
-        startDockService()
-        requestNotificationListenerAccessIfNeeded()
 
         setupWallpaper()
         setupSearchBar()
@@ -163,6 +156,10 @@ class MainActivity : AppCompatActivity() {
 
         binding.ivUserProfile.setOnClickListener {
             AdminDisabledDialog.newInstance().show(supportFragmentManager, "admin_disabled")
+        }
+
+        binding.btnExitTestMode.setOnClickListener {
+            finish()
         }
 
         lifecycleScope.launch {
@@ -231,6 +228,9 @@ class MainActivity : AppCompatActivity() {
 
     override fun onStart() {
         super.onStart()
+        Broadcaster.sendOpen(this)
+        startDockService()
+        requestNotificationListenerAccessIfNeeded()
         registerReceiver(connectivityReceiver, ConnectivityReceiver.getGeneralFilter(), RECEIVER_NOT_EXPORTED)
         registerReceiver(connectivityReceiver, ConnectivityReceiver.getMediaFilter(), RECEIVER_NOT_EXPORTED)
 
@@ -245,6 +245,8 @@ class MainActivity : AppCompatActivity() {
 
     override fun onStop() {
         super.onStop()
+        Broadcaster.sendClose(this)
+        DockOverlayService.stop(this)
         unregisterReceiver(connectivityReceiver)
         unregisterReceiver(packageReceiver)
     }
@@ -253,12 +255,6 @@ class MainActivity : AppCompatActivity() {
         super.onResume()
         hideNavBar()
         SystemActionHelper.setStatusBarLocked(this, true)
-        if (Settings.canDrawOverlays(this)) {
-            DockOverlayService.start(this)
-            DockOverlayService.showDock()
-        } else {
-            startDockService()
-        }
 
         if (isDesktopVisible) getDesktopFragment()?.onPageShown()
 
@@ -362,17 +358,12 @@ class MainActivity : AppCompatActivity() {
             .show()
     }
 
-    private fun requestDefaultLauncherRoleIfNeeded() {
-        val rm = getSystemService(RoleManager::class.java)
-        if (!rm.isRoleHeld(RoleManager.ROLE_HOME))
-            roleRequestLauncher.launch(rm.createRequestRoleIntent(RoleManager.ROLE_HOME))
-    }
-
     private fun openFileManager() {
         val candidates = listOf(
             "com.android.documentsui",
             "com.google.android.documentsui",
-            "com.android.fileexplorer"
+            "com.android.fileexplorer",
+            "com.orbys.filemanager"
         )
         val launched = candidates.any { pkg ->
             packageManager.getLaunchIntentForPackage(pkg)

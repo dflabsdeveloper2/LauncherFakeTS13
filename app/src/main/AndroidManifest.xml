@@ -41,13 +41,6 @@
         android:name="android.hardware.usb.host"
         android:required="false" />
 
-    <!-- CDD C-1-1: launcher requiere la feature de home screen. Nota: esto declara
-         que ESTA app la necesita, pero NO hace que el dispositivo la reporte via
-         hasSystemFeature() — eso depende de la config de la imagen de sistema
-         (normalmente ya viene por defecto en builds AOSP de tipo handheld). -->
-    <uses-feature
-        android:name="android.software.home_screen"
-        android:required="true" />
 
     <!-- CDD 3.8.2/C-1-1: el launcher soporta AppWidgets de terceros (añadir/mover/
          redimensionar/quitar en el Desktop, más el flujo de pin de PinItemConfirmActivity). -->
@@ -92,7 +85,6 @@
             android:windowSoftInputMode="adjustPan">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-                <category android:name="android.intent.category.HOME" />
                 <category android:name="android.intent.category.DEFAULT" />
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>

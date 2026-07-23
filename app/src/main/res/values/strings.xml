@@ -114,6 +114,7 @@
     <string name="error_auth_ms_authenticator">Please sign in to Microsoft Authenticator</string>
     <string name="error_ms_authenticator_not_installed">Microsoft Authenticator is not installed</string>
     <string name="user_profile">User profile</string>
+    <string name="exit_test_mode">Salir Modo Prueba</string>
 
     <!-- Widget Titles -->
     <string name="widget_clock">CLOCK</string>
