@@ -33,6 +33,12 @@ enum class Environment(
         id = "CORPORATE",
         badgeLabel = "PRO",
         defaultCategories = listOf("General", "Sala", "Trabajo", "Colaboración")
+    ),
+    /** Entorno de exhibición para demostraciones. */
+    SHOWROOM(
+        id = "SHOWROOM",
+        badgeLabel = "SR",
+        defaultCategories = emptyList()
     );
 
     companion object {

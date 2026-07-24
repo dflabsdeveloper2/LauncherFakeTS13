@@ -22,7 +22,7 @@ class EnvironmentSelectorDialog : DialogFragment() {
             .inflate(R.layout.dialog_environment_selector, null)
 
         view.findViewById<RecyclerView>(R.id.rvEnvironments).apply {
-            layoutManager = GridLayoutManager(requireContext(), 3)
+            layoutManager = GridLayoutManager(requireContext(), 4)
             adapter = EnvironmentAdapter(Environment.entries, initialEnvironment) { env ->
                 onEnvironmentSelected?.invoke(env)
                 dismiss()

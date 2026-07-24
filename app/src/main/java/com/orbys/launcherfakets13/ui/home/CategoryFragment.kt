@@ -280,6 +280,7 @@ class CategoryFragment : Fragment() {
                 "Colaboración" -> listOf(playStoreWidgetData(), googleAppsFolderWidgetData(), null, null)
                 else -> emptyList()
             }
+            Environment.SHOWROOM -> emptyList()
         }
 
         // Infla y posiciona los widgets en la rejilla de 2x2
