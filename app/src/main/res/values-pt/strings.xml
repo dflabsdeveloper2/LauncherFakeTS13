@@ -49,6 +49,8 @@
     <string name="profile_office_subtitle">MICROSOFT 365</string>
     <string name="profile_corp_title">Corporativo</string>
     <string name="profile_corp_subtitle">SALA DE EMPRESA</string>
+    <string name="profile_showroom_title">Showroom · Orbys</string>
+    <string name="profile_showroom_subtitle">MODO DEMO</string>
 
     <!-- Additional UI Strings -->
     <string name="add_shortcut_title">Adicionar atalho</string>
@@ -72,6 +74,9 @@
     <string name="error_auth_ms_authenticator">Por favor, inicie sessão no Microsoft Authenticator</string>
     <string name="error_ms_authenticator_not_installed">O Microsoft Authenticator não está instalado</string>
     <string name="user_profile">Perfil de utilizador</string>
+    <string name="exit_test_mode">Terminar\nligação remota</string>
+    <string name="remote_mode_title">Modo remoto ativo</string>
+    <string name="remote_mode_message">Ação não permitida</string>
 
     <!-- Widget Titles -->
     <string name="widget_clock">RELÓGIO</string>

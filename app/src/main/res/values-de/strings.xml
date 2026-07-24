@@ -49,6 +49,8 @@
     <string name="profile_office_subtitle">MICROSOFT 365</string>
     <string name="profile_corp_title">Unternehmen</string>
     <string name="profile_corp_subtitle">KONFERENZRAUM</string>
+    <string name="profile_showroom_title">Showroom · Orbys</string>
+    <string name="profile_showroom_subtitle">DEMO-MODUS</string>
 
     <!-- Additional UI Strings -->
     <string name="add_shortcut_title">Verknüpfung hinzufügen</string>
@@ -72,6 +74,9 @@
     <string name="error_auth_ms_authenticator">Bitte melden Sie sich beim Microsoft Authenticator an</string>
     <string name="error_ms_authenticator_not_installed">Microsoft Authenticator ist nicht installiert</string>
     <string name="user_profile">Benutzerprofil</string>
+    <string name="exit_test_mode">Remote-Verbindung\nbeenden</string>
+    <string name="remote_mode_title">Remote-Modus aktiv</string>
+    <string name="remote_mode_message">Aktion nicht erlaubt</string>
 
     <!-- Widget Titles -->
     <string name="widget_clock">UHR</string>

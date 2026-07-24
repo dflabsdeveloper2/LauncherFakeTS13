@@ -49,6 +49,8 @@
     <string name="profile_office_subtitle">MICROSOFT 365</string>
     <string name="profile_corp_title">Zakelijk</string>
     <string name="profile_corp_subtitle">VERGADERZAAL</string>
+    <string name="profile_showroom_title">Showroom · Orbys</string>
+    <string name="profile_showroom_subtitle">DEMOMODUS</string>
 
     <!-- Additional UI Strings -->
     <string name="add_shortcut_title">Snelkoppeling toevoegen</string>
@@ -72,6 +74,9 @@
     <string name="error_auth_ms_authenticator">Meld u aan bij Microsoft Authenticator</string>
     <string name="error_ms_authenticator_not_installed">Microsoft Authenticator is niet geïnstalleerd</string>
     <string name="user_profile">Gebruikersprofiel</string>
+    <string name="exit_test_mode">Externe verbinding\nbeëindigen</string>
+    <string name="remote_mode_title">Externe modus actief</string>
+    <string name="remote_mode_message">Actie niet toegestaan</string>
 
     <!-- Widget Titles -->
     <string name="widget_clock">KLOK</string>

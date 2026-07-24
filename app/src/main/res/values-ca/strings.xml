@@ -49,6 +49,8 @@
     <string name="profile_office_subtitle">MICROSOFT 365</string>
     <string name="profile_corp_title">Corporatiu</string>
     <string name="profile_corp_subtitle">SALA D\'EMPRESA</string>
+    <string name="profile_showroom_title">Showroom · Orbys</string>
+    <string name="profile_showroom_subtitle">MODALITAT DEMO</string>
 
     <!-- Additional UI Strings -->
     <string name="add_shortcut_title">Afegeix accés directe</string>
@@ -72,6 +74,9 @@
     <string name="error_auth_ms_authenticator">Inicieu la sessió a Microsoft Authenticator</string>
     <string name="error_ms_authenticator_not_installed">Microsoft Authenticator no està instal·lat</string>
     <string name="user_profile">Perfil d\'usuari</string>
+    <string name="exit_test_mode">Finalitzar\nconnexió remota</string>
+    <string name="remote_mode_title">Mode remot actiu</string>
+    <string name="remote_mode_message">Acció no permesa</string>
 
     <!-- Widget Titles -->
     <string name="widget_clock">RELLOTGE</string>

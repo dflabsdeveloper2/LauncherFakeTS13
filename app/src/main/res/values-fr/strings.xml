@@ -49,6 +49,8 @@
     <string name="profile_office_subtitle">MICROSOFT 365</string>
     <string name="profile_corp_title">Entreprise</string>
     <string name="profile_corp_subtitle">SALLE DE RÉUNION</string>
+    <string name="profile_showroom_title">Showroom · Orbys</string>
+    <string name="profile_showroom_subtitle">MODE DÉMO</string>
 
     <!-- Additional UI Strings -->
     <string name="add_shortcut_title">Ajouter un raccourci</string>
@@ -72,6 +74,19 @@
     <string name="error_auth_ms_authenticator">Veuillez vous connecter à Microsoft Authenticator</string>
     <string name="error_ms_authenticator_not_installed">Microsoft Authenticator n\'est pas installé</string>
     <string name="user_profile">Profil utilisateur</string>
+    <string name="exit_test_mode">Fin\nconnexion distante</string>
+    <string name="remote_mode_title">Mode distant actif</string>
+    <string name="remote_mode_message">Action non autorisée</string>
+
+    <!-- Weather Dialog -->
+    <string name="weather_title_prefix">La météo à</string>
+    <string name="weather_city">Castelló de la Plana</string>
+    <string name="weather_province">province de Castellón</string>
+    <string name="weather_description">Partiellement nuageux</string>
+    <string name="weather_feels_like_prefix">Ressenti</string>
+    <string name="weather_rain_label">Pluie</string>
+    <string name="weather_wind_label">Vent</string>
+    <string name="weather_gusts_label">Rafales</string>
 
     <!-- Widget Titles -->
     <string name="widget_clock">HORLOGE</string>

@@ -49,6 +49,8 @@
     <string name="profile_office_subtitle">MICROSOFT 365</string>
     <string name="profile_corp_title">Korporatiboa</string>
     <string name="profile_corp_subtitle">ENPRESA-GELA</string>
+    <string name="profile_showroom_title">Showroom · Orbys</string>
+    <string name="profile_showroom_subtitle">DEMO MODUA</string>
 
     <!-- Additional UI Strings -->
     <string name="add_shortcut_title">Gehitu lasterbidea</string>
@@ -72,6 +74,9 @@
     <string name="error_auth_ms_authenticator">Mesedez, hasi saioa Microsoft Authenticator-en</string>
     <string name="error_ms_authenticator_not_installed">Microsoft Authenticator ez dago instalatuta</string>
     <string name="user_profile">Erabiltzaile-profila</string>
+    <string name="exit_test_mode">Amaitu\nurruneko konexioa</string>
+    <string name="remote_mode_title">Urruneko modua aktibo</string>
+    <string name="remote_mode_message">Ekintza ez dago baimenduta</string>
 
     <!-- Widget Titles -->
     <string name="widget_clock">ERLOJUA</string>
