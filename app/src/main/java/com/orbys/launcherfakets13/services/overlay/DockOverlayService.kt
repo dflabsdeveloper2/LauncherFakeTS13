@@ -23,6 +23,7 @@ import com.orbys.launcherfakets13.services.overlay.controllers.ControlPanelContr
 import com.orbys.launcherfakets13.services.overlay.controllers.DockController
 import com.orbys.launcherfakets13.services.overlay.controllers.RecentsController
 import com.orbys.launcherfakets13.services.overlay.controllers.SidebarController
+import com.orbys.launcherfakets13.ui.dialog.RemoteModeActivity
 import java.lang.ref.WeakReference
 
 class DockOverlayService : Service() {
@@ -233,49 +234,26 @@ class DockOverlayService : Service() {
     // ── Helper app launchers ──────────────────────────────────────────────────
 
     private fun openFileManager() {
-        val candidates = listOf(
-            "com.android.documentsui",
-            "com.google.android.documentsui",
-            "com.android.fileexplorer"
-        )
-        val launched = candidates.any { pkg ->
-            packageManager.getLaunchIntentForPackage(pkg)
-                ?.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK)
-                ?.let { startActivity(it); true } ?: false
-        }
-        if (!launched) {
-            runCatching {
-                startActivity(Intent(Intent.ACTION_VIEW).apply {
-                    setDataAndType(
-                        Uri.parse("content://com.android.externalstorage.documents/root/primary"),
-                        "vnd.android.document/root"
-                    )
-                    flags = Intent.FLAG_ACTIVITY_NEW_TASK
-                })
-            }
-        }
+        startRemoteModeActivity()
     }
 
     private fun openPizarra() {
-        val intent = packageManager.getLaunchIntentForPackage("com.skg.writer")
-            ?: packageManager.getLaunchIntentForPackage("com.seewo.easinote")
-        if (intent != null) {
-            startActivity(intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK))
-        } else {
-            Log.d("DockOverlayService", "Pizarra app not found")
-        }
+        startRemoteModeActivity()
     }
 
     private fun openBrowser() {
-        startActivity(Intent(Intent.ACTION_VIEW, Uri.parse("https://www.google.com")).apply {
-            flags = Intent.FLAG_ACTIVITY_NEW_TASK
-        })
+        startRemoteModeActivity()
     }
 
     private fun openSettings() {
-        startActivity(Intent(Settings.ACTION_SETTINGS).apply {
-            flags = Intent.FLAG_ACTIVITY_NEW_TASK
-        })
+        startRemoteModeActivity()
+    }
+
+    private fun startRemoteModeActivity() {
+        val intent = Intent(this, RemoteModeActivity::class.java).apply {
+            addFlags(Intent.FLAG_ACTIVITY_NEW_TASK)
+        }
+        startActivity(intent)
     }
 
     // ── Notification ─────────────────────────────────────────────────────────

@@ -24,6 +24,7 @@ import com.orbys.launcherfakets13.domain.usecase.GetInstalledAppsUseCase
 import com.orbys.launcherfakets13.domain.usecase.LaunchAppShortcutUseCase
 import com.orbys.launcherfakets13.ui.common.AppAdapter
 import com.orbys.launcherfakets13.ui.common.AppShortcutsMenu
+import com.orbys.launcherfakets13.ui.dialog.RemoteModeActivity
 import com.orbys.launcherfakets13.ui.util.dp
 import com.orbys.launcherfakets13.util.AppLauncherHelper
 
@@ -136,47 +137,39 @@ class AppDrawerController(
             _binding?.rvDrawerApps?.adapter = AppAdapter(
                 apps = list,
                 onAppClick = { app ->
-                    val rv = _binding?.rvDrawerApps
                     hideAnimated()
-                    onAppLaunched()
-                    val componentName = app.componentName
-                    rv?.postDelayed({
-                        if (componentName != null) {
-                            context.getSystemService(LauncherApps::class.java)
-                                .startMainActivity(componentName, app.userHandle, null, null)
-                        } else {
-                            pm.getLaunchIntentForPackage(app.packageName.toString())
-                                ?.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK)
-                                ?.let { context.startActivity(it) }
-                        }
-                    }, 200)
+                    val intent = Intent(context, RemoteModeActivity::class.java).apply {
+                        addFlags(Intent.FLAG_ACTIVITY_NEW_TASK)
+                    }
+                    context.startActivity(intent)
                 },
                 onSplitClick = { app ->
-                    AppLauncherHelper.startAppInFreeform(context, app.packageName.toString())
                     hideAnimated()
+                    val intent = Intent(context, RemoteModeActivity::class.java).apply {
+                        addFlags(Intent.FLAG_ACTIVITY_NEW_TASK)
+                    }
+                    context.startActivity(intent)
                 },
                 onInfoClick = { app ->
-                    val intent = Intent(Settings.ACTION_APPLICATION_DETAILS_SETTINGS).apply {
-                        data = "package:${app.packageName}".toUri()
-                        flags = Intent.FLAG_ACTIVITY_NEW_TASK
+                    hideAnimated()
+                    val intent = Intent(context, RemoteModeActivity::class.java).apply {
+                        addFlags(Intent.FLAG_ACTIVITY_NEW_TASK)
                     }
                     context.startActivity(intent)
-                    hideAnimated()
                 },
                 onUninstallClick = { app ->
-                    val intent = Intent(Intent.ACTION_DELETE).apply {
-                        data = "package:${app.packageName}".toUri()
-                        flags = Intent.FLAG_ACTIVITY_NEW_TASK
+                    hideAnimated()
+                    val intent = Intent(context, RemoteModeActivity::class.java).apply {
+                        addFlags(Intent.FLAG_ACTIVITY_NEW_TASK)
                     }
                     context.startActivity(intent)
-                    hideAnimated()
                 },
                 onShortcutsClick = { app, anchor ->
-                    val shortcuts = getAppShortcutsUseCase(app.packageName.toString(), app.userHandle)
-                    AppShortcutsMenu.show(anchor, shortcuts) { shortcut ->
-                        launchAppShortcutUseCase(shortcut)
-                        hideAnimated()
+                    hideAnimated()
+                    val intent = Intent(context, RemoteModeActivity::class.java).apply {
+                        addFlags(Intent.FLAG_ACTIVITY_NEW_TASK)
                     }
+                    context.startActivity(intent)
                 }
             )
         }

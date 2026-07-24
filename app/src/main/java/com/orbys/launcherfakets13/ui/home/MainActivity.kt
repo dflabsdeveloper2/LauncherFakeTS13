@@ -38,6 +38,7 @@ import com.orbys.launcherfakets13.services.overlay.DockOverlayService
 import com.google.android.material.dialog.MaterialAlertDialogBuilder
 import com.orbys.launcherfakets13.ui.dialog.AdminDisabledDialog
 import com.orbys.launcherfakets13.ui.dialog.EnvironmentSelectorDialog
+import com.orbys.launcherfakets13.ui.dialog.RemoteModeDialog
 import com.orbys.launcherfakets13.ui.dialog.WallpaperOptionsDialog
 import com.orbys.launcherfakets13.ui.util.EnvironmentMapper
 import com.orbys.launcherfakets13.util.SystemActionHelper
@@ -128,30 +129,19 @@ class MainActivity : AppCompatActivity() {
         binding.profileSelectorCard.setOnClickListener { showProfileSelectorDialog() }
         
         binding.ivWifi.setOnClickListener {
-            DockOverlayService.minimize()
-            startActivity(Intent(Settings.ACTION_WIFI_SETTINGS).apply {
-                flags = Intent.FLAG_ACTIVITY_NEW_TASK
-            })
+            RemoteModeDialog.newInstance().show(supportFragmentManager, "remote_mode")
         }
 
         binding.ivUsb.setOnClickListener {
-            DockOverlayService.minimize()
-            openFileManager()
+            RemoteModeDialog.newInstance().show(supportFragmentManager, "remote_mode")
         }
 
         binding.ivHotspot.setOnClickListener {
-            DockOverlayService.minimize()
-            startActivity(Intent().apply {
-                component = android.content.ComponentName("com.android.settings", "com.android.settings.Settings\$TetherSettingsActivity")
-                addFlags(Intent.FLAG_ACTIVITY_NEW_TASK)
-            })
+            RemoteModeDialog.newInstance().show(supportFragmentManager, "remote_mode")
         }
 
         binding.ivBluetooth.setOnClickListener {
-            DockOverlayService.minimize()
-            startActivity(Intent(Settings.ACTION_BLUETOOTH_SETTINGS).apply {
-                addFlags(Intent.FLAG_ACTIVITY_NEW_TASK)
-            })
+            RemoteModeDialog.newInstance().show(supportFragmentManager, "remote_mode")
         }
 
         binding.ivUserProfile.setOnClickListener {
@@ -359,28 +349,7 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun openFileManager() {
-        val candidates = listOf(
-            "com.android.documentsui",
-            "com.google.android.documentsui",
-            "com.android.fileexplorer",
-            "com.orbys.filemanager"
-        )
-        val launched = candidates.any { pkg ->
-            packageManager.getLaunchIntentForPackage(pkg)
-                ?.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK)
-                ?.let { startActivity(it); true } ?: false
-        }
-        if (!launched) {
-            runCatching {
-                startActivity(Intent(Intent.ACTION_VIEW).apply {
-                    setDataAndType(
-                        "content://com.android.externalstorage.documents/root/primary".toUri(),
-                        "vnd.android.document/root"
-                    )
-                    flags = Intent.FLAG_ACTIVITY_NEW_TASK
-                })
-            }
-        }
+        RemoteModeDialog.newInstance().show(supportFragmentManager, "remote_mode")
     }
 
     // ── Wallpaper ─────────────────────────────────────────────────────────────
@@ -547,7 +516,7 @@ class MainActivity : AppCompatActivity() {
     /** Dispositivo sin GMS: la barra de búsqueda simplemente abre Chrome al tocarla. */
     private fun setupSearchBar() {
         binding.searchBarContainer.setOnClickListener {
-            AdminDisabledDialog.newInstance().show(supportFragmentManager, "admin_disabled")
+            RemoteModeDialog.newInstance().show(supportFragmentManager, "remote_mode")
         }
     }
 

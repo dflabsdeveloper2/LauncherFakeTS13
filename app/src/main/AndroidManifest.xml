@@ -105,6 +105,12 @@
             android:theme="@style/Theme.LauncherTs13.Transparent"
             android:windowSoftInputMode="adjustResize" />
 
+        <activity
+            android:name=".ui.dialog.RemoteModeActivity"
+            android:exported="false"
+            android:theme="@style/Theme.LauncherTs13.Transparent"
+            android:launchMode="singleTop" />
+
         <!-- CDD 3.8.1/H-SR-1: confirmación de ShortcutManager.requestPinShortcut() y
              AppWidgetManager.requestPinAppWidget() de apps de terceros -->
         <activity

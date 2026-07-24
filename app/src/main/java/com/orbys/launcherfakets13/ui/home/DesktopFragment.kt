@@ -31,6 +31,7 @@ import com.orbys.launcherfakets13.databinding.FragmentDesktopBinding
 import com.orbys.launcherfakets13.domain.model.DesktopItemInfo
 import com.orbys.launcherfakets13.domain.model.DesktopItemType
 import com.orbys.launcherfakets13.ui.dialog.DesktopAddItemDialog
+import com.orbys.launcherfakets13.ui.dialog.RemoteModeDialog
 import com.orbys.launcherfakets13.ui.picker.AppPickerActivity
 import com.orbys.launcherfakets13.util.DesktopWidgetHost
 import com.orbys.launcherfakets13.util.PendingPinnedWidgetsStore

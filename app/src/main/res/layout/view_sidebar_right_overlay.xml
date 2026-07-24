@@ -81,15 +81,16 @@
             android:contentDescription="@string/dock_home"
             android:layout_marginBottom="3dp" />
 
-       <!-- &lt;!&ndash; Recientes &ndash;&gt;
+        <!-- Recientes -->
         <ImageView
             android:id="@+id/sidebar_btn_recents"
-            android:layout_width="40dp"
-            android:layout_height="36dp"
-            android:padding="7dp"
+            android:layout_width="25dp"
+            android:layout_height="25dp"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:padding="5dp"
             android:src="@drawable/backgroundapps"
             android:contentDescription="@string/dock_recents"
-            android:layout_marginBottom="2dp" />-->
+            android:layout_marginBottom="3dp" />
 
         <!-- Volumen y Brillo -->
         <ImageView

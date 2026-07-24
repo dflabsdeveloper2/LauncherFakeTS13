@@ -106,4 +106,16 @@
     <string name="dialog_admin_disabled_title">Acción bloqueada</string>
     <string name="dialog_admin_disabled_msg">Esta acción ha sido deshabilitada por el administrador del sistema.</string>
     <string name="accept">Aceptar</string>
+    <string name="remote_mode_title">En Modo Remoto</string>
+    <string name="remote_mode_message">Acción no permitida</string>
+
+    <!-- Weather Dialog -->
+    <string name="weather_title_prefix">El tiempo en</string>
+    <string name="weather_city">Castelló de la Plana</string>
+    <string name="weather_province">Castellón provincia</string>
+    <string name="weather_description">Intervalos nubosos</string>
+    <string name="weather_feels_like_prefix">Sensación</string>
+    <string name="weather_rain_label">Lluvia</string>
+    <string name="weather_wind_label">Viento</string>
+    <string name="weather_gusts_label">Rachas</string>
 </resources>

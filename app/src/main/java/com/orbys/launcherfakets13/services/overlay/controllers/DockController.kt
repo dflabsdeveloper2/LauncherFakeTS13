@@ -88,25 +88,21 @@ class DockController(
         }
 
         binding.tabFiles.setOnClickListener {
-            collapse()
             selectTab(R.id.tab_files)
             onFilesTabClick()
         }
 
         binding.tabPizarra.setOnClickListener {
-            collapse()
             selectTab(R.id.tab_pizarra)
             onPizarraTabClick()
         }
 
         binding.tabBrowser.setOnClickListener {
-            collapse()
             selectTab(R.id.tab_browser)
             onBrowserTabClick()
         }
 
         binding.tabSettings.setOnClickListener {
-            collapse()
             selectTab(R.id.tab_settings)
             onSettingsTabClick()
         }

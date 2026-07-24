@@ -12,6 +12,7 @@ import android.view.WindowManager
 import android.view.animation.DecelerateInterpolator
 import android.widget.ImageView
 import com.orbys.launcherfakets13.R
+import com.orbys.launcherfakets13.services.overlay.DockOverlayService
 import com.orbys.launcherfakets13.ui.home.MainActivity
 import com.orbys.launcherfakets13.util.SystemActionHelper
 import com.orbys.launcherfakets13.ui.util.dp
@@ -73,9 +74,9 @@ class SidebarController(
             })
         }
 
-        /*v.findViewById<View>(R.id.sidebar_btn_recents).setOnClickListener {
+        v.findViewById<View>(R.id.sidebar_btn_recents).setOnClickListener {
             DockOverlayService.toggleRecents()
-        }*/
+        }
 
         v.findViewById<View>(R.id.sidebar_btn_tune).setOnClickListener {
             val sw = panel.width.takeIf { it > 0 } ?: 40.dp

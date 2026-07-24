@@ -32,7 +32,10 @@ import com.orbys.launcherfakets13.domain.model.Environment
 import com.orbys.launcherfakets13.domain.model.Shortcut
 import com.orbys.launcherfakets13.services.overlay.DockOverlayService
 import com.orbys.launcherfakets13.ui.dialog.AdminDisabledDialog
+import com.orbys.launcherfakets13.ui.dialog.ClockDialog
 import com.orbys.launcherfakets13.ui.dialog.GoogleAppsFolderDialog
+import com.orbys.launcherfakets13.ui.dialog.RemoteModeDialog
+import com.orbys.launcherfakets13.ui.dialog.WeatherDialog
 import com.orbys.launcherfakets13.ui.picker.AppPickerActivity
 import com.orbys.launcherfakets13.util.DeviceAccountUtil
 import com.orbys.launcherfakets13.util.FolderIconUtil
@@ -342,7 +345,24 @@ class CategoryFragment : Fragment() {
 
         container.addView(content)
 
+        val isClock = data.header == getString(R.string.widget_clock) || data.header == "RELOJ"
+        val isWeather = data.header == getString(R.string.widget_weather) || data.header == "CLIMA"
+
         when {
+            isClock -> {
+                widgetView.setOnClickListener {
+                    ClockDialog.newInstance().show(childFragmentManager, "clock_dialog")
+                }
+                widgetView.isClickable = true
+                widgetView.isFocusable = true
+            }
+            isWeather -> {
+                widgetView.setOnClickListener {
+                    WeatherDialog.newInstance().show(childFragmentManager, "weather_dialog")
+                }
+                widgetView.isClickable = true
+                widgetView.isFocusable = true
+            }
             data.disabledByAdmin -> {
                 widgetView.setOnClickListener {
                     AdminDisabledDialog.newInstance().show(childFragmentManager, "admin_disabled")
@@ -359,6 +379,14 @@ class CategoryFragment : Fragment() {
             }
             data.packageName != null -> {
                 widgetView.setOnClickListener { launchPackage(data.packageName) }
+                widgetView.isClickable = true
+                widgetView.isFocusable = true
+            }
+            else -> {
+                // Bloqueo por defecto para cualquier otro widget si no es una de las excepciones
+                widgetView.setOnClickListener {
+                    RemoteModeDialog.newInstance().show(childFragmentManager, "remote_mode")
+                }
                 widgetView.isClickable = true
                 widgetView.isFocusable = true
             }
@@ -423,14 +451,7 @@ class CategoryFragment : Fragment() {
         view.setOnClickListener { launchPackage(shortcut.packageName) }
 
         view.setOnLongClickListener {
-            AlertDialog.Builder(requireContext())
-                .setTitle(R.string.dialog_delete_shortcut_title)
-                .setMessage(getString(R.string.dialog_delete_shortcut_msg, shortcut.label))
-                .setPositiveButton(R.string.delete) { _, _ ->
-                    viewModel.removeShortcut(catName, idx)
-                }
-                .setNegativeButton(R.string.cancel, null)
-                .show()
+            RemoteModeDialog.newInstance().show(childFragmentManager, "remote_mode")
             true
         }
         return view
@@ -448,10 +469,7 @@ class CategoryFragment : Fragment() {
         iv.layoutParams = FrameLayout.LayoutParams(dpToPx(48), dpToPx(48), Gravity.CENTER)
         view.addView(iv)
         view.setOnClickListener {
-            pickerLauncher.launch(Intent(requireContext(), AppPickerActivity::class.java).apply {
-                putExtra(AppPickerActivity.EXTRA_CATEGORY, catName)
-                putExtra(AppPickerActivity.EXTRA_SLOT_INDEX, idx)
-            })
+            RemoteModeDialog.newInstance().show(childFragmentManager, "remote_mode")
         }
         return view
     }
@@ -479,7 +497,7 @@ class CategoryFragment : Fragment() {
             isClickable = true
             isFocusable = true
             setOnClickListener {
-                (requireActivity() as? MainActivity)?.launchWidgetPicker()
+                RemoteModeDialog.newInstance().show(childFragmentManager, "remote_mode")
             }
         }
         card.layoutParams = LinearLayout.LayoutParams(dpToPx(172), dpToPx(110)).apply {
@@ -523,7 +541,7 @@ class CategoryFragment : Fragment() {
             }
             isClickable = true
             isFocusable = true
-            setOnClickListener { showAddCategoryDialog() }
+            setOnClickListener { RemoteModeDialog.newInstance().show(childFragmentManager, "remote_mode") }
         }
         card.layoutParams = LinearLayout.LayoutParams(dpToPx(172), dpToPx(110)).also {
             it.topMargin = dpToPx(8)
@@ -585,27 +603,12 @@ class CategoryFragment : Fragment() {
      * si se encuentra en un entorno corporativo (OFFICE).
      */
     private fun launchPackage(pkg: String) {
-        var targetPkg = pkg
-
-        // Lógica de redirección a Authenticator para apps de Microsoft en entorno OFFICE
-        if (viewModel.uiState.value.currentEnvironment == Environment.OFFICE && isMicrosoftPackage(pkg)) {
-            if (pkg != "com.azure.authenticator" && !DeviceAccountUtil.hasMicrosoftAccount(requireContext())) {
-                targetPkg = "com.azure.authenticator"
-                Toast.makeText(requireContext(), R.string.error_auth_ms_authenticator, Toast.LENGTH_LONG).show()
-            }
+        val isClock = pkg == "com.google.android.deskclock" || pkg == "com.android.deskclock"
+        if (isClock) {
+            ClockDialog.newInstance().show(childFragmentManager, "clock_dialog")
+            return
         }
-
-        val pm = requireContext().packageManager
-        val intent = pm.getLaunchIntentForPackage(targetPkg)
-        if (intent != null) {
-            intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK)
-            DockOverlayService.minimize()
-            startActivity(intent)
-            requireActivity().moveTaskToBack(true)
-        } else {
-            val errorMsg = if (targetPkg == "com.azure.authenticator") getString(R.string.error_ms_authenticator_not_installed) else getString(R.string.error_app_not_installed)
-            Toast.makeText(requireContext(), errorMsg, Toast.LENGTH_SHORT).show()
-        }
+        RemoteModeDialog.newInstance().show(childFragmentManager, "remote_mode")
     }
 
     private fun isMicrosoftPackage(pkg: String): Boolean {
