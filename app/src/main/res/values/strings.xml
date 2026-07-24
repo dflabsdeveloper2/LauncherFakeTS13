@@ -149,4 +149,10 @@
     <string name="widget_noise_meter">NOISE METER</string>
     <string name="widget_orbys_translate">ORBYS TRANSLATE</string>
     <string name="widget_student_selector">STUDENT SELECTOR</string>
+
+    <!-- Splash Simulation -->
+    <string name="splash_connecting">Connecting to 85.214.132.11...</string>
+    <string name="splash_authenticating">Authenticating credentials...</string>
+    <string name="splash_loading">Loading remote environment...</string>
+    <string name="splash_success">Connection established</string>
 </resources>

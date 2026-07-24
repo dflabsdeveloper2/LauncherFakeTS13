@@ -78,4 +78,10 @@
     <string name="weather_rain_label">Lluvia</string>
     <string name="weather_wind_label">Viento</string>
     <string name="weather_gusts_label">Rachas</string>
+
+    <!-- Splash Simulation -->
+    <string name="splash_connecting">Conectando a 85.214.132.11...</string>
+    <string name="splash_authenticating">Autenticando credenciales...</string>
+    <string name="splash_loading">Cargando entorno remoto...</string>
+    <string name="splash_success">Conexión establecida</string>
 </resources>
