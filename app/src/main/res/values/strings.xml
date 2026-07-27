@@ -91,7 +91,7 @@
     <string name="profile_office_subtitle">MICROSOFT 365</string>
     <string name="profile_corp_title">Corporate</string>
     <string name="profile_corp_subtitle">BUSINESS ROOM</string>
-    <string name="profile_showroom_title">Showroom · Orbys</string>
+    <string name="profile_showroom_title">Showroom</string>
     <string name="profile_showroom_subtitle">DEMO MODE</string>
 
     <!-- Additional UI Strings -->

@@ -76,6 +76,11 @@ object DefaultShortcuts {
                 Shortcut("com.orbys.aiselector", "Selector"),
                 Shortcut("com.skg.writer", "Pizarra")
             )
+        ),
+        Environment.SHOWROOM to mapOf(
+            "General" to listOf(
+                Shortcut("com.example.sampleds", "Digital signare")
+            )
         )
     )
 }

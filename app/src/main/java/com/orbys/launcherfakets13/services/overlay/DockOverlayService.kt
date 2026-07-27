@@ -136,8 +136,12 @@ class DockOverlayService : Service() {
             getDockView = { dockController.rootView },
             onAppLaunched = { dockController.collapse() },
             onVisibilityChanged = { visible ->
-                if (visible) dockController.selectTab(R.id.tab_apps)
-                else dockController.clearTabSelection(R.id.tab_apps)
+                if (visible) {
+                    recentsController.hideAnimated()
+                    dockController.selectTab(R.id.tab_apps)
+                } else {
+                    dockController.clearTabSelection(R.id.tab_apps)
+                }
             }
         )
 
@@ -147,8 +151,12 @@ class DockOverlayService : Service() {
             themedCtx,
             getDockView = { dockController.rootView },
             onVisibilityChanged = { visible ->
-                if (visible) dockController.selectTab(R.id.tab_recents)
-                else dockController.clearTabSelection(R.id.tab_recents)
+                if (visible) {
+                    drawerController.hideAnimated()
+                    dockController.selectTab(R.id.tab_recents)
+                } else {
+                    dockController.clearTabSelection(R.id.tab_recents)
+                }
             }
         )
     }

@@ -1,7 +1,7 @@
 package com.orbys.launcherfakets13.ui.home
 
-import android.content.Intent
 import android.content.res.ColorStateList
+import android.graphics.drawable.Drawable
 import android.graphics.drawable.GradientDrawable
 import android.os.Bundle
 import android.text.InputType
@@ -24,22 +24,19 @@ import androidx.lifecycle.Lifecycle
 import androidx.lifecycle.lifecycleScope
 import androidx.lifecycle.repeatOnLifecycle
 import com.orbys.launcherfakets13.R
-import android.graphics.drawable.Drawable
-import kotlinx.coroutines.flow.distinctUntilChanged
-import kotlinx.coroutines.flow.map
 import com.orbys.launcherfakets13.databinding.FragmentCategoryBinding
 import com.orbys.launcherfakets13.domain.model.Environment
 import com.orbys.launcherfakets13.domain.model.Shortcut
-import com.orbys.launcherfakets13.services.overlay.DockOverlayService
 import com.orbys.launcherfakets13.ui.dialog.AdminDisabledDialog
 import com.orbys.launcherfakets13.ui.dialog.ClockDialog
 import com.orbys.launcherfakets13.ui.dialog.GoogleAppsFolderDialog
 import com.orbys.launcherfakets13.ui.dialog.RemoteModeDialog
 import com.orbys.launcherfakets13.ui.dialog.WeatherDialog
 import com.orbys.launcherfakets13.ui.picker.AppPickerActivity
-import com.orbys.launcherfakets13.util.DeviceAccountUtil
 import com.orbys.launcherfakets13.util.FolderIconUtil
 import com.orbys.launcherfakets13.util.viewBinding
+import kotlinx.coroutines.flow.distinctUntilChanged
+import kotlinx.coroutines.flow.map
 import kotlinx.coroutines.launch
 
 /**
@@ -124,7 +121,8 @@ class CategoryFragment : Fragment() {
         val isHardcoded = viewModel.uiState.value.currentEnvironment in listOf(
             Environment.CORPORATE,
             Environment.GOOGLE,
-            Environment.OFFICE
+            Environment.OFFICE,
+            Environment.SHOWROOM
         )
 
         for (catName in categories) {
@@ -215,77 +213,292 @@ class CategoryFragment : Fragment() {
         val widgets = when (env) {
             Environment.CORPORATE -> when (catName) {
                 "General" -> listOf(
-                    CorpWidgetData(getString(R.string.widget_clock), R.drawable.ic_recents, R.layout.widget_corporate_clock, packageName = "com.google.android.deskclock"),
-                    CorpWidgetData(getString(R.string.widget_agenda), R.drawable.ic_cat_calendar, R.layout.widget_corporate_generic, packageName = "com.google.android.calendar"),
-                    CorpWidgetData(getString(R.string.widget_weather), R.drawable.ic_cat_weather, R.layout.widget_corporate_weather),
-                    CorpWidgetData(getString(R.string.widget_focus), R.drawable.ic_cat_focus, R.layout.widget_corporate_generic, packageName = "com.android.settings")
+                    CorpWidgetData(
+                        getString(R.string.widget_clock),
+                        R.drawable.ic_recents,
+                        R.layout.widget_corporate_clock,
+                        packageName = "com.google.android.deskclock"
+                    ),
+                    CorpWidgetData(
+                        getString(R.string.widget_agenda),
+                        R.drawable.ic_cat_calendar,
+                        R.layout.widget_corporate_generic,
+                        packageName = "com.google.android.calendar"
+                    ),
+                    CorpWidgetData(
+                        getString(R.string.widget_weather),
+                        R.drawable.ic_cat_weather,
+                        R.layout.widget_corporate_weather
+                    ),
+                    CorpWidgetData(
+                        getString(R.string.widget_focus),
+                        R.drawable.ic_cat_focus,
+                        R.layout.widget_corporate_generic,
+                        packageName = "com.android.settings"
+                    )
                 )
+
                 "Sala" -> listOf(
-                    CorpWidgetData(getString(R.string.widget_timer), R.drawable.ic_cat_timer, R.layout.widget_corporate_generic, packageName = "com.google.android.deskclock"),
-                    CorpWidgetData(getString(R.string.widget_videocall), R.drawable.ic_cat_teams, R.layout.widget_corporate_generic, packageName = "com.google.android.apps.tachyon"),
-                    CorpWidgetData(getString(R.string.widget_eshare), R.drawable.ic_cat_mirroring, R.layout.widget_corporate_generic, packageName = "com.ecloud.eshare.server")
+                    CorpWidgetData(
+                        getString(R.string.widget_timer),
+                        R.drawable.ic_cat_timer,
+                        R.layout.widget_corporate_generic,
+                        packageName = "com.google.android.deskclock"
+                    ),
+                    CorpWidgetData(
+                        getString(R.string.widget_videocall),
+                        R.drawable.ic_cat_teams,
+                        R.layout.widget_corporate_generic,
+                        packageName = "com.google.android.apps.tachyon"
+                    ),
+                    CorpWidgetData(
+                        getString(R.string.widget_eshare),
+                        R.drawable.ic_cat_mirroring,
+                        R.layout.widget_corporate_generic,
+                        packageName = "com.ecloud.eshare.server"
+                    )
                 )
+
                 "Trabajo" -> listOf(
-                    CorpWidgetData(getString(R.string.widget_mail), R.drawable.ic_cat_mail, R.layout.widget_corporate_generic, packageName = "com.google.android.gm"),
-                    CorpWidgetData(getString(R.string.widget_storage), R.drawable.ic_cat_drive, R.layout.widget_corporate_generic, packageName = "com.google.android.apps.docs"),
-                    CorpWidgetData(getString(R.string.widget_docs), R.drawable.ic_cat_doc, R.layout.widget_corporate_generic, packageName = "com.google.android.apps.docs.editors.docs"),
-                    CorpWidgetData(getString(R.string.widget_notes), R.drawable.ic_cat_note, R.layout.widget_corporate_generic, packageName = "com.google.android.apps.docs.editors.docs")
+                    CorpWidgetData(
+                        getString(R.string.widget_mail),
+                        R.drawable.ic_cat_mail,
+                        R.layout.widget_corporate_generic,
+                        packageName = "com.google.android.gm"
+                    ),
+                    CorpWidgetData(
+                        getString(R.string.widget_storage),
+                        R.drawable.ic_cat_drive,
+                        R.layout.widget_corporate_generic,
+                        packageName = "com.google.android.apps.docs"
+                    ),
+                    CorpWidgetData(
+                        getString(R.string.widget_docs),
+                        R.drawable.ic_cat_doc,
+                        R.layout.widget_corporate_generic,
+                        packageName = "com.google.android.apps.docs.editors.docs"
+                    ),
+                    CorpWidgetData(
+                        getString(R.string.widget_notes),
+                        R.drawable.ic_cat_note,
+                        R.layout.widget_corporate_generic,
+                        packageName = "com.google.android.apps.docs.editors.docs"
+                    )
                 )
                 // CDD/EDLA: icono fijo de Play Store + carpeta de apps de Google, sustituyendo
                 // el contenido anterior de esta categoría.
-                "Colaboración" -> listOf(playStoreWidgetData(), googleAppsFolderWidgetData(), null, null)
+                "Colaboración" -> listOf(
+                    playStoreWidgetData(),
+                    googleAppsFolderWidgetData(),
+                    null,
+                    null
+                )
+
                 else -> emptyList()
             }
+
             Environment.GOOGLE -> when (catName) {
                 "General" -> listOf(
-                    CorpWidgetData("RELOJ", R.drawable.ic_recents, R.layout.widget_corporate_clock, packageName = "com.google.android.deskclock"),
-                    CorpWidgetData("GOOGLE CALENDAR", R.drawable.ic_cat_calendar, R.layout.widget_corporate_generic, packageName = "com.google.android.calendar"),
-                    CorpWidgetData("CLIMA", R.drawable.ic_cat_weather, R.layout.widget_corporate_generic),
-                    CorpWidgetData("CONCENTRACIÓN", R.drawable.ic_cat_focus, R.layout.widget_corporate_generic, packageName = "com.android.settings")
+                    CorpWidgetData(
+                        "RELOJ",
+                        R.drawable.ic_recents,
+                        R.layout.widget_corporate_clock,
+                        packageName = "com.google.android.deskclock"
+                    ),
+                    CorpWidgetData(
+                        "GOOGLE CALENDAR",
+                        R.drawable.ic_cat_calendar,
+                        R.layout.widget_corporate_generic,
+                        packageName = "com.google.android.calendar"
+                    ),
+                    CorpWidgetData(
+                        "CLIMA",
+                        R.drawable.ic_cat_weather,
+                        R.layout.widget_corporate_generic
+                    ),
+                    CorpWidgetData(
+                        "CONCENTRACIÓN",
+                        R.drawable.ic_cat_focus,
+                        R.layout.widget_corporate_generic,
+                        packageName = "com.android.settings"
+                    )
                 )
+
                 "Aula" -> listOf(
-                    CorpWidgetData("TEMPORIZADOR", R.drawable.ic_cat_timer, R.layout.widget_corporate_generic, packageName = "com.google.android.deskclock"),
-                    CorpWidgetData(getString(R.string.widget_dice), R.drawable.ic_cat_dice, R.layout.widget_corporate_generic),
-                    CorpWidgetData(getString(R.string.widget_noise_meter), R.drawable.ic_cat_noise, R.layout.widget_corporate_generic),
-                    CorpWidgetData(getString(R.string.widget_orbys_translate), R.drawable.ic_cat_translate, R.layout.widget_corporate_generic, packageName = "com.orbys.aitranslate")
+                    CorpWidgetData(
+                        "TEMPORIZADOR",
+                        R.drawable.ic_cat_timer,
+                        R.layout.widget_corporate_generic,
+                        packageName = "com.google.android.deskclock"
+                    ),
+                    CorpWidgetData(
+                        getString(R.string.widget_dice),
+                        R.drawable.ic_cat_dice,
+                        R.layout.widget_corporate_generic
+                    ),
+                    CorpWidgetData(
+                        getString(R.string.widget_noise_meter),
+                        R.drawable.ic_cat_noise,
+                        R.layout.widget_corporate_generic
+                    ),
+                    CorpWidgetData(
+                        getString(R.string.widget_orbys_translate),
+                        R.drawable.ic_cat_translate,
+                        R.layout.widget_corporate_generic,
+                        packageName = "com.orbys.aitranslate"
+                    )
                 )
+
                 "Trabajo" -> listOf(
-                    CorpWidgetData("GMAIL", R.drawable.ic_cat_mail, R.layout.widget_corporate_generic, packageName = "com.google.android.gm"),
-                    CorpWidgetData("GOOGLE DRIVE", R.drawable.ic_cat_drive, R.layout.widget_corporate_generic, packageName = "com.google.android.apps.docs"),
-                    CorpWidgetData("MEET", R.drawable.ic_cat_teams, R.layout.widget_corporate_generic, packageName = "com.google.android.apps.tachyon"),
-                    CorpWidgetData("DOCS", R.drawable.ic_cat_doc, R.layout.widget_corporate_generic, packageName = "com.google.android.apps.docs.editors.docs")
+                    CorpWidgetData(
+                        "GMAIL",
+                        R.drawable.ic_cat_mail,
+                        R.layout.widget_corporate_generic,
+                        packageName = "com.google.android.gm"
+                    ),
+                    CorpWidgetData(
+                        "GOOGLE DRIVE",
+                        R.drawable.ic_cat_drive,
+                        R.layout.widget_corporate_generic,
+                        packageName = "com.google.android.apps.docs"
+                    ),
+                    CorpWidgetData(
+                        "MEET",
+                        R.drawable.ic_cat_teams,
+                        R.layout.widget_corporate_generic,
+                        packageName = "com.google.android.apps.tachyon"
+                    ),
+                    CorpWidgetData(
+                        "DOCS",
+                        R.drawable.ic_cat_doc,
+                        R.layout.widget_corporate_generic,
+                        packageName = "com.google.android.apps.docs.editors.docs"
+                    )
                 )
-                "Colaboración" -> listOf(playStoreWidgetData(), googleAppsFolderWidgetData(), null, null)
+
+                "Colaboración" -> listOf(
+                    playStoreWidgetData(),
+                    googleAppsFolderWidgetData(),
+                    null,
+                    null
+                )
+
                 else -> emptyList()
             }
+
             Environment.OFFICE -> when (catName) {
                 "General" -> listOf(
-                    CorpWidgetData("RELOJ", R.drawable.ic_recents, R.layout.widget_corporate_clock, packageName = "com.google.android.deskclock"),
-                    CorpWidgetData("CALENDARIO", R.drawable.ic_cat_calendar, R.layout.widget_corporate_generic, packageName = "com.microsoft.office.outlook"),
-                    CorpWidgetData("CLIMA", R.drawable.ic_cat_weather, R.layout.widget_corporate_generic),
-                    CorpWidgetData("CONCENTRACIÓN", R.drawable.ic_cat_focus, R.layout.widget_corporate_generic, packageName = "com.android.settings")
+                    CorpWidgetData(
+                        "RELOJ",
+                        R.drawable.ic_recents,
+                        R.layout.widget_corporate_clock,
+                        packageName = "com.google.android.deskclock"
+                    ),
+                    CorpWidgetData(
+                        "CALENDARIO",
+                        R.drawable.ic_cat_calendar,
+                        R.layout.widget_corporate_generic,
+                        packageName = "com.microsoft.office.outlook"
+                    ),
+                    CorpWidgetData(
+                        "CLIMA",
+                        R.drawable.ic_cat_weather,
+                        R.layout.widget_corporate_generic
+                    ),
+                    CorpWidgetData(
+                        "CONCENTRACIÓN",
+                        R.drawable.ic_cat_focus,
+                        R.layout.widget_corporate_generic,
+                        packageName = "com.android.settings"
+                    )
                 )
+
                 "Aula" -> listOf(
-                    CorpWidgetData(getString(R.string.widget_timer), R.drawable.ic_cat_timer, R.layout.widget_corporate_generic, packageName = "com.google.android.deskclock"),
-                    CorpWidgetData(getString(R.string.widget_student_selector), R.drawable.ic_cat_dice, R.layout.widget_corporate_generic),
-                    CorpWidgetData(getString(R.string.widget_noise_meter), R.drawable.ic_cat_noise, R.layout.widget_corporate_generic),
-                    CorpWidgetData(getString(R.string.widget_orbys_translate), R.drawable.ic_cat_translate, R.layout.widget_corporate_generic, packageName = "com.orbys.aitranslate")
+                    CorpWidgetData(
+                        getString(R.string.widget_timer),
+                        R.drawable.ic_cat_timer,
+                        R.layout.widget_corporate_generic,
+                        packageName = "com.google.android.deskclock"
+                    ),
+                    CorpWidgetData(
+                        getString(R.string.widget_student_selector),
+                        R.drawable.ic_cat_dice,
+                        R.layout.widget_corporate_generic
+                    ),
+                    CorpWidgetData(
+                        getString(R.string.widget_noise_meter),
+                        R.drawable.ic_cat_noise,
+                        R.layout.widget_corporate_generic
+                    ),
+                    CorpWidgetData(
+                        getString(R.string.widget_orbys_translate),
+                        R.drawable.ic_cat_translate,
+                        R.layout.widget_corporate_generic,
+                        packageName = "com.orbys.aitranslate"
+                    )
                 )
+
                 "Trabajo" -> listOf(
-                    CorpWidgetData("OUTLOOK", R.drawable.ic_cat_mail, R.layout.widget_corporate_generic, packageName = "com.microsoft.office.outlook"),
-                    CorpWidgetData("ONEDRIVE", R.drawable.ic_cat_drive, R.layout.widget_corporate_generic, packageName = "com.microsoft.skydrive"),
-                    CorpWidgetData("TEAMS", R.drawable.ic_cat_teams, R.layout.widget_corporate_generic, packageName = "com.microsoft.teams"),
-                    CorpWidgetData("WORD", R.drawable.ic_cat_doc, R.layout.widget_corporate_generic, packageName = "com.microsoft.office.word")
+                    CorpWidgetData(
+                        "OUTLOOK",
+                        R.drawable.ic_cat_mail,
+                        R.layout.widget_corporate_generic,
+                        packageName = "com.microsoft.office.outlook"
+                    ),
+                    CorpWidgetData(
+                        "ONEDRIVE",
+                        R.drawable.ic_cat_drive,
+                        R.layout.widget_corporate_generic,
+                        packageName = "com.microsoft.skydrive"
+                    ),
+                    CorpWidgetData(
+                        "TEAMS",
+                        R.drawable.ic_cat_teams,
+                        R.layout.widget_corporate_generic,
+                        packageName = "com.microsoft.teams"
+                    ),
+                    CorpWidgetData(
+                        "WORD",
+                        R.drawable.ic_cat_doc,
+                        R.layout.widget_corporate_generic,
+                        packageName = "com.microsoft.office.word"
+                    )
                 )
-                "Colaboración" -> listOf(playStoreWidgetData(), googleAppsFolderWidgetData(), null, null)
+
+                "Colaboración" -> listOf(
+                    playStoreWidgetData(),
+                    googleAppsFolderWidgetData(),
+                    null,
+                    null
+                )
+
                 else -> emptyList()
             }
-            Environment.SHOWROOM -> emptyList()
+
+            Environment.SHOWROOM -> when (catName) {
+                "General" -> listOf(
+                    CorpWidgetData(
+                        getString(R.string.widget_clock),
+                        R.drawable.ic_recents,
+                        R.layout.widget_corporate_clock,
+                        packageName = "com.google.android.deskclock"
+                    ),
+                    CorpWidgetData(
+                        "Digital signage",
+                        R.drawable.ic_ops,
+                        R.layout.widget_corporate_generic,
+                        packageName = "com.example.sampleds"
+                    ), null, null
+                )
+
+                else -> emptyList()
+            }
         }
 
         // Infla y posiciona los widgets en la rejilla de 2x2
         widgets.forEachIndexed { i, data ->
-            val view = if (data != null) buildCorporateWidget(data) else FrameLayout(requireContext())
+            val view =
+                if (data != null) buildCorporateWidget(data) else FrameLayout(requireContext())
             val lp = LinearLayout.LayoutParams(slotPx, slotPx)
             if (i % 2 == 1) lp.marginStart = gapPx
             view.layoutParams = lp
@@ -315,31 +528,42 @@ class CategoryFragment : Fragment() {
      * Construye un widget visual para los entornos predefinidos.
      */
     private fun buildCorporateWidget(data: CorpWidgetData): View {
-        val widgetView = LayoutInflater.from(requireContext()).inflate(R.layout.item_corporate_widget, null)
+        val widgetView =
+            LayoutInflater.from(requireContext()).inflate(R.layout.item_corporate_widget, null)
         val container = widgetView.findViewById<FrameLayout>(R.id.widget_content_container)
-        val content = LayoutInflater.from(requireContext()).inflate(data.layoutRes, container, false)
+        val content =
+            LayoutInflater.from(requireContext()).inflate(data.layoutRes, container, false)
 
         // Configuración específica para el layout genérico de widgets corporativos
         if (data.layoutRes == R.layout.widget_corporate_generic) {
-            content.findViewById<TextView>(R.id.tv_corp_generic_title)?.text = data.title ?: data.header
+            content.findViewById<TextView>(R.id.tv_corp_generic_title)?.text =
+                data.title ?: data.header
             val iconView = content.findViewById<ImageView>(R.id.iv_corp_generic_icon)
             when {
                 data.folderPreviewPackages != null -> {
                     iconView?.setImageDrawable(
-                        FolderIconUtil.buildFolderPreviewIcon(requireContext(), data.folderPreviewPackages, sizeDp = 44)
+                        FolderIconUtil.buildFolderPreviewIcon(
+                            requireContext(),
+                            data.folderPreviewPackages,
+                            sizeDp = 44
+                        )
                     )
                     // El slot de 90dp solo deja ~54dp de alto para icono + texto: agranda el
                     // icono pero recorta su margen inferior para que el título no se salga.
                     (iconView?.layoutParams as? LinearLayout.LayoutParams)?.apply {
-                        width = dpToPx(45)
-                        height = dpToPx(45)
+                        width = dpToPx(42)
+                        height = dpToPx(42)
                         bottomMargin = dpToPx(2)
                     }?.let { iconView.layoutParams = it }
                 }
+
                 data.useRealAppIcon && data.packageName != null -> {
                     val realIcon = cachedAppIcon(data.packageName)
-                    if (realIcon != null) iconView?.setImageDrawable(realIcon) else iconView?.setImageResource(data.iconRes)
+                    if (realIcon != null) iconView?.setImageDrawable(realIcon) else iconView?.setImageResource(
+                        data.iconRes
+                    )
                 }
+
                 else -> iconView?.setImageResource(data.iconRes)
             }
         }
@@ -357,6 +581,7 @@ class CategoryFragment : Fragment() {
                 widgetView.isClickable = true
                 widgetView.isFocusable = true
             }
+
             isWeather -> {
                 widgetView.setOnClickListener {
                     WeatherDialog.newInstance().show(childFragmentManager, "weather_dialog")
@@ -364,6 +589,7 @@ class CategoryFragment : Fragment() {
                 widgetView.isClickable = true
                 widgetView.isFocusable = true
             }
+
             data.disabledByAdmin -> {
                 widgetView.setOnClickListener {
                     AdminDisabledDialog.newInstance().show(childFragmentManager, "admin_disabled")
@@ -371,18 +597,22 @@ class CategoryFragment : Fragment() {
                 widgetView.isClickable = true
                 widgetView.isFocusable = true
             }
+
             data.opensGoogleFolder -> {
                 widgetView.setOnClickListener {
-                    GoogleAppsFolderDialog.newInstance().show(childFragmentManager, "google_apps_folder")
+                    GoogleAppsFolderDialog.newInstance()
+                        .show(childFragmentManager, "google_apps_folder")
                 }
                 widgetView.isClickable = true
                 widgetView.isFocusable = true
             }
+
             data.packageName != null -> {
                 widgetView.setOnClickListener { launchPackage(data.packageName) }
                 widgetView.isClickable = true
                 widgetView.isFocusable = true
             }
+
             else -> {
                 // Bloqueo por defecto para cualquier otro widget si no es una de las excepciones
                 widgetView.setOnClickListener {
@@ -465,7 +695,8 @@ class CategoryFragment : Fragment() {
         val view = roundedSlot(R.color.slot_bg_empty)
         val iv = ImageView(requireContext()).apply {
             setImageResource(R.drawable.ic_add_plus)
-            imageTintList = ColorStateList.valueOf(requireContext().getColor(R.color.slot_add_icon_tint))
+            imageTintList =
+                ColorStateList.valueOf(requireContext().getColor(R.color.slot_add_icon_tint))
         }
         iv.layoutParams = FrameLayout.LayoutParams(dpToPx(48), dpToPx(48), Gravity.CENTER)
         view.addView(iv)
@@ -508,9 +739,11 @@ class CategoryFragment : Fragment() {
 
         val iv = ImageView(requireContext()).apply {
             setImageResource(R.drawable.ic_add_plus)
-            imageTintList = ColorStateList.valueOf(requireContext().getColor(R.color.slot_add_icon_tint))
+            imageTintList =
+                ColorStateList.valueOf(requireContext().getColor(R.color.slot_add_icon_tint))
         }
-        iv.layoutParams = LinearLayout.LayoutParams(dpToPx(42), dpToPx(42)).apply { gravity = Gravity.CENTER_HORIZONTAL }
+        iv.layoutParams = LinearLayout.LayoutParams(dpToPx(42), dpToPx(42))
+            .apply { gravity = Gravity.CENTER_HORIZONTAL }
 
         val tv = TextView(requireContext()).apply {
             setText(R.string.add_widget)
@@ -542,7 +775,9 @@ class CategoryFragment : Fragment() {
             }
             isClickable = true
             isFocusable = true
-            setOnClickListener { RemoteModeDialog.newInstance().show(childFragmentManager, "remote_mode") }
+            setOnClickListener {
+                RemoteModeDialog.newInstance().show(childFragmentManager, "remote_mode")
+            }
         }
         card.layoutParams = LinearLayout.LayoutParams(dpToPx(172), dpToPx(110)).also {
             it.topMargin = dpToPx(8)
@@ -551,9 +786,11 @@ class CategoryFragment : Fragment() {
 
         val iv = ImageView(requireContext()).apply {
             setImageResource(R.drawable.ic_add_plus)
-            imageTintList = ColorStateList.valueOf(requireContext().getColor(R.color.slot_add_icon_tint))
+            imageTintList =
+                ColorStateList.valueOf(requireContext().getColor(R.color.slot_add_icon_tint))
         }
-        iv.layoutParams = LinearLayout.LayoutParams(dpToPx(42), dpToPx(42)).also { it.gravity = Gravity.CENTER_HORIZONTAL }
+        iv.layoutParams = LinearLayout.LayoutParams(dpToPx(42), dpToPx(42))
+            .also { it.gravity = Gravity.CENTER_HORIZONTAL }
 
         val tv = TextView(requireContext()).apply {
             setText(R.string.new_category)
@@ -609,6 +846,17 @@ class CategoryFragment : Fragment() {
             ClockDialog.newInstance().show(childFragmentManager, "clock_dialog")
             return
         }
+
+        if (pkg == "com.example.sampleds") {
+            val intent = requireContext().packageManager.getLaunchIntentForPackage(pkg)
+            if (intent != null) {
+                startActivity(intent)
+            } else {
+                Toast.makeText(requireContext(), "App not found: $pkg", Toast.LENGTH_SHORT).show()
+            }
+            return
+        }
+
         RemoteModeDialog.newInstance().show(childFragmentManager, "remote_mode")
     }
 

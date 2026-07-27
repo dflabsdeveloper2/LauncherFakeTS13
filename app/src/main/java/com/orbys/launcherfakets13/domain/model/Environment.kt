@@ -38,7 +38,7 @@ enum class Environment(
     SHOWROOM(
         id = "SHOWROOM",
         badgeLabel = "SR",
-        defaultCategories = emptyList()
+        defaultCategories = listOf("General")
     );
 
     companion object {

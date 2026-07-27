@@ -35,11 +35,9 @@ import com.orbys.launcherfakets13.domain.model.Environment
 import com.orbys.launcherfakets13.services.ConnectivityReceiver
 import com.orbys.launcherfakets13.services.Broadcaster
 import com.orbys.launcherfakets13.services.overlay.DockOverlayService
-import com.google.android.material.dialog.MaterialAlertDialogBuilder
 import com.orbys.launcherfakets13.ui.dialog.AdminDisabledDialog
 import com.orbys.launcherfakets13.ui.dialog.EnvironmentSelectorDialog
 import com.orbys.launcherfakets13.ui.dialog.RemoteModeDialog
-import com.orbys.launcherfakets13.ui.dialog.WallpaperOptionsDialog
 import com.orbys.launcherfakets13.ui.util.EnvironmentMapper
 import com.orbys.launcherfakets13.util.SystemActionHelper
 import com.orbys.launcherfakets13.util.WidgetPickerHelper
@@ -437,31 +435,7 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun showWallpaperDialog() {
-        WallpaperOptionsDialog.newInstance().apply {
-            onChangeWallpaper = {
-                // Guardamos el ID actual antes de irnos para comparar al volver
-                viewModel.prepareForWallpaperChange(wallpaperManager.getWallpaperId(WallpaperManager.FLAG_SYSTEM))
-                val intent = Intent("android.settings.WALLPAPER_SETTINGS")
-                startActivity(intent)
-            }
-            onRemoveWallpaper = {
-                MaterialAlertDialogBuilder(this@MainActivity)
-                    .setTitle(R.string.wallpaper_remove)
-                    .setMessage(R.string.wallpaper_remove_msg)
-                    .setPositiveButton(R.string.delete) { _, _ ->
-                        viewModel.restoreDefaultWallpaper(currentEnviroment)
-                    }
-                    .setNegativeButton(R.string.cancel, null)
-                    .create()
-                    .also { dialog ->
-                        dialog.window?.setBackgroundDrawableResource(R.drawable.bg_dialog_rounded)
-                    }
-                    .show()
-            }
-           /* onAddWidget = {
-                launchWidgetPicker()
-            }*/
-        }.show(supportFragmentManager, "wallpaper_options")
+        AdminDisabledDialog.newInstance().show(supportFragmentManager, "admin_disabled")
     }
 
     private fun loadWallpaper() {

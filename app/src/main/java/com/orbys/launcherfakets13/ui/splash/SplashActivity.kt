@@ -12,6 +12,7 @@ import com.orbys.launcherfakets13.R
 import com.orbys.launcherfakets13.ui.home.MainActivity
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
+import kotlin.time.Duration.Companion.milliseconds
 
 @SuppressLint("CustomSplashScreen")
 class SplashActivity : AppCompatActivity() {
@@ -26,16 +27,16 @@ class SplashActivity : AppCompatActivity() {
 
         lifecycleScope.launch {
             // Simulated sequence
-            delay(1500)
+            delay(1000.milliseconds)
             tvStatus.text = getString(R.string.splash_authenticating)
             
-            delay(1000)
+            delay(700.milliseconds)
             tvStatus.text = getString(R.string.splash_loading)
             
-            delay(1000)
+            delay(500.milliseconds)
             tvStatus.text = getString(R.string.splash_success)
             
-            delay(500)
+            delay(500.milliseconds)
             startActivity(Intent(this@SplashActivity, MainActivity::class.java))
             finish()
         }

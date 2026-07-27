@@ -78,12 +78,10 @@ class DockController(
         }
 
         binding.tabRecents.setOnClickListener {
-            selectTab(R.id.tab_recents)
             DockOverlayService.toggleRecents()
         }
 
         binding.tabApps.setOnClickListener {
-            selectTab(R.id.tab_apps)
             onAppsTabClick()
         }
 
