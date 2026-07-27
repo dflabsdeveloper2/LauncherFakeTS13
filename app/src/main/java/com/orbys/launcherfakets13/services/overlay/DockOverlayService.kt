@@ -22,7 +22,6 @@ import com.orbys.launcherfakets13.services.overlay.controllers.AppDrawerControll
 import com.orbys.launcherfakets13.services.overlay.controllers.ControlPanelController
 import com.orbys.launcherfakets13.services.overlay.controllers.DockController
 import com.orbys.launcherfakets13.services.overlay.controllers.RecentsController
-import com.orbys.launcherfakets13.services.overlay.controllers.SidebarController
 import com.orbys.launcherfakets13.ui.dialog.RemoteModeActivity
 import java.lang.ref.WeakReference
 
@@ -31,8 +30,6 @@ class DockOverlayService : Service() {
     private lateinit var themedCtx: Context
 
     private lateinit var dockController: DockController
-    private lateinit var sidebarLeftController: SidebarController
-    private lateinit var sidebarRightController: SidebarController
     private lateinit var drawerController: AppDrawerController
     private lateinit var controlPanelController: ControlPanelController
     private lateinit var recentsController: RecentsController
@@ -76,8 +73,6 @@ class DockOverlayService : Service() {
         initControllers()
 
         dockController.show()
-        sidebarLeftController.show()
-        sidebarRightController.show()
 
         val filter = IntentFilter().apply {
             addAction(Intent.ACTION_LOCALE_CHANGED)
@@ -93,42 +88,7 @@ class DockOverlayService : Service() {
             onFilesTabClick = { openFileManager() },
             onPizarraTabClick = { openPizarra() },
             onBrowserTabClick = { openBrowser() },
-            onSettingsTabClick = { openSettings() },
-            onToggleDock = { syncSidebarsDockIcon() }
-        )
-
-        sidebarLeftController = SidebarController(
-            themedCtx,
-            SidebarController.Side.LEFT,
-            onTuneClick = { w, y, h, fromRight ->
-                controlPanelController.toggle(
-                    w,
-                    y,
-                    h,
-                    fromRight
-                )
-            },
-            onToggleDock = { dockController.toggle() },
-            onExpandSync = { expandAll() },
-            onCollapseSync = { collapseSidebars() },
-            isDockExpanded = { dockController.isExpanded }
-        )
-
-        sidebarRightController = SidebarController(
-            themedCtx,
-            SidebarController.Side.RIGHT,
-            onTuneClick = { w, y, h, fromRight ->
-                controlPanelController.toggle(
-                    w,
-                    y,
-                    h,
-                    fromRight
-                )
-            },
-            onToggleDock = { dockController.toggle() },
-            onExpandSync = { expandAll() },
-            onCollapseSync = { collapseSidebars() },
-            isDockExpanded = { dockController.isExpanded }
+            onSettingsTabClick = { openSettings() }
         )
 
         drawerController = AppDrawerController(
@@ -161,14 +121,6 @@ class DockOverlayService : Service() {
         )
     }
 
-    private fun syncSidebarsDockIcon() {
-        sidebarLeftController.syncDockIcon()
-        sidebarRightController.syncDockIcon()
-        
-        if (dockController.isExpanded) {
-            expandAll()
-        }
-    }
 
     override fun onConfigurationChanged(newConfig: android.content.res.Configuration) {
         super.onConfigurationChanged(newConfig)
@@ -194,8 +146,6 @@ class DockOverlayService : Service() {
 
             // Remove and re-init
             dockController.removeView()
-            sidebarLeftController.removeView()
-            sidebarRightController.removeView()
             drawerController.removeView()
             controlPanelController.removeView()
             recentsController.removeView()
@@ -205,9 +155,6 @@ class DockOverlayService : Service() {
             // Re-show
             dockController.show()
             if (!wasDockExpanded) dockController.collapse()
-
-            sidebarLeftController.show()
-            sidebarRightController.show()
 
             Log.d("DockOverlay", "Refreshing UI... done")
         } catch (e: Exception) {
@@ -227,8 +174,6 @@ class DockOverlayService : Service() {
             receiverRegistered = false
         }
         dockController.removeView()
-        sidebarLeftController.removeView()
-        sidebarRightController.removeView()
         drawerController.removeView()
         controlPanelController.removeView()
         recentsController.removeView()
@@ -303,19 +248,6 @@ class DockOverlayService : Service() {
             instance?.get()?.dockController?.expand()
         }
 
-        fun expandAll() {
-            val service = instance?.get() ?: return
-            service.dockController.expand()
-            service.sidebarLeftController.expand()
-            service.sidebarRightController.expand()
-        }
-
-        fun collapseSidebars() {
-            val service = instance?.get() ?: return
-            service.sidebarLeftController.collapse()
-            service.sidebarRightController.collapse()
-        }
-
         fun isDockExpanded() = instance?.get()?.dockController?.isExpanded ?: true
         fun toggleVolBright(
             sidebarW: Int,
@@ -332,22 +264,6 @@ class DockOverlayService : Service() {
 
         fun toggleRecents() {
             instance?.get()?.recentsController?.toggle()
-        }
-
-        fun removeFallbackSidebar() {
-            instance?.get()?.sidebarLeftController?.removeView()
-        }
-
-        fun restoreFallbackSidebar() {
-            instance?.get()?.sidebarLeftController?.show()
-        }
-
-        fun removeFallbackSidebarRight() {
-            instance?.get()?.sidebarRightController?.removeView()
-        }
-
-        fun restoreFallbackSidebarRight() {
-            instance?.get()?.sidebarRightController?.show()
         }
 
         fun clearDockSelection() {

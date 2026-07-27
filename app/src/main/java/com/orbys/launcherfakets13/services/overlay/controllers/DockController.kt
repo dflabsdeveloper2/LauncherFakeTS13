@@ -23,8 +23,7 @@ class DockController(
     private val onFilesTabClick: () -> Unit,
     private val onPizarraTabClick: () -> Unit,
     private val onBrowserTabClick: () -> Unit,
-    private val onSettingsTabClick: () -> Unit,
-    private val onToggleDock: (Boolean) -> Unit
+    private val onSettingsTabClick: () -> Unit
 ) : BaseOverlayController(context) {
 
     private var _binding: ViewDockOverlayBinding? = null
@@ -130,7 +129,6 @@ class DockController(
         b.dockPanel.visibility = View.VISIBLE
         layoutParams?.y = 20.dp
         updateViewSafely()
-        onToggleDock(true)
     }
 
     fun collapse() {
@@ -150,7 +148,6 @@ class DockController(
         b.dockToggleHandle.visibility = View.VISIBLE
         layoutParams?.y = 0
         updateViewSafely()
-        onToggleDock(false)
     }
 
     fun selectTab(tabId: Int) {
