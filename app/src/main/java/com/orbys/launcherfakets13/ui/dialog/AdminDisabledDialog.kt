@@ -9,6 +9,7 @@ import androidx.fragment.app.DialogFragment
 import com.google.android.material.dialog.MaterialAlertDialogBuilder
 import com.orbys.launcherfakets13.R
 import com.orbys.launcherfakets13.ui.util.dp
+import com.orbys.launcherfakets13.ui.util.setupDialogSize
 
 class AdminDisabledDialog : DialogFragment() {
 
@@ -30,6 +31,11 @@ class AdminDisabledDialog : DialogFragment() {
                     y -= 30.dp
                 }
             }
+    }
+
+    override fun onStart() {
+        super.onStart()
+        setupDialogSize(R.fraction.dialog_width_small)
     }
 
     companion object {

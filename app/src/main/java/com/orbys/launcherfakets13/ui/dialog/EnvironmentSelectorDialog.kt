@@ -12,6 +12,7 @@ import com.google.android.material.dialog.MaterialAlertDialogBuilder
 import com.orbys.launcherfakets13.R
 import com.orbys.launcherfakets13.domain.model.Environment
 import com.orbys.launcherfakets13.ui.util.dp
+import com.orbys.launcherfakets13.ui.util.setupDialogSize
 
 class EnvironmentSelectorDialog : DialogFragment() {
 
@@ -44,12 +45,7 @@ class EnvironmentSelectorDialog : DialogFragment() {
 
     override fun onStart() {
         super.onStart()
-        dialog?.window?.let { window ->
-            val displayMetrics = resources.displayMetrics
-            val width = (displayMetrics.widthPixels * 0.7).toInt()
-            val height = (displayMetrics.heightPixels * 0.68).toInt()
-            window.setLayout(width, height)
-        }
+        setupDialogSize(R.fraction.dialog_width_medium, R.fraction.dialog_height_environment)
     }
 
     companion object {

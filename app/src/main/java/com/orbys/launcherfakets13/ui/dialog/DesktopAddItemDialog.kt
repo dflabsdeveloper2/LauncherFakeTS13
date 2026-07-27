@@ -7,6 +7,7 @@ import android.view.View
 import androidx.fragment.app.DialogFragment
 import com.google.android.material.dialog.MaterialAlertDialogBuilder
 import com.orbys.launcherfakets13.R
+import com.orbys.launcherfakets13.ui.util.setupDialogSize
 
 /**
  * Selector de tipo de elemento a añadir en una celda vacía del Desktop (App o Widget),
@@ -37,6 +38,11 @@ class DesktopAddItemDialog : DialogFragment() {
             .also { dialog ->
                 dialog.window?.setBackgroundDrawableResource(R.drawable.bg_dialog_rounded)
             }
+    }
+
+    override fun onStart() {
+        super.onStart()
+        setupDialogSize(R.fraction.dialog_width_small)
     }
 
     companion object {

@@ -13,6 +13,7 @@ import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.google.android.material.dialog.MaterialAlertDialogBuilder
 import com.orbys.launcherfakets13.R
+import com.orbys.launcherfakets13.ui.util.setupDialogSize
 
 /**
  * Carpeta de apps de Google (CDD/EDLA): icono fijo en el Home que muestra un listado de apps
@@ -51,6 +52,11 @@ class GoogleAppsFolderDialog : DialogFragment() {
             .setView(view)
             .create()
             .also { dialog -> dialog.window?.setBackgroundDrawableResource(R.drawable.bg_dialog_rounded) }
+    }
+
+    override fun onStart() {
+        super.onStart()
+        setupDialogSize(R.fraction.dialog_width_medium)
     }
 
     private inner class GoogleAppsAdapter(

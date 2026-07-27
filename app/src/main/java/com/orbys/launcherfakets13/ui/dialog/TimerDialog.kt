@@ -13,6 +13,7 @@ import androidx.core.content.ContextCompat
 import androidx.fragment.app.DialogFragment
 import com.google.android.material.dialog.MaterialAlertDialogBuilder
 import com.orbys.launcherfakets13.R
+import com.orbys.launcherfakets13.ui.util.setupDialogSize
 
 /**
  * Diálogo "Temporizador" (cuenta atrás) con estilo visual unificado.
@@ -73,11 +74,7 @@ class TimerDialog : DialogFragment() {
 
     override fun onStart() {
         super.onStart()
-        dialog?.window?.let { window ->
-            val displayMetrics = resources.displayMetrics
-            val width = (displayMetrics.widthPixels * 0.6).toInt()
-            window.setLayout(width, WindowManager.LayoutParams.WRAP_CONTENT)
-        }
+        setupDialogSize(R.fraction.dialog_width_medium)
     }
 
     override fun onDestroyView() {

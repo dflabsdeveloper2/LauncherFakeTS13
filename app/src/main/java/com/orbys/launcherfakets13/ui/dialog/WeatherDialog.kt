@@ -9,6 +9,7 @@ import android.view.WindowManager
 import androidx.fragment.app.DialogFragment
 import com.google.android.material.dialog.MaterialAlertDialogBuilder
 import com.orbys.launcherfakets13.R
+import com.orbys.launcherfakets13.ui.util.setupDialogSize
 
 class WeatherDialog : DialogFragment() {
 
@@ -27,11 +28,7 @@ class WeatherDialog : DialogFragment() {
 
     override fun onStart() {
         super.onStart()
-        // Large dialog width
-        dialog?.window?.apply {
-            val width = (resources.displayMetrics.widthPixels * 0.85).toInt()
-            setLayout(width, WindowManager.LayoutParams.WRAP_CONTENT)
-        }
+        setupDialogSize(R.fraction.dialog_width_large)
     }
 
     companion object {
