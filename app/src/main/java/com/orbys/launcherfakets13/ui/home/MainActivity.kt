@@ -505,7 +505,7 @@ class MainActivity : AppCompatActivity() {
     private fun updateProfileUI(environment: Environment) {
         binding.tvProfileTitle.text = getString(EnvironmentMapper.getTitleRes(environment))
         binding.ivProfileIcon.setImageResource(EnvironmentMapper.getIconRes(environment))
-        binding.tvProfileSubtitle.text = getString(EnvironmentMapper.getSubtitleRes(environment))
+        binding.tvProfileSubtitle.text = getString(EnvironmentMapper.getCategoryRes(environment))
 
         // Si el modo es DEFAULT, aplicamos el fondo del entorno. 
         // Si es CUSTOM, mostramos el fondo del sistema habilitando FLAG_SHOW_WALLPAPER y quitando el fondo del root.

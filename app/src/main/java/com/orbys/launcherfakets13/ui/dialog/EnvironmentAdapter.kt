@@ -28,7 +28,8 @@ class EnvironmentAdapter(
         val card: MaterialCardView = itemView.findViewById(R.id.card)
         val icon: ImageView = itemView.findViewById(R.id.ivIcon)
         val title: TextView = itemView.findViewById(R.id.tvTitle)
-        val subtitle: TextView = itemView.findViewById(R.id.tvSubtitle)
+        val category: TextView = itemView.findViewById(R.id.tvCategory)
+        val footer: TextView = itemView.findViewById(R.id.tvFooter)
         val badge: TextView = itemView.findViewById(R.id.tvBadge)
     }
 
@@ -44,26 +45,36 @@ class EnvironmentAdapter(
 
         // Resolución de recursos mediante el Mapper de UI
         holder.title.text = ctx.getString(EnvironmentMapper.getTitleRes(env))
-        holder.subtitle.text = ctx.getString(EnvironmentMapper.getSubtitleRes(env))
+        holder.category.text = ctx.getString(EnvironmentMapper.getCategoryRes(env))
+        holder.footer.text = ctx.getString(EnvironmentMapper.getFooterRes(env))
         holder.icon.setImageResource(EnvironmentMapper.getIconRes(env))
-        holder.badge.text = env.badgeLabel
 
         if (isSelected) {
             holder.card.setCardBackgroundColor(ctx.getColor(R.color.environment_selected_bg))
             holder.title.setTextColor(ctx.getColor(R.color.white))
-            holder.subtitle.setTextColor(ctx.getColor(R.color.white_65))
-            holder.icon.setColorFilter(ctx.getColor(R.color.white))
+            holder.category.setTextColor(ctx.getColor(R.color.white_65))
+            holder.footer.setTextColor(ctx.getColor(R.color.white_65))
             holder.icon.background.setTint(ctx.getColor(R.color.environment_badge_selected_bg))
-            holder.badge.setBackgroundResource(R.drawable.bg_badge_selected)
-            holder.badge.setTextColor(ctx.getColor(R.color.white))
+            holder.badge.visibility = View.VISIBLE
+            // Quitar el filtro de color si el icono tiene sus propios colores (Google/Microsoft)
+            if (env == Environment.OFFICE || env == Environment.GOOGLE) {
+                holder.icon.clearColorFilter()
+            } else {
+                holder.icon.setColorFilter(ctx.getColor(R.color.white))
+            }
         } else {
             holder.card.setCardBackgroundColor(ctx.getColor(R.color.environment_unselected_bg))
             holder.title.setTextColor(ctx.getColor(R.color.environment_unselected_title))
-            holder.subtitle.setTextColor(ctx.getColor(R.color.launcher_bg))
-            holder.icon.setColorFilter(ctx.getColor(R.color.environment_icon_unselected_tint))
-            holder.icon.background.setTint(ctx.getColor(R.color.environment_badge_bg))
-            holder.badge.setBackgroundResource(R.drawable.bg_badge)
-            holder.badge.setTextColor(ctx.getColor(R.color.environment_unselected_title))
+            holder.category.setTextColor(ctx.getColor(R.color.dock_text_inactive))
+            holder.footer.setTextColor(ctx.getColor(R.color.dock_text_inactive))
+            holder.icon.background.setTint(ctx.getColor(R.color.white))
+            holder.badge.visibility = View.GONE
+            
+            if (env == Environment.OFFICE || env == Environment.GOOGLE) {
+                holder.icon.clearColorFilter()
+            } else {
+                holder.icon.setColorFilter(ctx.getColor(R.color.environment_icon_unselected_tint))
+            }
         }
 
         holder.card.setOnClickListener {

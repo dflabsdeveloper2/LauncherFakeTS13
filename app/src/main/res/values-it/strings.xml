@@ -44,13 +44,13 @@
 
     <!-- Profiles -->
     <string name="profile_google_title">Istruzione · Google</string>
-    <string name="profile_google_subtitle">GOOGLE WORKSPACE</string>
+    <string name="profile_google_category">GOOGLE WORKSPACE</string>
     <string name="profile_office_title">Istruzione · Office</string>
-    <string name="profile_office_subtitle">MICROSOFT 365</string>
+    <string name="profile_office_category">MICROSOFT 365</string>
     <string name="profile_corp_title">Aziendale</string>
-    <string name="profile_corp_subtitle">SALA RIUNIONI</string>
+    <string name="profile_corp_category">SALA RIUNIONI</string>
     <string name="profile_showroom_title">Showroom</string>
-    <string name="profile_showroom_subtitle">MODALITÀ DEMO</string>
+    <string name="profile_showroom_category">MODALITÀ DEMO</string>
 
     <!-- Additional UI Strings -->
     <string name="add_shortcut_title">Aggiungi scorciatoia</string>

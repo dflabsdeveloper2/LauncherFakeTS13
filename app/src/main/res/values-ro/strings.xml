@@ -44,11 +44,11 @@
 
     <!-- Profiles -->
     <string name="profile_google_title">Educație · Google</string>
-    <string name="profile_google_subtitle">GOOGLE WORKSPACE</string>
+    <string name="profile_google_category">GOOGLE WORKSPACE</string>
     <string name="profile_office_title">Educație · Office</string>
-    <string name="profile_office_subtitle">MICROSOFT 365</string>
+    <string name="profile_office_category">MICROSOFT 365</string>
     <string name="profile_corp_title">Corporativ</string>
-    <string name="profile_corp_subtitle">SALA DE AFACERI</string>
+    <string name="profile_corp_category">SALA DE AFACERI</string>
 
     <!-- Additional UI Strings -->
     <string name="add_shortcut_title">Adaugă scurtătură</string>

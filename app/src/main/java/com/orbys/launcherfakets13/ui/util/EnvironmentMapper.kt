@@ -17,19 +17,28 @@ object EnvironmentMapper {
         Environment.SHOWROOM -> R.string.profile_showroom_title
     }
 
-    /** Obtiene el ID del recurso de cadena para el subtítulo del entorno. */
-    fun getSubtitleRes(environment: Environment): Int = when (environment) {
-        Environment.OFFICE -> R.string.profile_office_subtitle
-        Environment.GOOGLE -> R.string.profile_google_subtitle
-        Environment.CORPORATE -> R.string.profile_corp_subtitle
-        Environment.SHOWROOM -> R.string.profile_showroom_subtitle
+    /** Obtiene el ID del recurso de cadena para la categoría del entorno. */
+    fun getCategoryRes(environment: Environment): Int = when (environment) {
+        Environment.OFFICE -> R.string.profile_office_category
+        Environment.GOOGLE -> R.string.profile_google_category
+        Environment.CORPORATE -> R.string.profile_corp_category
+        Environment.SHOWROOM -> R.string.profile_showroom_category
+    }
+
+    /** Obtiene el ID del recurso de cadena para el pie de la tarjeta del entorno. */
+    fun getFooterRes(environment: Environment): Int = when (environment) {
+        Environment.OFFICE -> R.string.profile_office_footer
+        Environment.GOOGLE -> R.string.profile_google_footer
+        Environment.CORPORATE -> R.string.profile_corp_footer
+        Environment.SHOWROOM -> R.string.profile_showroom_footer
     }
 
     /** Obtiene el ID del recurso de drawable para el icono del entorno. */
     fun getIconRes(environment: Environment): Int = when (environment) {
-        Environment.OFFICE, Environment.GOOGLE -> R.drawable.ic_graduation
+        Environment.OFFICE -> R.drawable.ic_microsoft_365
+        Environment.GOOGLE -> R.drawable.google_color_svgrepo_com
         Environment.CORPORATE -> R.drawable.ic_corporate
-        Environment.SHOWROOM -> R.drawable.ic_ops
+        Environment.SHOWROOM -> R.drawable.ic_showroom
     }
 
     /** Obtiene el ID del recurso de drawable para el fondo del entorno. */

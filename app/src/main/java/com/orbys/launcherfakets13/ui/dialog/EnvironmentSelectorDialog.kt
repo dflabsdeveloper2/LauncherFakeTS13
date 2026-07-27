@@ -4,6 +4,7 @@ import android.app.Dialog
 import android.os.Bundle
 import android.view.Gravity
 import android.view.LayoutInflater
+import android.view.ViewGroup
 import androidx.fragment.app.DialogFragment
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.RecyclerView
@@ -39,6 +40,16 @@ class EnvironmentSelectorDialog : DialogFragment() {
                     y -= 30.dp
                 }
             }
+    }
+
+    override fun onStart() {
+        super.onStart()
+        dialog?.window?.let { window ->
+            val displayMetrics = resources.displayMetrics
+            val width = (displayMetrics.widthPixels * 0.7).toInt()
+            val height = (displayMetrics.heightPixels * 0.68).toInt()
+            window.setLayout(width, height)
+        }
     }
 
     companion object {

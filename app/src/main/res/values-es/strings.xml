@@ -98,13 +98,22 @@
 
     <!-- Profiles -->
     <string name="profile_google_title">Educación · Google</string>
-    <string name="profile_google_subtitle">GOOGLE WORKSPACE</string>
+    <string name="profile_google_category">GOOGLE WORKSPACE</string>
+    <string name="profile_google_footer">Docs, Sheets, Meet, Drive</string>
+
     <string name="profile_office_title">Educación · Office</string>
-    <string name="profile_office_subtitle">MICROSOFT 365</string>
+    <string name="profile_office_category">MICROSOFT 365</string>
+    <string name="profile_office_footer">Word, Excel, Teams, Outlook</string>
+
     <string name="profile_corp_title">Corporativo</string>
-    <string name="profile_corp_subtitle">SALA DE JUNTAS</string>
+    <string name="profile_corp_category">ORBYS PARA EMPRESA</string>
+    <string name="profile_corp_footer">Sala de reuniones, agenda</string>
+
     <string name="profile_showroom_title">Showroom</string>
-    <string name="profile_showroom_subtitle">MODO DEMO</string>
+    <string name="profile_showroom_category">MODO DEMO</string>
+    <string name="profile_showroom_footer">Presentación autoguiada</string>
+
+    <string name="badge_active">ACTIVO</string>
 
     <!-- Additional UI Strings -->
     <string name="add_shortcut_title">Añadir acceso directo</string>

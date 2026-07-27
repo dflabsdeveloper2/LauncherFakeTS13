@@ -10,34 +10,37 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/config_panel_title"
-        android:textColor="@color/environment_unselected_title"
+        android:textColor="#1A2363"
         android:textSize="10sp"
         android:textStyle="bold"
         android:letterSpacing="0.05"
-        android:layout_marginBottom="8dp" />
+        android:layout_marginBottom="12dp" />
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/choose_environment"
-        android:textColor="#1A1A1A"
+        android:textColor="#000000"
         android:textSize="24sp"
         android:textStyle="bold"
-        android:layout_marginBottom="8dp" />
+        android:layout_marginBottom="12dp" />
 
     <TextView
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="@string/environment_desc"
         android:textSize="14sp"
-        android:textColor="#666666"
+        android:textColor="#1A2363"
         android:lineSpacingMultiplier="1.2"
         android:layout_marginBottom="24dp" />
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rvEnvironments"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:overScrollMode="never" />
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:overScrollMode="never"
+        android:clipToPadding="false"
+        android:paddingBottom="8dp" />
 
 </LinearLayout>

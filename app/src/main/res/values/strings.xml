@@ -86,13 +86,22 @@
 
     <!-- Profiles -->
     <string name="profile_google_title">Education · Google</string>
-    <string name="profile_google_subtitle">GOOGLE WORKSPACE</string>
+    <string name="profile_google_category">GOOGLE WORKSPACE</string>
+    <string name="profile_google_footer">Docs, Sheets, Meet, Drive</string>
+
     <string name="profile_office_title">Education · Office</string>
-    <string name="profile_office_subtitle">MICROSOFT 365</string>
+    <string name="profile_office_category">MICROSOFT 365</string>
+    <string name="profile_office_footer">Word, Excel, Teams, Outlook</string>
+
     <string name="profile_corp_title">Corporate</string>
-    <string name="profile_corp_subtitle">BUSINESS ROOM</string>
+    <string name="profile_corp_category">ORBYS FOR BUSINESS</string>
+    <string name="profile_corp_footer">Meeting room, agenda</string>
+
     <string name="profile_showroom_title">Showroom</string>
-    <string name="profile_showroom_subtitle">DEMO MODE</string>
+    <string name="profile_showroom_category">DEMO MODE</string>
+    <string name="profile_showroom_footer">Self-guided presentation</string>
+
+    <string name="badge_active">ACTIVE</string>
 
     <!-- Additional UI Strings -->
     <string name="add_shortcut_title">Add shortcut</string>

@@ -192,7 +192,7 @@
                     android:layout_height="wrap_content"
                     android:ellipsize="end"
                     android:maxLines="1"
-                    android:text="@string/profile_google_subtitle"
+                    android:text="@string/profile_google_category"
                     android:textColor="@color/dock_text_inactive"
                     android:textSize="9sp" />
 
