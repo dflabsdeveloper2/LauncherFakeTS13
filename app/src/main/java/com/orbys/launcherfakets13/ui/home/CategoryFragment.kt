@@ -31,6 +31,7 @@ import com.orbys.launcherfakets13.ui.dialog.AdminDisabledDialog
 import com.orbys.launcherfakets13.ui.dialog.ClockDialog
 import com.orbys.launcherfakets13.ui.dialog.GoogleAppsFolderDialog
 import com.orbys.launcherfakets13.ui.dialog.RemoteModeDialog
+import com.orbys.launcherfakets13.ui.dialog.SonometerDialog
 import com.orbys.launcherfakets13.ui.dialog.WeatherDialog
 import com.orbys.launcherfakets13.ui.picker.AppPickerActivity
 import com.orbys.launcherfakets13.util.FolderIconUtil
@@ -572,6 +573,7 @@ class CategoryFragment : Fragment() {
 
         val isClock = data.header == getString(R.string.widget_clock) || data.header == "RELOJ"
         val isWeather = data.header == getString(R.string.widget_weather) || data.header == "CLIMA"
+        val isSonometer = data.header == getString(R.string.widget_noise_meter) || data.header == "SONÓMETRO"
 
         when {
             isClock -> {
@@ -585,6 +587,14 @@ class CategoryFragment : Fragment() {
             isWeather -> {
                 widgetView.setOnClickListener {
                     WeatherDialog.newInstance().show(childFragmentManager, "weather_dialog")
+                }
+                widgetView.isClickable = true
+                widgetView.isFocusable = true
+            }
+
+            isSonometer -> {
+                widgetView.setOnClickListener {
+                    SonometerDialog.newInstance().show(childFragmentManager, "sonometer_dialog")
                 }
                 widgetView.isClickable = true
                 widgetView.isFocusable = true

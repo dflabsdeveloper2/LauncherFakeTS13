@@ -79,6 +79,77 @@
     <string name="weather_wind_label">Viento</string>
     <string name="weather_gusts_label">Rachas</string>
 
+    <string name="notification_listener_permission_title">Permiso necesario</string>
+    <string name="notification_listener_permission_msg">Para mostrar insignias de notificación en los iconos, activa el acceso a notificaciones en Ajustes.</string>
+
+    <!-- Dock -->
+    <string name="dock_back">Atrás</string>
+    <string name="dock_home">Inicio</string>
+    <string name="dock_recents">Recientes</string>
+    <string name="dock_apps">Apps</string>
+    <string name="dock_files">Archivos</string>
+    <string name="dock_pizarra">Pizarra</string>
+    <string name="dock_browser">Navegador</string>
+    <string name="dock_settings">Ajustes</string>
+
+    <!-- Volume / Brightness -->
+    <string name="label_volume">Volumen</string>
+    <string name="label_brightness">Brillo</string>
+
+    <!-- Profiles -->
+    <string name="profile_google_title">Educación · Google</string>
+    <string name="profile_google_subtitle">GOOGLE WORKSPACE</string>
+    <string name="profile_office_title">Educación · Office</string>
+    <string name="profile_office_subtitle">MICROSOFT 365</string>
+    <string name="profile_corp_title">Corporativo</string>
+    <string name="profile_corp_subtitle">SALA DE JUNTAS</string>
+    <string name="profile_showroom_title">Showroom</string>
+    <string name="profile_showroom_subtitle">MODO DEMO</string>
+
+    <!-- Additional UI Strings -->
+    <string name="add_shortcut_title">Añadir acceso directo</string>
+    <string name="all_apps">Todas las apps</string>
+    <string name="config_panel_title">//PANEL DE CONFIGURACIÓN</string>
+    <string name="choose_environment">Elegir entorno</string>
+    <string name="environment_desc">Cada entorno reorganiza el escritorio con las apps y widgets adecuados para ese espacio de trabajo.</string>
+    <string name="label_eyes">Vista</string>
+    <string name="label_touch">Táctil</string>
+    <string name="action_power_off_ops">Apagar OPS</string>
+    <string name="action_restart">Reiniciar</string>
+    <string name="action_power_off">Apagar</string>
+    <string name="recent_apps">Aplicaciones recientes</string>
+    <string name="swipe_to_close_all">Desliza para cerrar todo</string>
+
+    <!-- Messages and Errors -->
+    <string name="error_no_multiwindow">No admite Multiventana</string>
+    <string name="error_split_screen">No se pudo abrir en pantalla dividida</string>
+    <string name="error_app_not_found">Aplicación no encontrada</string>
+    <string name="error_app_not_installed">Aplicación no instalada</string>
+    <string name="error_auth_ms_authenticator">Por favor, inicia sesión en Microsoft Authenticator</string>
+    <string name="error_ms_authenticator_not_installed">Microsoft Authenticator no está instalado</string>
+    <string name="user_profile">Perfil de usuario</string>
+    <string name="exit_test_mode">Finalizar\nconexión remota</string>
+
+    <!-- Widget Titles -->
+    <string name="widget_clock">RELOJ</string>
+    <string name="widget_agenda">AGENDA</string>
+    <string name="widget_weather">TIEMPO</string>
+    <string name="widget_focus">CONCENTRACIÓN</string>
+    <string name="widget_timer">TEMPORIZADOR</string>
+    <string name="widget_videocall">VIDEOCALL</string>
+    <string name="widget_eshare">ESHARE</string>
+    <string name="widget_mail">CORREO</string>
+    <string name="widget_storage">ALMACENAMIENTO</string>
+    <string name="widget_docs">DOCUMENTOS</string>
+    <string name="widget_notes">NOTAS</string>
+    <string name="widget_orbys_ai">ORBYS AI</string>
+    <string name="widget_vote">VOTAR</string>
+    <string name="widget_whiteboard">PIZARRA</string>
+    <string name="widget_dice">DADO</string>
+    <string name="widget_noise_meter">SONÓMETRO</string>
+    <string name="widget_orbys_translate">TRADUCTOR</string>
+    <string name="widget_student_selector">SELECTOR ALUMNOS</string>
+
     <!-- Splash Simulation -->
     <string name="splash_connecting">Conectando a 85.214.132.11...</string>
     <string name="splash_authenticating">Autenticando credenciales...</string>
