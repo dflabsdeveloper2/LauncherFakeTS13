@@ -56,8 +56,9 @@ class EnvironmentAdapter(
             holder.footer.setTextColor(ctx.getColor(R.color.white_65))
             holder.icon.background.setTint(ctx.getColor(R.color.environment_badge_selected_bg))
             holder.badge.visibility = View.VISIBLE
-            // Quitar el filtro de color si el icono tiene sus propios colores (Google/Microsoft)
-            if (env == Environment.OFFICE || env == Environment.GOOGLE) {
+            // Quitar el filtro de color si el icono tiene sus propios colores definidos
+            if (env == Environment.OFFICE || env == Environment.GOOGLE || 
+                env == Environment.CORPORATE || env == Environment.SHOWROOM) {
                 holder.icon.clearColorFilter()
             } else {
                 holder.icon.setColorFilter(ctx.getColor(R.color.white))
@@ -70,7 +71,8 @@ class EnvironmentAdapter(
             holder.icon.background.setTint(ctx.getColor(R.color.white))
             holder.badge.visibility = View.GONE
             
-            if (env == Environment.OFFICE || env == Environment.GOOGLE) {
+            if (env == Environment.OFFICE || env == Environment.GOOGLE || 
+                env == Environment.CORPORATE || env == Environment.SHOWROOM) {
                 holder.icon.clearColorFilter()
             } else {
                 holder.icon.setColorFilter(ctx.getColor(R.color.environment_icon_unselected_tint))

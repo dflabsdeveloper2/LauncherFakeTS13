@@ -37,8 +37,8 @@ object EnvironmentMapper {
     fun getIconRes(environment: Environment): Int = when (environment) {
         Environment.OFFICE -> R.drawable.ic_microsoft_365
         Environment.GOOGLE -> R.drawable.google_color_svgrepo_com
-        Environment.CORPORATE -> R.drawable.ic_corporate
-        Environment.SHOWROOM -> R.drawable.ic_showroom
+        Environment.CORPORATE -> R.drawable.corporativo_ic_enviroment
+        Environment.SHOWROOM -> R.drawable.showroom_ic_enviroment
     }
 
     /** Obtiene el ID del recurso de drawable para el fondo del entorno. */

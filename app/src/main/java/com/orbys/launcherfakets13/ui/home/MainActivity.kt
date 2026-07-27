@@ -507,6 +507,16 @@ class MainActivity : AppCompatActivity() {
         binding.ivProfileIcon.setImageResource(EnvironmentMapper.getIconRes(environment))
         binding.tvProfileSubtitle.text = getString(EnvironmentMapper.getCategoryRes(environment))
 
+        // Los iconos de estos entornos tienen colores propios, no debemos aplicarles el tinte global
+        if (environment == Environment.OFFICE || environment == Environment.GOOGLE ||
+            environment == Environment.CORPORATE || environment == Environment.SHOWROOM) {
+            binding.ivProfileIcon.imageTintList = null
+        } else {
+            binding.ivProfileIcon.imageTintList = android.content.res.ColorStateList.valueOf(
+                getColor(R.color.dock_text_active)
+            )
+        }
+
         // Si el modo es DEFAULT, aplicamos el fondo del entorno. 
         // Si es CUSTOM, mostramos el fondo del sistema habilitando FLAG_SHOW_WALLPAPER y quitando el fondo del root.
         if (viewModel.uiState.value.wallpaperType == com.orbys.launcherfakets13.domain.model.WallpaperType.DEFAULT) {
