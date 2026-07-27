@@ -33,6 +33,7 @@ import com.orbys.launcherfakets13.ui.dialog.GoogleAppsFolderDialog
 import com.orbys.launcherfakets13.ui.dialog.NameSelectorDialog
 import com.orbys.launcherfakets13.ui.dialog.RemoteModeDialog
 import com.orbys.launcherfakets13.ui.dialog.SonometerDialog
+import com.orbys.launcherfakets13.ui.dialog.TimerDialog
 import com.orbys.launcherfakets13.ui.dialog.WeatherDialog
 import com.orbys.launcherfakets13.ui.picker.AppPickerActivity
 import com.orbys.launcherfakets13.util.FolderIconUtil
@@ -576,6 +577,7 @@ class CategoryFragment : Fragment() {
         val isWeather = data.header == getString(R.string.widget_weather) || data.header == "CLIMA"
         val isSonometer = data.header == getString(R.string.widget_noise_meter) || data.header == "SONÓMETRO"
         val isStudentSelector = data.header == getString(R.string.widget_student_selector) || data.header == "SELECTOR ALUMNOS"
+        val isTimer = data.header == getString(R.string.widget_timer) || data.header == "TEMPORIZADOR"
 
         when {
             isClock -> {
@@ -605,6 +607,14 @@ class CategoryFragment : Fragment() {
             isStudentSelector -> {
                 widgetView.setOnClickListener {
                     NameSelectorDialog.newInstance().show(childFragmentManager, "name_selector")
+                }
+                widgetView.isClickable = true
+                widgetView.isFocusable = true
+            }
+
+            isTimer -> {
+                widgetView.setOnClickListener {
+                    TimerDialog.newInstance().show(childFragmentManager, "timer_dialog")
                 }
                 widgetView.isClickable = true
                 widgetView.isFocusable = true
