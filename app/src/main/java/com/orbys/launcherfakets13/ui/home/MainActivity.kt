@@ -38,6 +38,7 @@ import com.orbys.launcherfakets13.services.overlay.DockOverlayService
 import com.orbys.launcherfakets13.ui.dialog.AdminDisabledDialog
 import com.orbys.launcherfakets13.ui.dialog.ClockDialog
 import com.orbys.launcherfakets13.ui.dialog.EnvironmentSelectorDialog
+import com.orbys.launcherfakets13.ui.dialog.GoogleLoginDialog
 import com.orbys.launcherfakets13.ui.dialog.MicrosoftValidationDialog
 import com.orbys.launcherfakets13.ui.dialog.RemoteModeDialog
 import com.orbys.launcherfakets13.ui.util.EnvironmentMapper
@@ -148,6 +149,8 @@ class MainActivity : AppCompatActivity() {
             val state = viewModel.uiState.value
             if (state.currentEnvironment == Environment.OFFICE || state.currentEnvironment == Environment.CORPORATE) {
                 MicrosoftValidationDialog.newInstance().show(supportFragmentManager, "ms_validation")
+            } else if (state.currentEnvironment == Environment.GOOGLE) {
+                GoogleLoginDialog.newInstance().show(supportFragmentManager, "google_login")
             } else {
                 AdminDisabledDialog.newInstance().show(supportFragmentManager, "admin_disabled")
             }
