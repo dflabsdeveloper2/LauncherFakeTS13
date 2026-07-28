@@ -30,6 +30,7 @@ import com.orbys.launcherfakets13.domain.model.Shortcut
 import com.orbys.launcherfakets13.ui.dialog.AdminDisabledDialog
 import com.orbys.launcherfakets13.ui.dialog.ClockDialog
 import com.orbys.launcherfakets13.ui.dialog.FakeGoogleCalendarDialogFragment
+import com.orbys.launcherfakets13.ui.dialog.FakeOutlookDialogFragment
 import com.orbys.launcherfakets13.ui.dialog.FocusModeDialog
 import com.orbys.launcherfakets13.ui.dialog.GoogleAppsFolderDialog
 import com.orbys.launcherfakets13.ui.dialog.NameSelectorDialog
@@ -589,7 +590,8 @@ class CategoryFragment : Fragment() {
         val isTimer = data.header == getString(R.string.widget_timer) || data.header == "TEMPORIZADOR"
         val isTranslate = data.header == getString(R.string.widget_orbys_translate) || data.header == "TRADUCTOR"
         val isFocus = data.header == getString(R.string.widget_focus) || data.header == "CONCENTRACIÓN"
-        val isCalendar = data.header == getString(R.string.widget_agenda) || data.header == "GOOGLE CALENDAR" || data.header == "CALENDARIO"
+        val isGoogleCalendar = data.packageName == "com.google.android.calendar" || data.header == "GOOGLE CALENDAR"
+        val isOutlook = data.packageName == "com.microsoft.office.outlook" || data.header == "CALENDARIO"
 
         when {
             isClock -> {
@@ -600,9 +602,17 @@ class CategoryFragment : Fragment() {
                 widgetView.isFocusable = true
             }
 
-            isCalendar -> {
+            isGoogleCalendar -> {
                 widgetView.setOnClickListener {
                     FakeGoogleCalendarDialogFragment.newInstance().show(childFragmentManager, "fake_calendar")
+                }
+                widgetView.isClickable = true
+                widgetView.isFocusable = true
+            }
+
+            isOutlook -> {
+                widgetView.setOnClickListener {
+                    FakeOutlookDialogFragment.newInstance().show(childFragmentManager, "fake_outlook")
                 }
                 widgetView.isClickable = true
                 widgetView.isFocusable = true
@@ -915,6 +925,11 @@ class CategoryFragment : Fragment() {
 
         if (pkg == "com.google.android.calendar") {
             FakeGoogleCalendarDialogFragment.newInstance().show(childFragmentManager, "fake_calendar")
+            return
+        }
+
+        if (pkg == "com.microsoft.office.outlook") {
+            FakeOutlookDialogFragment.newInstance().show(childFragmentManager, "fake_outlook")
             return
         }
 
