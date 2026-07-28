@@ -36,7 +36,9 @@ import com.orbys.launcherfakets13.services.ConnectivityReceiver
 import com.orbys.launcherfakets13.services.Broadcaster
 import com.orbys.launcherfakets13.services.overlay.DockOverlayService
 import com.orbys.launcherfakets13.ui.dialog.AdminDisabledDialog
+import com.orbys.launcherfakets13.ui.dialog.ClockDialog
 import com.orbys.launcherfakets13.ui.dialog.EnvironmentSelectorDialog
+import com.orbys.launcherfakets13.ui.dialog.MicrosoftValidationDialog
 import com.orbys.launcherfakets13.ui.dialog.RemoteModeDialog
 import com.orbys.launcherfakets13.ui.util.EnvironmentMapper
 import com.orbys.launcherfakets13.util.SystemActionHelper
@@ -143,7 +145,12 @@ class MainActivity : AppCompatActivity() {
         }
 
         binding.ivUserProfile.setOnClickListener {
-            AdminDisabledDialog.newInstance().show(supportFragmentManager, "admin_disabled")
+            val state = viewModel.uiState.value
+            if (state.currentEnvironment == Environment.OFFICE || state.currentEnvironment == Environment.CORPORATE) {
+                MicrosoftValidationDialog.newInstance().show(supportFragmentManager, "ms_validation")
+            } else {
+                AdminDisabledDialog.newInstance().show(supportFragmentManager, "admin_disabled")
+            }
         }
 
         binding.btnExitTestMode.setOnClickListener {

@@ -906,10 +906,5 @@ class CategoryFragment : Fragment() {
         RemoteModeDialog.newInstance().show(childFragmentManager, "remote_mode")
     }
 
-    private fun isMicrosoftPackage(pkg: String): Boolean {
-        val microsoftPrefixes = listOf("com.microsoft.", "com.azure.authenticator")
-        return microsoftPrefixes.any { pkg.startsWith(it) } || pkg == "com.microsoft.skydrive"
-    }
-
     private fun dpToPx(dp: Int) = (dp * resources.displayMetrics.density).toInt()
 }
