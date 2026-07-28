@@ -5,13 +5,13 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:padding="24dp">
+    android:padding="@dimen/dialog_padding">
 
     <!-- Header -->
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="16dp">
+        android:layout_marginBottom="@dimen/dialog_header_margin_bottom">
 
         <LinearLayout
             android:layout_width="wrap_content"
@@ -27,7 +27,7 @@
                 android:letterSpacing="0.05"
                 android:text="//VALIDACIÓN · MICROSOFT 365"
                 android:textColor="#1A2363"
-                android:textSize="10sp"
+                android:textSize="@dimen/text_size_header_label"
                 android:textStyle="bold" />
 
             <TextView
@@ -35,14 +35,14 @@
                 android:layout_height="wrap_content"
                 android:text="¿En qué app quieres validar?"
                 android:textColor="#000000"
-                android:textSize="24sp"
+                android:textSize="@dimen/text_size_header_title"
                 android:textStyle="bold" />
         </LinearLayout>
 
         <TextView
             android:id="@+id/btn_close_ms_validation"
-            android:layout_width="32dp"
-            android:layout_height="32dp"
+            android:layout_width="@dimen/dialog_close_button_size"
+            android:layout_height="@dimen/dialog_close_button_size"
             android:layout_alignParentEnd="true"
             android:layout_centerVertical="true"
             android:background="@drawable/bg_name_selector_close"
@@ -51,7 +51,7 @@
             android:gravity="center"
             android:text="✕"
             android:textColor="#5F6368"
-            android:textSize="14sp"
+            android:textSize="12sp"
             android:textStyle="bold" />
     </RelativeLayout>
 
@@ -70,36 +70,36 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginBottom="20dp"
-                android:lineSpacingExtra="3dp"
+                android:layout_marginBottom="12dp"
+                android:lineSpacingExtra="2dp"
                 android:text="Microsoft no tiene un inicio de sesión único. Valida cada app por separado, o conecta Microsoft Authenticator para validarlas todas a la vez."
                 android:textColor="#6B7280"
-                android:textSize="12sp" />
+                android:textSize="@dimen/text_size_body_secondary" />
 
             <!-- Banner Microsoft Authenticator -->
             <LinearLayout
                 android:id="@+id/btn_use_authenticator"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginBottom="24dp"
+                android:layout_marginBottom="16dp"
                 android:background="@drawable/bg_ms_authenticator_banner"
                 android:clickable="true"
                 android:focusable="true"
                 android:gravity="center_vertical"
                 android:orientation="horizontal"
-                android:padding="20dp">
+                android:padding="16dp">
 
                 <ImageView
-                    android:layout_width="48dp"
-                    android:layout_height="48dp"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
                     android:background="@drawable/bg_ms_banner_icon_box"
-                    android:padding="8dp"
+                    android:padding="6dp"
                     android:src="@drawable/ic_ms_authenticator"/>
 
                 <LinearLayout
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
-                    android:layout_marginStart="16dp"
+                    android:layout_marginStart="14dp"
                     android:layout_weight="1"
                     android:orientation="vertical">
 
@@ -108,7 +108,7 @@
                         android:layout_height="wrap_content"
                         android:text="Microsoft Authenticator"
                         android:textColor="#FFFFFF"
-                        android:textSize="16sp"
+                        android:textSize="14sp"
                         android:textStyle="bold" />
 
                     <TextView
@@ -118,7 +118,7 @@
                         android:layout_marginTop="2dp"
                         android:text="Valida todas las apps de Microsoft 365 de una vez"
                         android:textColor="#A9B7E0"
-                        android:textSize="12sp" />
+                        android:textSize="@dimen/text_size_footer" />
 
                 </LinearLayout>
 
@@ -129,7 +129,7 @@
                     android:text="USAR AUTHENTICATOR  →"
                     android:textAllCaps="true"
                     android:textColor="#FFFFFF"
-                    android:textSize="12sp"
+                    android:textSize="@dimen/text_size_footer"
                     android:textStyle="bold" />
 
             </LinearLayout>
@@ -138,11 +138,11 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginBottom="12dp"
+                android:layout_marginBottom="8dp"
                 android:letterSpacing="0.05"
                 android:text="O VALIDA APP POR APP"
                 android:textColor="#1A4479"
-                android:textSize="11sp"
+                android:textSize="@dimen/text_size_footer"
                 android:textStyle="bold" />
 
             <!-- Fila 1: Outlook / OneDrive / Teams -->
@@ -155,24 +155,24 @@
                 <LinearLayout
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
-                    android:layout_marginEnd="8dp"
+                    android:layout_marginEnd="6dp"
                     android:layout_weight="1"
                     android:background="@drawable/bg_ms_app_row"
                     android:gravity="center_vertical"
                     android:orientation="horizontal"
-                    android:padding="12dp">
+                    android:padding="@dimen/ms_validation_app_row_padding">
 
                     <ImageView
-                        android:layout_width="36dp"
-                        android:layout_height="36dp"
-                        android:padding="8dp"
+                        android:layout_width="32dp"
+                        android:layout_height="32dp"
+                        android:padding="6dp"
                         android:background="@drawable/bg_ms_app_icon_box"
                         android:src="@drawable/ic_ms_outlook" />
 
                     <LinearLayout
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
-                        android:layout_marginStart="10dp"
+                        android:layout_marginStart="8dp"
                         android:layout_weight="1"
                         android:orientation="vertical">
 
@@ -183,7 +183,7 @@
                             android:maxLines="1"
                             android:text="Outlook"
                             android:textColor="#1A1A2E"
-                            android:textSize="13sp"
+                            android:textSize="11sp"
                             android:textStyle="bold" />
 
                         <TextView
@@ -192,7 +192,7 @@
                             android:layout_height="wrap_content"
                             android:text="Sin validar"
                             android:textColor="#8A8F98"
-                            android:textSize="10sp" />
+                            android:textSize="8sp" />
 
                     </LinearLayout>
 
@@ -203,12 +203,12 @@
                         android:background="@drawable/bg_name_selector_button"
                         android:clickable="true"
                         android:focusable="true"
-                        android:paddingHorizontal="12dp"
-                        android:paddingVertical="8dp"
+                        android:paddingHorizontal="10dp"
+                        android:paddingVertical="6dp"
                         android:text="VALIDAR"
                         android:textAllCaps="true"
                         android:textColor="#FFFFFF"
-                        android:textSize="10sp"
+                        android:textSize="8sp"
                         android:textStyle="bold" />
 
                 </LinearLayout>
@@ -217,25 +217,25 @@
                 <LinearLayout
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
-                    android:layout_marginStart="8dp"
-                    android:layout_marginEnd="8dp"
+                    android:layout_marginStart="6dp"
+                    android:layout_marginEnd="6dp"
                     android:layout_weight="1"
                     android:background="@drawable/bg_ms_app_row"
                     android:gravity="center_vertical"
                     android:orientation="horizontal"
-                    android:padding="12dp">
+                    android:padding="@dimen/ms_validation_app_row_padding">
 
                     <ImageView
-                        android:layout_width="36dp"
-                        android:layout_height="36dp"
-                        android:padding="8dp"
+                        android:layout_width="32dp"
+                        android:layout_height="32dp"
+                        android:padding="6dp"
                         android:background="@drawable/bg_ms_app_icon_box"
                         android:src="@drawable/ic_ms_onedrive" />
 
                     <LinearLayout
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
-                        android:layout_marginStart="10dp"
+                        android:layout_marginStart="8dp"
                         android:layout_weight="1"
                         android:orientation="vertical">
 
@@ -246,7 +246,7 @@
                             android:maxLines="1"
                             android:text="OneDrive"
                             android:textColor="#1A1A2E"
-                            android:textSize="13sp"
+                            android:textSize="11sp"
                             android:textStyle="bold" />
 
                         <TextView
@@ -255,7 +255,7 @@
                             android:layout_height="wrap_content"
                             android:text="Sin validar"
                             android:textColor="#8A8F98"
-                            android:textSize="10sp" />
+                            android:textSize="8sp" />
 
                     </LinearLayout>
 
@@ -266,12 +266,12 @@
                         android:background="@drawable/bg_name_selector_button"
                         android:clickable="true"
                         android:focusable="true"
-                        android:paddingHorizontal="12dp"
-                        android:paddingVertical="8dp"
+                        android:paddingHorizontal="10dp"
+                        android:paddingVertical="6dp"
                         android:text="VALIDAR"
                         android:textAllCaps="true"
                         android:textColor="#FFFFFF"
-                        android:textSize="10sp"
+                        android:textSize="8sp"
                         android:textStyle="bold" />
 
                 </LinearLayout>
@@ -280,24 +280,24 @@
                 <LinearLayout
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
-                    android:layout_marginStart="8dp"
+                    android:layout_marginStart="6dp"
                     android:layout_weight="1"
                     android:background="@drawable/bg_ms_app_row"
                     android:gravity="center_vertical"
                     android:orientation="horizontal"
-                    android:padding="12dp">
+                    android:padding="@dimen/ms_validation_app_row_padding">
 
                     <ImageView
-                        android:layout_width="36dp"
-                        android:layout_height="36dp"
-                        android:padding="8dp"
+                        android:layout_width="32dp"
+                        android:layout_height="32dp"
+                        android:padding="6dp"
                         android:background="@drawable/bg_ms_app_icon_box"
                         android:src="@drawable/ic_ms_teams" />
 
                     <LinearLayout
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
-                        android:layout_marginStart="10dp"
+                        android:layout_marginStart="8dp"
                         android:layout_weight="1"
                         android:orientation="vertical">
 
@@ -308,7 +308,7 @@
                             android:maxLines="1"
                             android:text="Teams"
                             android:textColor="#1A1A2E"
-                            android:textSize="13sp"
+                            android:textSize="11sp"
                             android:textStyle="bold" />
 
                         <TextView
@@ -317,7 +317,7 @@
                             android:layout_height="wrap_content"
                             android:text="Sin validar"
                             android:textColor="#8A8F98"
-                            android:textSize="10sp" />
+                            android:textSize="8sp" />
 
                     </LinearLayout>
 
@@ -328,12 +328,12 @@
                         android:background="@drawable/bg_name_selector_button"
                         android:clickable="true"
                         android:focusable="true"
-                        android:paddingHorizontal="12dp"
-                        android:paddingVertical="8dp"
+                        android:paddingHorizontal="10dp"
+                        android:paddingVertical="6dp"
                         android:text="VALIDAR"
                         android:textAllCaps="true"
                         android:textColor="#FFFFFF"
-                        android:textSize="10sp"
+                        android:textSize="8sp"
                         android:textStyle="bold" />
 
                 </LinearLayout>
@@ -344,31 +344,31 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="12dp"
+                android:layout_marginTop="8dp"
                 android:orientation="horizontal">
 
                 <!-- Word -->
                 <LinearLayout
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
-                    android:layout_marginEnd="8dp"
+                    android:layout_marginEnd="6dp"
                     android:layout_weight="1"
                     android:background="@drawable/bg_ms_app_row"
                     android:gravity="center_vertical"
                     android:orientation="horizontal"
-                    android:padding="12dp">
+                    android:padding="@dimen/ms_validation_app_row_padding">
 
                     <ImageView
-                        android:layout_width="36dp"
-                        android:layout_height="36dp"
-                        android:padding="8dp"
+                        android:layout_width="32dp"
+                        android:layout_height="32dp"
+                        android:padding="6dp"
                         android:background="@drawable/bg_ms_app_icon_box"
                         android:src="@drawable/ic_ms_word" />
 
                     <LinearLayout
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
-                        android:layout_marginStart="10dp"
+                        android:layout_marginStart="8dp"
                         android:layout_weight="1"
                         android:orientation="vertical">
 
@@ -379,7 +379,7 @@
                             android:maxLines="1"
                             android:text="Word"
                             android:textColor="#1A1A2E"
-                            android:textSize="13sp"
+                            android:textSize="11sp"
                             android:textStyle="bold" />
 
                         <TextView
@@ -388,7 +388,7 @@
                             android:layout_height="wrap_content"
                             android:text="Sin validar"
                             android:textColor="#8A8F98"
-                            android:textSize="10sp" />
+                            android:textSize="8sp" />
 
                     </LinearLayout>
 
@@ -399,12 +399,12 @@
                         android:background="@drawable/bg_name_selector_button"
                         android:clickable="true"
                         android:focusable="true"
-                        android:paddingHorizontal="12dp"
-                        android:paddingVertical="8dp"
+                        android:paddingHorizontal="10dp"
+                        android:paddingVertical="6dp"
                         android:text="VALIDAR"
                         android:textAllCaps="true"
                         android:textColor="#FFFFFF"
-                        android:textSize="10sp"
+                        android:textSize="8sp"
                         android:textStyle="bold" />
 
                 </LinearLayout>
@@ -413,25 +413,25 @@
                 <LinearLayout
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
-                    android:layout_marginStart="8dp"
-                    android:layout_marginEnd="8dp"
+                    android:layout_marginStart="6dp"
+                    android:layout_marginEnd="6dp"
                     android:layout_weight="1"
                     android:background="@drawable/bg_ms_app_row"
                     android:gravity="center_vertical"
                     android:orientation="horizontal"
-                    android:padding="12dp">
+                    android:padding="@dimen/ms_validation_app_row_padding">
 
                     <ImageView
-                        android:layout_width="36dp"
-                        android:layout_height="36dp"
-                        android:padding="8dp"
+                        android:layout_width="32dp"
+                        android:layout_height="32dp"
+                        android:padding="6dp"
                         android:background="@drawable/bg_ms_app_icon_box"
                         android:src="@drawable/ic_ms_calendar" />
 
                     <LinearLayout
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
-                        android:layout_marginStart="10dp"
+                        android:layout_marginStart="8dp"
                         android:layout_weight="1"
                         android:orientation="vertical">
 
@@ -442,7 +442,7 @@
                             android:maxLines="1"
                             android:text="Calendario"
                             android:textColor="#1A1A2E"
-                            android:textSize="13sp"
+                            android:textSize="11sp"
                             android:textStyle="bold" />
 
                         <TextView
@@ -451,7 +451,7 @@
                             android:layout_height="wrap_content"
                             android:text="Sin validar"
                             android:textColor="#8A8F98"
-                            android:textSize="10sp" />
+                            android:textSize="8sp" />
 
                     </LinearLayout>
 
@@ -462,12 +462,12 @@
                         android:background="@drawable/bg_name_selector_button"
                         android:clickable="true"
                         android:focusable="true"
-                        android:paddingHorizontal="12dp"
-                        android:paddingVertical="8dp"
+                        android:paddingHorizontal="10dp"
+                        android:paddingVertical="6dp"
                         android:text="VALIDAR"
                         android:textAllCaps="true"
                         android:textColor="#FFFFFF"
-                        android:textSize="10sp"
+                        android:textSize="8sp"
                         android:textStyle="bold" />
 
                 </LinearLayout>
@@ -476,7 +476,7 @@
                 <View
                     android:layout_width="0dp"
                     android:layout_height="0dp"
-                    android:layout_marginStart="8dp"
+                    android:layout_marginStart="6dp"
                     android:layout_weight="1" />
 
             </LinearLayout>

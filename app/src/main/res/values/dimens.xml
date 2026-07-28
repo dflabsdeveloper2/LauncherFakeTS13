@@ -2,9 +2,31 @@
 <resources>
     <!-- Dialog Width Fractions -->
     <item name="dialog_width_small" type="fraction">50%</item>
-    <item name="dialog_width_medium" type="fraction">70%</item>
+    <item name="dialog_width_medium" type="fraction">65%</item>
     <item name="dialog_width_large" type="fraction">85%</item>
+    <item name="dialog_width_small_plus" type="fraction">55%</item>
 
     <!-- Specific Dialog Heights -->
-    <item name="dialog_height_environment" type="fraction">68%</item>
+    <item name="dialog_height_large" type="fraction">68%</item>
+    <item name="dialog_height_medium" type="fraction">55%</item>
+
+    <!-- Standard Dialog Dimensions -->
+    <dimen name="dialog_padding">16dp</dimen>
+    <dimen name="dialog_header_margin_bottom">12dp</dimen>
+    <dimen name="dialog_close_button_size">28dp</dimen>
+
+    <!-- Typography -->
+    <dimen name="text_size_header_label">9sp</dimen>
+    <dimen name="text_size_header_title">20sp</dimen>
+    <dimen name="text_size_body_primary">14sp</dimen>
+    <dimen name="text_size_body_secondary">12sp</dimen>
+    <dimen name="text_size_footer">9sp</dimen>
+    <dimen name="text_size_button">12sp</dimen>
+
+    <!-- Component Specific -->
+    <dimen name="timer_time_text_size">48sp</dimen>
+    <dimen name="name_selector_result_text_size">32sp</dimen>
+    <dimen name="google_login_field_margin_horizontal">60dp</dimen>
+    <dimen name="ms_validation_app_row_padding">8dp</dimen>
+    <dimen name="google_calendar_lock_icon_size">70dp</dimen>
 </resources>

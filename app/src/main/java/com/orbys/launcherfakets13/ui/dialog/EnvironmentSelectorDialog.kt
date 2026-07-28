@@ -4,7 +4,6 @@ import android.app.Dialog
 import android.os.Bundle
 import android.view.Gravity
 import android.view.LayoutInflater
-import android.view.ViewGroup
 import androidx.fragment.app.DialogFragment
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.RecyclerView
@@ -45,7 +44,7 @@ class EnvironmentSelectorDialog : DialogFragment() {
 
     override fun onStart() {
         super.onStart()
-        setupDialogSize(R.fraction.dialog_width_medium, R.fraction.dialog_height_environment)
+        setupDialogSize(R.fraction.dialog_width_medium, R.fraction.dialog_height_large)
     }
 
     companion object {

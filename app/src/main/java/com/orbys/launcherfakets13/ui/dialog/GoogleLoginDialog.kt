@@ -39,7 +39,7 @@ class GoogleLoginDialog : DialogFragment() {
 
     override fun onStart() {
         super.onStart()
-        setupDialogSize(R.fraction.dialog_width_medium, R.fraction.dialog_height_environment)
+        setupDialogSize(R.fraction.dialog_width_small_plus, R.fraction.dialog_height_medium)
     }
 
     companion object {

@@ -33,7 +33,7 @@ class ClockDialog : DialogFragment() {
 
     override fun onStart() {
         super.onStart()
-        setupDialogSize(R.fraction.dialog_width_large)
+        setupDialogSize(R.fraction.dialog_width_medium)
     }
 
     companion object {

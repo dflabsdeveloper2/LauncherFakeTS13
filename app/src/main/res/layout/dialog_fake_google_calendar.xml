@@ -9,9 +9,9 @@
     <!-- Header -->
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="64dp"
+        android:layout_height="56dp"
         android:background="@drawable/bg_header_fake_google"
-        android:paddingHorizontal="20dp">
+        android:paddingHorizontal="16dp">
 
         <LinearLayout
             android:layout_width="wrap_content"
@@ -20,8 +20,8 @@
             android:orientation="horizontal">
 
             <ImageView
-                android:layout_width="36dp"
-                android:layout_height="36dp"
+                android:layout_width="32dp"
+                android:layout_height="32dp"
                 android:src="@drawable/google_calendar_svgrepo_com"
                 android:background="@drawable/bg_calendar_icon_fake_google"
                 android:padding="6dp" />
@@ -29,7 +29,7 @@
             <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="14dp"
+                android:layout_marginStart="12dp"
                 android:orientation="vertical">
 
                 <TextView
@@ -37,7 +37,7 @@
                     android:layout_height="wrap_content"
                     android:text="Google Calendar"
                     android:textColor="@android:color/white"
-                    android:textSize="18sp"
+                    android:textSize="16sp"
                     android:textStyle="bold" />
 
                 <TextView
@@ -45,7 +45,7 @@
                     android:layout_height="wrap_content"
                     android:text="Requiere iniciar sesión"
                     android:textColor="#D9E8FF"
-                    android:textSize="12sp" />
+                    android:textSize="11sp" />
 
             </LinearLayout>
 
@@ -53,12 +53,12 @@
 
         <ImageButton
             android:id="@+id/btnClose"
-            android:layout_width="40dp"
-            android:layout_height="40dp"
+            android:layout_width="32dp"
+            android:layout_height="32dp"
             android:layout_alignParentEnd="true"
             android:layout_centerVertical="true"
             android:background="@drawable/bg_close_fake_google"
-            android:padding="10dp"
+            android:padding="8dp"
             android:src="@drawable/ic_close"
             android:contentDescription="Cerrar"
             app:tint="@android:color/white"/>
@@ -71,38 +71,39 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:gravity="center"
-        android:orientation="vertical">
+        android:orientation="vertical"
+        android:padding="20dp">
 
         <ImageView
-            android:layout_width="90dp"
-            android:layout_height="90dp"
+            android:layout_width="@dimen/google_calendar_lock_icon_size"
+            android:layout_height="@dimen/google_calendar_lock_icon_size"
             android:src="@drawable/ic_ms_security"/>
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="22dp"
+            android:layout_marginTop="16dp"
             android:text="Inicia sesión para usar Google Calendar"
             android:textStyle="bold"
-            android:textSize="20sp"
+            android:textSize="18sp"
             android:textColor="#1F2937" />
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="10dp"
+            android:layout_marginTop="8dp"
             android:text="Esta app necesita una cuenta validada en este panel."
-            android:textSize="15sp"
+            android:textSize="13sp"
             android:textColor="#94A3B8" />
 
         <Button
             android:id="@+id/btnValidate"
-            android:layout_width="260dp"
-            android:layout_height="52dp"
-            android:layout_marginTop="32dp"
+            android:layout_width="220dp"
+            android:layout_height="48dp"
+            android:layout_marginTop="24dp"
             android:text="VALIDAR CUENTA"
             android:textStyle="bold"
-            android:textSize="16sp"
+            android:textSize="14sp"
             android:textAllCaps="true"
             android:background="@drawable/bg_button_fake_google"
             android:textColor="@android:color/white"/>

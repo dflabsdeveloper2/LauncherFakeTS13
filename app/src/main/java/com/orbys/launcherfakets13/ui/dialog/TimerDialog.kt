@@ -74,7 +74,7 @@ class TimerDialog : DialogFragment() {
 
     override fun onStart() {
         super.onStart()
-        setupDialogSize(R.fraction.dialog_width_medium)
+        setupDialogSize(R.fraction.dialog_width_small)
     }
 
     override fun onDestroyView() {

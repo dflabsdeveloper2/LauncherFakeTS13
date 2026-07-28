@@ -17,6 +17,10 @@ class WeatherDialog : DialogFragment() {
         val view = LayoutInflater.from(requireContext())
             .inflate(R.layout.dialog_weather, null)
 
+        view.findViewById<View>(R.id.btn_close_weather).setOnClickListener {
+            dismiss()
+        }
+
         return MaterialAlertDialogBuilder(requireContext())
             .setView(view)
             .create()

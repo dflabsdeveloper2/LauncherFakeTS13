@@ -71,7 +71,7 @@ class MicrosoftValidationDialog : DialogFragment() {
 
     override fun onStart() {
         super.onStart()
-        setupDialogSize(R.fraction.dialog_width_medium, R.fraction.dialog_height_environment)
+        setupDialogSize(R.fraction.dialog_width_medium, R.fraction.dialog_height_large)
     }
 
     private fun validateApp(button: TextView, subtitle: TextView) {
