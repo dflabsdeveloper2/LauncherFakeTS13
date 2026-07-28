@@ -9,12 +9,12 @@ import android.content.Context
 import android.content.Intent
 import android.content.IntentFilter
 import android.content.pm.ServiceInfo
-import android.net.Uri
 import android.os.Build
 import android.os.IBinder
 import android.provider.Settings
 import android.util.Log
 import android.view.ContextThemeWrapper
+import android.view.View
 import androidx.core.app.NotificationCompat
 import com.orbys.launcherfakets13.R
 import com.orbys.launcherfakets13.data.repository.AppsRepositoryImpl
@@ -268,6 +268,11 @@ class DockOverlayService : Service() {
 
         fun clearDockSelection() {
             instance?.get()?.dockController?.clearSelection()
+        }
+
+        fun setDockVisibility(visible: Boolean) {
+            instance?.get()?.dockController?.rootView?.visibility =
+                if (visible) View.VISIBLE else View.GONE
         }
 
         fun start(context: Context) =

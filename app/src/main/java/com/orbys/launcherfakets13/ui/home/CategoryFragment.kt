@@ -29,6 +29,7 @@ import com.orbys.launcherfakets13.domain.model.Environment
 import com.orbys.launcherfakets13.domain.model.Shortcut
 import com.orbys.launcherfakets13.ui.dialog.AdminDisabledDialog
 import com.orbys.launcherfakets13.ui.dialog.ClockDialog
+import com.orbys.launcherfakets13.ui.dialog.FocusModeDialog
 import com.orbys.launcherfakets13.ui.dialog.GoogleAppsFolderDialog
 import com.orbys.launcherfakets13.ui.dialog.NameSelectorDialog
 import com.orbys.launcherfakets13.ui.dialog.RemoteModeDialog
@@ -586,6 +587,7 @@ class CategoryFragment : Fragment() {
         val isStudentSelector = data.header == getString(R.string.widget_student_selector) || data.header == "SELECTOR ALUMNOS"
         val isTimer = data.header == getString(R.string.widget_timer) || data.header == "TEMPORIZADOR"
         val isTranslate = data.header == getString(R.string.widget_orbys_translate) || data.header == "TRADUCTOR"
+        val isFocus = data.header == getString(R.string.widget_focus) || data.header == "CONCENTRACIÓN"
 
         when {
             isClock -> {
@@ -631,6 +633,14 @@ class CategoryFragment : Fragment() {
             isTranslate -> {
                 widgetView.setOnClickListener {
                     TranslateDialog.newInstance().show(childFragmentManager, "translate_dialog")
+                }
+                widgetView.isClickable = true
+                widgetView.isFocusable = true
+            }
+
+            isFocus -> {
+                widgetView.setOnClickListener {
+                    FocusModeDialog.newInstance().show(childFragmentManager, "focus_mode")
                 }
                 widgetView.isClickable = true
                 widgetView.isFocusable = true
