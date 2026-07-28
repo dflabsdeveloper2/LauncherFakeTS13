@@ -29,6 +29,7 @@ import com.orbys.launcherfakets13.domain.model.Environment
 import com.orbys.launcherfakets13.domain.model.Shortcut
 import com.orbys.launcherfakets13.ui.dialog.AdminDisabledDialog
 import com.orbys.launcherfakets13.ui.dialog.ClockDialog
+import com.orbys.launcherfakets13.ui.dialog.FakeGoogleCalendarDialogFragment
 import com.orbys.launcherfakets13.ui.dialog.FocusModeDialog
 import com.orbys.launcherfakets13.ui.dialog.GoogleAppsFolderDialog
 import com.orbys.launcherfakets13.ui.dialog.NameSelectorDialog
@@ -588,11 +589,20 @@ class CategoryFragment : Fragment() {
         val isTimer = data.header == getString(R.string.widget_timer) || data.header == "TEMPORIZADOR"
         val isTranslate = data.header == getString(R.string.widget_orbys_translate) || data.header == "TRADUCTOR"
         val isFocus = data.header == getString(R.string.widget_focus) || data.header == "CONCENTRACIÓN"
+        val isCalendar = data.header == getString(R.string.widget_agenda) || data.header == "GOOGLE CALENDAR" || data.header == "CALENDARIO"
 
         when {
             isClock -> {
                 widgetView.setOnClickListener {
                     ClockDialog.newInstance().show(childFragmentManager, "clock_dialog")
+                }
+                widgetView.isClickable = true
+                widgetView.isFocusable = true
+            }
+
+            isCalendar -> {
+                widgetView.setOnClickListener {
+                    FakeGoogleCalendarDialogFragment.newInstance().show(childFragmentManager, "fake_calendar")
                 }
                 widgetView.isClickable = true
                 widgetView.isFocusable = true
@@ -900,6 +910,11 @@ class CategoryFragment : Fragment() {
         val isClock = pkg == "com.google.android.deskclock" || pkg == "com.android.deskclock"
         if (isClock) {
             ClockDialog.newInstance().show(childFragmentManager, "clock_dialog")
+            return
+        }
+
+        if (pkg == "com.google.android.calendar") {
+            FakeGoogleCalendarDialogFragment.newInstance().show(childFragmentManager, "fake_calendar")
             return
         }
 
