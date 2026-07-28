@@ -34,6 +34,7 @@ import com.orbys.launcherfakets13.ui.dialog.NameSelectorDialog
 import com.orbys.launcherfakets13.ui.dialog.RemoteModeDialog
 import com.orbys.launcherfakets13.ui.dialog.SonometerDialog
 import com.orbys.launcherfakets13.ui.dialog.TimerDialog
+import com.orbys.launcherfakets13.ui.dialog.TranslateDialog
 import com.orbys.launcherfakets13.ui.dialog.WeatherDialog
 import com.orbys.launcherfakets13.ui.picker.AppPickerActivity
 import com.orbys.launcherfakets13.util.FolderIconUtil
@@ -502,7 +503,11 @@ class CategoryFragment : Fragment() {
         widgets.forEachIndexed { i, data ->
             val view =
                 if (data != null) buildCorporateWidget(data) else FrameLayout(requireContext())
-            val lp = LinearLayout.LayoutParams(slotPx, slotPx)
+
+            // Tamaño estándar de 90dp, pero la carpeta de Google se hace 3dp más grande (93dp)
+            val currentSlotPx = if (data?.opensGoogleFolder == true) dpToPx(93) else slotPx
+
+            val lp = LinearLayout.LayoutParams(currentSlotPx, currentSlotPx)
             if (i % 2 == 1) lp.marginStart = gapPx
             view.layoutParams = lp
             if (i < 2) rowTop.addView(view) else rowBot.addView(view)
@@ -544,18 +549,20 @@ class CategoryFragment : Fragment() {
             val iconView = content.findViewById<ImageView>(R.id.iv_corp_generic_icon)
             when {
                 data.folderPreviewPackages != null -> {
+                    val sizeDp = if (data.opensGoogleFolder) 47 else 44
                     iconView?.setImageDrawable(
                         FolderIconUtil.buildFolderPreviewIcon(
                             requireContext(),
                             data.folderPreviewPackages,
-                            sizeDp = 44
+                            sizeDp = sizeDp
                         )
                     )
                     // El slot de 90dp solo deja ~54dp de alto para icono + texto: agranda el
                     // icono pero recorta su margen inferior para que el título no se salga.
+                    // Para la carpeta de Google (93dp), el icono sube de 42dp a 45dp.
                     (iconView?.layoutParams as? LinearLayout.LayoutParams)?.apply {
-                        width = dpToPx(42)
-                        height = dpToPx(42)
+                        width = if (data.opensGoogleFolder) dpToPx(45) else dpToPx(42)
+                        height = if (data.opensGoogleFolder) dpToPx(45) else dpToPx(42)
                         bottomMargin = dpToPx(2)
                     }?.let { iconView.layoutParams = it }
                 }
@@ -578,6 +585,7 @@ class CategoryFragment : Fragment() {
         val isSonometer = data.header == getString(R.string.widget_noise_meter) || data.header == "SONÓMETRO"
         val isStudentSelector = data.header == getString(R.string.widget_student_selector) || data.header == "SELECTOR ALUMNOS"
         val isTimer = data.header == getString(R.string.widget_timer) || data.header == "TEMPORIZADOR"
+        val isTranslate = data.header == getString(R.string.widget_orbys_translate) || data.header == "TRADUCTOR"
 
         when {
             isClock -> {
@@ -615,6 +623,14 @@ class CategoryFragment : Fragment() {
             isTimer -> {
                 widgetView.setOnClickListener {
                     TimerDialog.newInstance().show(childFragmentManager, "timer_dialog")
+                }
+                widgetView.isClickable = true
+                widgetView.isFocusable = true
+            }
+
+            isTranslate -> {
+                widgetView.setOnClickListener {
+                    TranslateDialog.newInstance().show(childFragmentManager, "translate_dialog")
                 }
                 widgetView.isClickable = true
                 widgetView.isFocusable = true

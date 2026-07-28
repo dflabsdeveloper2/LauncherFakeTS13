@@ -2,6 +2,7 @@
 <androidx.constraintlayout.widget.ConstraintLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/bg_home_gradient_office"
@@ -148,7 +149,7 @@
         <LinearLayout
             android:id="@+id/profile_selector_card"
             android:layout_width="wrap_content"
-            android:layout_height="50dp"
+            android:layout_height="30dp"
             android:layout_marginEnd="12dp"
             android:background="@drawable/bg_selector_card"
             android:clickable="true"
@@ -163,8 +164,8 @@
 
             <ImageView
                 android:id="@+id/iv_profile_icon"
-                android:layout_width="25dp"
-                android:layout_height="25dp"
+                android:layout_width="18dp"
+                android:layout_height="18dp"
                 android:src="@drawable/ic_graduation"
                 app:tint="@color/dock_text_active" />
 
@@ -250,18 +251,15 @@
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintVertical_bias="1.0" />
 
+        <androidx.fragment.app.FragmentContainerView
+            android:id="@+id/desktop_container_view"
+            android:name="com.orbys.launcherfakets13.ui.home.DesktopFragment"
+            android:layout_width="0dp"
+            android:layout_height="0dp" />
+
     </androidx.constraintlayout.widget.ConstraintLayout>
 
     <!-- Desktop page — grid-snap screen for apps + widgets. Right pane; visible by default, slides out to reveal Home on swipe right -->
-    <androidx.fragment.app.FragmentContainerView
-        android:id="@+id/desktop_container_view"
-        android:name="com.orbys.launcherfakets13.ui.home.DesktopFragment"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
 
     <LinearLayout
         android:layout_width="wrap_content"
