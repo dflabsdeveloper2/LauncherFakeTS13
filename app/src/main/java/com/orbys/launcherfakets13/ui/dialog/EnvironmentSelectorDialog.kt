@@ -4,6 +4,7 @@ import android.app.Dialog
 import android.os.Bundle
 import android.view.Gravity
 import android.view.LayoutInflater
+import android.view.View
 import androidx.fragment.app.DialogFragment
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.RecyclerView
@@ -29,6 +30,8 @@ class EnvironmentSelectorDialog : DialogFragment() {
                 dismiss()
             }
         }
+
+        view.findViewById<View>(R.id.btn_close_env).setOnClickListener { dismiss() }
 
         return MaterialAlertDialogBuilder(requireContext())
             .setView(view)

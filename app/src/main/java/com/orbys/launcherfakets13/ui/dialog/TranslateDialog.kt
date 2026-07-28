@@ -72,7 +72,7 @@ class TranslateDialog : DialogFragment() {
 
     override fun onStart() {
         super.onStart()
-        setupDialogSize(R.fraction.dialog_width_medium, R.fraction.dialog_height_large)
+        setupDialogSize(R.fraction.dialog_width_medium, R.fraction.dialog_height_medium)
     }
 
     private fun showLanguagePicker(anchor: TextView, isSource: Boolean) {

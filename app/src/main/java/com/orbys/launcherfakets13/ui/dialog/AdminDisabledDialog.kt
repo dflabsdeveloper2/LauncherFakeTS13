@@ -17,7 +17,7 @@ class AdminDisabledDialog : DialogFragment() {
         val view = LayoutInflater.from(requireContext())
             .inflate(R.layout.dialog_admin_disabled, null)
 
-        view.findViewById<View>(R.id.btn_accept).setOnClickListener {
+        view.findViewById<View>(R.id.btn_close_admin).setOnClickListener {
             dismiss()
         }
 

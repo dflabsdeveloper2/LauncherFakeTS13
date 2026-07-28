@@ -18,7 +18,7 @@ class ClockDialog : DialogFragment() {
         val view = LayoutInflater.from(requireContext())
             .inflate(R.layout.dialog_clock, null)
 
-        view.findViewById<View>(R.id.btn_close_clock).setOnClickListener {
+        view.findViewById<View>(R.id.btn_close_clock_x).setOnClickListener {
             dismiss()
         }
 
@@ -33,7 +33,7 @@ class ClockDialog : DialogFragment() {
 
     override fun onStart() {
         super.onStart()
-        setupDialogSize(R.fraction.dialog_width_medium)
+        setupDialogSize(R.fraction.dialog_width_small_plus)
     }
 
     companion object {

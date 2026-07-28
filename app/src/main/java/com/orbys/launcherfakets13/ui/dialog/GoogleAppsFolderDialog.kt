@@ -48,6 +48,8 @@ class GoogleAppsFolderDialog : DialogFragment() {
             }
         }
 
+        view.findViewById<View>(R.id.btn_close_folder).setOnClickListener { dismiss() }
+
         return MaterialAlertDialogBuilder(requireContext())
             .setView(view)
             .create()

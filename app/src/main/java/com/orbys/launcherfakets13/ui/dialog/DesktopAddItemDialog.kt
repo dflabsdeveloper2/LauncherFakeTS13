@@ -32,6 +32,8 @@ class DesktopAddItemDialog : DialogFragment() {
             dismiss()
         }
 
+        view.findViewById<View>(R.id.btn_close_add_item).setOnClickListener { dismiss() }
+
         return MaterialAlertDialogBuilder(requireContext())
             .setView(view)
             .create()

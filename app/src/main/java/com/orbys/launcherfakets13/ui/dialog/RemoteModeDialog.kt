@@ -19,7 +19,7 @@ class RemoteModeDialog : DialogFragment() {
         val view = LayoutInflater.from(requireContext())
             .inflate(R.layout.dialog_remote_mode, null)
 
-        view.findViewById<View>(R.id.btn_accept).setOnClickListener {
+        view.findViewById<View>(R.id.btn_close_remote).setOnClickListener {
             dismiss()
         }
 
