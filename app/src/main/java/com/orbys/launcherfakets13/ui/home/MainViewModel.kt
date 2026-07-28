@@ -58,7 +58,7 @@ class MainViewModel @Inject constructor(
     val uiState: StateFlow<MainState> = _uiState.asStateFlow()
 
     init {
-        loadData()
+        updateEnvironment(Environment.OFFICE)
         provisionDefaults()
     }
 

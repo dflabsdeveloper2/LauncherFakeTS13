@@ -45,6 +45,6 @@ enum class Environment(
         /**
          * Busca un entorno por su identificador.
          */
-        fun fromId(id: String?): Environment = entries.find { it.id == id } ?: GOOGLE
+        fun fromId(id: String?): Environment = entries.find { it.id == id } ?: OFFICE
     }
 }
