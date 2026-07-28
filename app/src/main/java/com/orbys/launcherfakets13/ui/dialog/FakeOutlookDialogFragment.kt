@@ -11,6 +11,7 @@ import android.widget.ImageButton
 import androidx.fragment.app.DialogFragment
 import com.orbys.launcherfakets13.R
 import com.orbys.launcherfakets13.ui.util.setupDialogSize
+import com.orbys.launcherfakets13.ui.dialog.MicrosoftValidationDialog
 
 class FakeOutlookDialogFragment : DialogFragment() {
 
@@ -35,8 +36,8 @@ class FakeOutlookDialogFragment : DialogFragment() {
 
             // Botón fake
             findViewById<Button>(R.id.btnValidate).setOnClickListener {
-                // Sin funcionalidad
                 dismiss()
+                MicrosoftValidationDialog.newInstance().show(parentFragmentManager, "ms_validation")
             }
         }
     }

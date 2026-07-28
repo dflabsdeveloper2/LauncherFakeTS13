@@ -23,9 +23,9 @@ class GoogleLoginDialog : DialogFragment() {
 
         view.findViewById<View>(R.id.btn_close_google_login).setOnClickListener { dismiss() }
         
-        // El botón SIGUIENTE no tiene funcionalidad (Fake)
+        // El botón SIGUIENTE abre el diálogo de administrador deshabilitado
         view.findViewById<View>(R.id.btn_google_next).setOnClickListener { 
-            // Podría añadirse un feedback visual o simplemente cerrar
+            AdminDisabledDialog.newInstance().show(parentFragmentManager, "admin_disabled")
         }
 
         return MaterialAlertDialogBuilder(requireContext())

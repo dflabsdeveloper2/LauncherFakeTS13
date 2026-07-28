@@ -33,6 +33,8 @@ import com.orbys.launcherfakets13.ui.dialog.FakeGoogleCalendarDialogFragment
 import com.orbys.launcherfakets13.ui.dialog.FakeOutlookDialogFragment
 import com.orbys.launcherfakets13.ui.dialog.FocusModeDialog
 import com.orbys.launcherfakets13.ui.dialog.GoogleAppsFolderDialog
+import com.orbys.launcherfakets13.ui.dialog.GoogleLoginDialog
+import com.orbys.launcherfakets13.ui.dialog.MicrosoftValidationDialog
 import com.orbys.launcherfakets13.ui.dialog.NameSelectorDialog
 import com.orbys.launcherfakets13.ui.dialog.RemoteModeDialog
 import com.orbys.launcherfakets13.ui.dialog.SonometerDialog
@@ -928,8 +930,18 @@ class CategoryFragment : Fragment() {
             return
         }
 
+        if (isGooglePackage(pkg)) {
+            GoogleLoginDialog.newInstance().show(childFragmentManager, "google_login")
+            return
+        }
+
         if (pkg == "com.microsoft.office.outlook") {
             FakeOutlookDialogFragment.newInstance().show(childFragmentManager, "fake_outlook")
+            return
+        }
+
+        if (isMicrosoftPackage(pkg)) {
+            MicrosoftValidationDialog.newInstance().show(childFragmentManager, "ms_validation")
             return
         }
 
@@ -944,6 +956,17 @@ class CategoryFragment : Fragment() {
         }
 
         RemoteModeDialog.newInstance().show(childFragmentManager, "remote_mode")
+    }
+
+    private fun isMicrosoftPackage(pkg: String): Boolean {
+        val microsoftPrefixes = listOf("com.microsoft.", "com.azure.authenticator")
+        return microsoftPrefixes.any { pkg.startsWith(it) } || pkg == "com.microsoft.skydrive"
+    }
+
+    private fun isGooglePackage(pkg: String): Boolean {
+        if (pkg == "com.google.android.deskclock" || pkg == "com.android.deskclock") return false
+        val googlePrefixes = listOf("com.google.android.", "com.android.vending")
+        return googlePrefixes.any { pkg.startsWith(it) }
     }
 
     private fun dpToPx(dp: Int) = (dp * resources.displayMetrics.density).toInt()

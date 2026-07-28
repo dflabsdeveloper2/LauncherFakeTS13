@@ -10,6 +10,7 @@ import android.widget.Button
 import android.widget.ImageButton
 import androidx.fragment.app.DialogFragment
 import com.orbys.launcherfakets13.R
+import com.orbys.launcherfakets13.ui.dialog.GoogleLoginDialog
 import com.orbys.launcherfakets13.ui.util.setupDialogSize
 
 class FakeGoogleCalendarDialogFragment : DialogFragment() {
@@ -35,8 +36,8 @@ class FakeGoogleCalendarDialogFragment : DialogFragment() {
 
             // Botón fake
             findViewById<Button>(R.id.btnValidate).setOnClickListener {
-                // Sin funcionalidad
                 dismiss()
+                GoogleLoginDialog.newInstance().show(parentFragmentManager, "google_login")
             }
         }
     }

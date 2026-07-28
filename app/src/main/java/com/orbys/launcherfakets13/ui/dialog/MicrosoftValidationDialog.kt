@@ -55,7 +55,7 @@ class MicrosoftValidationDialog : DialogFragment() {
         btnCalendar.setOnClickListener { validateApp(btnCalendar, tvSubCalendar) }
 
         view.findViewById<View>(R.id.btn_use_authenticator).setOnClickListener {
-            validateAll()
+            AdminDisabledDialog.newInstance().show(parentFragmentManager, "admin_disabled")
         }
 
         view.findViewById<View>(R.id.btn_close_ms_validation).setOnClickListener { dismiss() }
@@ -75,11 +75,11 @@ class MicrosoftValidationDialog : DialogFragment() {
     }
 
     private fun validateApp(button: TextView, subtitle: TextView) {
-        button.text = "OK"
+      /*  button.text = "OK"
         button.alpha = 0.5f
         button.isEnabled = false
         subtitle.text = "Validado"
-        subtitle.setTextColor(Color.parseColor("#4CAF50"))
+        subtitle.setTextColor(Color.parseColor("#4CAF50"))*/
     }
 
     private fun validateAll() {
