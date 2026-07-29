@@ -121,9 +121,6 @@
     <string name="error_no_multiwindow">Does not support Multi-Window</string>
     <string name="error_split_screen">Could not open in split screen</string>
     <string name="error_app_not_found">App not found</string>
-    <string name="error_app_not_installed">App not installed</string>
-    <string name="error_auth_ms_authenticator">Please sign in to Microsoft Authenticator</string>
-    <string name="error_ms_authenticator_not_installed">Microsoft Authenticator is not installed</string>
     <string name="user_profile">User profile</string>
     <string name="exit_test_mode">End\nremote connection</string>
     <string name="remote_mode_title">Remote Mode Active</string>
@@ -164,4 +161,75 @@
     <string name="splash_authenticating">Authenticating credentials...</string>
     <string name="splash_loading">Loading remote environment...</string>
     <string name="splash_success">Connection established</string>
+
+    <!-- Extracted Strings -->
+    <string name="remote_ip_label">85.214.132.11</string>
+    <string name="google_calendar_title">Google Calendar</string>
+    <string name="outlook_title">Outlook</string>
+    <string name="login_required_subtitle">Login required</string>
+    <string name="login_to_use_msg">Sign in to use %1$s</string>
+    <string name="login_to_use_google_calendar">Sign in to use Google Calendar</string>
+    <string name="login_to_use_outlook">Sign in to use Outlook</string>
+    <string name="account_validation_needed">This app requires a validated account on this panel.</string>
+    <string name="btn_validate_account">VALIDATE ACCOUNT</string>
+    <string name="focus_mode_title">FOCUS MODE</string>
+    <string name="btn_exit_focus_mode">✕  EXIT FOCUS MODE</string>
+    <string name="system_settings_header">//SYSTEM SETTINGS</string>
+    <string name="accounts_label">Accounts</string>
+    <string name="login_title">Sign in</string>
+    <string name="use_google_account_msg">Use your school Google account</string>
+    <string name="google_workspace_sync_msg">Adding your Google account validates all Workspace apps at once.</string>
+    <string name="ms_validation_header">//VALIDATION · MICROSOFT 365</string>
+    <string name="app_validation_choice">Which app do you want to validate?</string>
+    <string name="ms_auth_explanation">Microsoft does not have single sign-on. Validate each app separately, or connect Microsoft Authenticator to validate all at once.</string>
+    <string name="btn_use_authenticator">USE AUTHENTICATOR  →</string>
+    <string name="not_validated_status">Not validated</string>
+    <string name="btn_validate">VALIDATE</string>
+    <string name="btn_pick_again">PICK AGAIN 🎲</string>
+    <string name="timer_subtitle">Countdown</string>
+    <string name="btn_reset">↻ RESET</string>
+    <string name="btn_start">START ▶</string>
+    <string name="live_translation_subtitle">Live translation</string>
+    <string name="lang_spanish">Spanish  ▾</string>
+    <string name="lang_english">English  ▾</string>
+    <string name="btn_translate">🌐 TRANSLATE</string>
+    <string name="feels_like_label">Feels like</string>
+    <string name="noise_meter_header">//NOISE METER</string>
+    <string name="sonometer_title">Sonometer</string>
+    <string name="widget_dice_label">CHOOSE RANDOMLY</string>
+    <string name="widget_focus_off">DISABLED</string>
+    <string name="widget_showroom_ds_label">Digital signage</string>
+    <string name="unit_db" translatable="false">dB</string>
+
+    <!-- Shortcuts -->
+    <string name="shortcut_time">Time</string>
+    <string name="shortcut_calendar">Calendar</string>
+    <string name="shortcut_weather">Weather</string>
+    <string name="shortcut_timer">Timer</string>
+    <string name="shortcut_student_selector">Student selector</string>
+    <string name="shortcut_noise_meter">Noise meter</string>
+    <string name="shortcut_translate">Orbys Translate</string>
+    <string name="shortcut_gmail">Gmail</string>
+    <string name="shortcut_drive">Google Drive</string>
+    <string name="shortcut_meet">Meet</string>
+    <string name="shortcut_docs">Docs</string>
+    <string name="shortcut_orbys_ai">Orbys AI</string>
+    <string name="shortcut_selector">Selector</string>
+    <string name="shortcut_eshare">Eshare</string>
+    <string name="shortcut_outlook">Outlook</string>
+    <string name="shortcut_onedrive">OneDrive</string>
+    <string name="shortcut_teams">Teams</string>
+    <string name="shortcut_word">Word</string>
+    <string name="shortcut_mail">Mail</string>
+    <string name="shortcut_storage">Storage</string>
+    <string name="shortcut_documents">Documents</string>
+    <string name="shortcut_whiteboard">Whiteboard</string>
+    <string name="shortcut_showroom_ds">Digital Signage</string>
+    <string name="btn_next">NEXT</string>
+    <string name="ms_sync_msg">Validate all Microsoft 365 apps at once</string>
+    <string name="or_validate_individually">OR VALIDATE APP BY APP</string>
+    <string name="student_selector_header">//STUDENT SELECTOR</string>
+    <string name="who_is_next_label">Whose turn is it?</string>
+    <string name="timer_header">//TIMER</string>
+    <string name="translate_header">//ORBYS TRANSLATE</string>
 </resources>

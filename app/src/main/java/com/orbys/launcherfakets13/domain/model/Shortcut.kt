@@ -5,5 +5,6 @@ package com.orbys.launcherfakets13.domain.model
  */
 data class Shortcut(
     val packageName: String,
-    val label: String
+    val label: String,
+    val labelRes: Int? = null
 )

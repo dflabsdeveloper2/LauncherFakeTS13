@@ -16,7 +16,7 @@
         android:id="@+id/tv_showroom_ds_subtitle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Digital signage"
+        android:text="@string/widget_showroom_ds_label"
         android:textColor="#9CA3AF"
         android:textSize="9sp" />
 

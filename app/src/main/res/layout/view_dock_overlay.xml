@@ -59,7 +59,7 @@
                 <ImageView
                     android:id="@+id/ic_tab_back"
                     android:layout_width="20dp"
-                    android:layout_height="20dp" android:src="@drawable/fl15"
+                    android:layout_height="20dp" android:src="@drawable/ic_dock_back"
                     android:contentDescription="@string/dock_back" />
                 <TextView
                     android:id="@+id/lbl_tab_back"
@@ -86,7 +86,7 @@
                     android:id="@+id/ic_tab_home"
                     android:layout_width="20dp"
                     android:layout_height="20dp"
-                    android:src="@drawable/home"
+                    android:src="@drawable/ic_home"
                     app:tint="@color/dock_text_inactive"
                     android:contentDescription="@string/dock_home" />
                 <TextView
@@ -114,7 +114,7 @@
                     android:id="@+id/ic_tab_recents"
                     android:layout_width="20dp"
                     android:layout_height="20dp"
-                    android:src="@drawable/backgroundapps"
+                    android:src="@drawable/ic_recents_dock"
                     app:tint="@color/dock_text_inactive"
                     android:contentDescription="@string/dock_recents" />
                 <TextView
@@ -142,7 +142,7 @@
                     android:layout_width="20dp"
                     android:layout_height="20dp"
                     android:padding="2dp"
-                    android:src="@drawable/bottombar_apps"
+                    android:src="@drawable/ic_bottombar_apps"
                     android:contentDescription="@string/dock_apps" />
                 <TextView
                     android:id="@+id/lbl_tab_apps"
@@ -170,7 +170,7 @@
                     android:layout_width="20dp"
                     android:layout_height="20dp"
                     android:padding="2dp"
-                    android:src="@drawable/bottombar_filesmanager"
+                    android:src="@drawable/ic_bottombar_files"
                     android:contentDescription="@string/dock_files" />
                 <TextView
                     android:id="@+id/lbl_tab_files"
@@ -198,7 +198,7 @@
                     android:layout_width="20dp"
                     android:layout_height="20dp"
                     android:padding="1dp"
-                    android:src="@drawable/bottombar_whiteboard"
+                    android:src="@drawable/ic_bottombar_whiteboard"
                     app:tint="@color/dock_text_inactive"
                     android:contentDescription="@string/dock_pizarra" />
                 <TextView
@@ -227,7 +227,7 @@
                     android:layout_width="20dp"
                     android:layout_height="20dp"
                     android:padding="2dp"
-                    android:src="@drawable/bottombar_browser2"
+                    android:src="@drawable/ic_bottombar_browser"
                     app:tint="@color/dock_text_inactive"
                     android:contentDescription="@string/dock_browser" />
                 <TextView
@@ -255,7 +255,7 @@
                     android:id="@+id/ic_tab_settings"
                     android:layout_width="20dp"
                     android:layout_height="20dp"
-                    android:src="@drawable/bottombar_settings"
+                    android:src="@drawable/ic_bottombar_settings"
                     app:tint="@color/dock_text_inactive"
                     android:contentDescription="@string/dock_settings" />
                 <TextView
@@ -319,7 +319,7 @@
                 <ImageView
                     android:layout_width="30dp"
                     android:layout_height="30dp"
-                    android:src="@drawable/fl33"
+                    android:src="@drawable/ic_seekbar_thumb"
                     android:rotation="-90"
                     android:contentDescription="Minimizar dock"
                     app:tint="@color/dock_text_inactive" />

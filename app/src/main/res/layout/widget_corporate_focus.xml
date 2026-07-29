@@ -17,7 +17,7 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="DESACTIVADO"
+        android:text="@string/widget_focus_off"
         android:textColor="#9CA3AF"
         android:textSize="8sp"
         android:textStyle="bold"

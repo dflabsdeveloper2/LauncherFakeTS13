@@ -25,7 +25,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:letterSpacing="0.05"
-                android:text="//ORBYS TRANSLATE"
+                android:text="@string/translate_header"
                 android:textColor="#1A2363"
                 android:textSize="@dimen/text_size_header_label"
                 android:textStyle="bold" />
@@ -33,7 +33,7 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Traducción en vivo"
+                android:text="@string/live_translation_subtitle"
                 android:textColor="#000000"
                 android:textSize="@dimen/text_size_header_title"
                 android:textStyle="bold" />
@@ -74,7 +74,7 @@
             android:paddingTop="8dp"
             android:paddingEnd="8dp"
             android:paddingBottom="6dp"
-            android:text="Español  ▾"
+            android:text="@string/lang_spanish"
             android:textColor="#1A1A2E"
             android:textSize="@dimen/text_size_body_secondary"
             android:textStyle="bold" />
@@ -105,7 +105,7 @@
             android:paddingTop="8dp"
             android:paddingEnd="8dp"
             android:paddingBottom="6dp"
-            android:text="Inglés  ▾"
+            android:text="@string/lang_english"
             android:textColor="#1A1A2E"
             android:textSize="@dimen/text_size_body_secondary"
             android:textStyle="bold" />
@@ -127,7 +127,7 @@
             android:paddingTop="6dp"
             android:paddingEnd="20dp"
             android:paddingBottom="6dp"
-            android:text="🌐 TRADUCIR"
+            android:text="@string/btn_translate"
             android:textAllCaps="true"
             android:textColor="#FFFFFF"
             android:textSize="@dimen/text_size_body_secondary"

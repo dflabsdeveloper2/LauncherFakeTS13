@@ -103,7 +103,7 @@
             android:id="@+id/tv_weather_feels_like"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Sensación 35°"
+            android:text="@string/weather_feels_like_prefix"
             android:textColor="#E0E0E0"
             android:textSize="16sp" />
 

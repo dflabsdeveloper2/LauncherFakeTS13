@@ -23,7 +23,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:letterSpacing="0.05"
-                android:text="//AJUSTES DEL SISTEMA"
+                android:text="@string/system_settings_header"
                 android:textColor="#1A4479"
                 android:textSize="@dimen/text_size_header_label"
                 android:textStyle="bold" />
@@ -31,7 +31,7 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Cuentas"
+                android:text="@string/accounts_label"
                 android:textColor="#1A1A2E"
                 android:textSize="@dimen/text_size_header_title"
                 android:textStyle="bold" />
@@ -65,7 +65,7 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Inicia sesión"
+            android:text="@string/login_title"
             android:textColor="#1A1A2E"
             android:textSize="@dimen/text_size_body_primary"
             android:textStyle="bold" />
@@ -74,7 +74,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="4dp"
-            android:text="Usa tu cuenta Google del centro"
+            android:text="@string/use_google_account_msg"
             android:textColor="#80868B"
             android:textSize="@dimen/text_size_body_secondary" />
 
@@ -104,7 +104,7 @@
             android:paddingTop="8dp"
             android:paddingEnd="28dp"
             android:paddingBottom="8dp"
-            android:text="SIGUIENTE"
+            android:text="@string/btn_next"
             android:textAllCaps="true"
             android:textColor="#FFFFFF"
             android:textSize="@dimen/text_size_button"
@@ -116,7 +116,7 @@
             android:layout_marginTop="16dp"
             android:gravity="center"
             android:paddingHorizontal="32dp"
-            android:text="Al añadir tu cuenta de Google validas todas las apps de Workspace a la vez."
+            android:text="@string/google_workspace_sync_msg"
             android:textColor="#9AA0A6"
             android:textSize="@dimen/text_size_footer" />
 

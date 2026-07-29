@@ -25,7 +25,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:letterSpacing="0.05"
-                android:text="//VALIDACIÓN · MICROSOFT 365"
+                android:text="@string/ms_validation_header"
                 android:textColor="#1A2363"
                 android:textSize="@dimen/text_size_header_label"
                 android:textStyle="bold" />
@@ -33,7 +33,7 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="¿En qué app quieres validar?"
+                android:text="@string/app_validation_choice"
                 android:textColor="#000000"
                 android:textSize="@dimen/text_size_header_title"
                 android:textStyle="bold" />
@@ -72,7 +72,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="12dp"
                 android:lineSpacingExtra="2dp"
-                android:text="Microsoft no tiene un inicio de sesión único. Valida cada app por separado, o conecta Microsoft Authenticator para validarlas todas a la vez."
+                android:text="@string/ms_auth_explanation"
                 android:textColor="#6B7280"
                 android:textSize="@dimen/text_size_body_secondary" />
 
@@ -116,7 +116,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="2dp"
-                        android:text="Valida todas las apps de Microsoft 365 de una vez"
+                        android:text="@string/ms_sync_msg"
                         android:textColor="#A9B7E0"
                         android:textSize="@dimen/text_size_footer" />
 
@@ -126,7 +126,7 @@
                     android:id="@+id/tv_use_authenticator_label"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="USAR AUTHENTICATOR  →"
+                    android:text="@string/btn_use_authenticator"
                     android:textAllCaps="true"
                     android:textColor="#FFFFFF"
                     android:textSize="@dimen/text_size_footer"
@@ -140,7 +140,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="8dp"
                 android:letterSpacing="0.05"
-                android:text="O VALIDA APP POR APP"
+                android:text="@string/or_validate_individually"
                 android:textColor="#1A4479"
                 android:textSize="@dimen/text_size_footer"
                 android:textStyle="bold" />
@@ -190,7 +190,7 @@
                             android:id="@+id/tv_sub_outlook"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="Sin validar"
+                            android:text="@string/not_validated_status"
                             android:textColor="#8A8F98"
                             android:textSize="8sp" />
 
@@ -205,7 +205,7 @@
                         android:focusable="true"
                         android:paddingHorizontal="10dp"
                         android:paddingVertical="6dp"
-                        android:text="VALIDAR"
+                        android:text="@string/btn_validate"
                         android:textAllCaps="true"
                         android:textColor="#FFFFFF"
                         android:textSize="8sp"
@@ -253,7 +253,7 @@
                             android:id="@+id/tv_sub_onedrive"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="Sin validar"
+                            android:text="@string/not_validated_status"
                             android:textColor="#8A8F98"
                             android:textSize="8sp" />
 
@@ -268,7 +268,7 @@
                         android:focusable="true"
                         android:paddingHorizontal="10dp"
                         android:paddingVertical="6dp"
-                        android:text="VALIDAR"
+                        android:text="@string/btn_validate"
                         android:textAllCaps="true"
                         android:textColor="#FFFFFF"
                         android:textSize="8sp"
@@ -315,7 +315,7 @@
                             android:id="@+id/tv_sub_teams"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="Sin validar"
+                            android:text="@string/not_validated_status"
                             android:textColor="#8A8F98"
                             android:textSize="8sp" />
 
@@ -330,7 +330,7 @@
                         android:focusable="true"
                         android:paddingHorizontal="10dp"
                         android:paddingVertical="6dp"
-                        android:text="VALIDAR"
+                        android:text="@string/btn_validate"
                         android:textAllCaps="true"
                         android:textColor="#FFFFFF"
                         android:textSize="8sp"
@@ -386,7 +386,7 @@
                             android:id="@+id/tv_sub_word"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="Sin validar"
+                            android:text="@string/not_validated_status"
                             android:textColor="#8A8F98"
                             android:textSize="8sp" />
 
@@ -401,7 +401,7 @@
                         android:focusable="true"
                         android:paddingHorizontal="10dp"
                         android:paddingVertical="6dp"
-                        android:text="VALIDAR"
+                        android:text="@string/btn_validate"
                         android:textAllCaps="true"
                         android:textColor="#FFFFFF"
                         android:textSize="8sp"
@@ -449,7 +449,7 @@
                             android:id="@+id/tv_sub_calendar"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="Sin validar"
+                            android:text="@string/not_validated_status"
                             android:textColor="#8A8F98"
                             android:textSize="8sp" />
 
@@ -464,7 +464,7 @@
                         android:focusable="true"
                         android:paddingHorizontal="10dp"
                         android:paddingVertical="6dp"
-                        android:text="VALIDAR"
+                        android:text="@string/btn_validate"
                         android:textAllCaps="true"
                         android:textColor="#FFFFFF"
                         android:textSize="8sp"

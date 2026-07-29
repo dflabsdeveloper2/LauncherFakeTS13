@@ -742,7 +742,7 @@ class CategoryFragment : Fragment() {
 
     private fun playStoreWidgetData() = CorpWidgetData(
         header = getString(R.string.play_store),
-        iconRes = R.drawable.google_play_store_logo_svgrepo_com,
+        iconRes = R.drawable.ic_play_store,
         layoutRes = R.layout.widget_corporate_generic,
         title = getString(R.string.play_store),
         packageName = "com.android.vending",
@@ -756,10 +756,10 @@ class CategoryFragment : Fragment() {
         layoutRes = R.layout.widget_corporate_generic,
         title = getString(R.string.google_apps_folder_title),
         folderPreviewPackages = listOf(
-            "com.google.android.gm" to R.drawable.gmail_svgrepo_com,
-            "com.google.android.apps.maps" to R.drawable.google_maps_platform_svgrepo_com,
+            "com.google.android.gm" to R.drawable.ic_gmail,
+            "com.google.android.apps.maps" to R.drawable.ic_google_maps,
             "com.google.android.youtube" to R.drawable.ic_brand_youtube_official,
-            "com.google.android.apps.photos" to R.drawable.google_calendar_svgrepo_com
+            "com.google.android.apps.photos" to R.drawable.ic_brand_photos
         ),
         disabledByAdmin = true
     )

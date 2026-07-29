@@ -22,7 +22,7 @@
             <ImageView
                 android:layout_width="32dp"
                 android:layout_height="32dp"
-                android:src="@drawable/google_calendar_svgrepo_com"
+                android:src="@drawable/ic_google_calendar"
                 android:background="@drawable/bg_calendar_icon_fake_google"
                 android:padding="6dp" />
 
@@ -35,7 +35,7 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Google Calendar"
+                    android:text="@string/google_calendar_title"
                     android:textColor="@android:color/white"
                     android:textSize="16sp"
                     android:textStyle="bold" />
@@ -43,7 +43,7 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Requiere iniciar sesión"
+                    android:text="@string/login_required_subtitle"
                     android:textColor="#D9E8FF"
                     android:textSize="11sp" />
 
@@ -83,7 +83,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
-            android:text="Inicia sesión para usar Google Calendar"
+            android:text="@string/login_to_use_google_calendar"
             android:textStyle="bold"
             android:textSize="18sp"
             android:textColor="#1F2937" />
@@ -92,7 +92,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="8dp"
-            android:text="Esta app necesita una cuenta validada en este panel."
+            android:text="@string/account_validation_needed"
             android:textSize="13sp"
             android:textColor="#94A3B8" />
 
@@ -101,7 +101,7 @@
             android:layout_width="220dp"
             android:layout_height="48dp"
             android:layout_marginTop="24dp"
-            android:text="VALIDAR CUENTA"
+            android:text="@string/btn_validate_account"
             android:textStyle="bold"
             android:textSize="14sp"
             android:textAllCaps="true"

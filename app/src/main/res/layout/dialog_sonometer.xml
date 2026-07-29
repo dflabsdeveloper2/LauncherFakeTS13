@@ -25,7 +25,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:letterSpacing="0.05"
-                android:text="//MEDIDOR DE RUIDO"
+                android:text="@string/noise_meter_header"
                 android:textColor="#1A2363"
                 android:textSize="10sp"
                 android:textStyle="bold" />
@@ -33,7 +33,7 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Sonómetro"
+                android:text="@string/sonometer_title"
                 android:textColor="#000000"
                 android:textSize="24sp"
                 android:textStyle="bold" />

@@ -25,7 +25,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:letterSpacing="0.05"
-                android:text="//SELECTOR DE ALUMNOS"
+                android:text="@string/student_selector_header"
                 android:textColor="#1A2363"
                 android:textSize="@dimen/text_size_header_label"
                 android:textStyle="bold" />
@@ -33,7 +33,7 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="¿A quién le toca?"
+                android:text="@string/who_is_next_label"
                 android:textColor="#000000"
                 android:textSize="@dimen/text_size_header_title"
                 android:textStyle="bold" />
@@ -111,7 +111,7 @@
             android:paddingTop="10dp"
             android:paddingEnd="24dp"
             android:paddingBottom="10dp"
-            android:text="OTRA VEZ 🎲"
+            android:text="@string/btn_pick_again"
             android:textAllCaps="true"
             android:textColor="#FFFFFF"
             android:textSize="@dimen/text_size_button"

@@ -25,7 +25,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:letterSpacing="0.05"
-                android:text="//TEMPORIZADOR"
+                android:text="@string/timer_header"
                 android:textColor="#1A2363"
                 android:textSize="@dimen/text_size_header_label"
                 android:textStyle="bold" />
@@ -33,7 +33,7 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Cuenta atrás"
+                android:text="@string/timer_subtitle"
                 android:textColor="#000000"
                 android:textSize="@dimen/text_size_header_title"
                 android:textStyle="bold" />
@@ -213,7 +213,7 @@
             android:focusable="true"
             android:gravity="center"
             android:paddingVertical="10dp"
-            android:text="↻ REINICIAR"
+            android:text="@string/btn_reset"
             android:textAllCaps="true"
             android:textColor="#1A1A2E"
             android:textSize="@dimen/text_size_button"
@@ -229,7 +229,7 @@
             android:focusable="true"
             android:gravity="center"
             android:paddingVertical="10dp"
-            android:text="INICIAR ▶"
+            android:text="@string/btn_start"
             android:textAllCaps="true"
             android:textColor="#FFFFFF"
             android:textSize="@dimen/text_size_button"

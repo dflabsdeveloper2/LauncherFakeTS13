@@ -62,7 +62,7 @@
             android:layout_height="wrap_content"
             android:max="100"
             android:progress="0"
-            android:thumb="@drawable/fl33"
+            android:thumb="@drawable/ic_seekbar_thumb"
             android:splitTrack="false" />
 
     </LinearLayout>

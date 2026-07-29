@@ -1,5 +1,6 @@
 package com.orbys.launcherfakets13.ui.home
 
+import android.content.Context
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.orbys.launcherfakets13.data.repository.DefaultShortcuts
@@ -7,6 +8,7 @@ import com.orbys.launcherfakets13.domain.model.*
 import com.orbys.launcherfakets13.domain.repository.WallpaperRepository
 import com.orbys.launcherfakets13.domain.usecase.*
 import dagger.hilt.android.lifecycle.HiltViewModel
+import dagger.hilt.android.qualifiers.ApplicationContext
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.flow.asStateFlow
@@ -38,6 +40,7 @@ data class MainState(
  */
 @HiltViewModel
 class MainViewModel @Inject constructor(
+    @ApplicationContext private val context: Context,
     private val getCategoriesUseCase: GetCategoriesUseCase,
     private val setCategoriesUseCase: SetCategoriesUseCase,
     private val addCategoryUseCase: AddCategoryUseCase,
@@ -74,7 +77,8 @@ class MainViewModel @Inject constructor(
         DefaultShortcuts.defaults[env]?.forEach { (category, shortcuts) ->
             shortcuts.forEachIndexed { index, shortcut ->
                 if (getShortcutUseCase(category, index) == null) {
-                    setShortcutUseCase(category, index, shortcut.packageName, shortcut.label)
+                    val label = shortcut.labelRes?.let { context.getString(it) } ?: shortcut.label
+                    setShortcutUseCase(category, index, shortcut.packageName, label)
                 }
             }
         }
@@ -186,7 +190,8 @@ class MainViewModel @Inject constructor(
             // Aplicar shortcuts por defecto del entorno
             DefaultShortcuts.defaults[environment]?.forEach { (category, shortcuts) ->
                 shortcuts.forEachIndexed { index, shortcut ->
-                    setShortcutUseCase(category, index, shortcut.packageName, shortcut.label)
+                    val label = shortcut.labelRes?.let { context.getString(it) } ?: shortcut.label
+                    setShortcutUseCase(category, index, shortcut.packageName, label)
                 }
             }
 
