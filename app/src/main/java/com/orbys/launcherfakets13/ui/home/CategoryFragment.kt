@@ -319,24 +319,25 @@ class CategoryFragment : Fragment() {
                         "RELOJ",
                         R.drawable.ic_recents,
                         R.layout.widget_corporate_clock,
-                        packageName = "com.google.android.deskclock"
+                        headerIconRes = R.drawable.ic_clock
                     ),
                     CorpWidgetData(
                         "GOOGLE CALENDAR",
                         R.drawable.ic_cat_calendar,
-                        R.layout.widget_corporate_generic,
-                        packageName = "com.google.android.calendar"
+                        R.layout.widget_corporate_calendar,
+                        headerIconRes = R.drawable.ic_cat_calendar
                     ),
                     CorpWidgetData(
                         "CLIMA",
                         R.drawable.ic_cat_weather,
-                        R.layout.widget_corporate_generic
+                        R.layout.widget_corporate_weather,
+                        headerIconRes = R.drawable.ic_brightness
                     ),
                     CorpWidgetData(
                         "CONCENTRACIÓN",
                         R.drawable.ic_cat_focus,
-                        R.layout.widget_corporate_generic,
-                        packageName = "com.android.settings"
+                        R.layout.widget_corporate_focus,
+                        headerIconRes = R.drawable.ic_not_disturb
                     )
                 )
 
@@ -344,24 +345,26 @@ class CategoryFragment : Fragment() {
                     CorpWidgetData(
                         "TEMPORIZADOR",
                         R.drawable.ic_cat_timer,
-                        R.layout.widget_corporate_generic,
-                        packageName = "com.google.android.deskclock"
+                        R.layout.widget_corporate_timer,
+                        headerIconRes = R.drawable.ic_cat_timer
                     ),
                     CorpWidgetData(
-                        getString(R.string.widget_dice),
+                        "SELECTOR DE ALUMNOS",
                         R.drawable.ic_cat_dice,
-                        R.layout.widget_corporate_generic
+                        R.layout.widget_corporate_dice,
+                        headerIconRes = R.drawable.ic_cat_dice
                     ),
                     CorpWidgetData(
-                        getString(R.string.widget_noise_meter),
+                        "MEDIDOR DE RUIDO",
                         R.drawable.ic_cat_noise,
-                        R.layout.widget_corporate_generic
+                        R.layout.widget_corporate_noise,
+                        headerIconRes = R.drawable.ic_cat_noise
                     ),
                     CorpWidgetData(
-                        getString(R.string.widget_orbys_translate),
+                        "ORBYS TRANSLATE",
                         R.drawable.ic_cat_translate,
-                        R.layout.widget_corporate_generic,
-                        packageName = "com.orbys.aitranslate"
+                        R.layout.widget_corporate_translate,
+                        headerIconRes = R.drawable.ic_cat_translate
                     )
                 )
 
@@ -369,25 +372,29 @@ class CategoryFragment : Fragment() {
                     CorpWidgetData(
                         "GMAIL",
                         R.drawable.ic_cat_mail,
-                        R.layout.widget_corporate_generic,
+                        R.layout.widget_corporate_app,
+                        subtitle = "4 sin leer",
                         packageName = "com.google.android.gm"
                     ),
                     CorpWidgetData(
                         "GOOGLE DRIVE",
                         R.drawable.ic_cat_drive,
-                        R.layout.widget_corporate_generic,
+                        R.layout.widget_corporate_app,
+                        subtitle = "Recientes",
                         packageName = "com.google.android.apps.docs"
                     ),
                     CorpWidgetData(
                         "MEET",
                         R.drawable.ic_cat_teams,
-                        R.layout.widget_corporate_generic,
+                        R.layout.widget_corporate_app,
+                        subtitle = "Iniciar reunión",
                         packageName = "com.google.android.apps.tachyon"
                     ),
                     CorpWidgetData(
                         "DOCS",
                         R.drawable.ic_cat_doc,
-                        R.layout.widget_corporate_generic,
+                        R.layout.widget_corporate_app,
+                        subtitle = "3 recientes",
                         packageName = "com.google.android.apps.docs.editors.docs"
                     )
                 )
