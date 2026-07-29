@@ -136,6 +136,13 @@ class CategoryFragment : Fragment() {
 
         for (catName in categories) {
             val card = inflater.inflate(R.layout.item_category_card, container, false)
+            
+            // Margen entre tarjetas de 8dp
+            (card.layoutParams as? LinearLayout.LayoutParams)?.apply {
+                marginEnd = dpToPx(8)
+                card.layoutParams = this
+            }
+
             val rowTop = card.findViewById<LinearLayout>(R.id.slots_row_top)
             val rowBot = card.findViewById<LinearLayout>(R.id.slots_row_bottom)
             val spacer = card.findViewById<View>(R.id.rows_spacer)
@@ -215,7 +222,7 @@ class CategoryFragment : Fragment() {
         rowBot: LinearLayout,
         env: Environment
     ) {
-        val slotPx = dpToPx(90)
+        val slotPx = dpToPx(86)
         val gapPx = dpToPx(10)
 
         // Definición de widgets predefinidos por entorno y categoría
@@ -401,49 +408,52 @@ class CategoryFragment : Fragment() {
                         "RELOJ",
                         R.drawable.ic_recents,
                         R.layout.widget_corporate_clock,
-                        packageName = "com.google.android.deskclock"
+                        headerIconRes = R.drawable.ic_clock
                     ),
                     CorpWidgetData(
                         "CALENDARIO",
                         R.drawable.ic_cat_calendar,
-                        R.layout.widget_corporate_generic,
-                        packageName = "com.microsoft.office.outlook"
+                        R.layout.widget_corporate_calendar,
+                        headerIconRes = R.drawable.ic_cat_calendar
                     ),
                     CorpWidgetData(
                         "CLIMA",
                         R.drawable.ic_cat_weather,
-                        R.layout.widget_corporate_generic
+                        R.layout.widget_corporate_weather,
+                        headerIconRes = R.drawable.ic_brightness
                     ),
                     CorpWidgetData(
                         "CONCENTRACIÓN",
                         R.drawable.ic_cat_focus,
-                        R.layout.widget_corporate_generic,
-                        packageName = "com.android.settings"
+                        R.layout.widget_corporate_focus,
+                        headerIconRes = R.drawable.ic_not_disturb
                     )
                 )
 
                 "Aula" -> listOf(
                     CorpWidgetData(
-                        getString(R.string.widget_timer),
+                        "TEMPORIZADOR",
                         R.drawable.ic_cat_timer,
-                        R.layout.widget_corporate_generic,
-                        packageName = "com.google.android.deskclock"
+                        R.layout.widget_corporate_timer,
+                        headerIconRes = R.drawable.ic_cat_timer
                     ),
                     CorpWidgetData(
-                        getString(R.string.widget_student_selector),
+                        "SELECTOR DE ALUMNOS",
                         R.drawable.ic_cat_dice,
-                        R.layout.widget_corporate_generic
+                        R.layout.widget_corporate_dice,
+                        headerIconRes = R.drawable.ic_cat_dice
                     ),
                     CorpWidgetData(
-                        getString(R.string.widget_noise_meter),
+                        "MEDIDOR DE RUIDO",
                         R.drawable.ic_cat_noise,
-                        R.layout.widget_corporate_generic
+                        R.layout.widget_corporate_noise,
+                        headerIconRes = R.drawable.ic_cat_noise
                     ),
                     CorpWidgetData(
-                        getString(R.string.widget_orbys_translate),
+                        "ORBYS TRANSLATE",
                         R.drawable.ic_cat_translate,
-                        R.layout.widget_corporate_generic,
-                        packageName = "com.orbys.aitranslate"
+                        R.layout.widget_corporate_translate,
+                        headerIconRes = R.drawable.ic_cat_translate
                     )
                 )
 
@@ -451,25 +461,29 @@ class CategoryFragment : Fragment() {
                     CorpWidgetData(
                         "OUTLOOK",
                         R.drawable.ic_cat_mail,
-                        R.layout.widget_corporate_generic,
+                        R.layout.widget_corporate_app,
+                        subtitle = "4 sin leer",
                         packageName = "com.microsoft.office.outlook"
                     ),
                     CorpWidgetData(
                         "ONEDRIVE",
                         R.drawable.ic_cat_drive,
-                        R.layout.widget_corporate_generic,
+                        R.layout.widget_corporate_app,
+                        subtitle = "Recientes",
                         packageName = "com.microsoft.skydrive"
                     ),
                     CorpWidgetData(
                         "TEAMS",
                         R.drawable.ic_cat_teams,
-                        R.layout.widget_corporate_generic,
+                        R.layout.widget_corporate_app,
+                        subtitle = "Iniciar reunión",
                         packageName = "com.microsoft.teams"
                     ),
                     CorpWidgetData(
                         "WORD",
                         R.drawable.ic_cat_doc,
-                        R.layout.widget_corporate_generic,
+                        R.layout.widget_corporate_app,
+                        subtitle = "3 recientes",
                         packageName = "com.microsoft.office.word"
                     )
                 )
@@ -524,6 +538,8 @@ class CategoryFragment : Fragment() {
         val iconRes: Int,
         val layoutRes: Int,
         val title: String? = null,
+        val subtitle: String? = null,
+        val headerIconRes: Int? = null,
         val packageName: String? = null,
         // CDD/EDLA: usa el icono real instalado de packageName en vez de iconRes.
         val useRealAppIcon: Boolean = false,
@@ -547,39 +563,30 @@ class CategoryFragment : Fragment() {
         val content =
             LayoutInflater.from(requireContext()).inflate(data.layoutRes, container, false)
 
+        // Configuración de la cabecera
+        widgetView.findViewById<TextView>(R.id.tv_widget_header)?.text = data.header
+        val headerIconView = widgetView.findViewById<ImageView>(R.id.iv_widget_header_icon)
+        if (data.headerIconRes != null) {
+            headerIconView?.setImageResource(data.headerIconRes)
+            headerIconView?.visibility = View.VISIBLE
+        } else {
+            headerIconView?.visibility = View.GONE
+        }
+
         // Configuración específica para el layout genérico de widgets corporativos
         if (data.layoutRes == R.layout.widget_corporate_generic) {
             content.findViewById<TextView>(R.id.tv_corp_generic_title)?.text =
                 data.title ?: data.header
             val iconView = content.findViewById<ImageView>(R.id.iv_corp_generic_icon)
-            when {
-                data.folderPreviewPackages != null -> {
-                    val sizeDp = if (data.opensGoogleFolder) 47 else 44
-                    iconView?.setImageDrawable(
-                        FolderIconUtil.buildFolderPreviewIcon(
-                            requireContext(),
-                            data.folderPreviewPackages,
-                            sizeDp = sizeDp
-                        )
-                    )
-                    // El slot de 90dp solo deja ~54dp de alto para icono + texto: agranda el
-                    // icono pero recorta su margen inferior para que el título no se salga.
-                    // Para la carpeta de Google (93dp), el icono sube de 42dp a 45dp.
-                    (iconView?.layoutParams as? LinearLayout.LayoutParams)?.apply {
-                        width = if (data.opensGoogleFolder) dpToPx(45) else dpToPx(42)
-                        height = if (data.opensGoogleFolder) dpToPx(45) else dpToPx(42)
-                        bottomMargin = dpToPx(2)
-                    }?.let { iconView.layoutParams = it }
-                }
-
-                data.useRealAppIcon && data.packageName != null -> {
-                    val realIcon = cachedAppIcon(data.packageName)
-                    if (realIcon != null) iconView?.setImageDrawable(realIcon) else iconView?.setImageResource(
-                        data.iconRes
-                    )
-                }
-
-                else -> iconView?.setImageResource(data.iconRes)
+            configureGenericIcon(iconView, data)
+        } else if (data.layoutRes == R.layout.widget_corporate_app) {
+            content.findViewById<TextView>(R.id.tv_corp_app_subtitle)?.text = data.subtitle
+            val iconView = content.findViewById<ImageView>(R.id.iv_corp_app_icon)
+            if (data.useRealAppIcon && data.packageName != null) {
+                val realIcon = cachedAppIcon(data.packageName)
+                if (realIcon != null) iconView?.setImageDrawable(realIcon) else iconView?.setImageResource(data.iconRes)
+            } else {
+                iconView?.setImageResource(data.iconRes)
             }
         }
 
@@ -587,13 +594,12 @@ class CategoryFragment : Fragment() {
 
         val isClock = data.header == getString(R.string.widget_clock) || data.header == "RELOJ"
         val isWeather = data.header == getString(R.string.widget_weather) || data.header == "CLIMA"
-        val isSonometer = data.header == getString(R.string.widget_noise_meter) || data.header == "SONÓMETRO"
-        val isStudentSelector = data.header == getString(R.string.widget_student_selector) || data.header == "SELECTOR ALUMNOS"
+        val isSonometer = data.header == getString(R.string.widget_noise_meter) || data.header == "SONÓMETRO" || data.header == "MEDIDOR DE RUIDO"
+        val isStudentSelector = data.header == getString(R.string.widget_student_selector) || data.header == "SELECTOR ALUMNOS" || data.header == "SELECTOR DE ALUMNOS"
         val isTimer = data.header == getString(R.string.widget_timer) || data.header == "TEMPORIZADOR"
-        val isTranslate = data.header == getString(R.string.widget_orbys_translate) || data.header == "TRADUCTOR"
+        val isTranslate = data.header == getString(R.string.widget_orbys_translate) || data.header == "TRADUCTOR" || data.header == "ORBYS TRANSLATE"
         val isFocus = data.header == getString(R.string.widget_focus) || data.header == "CONCENTRACIÓN"
-        val isGoogleCalendar = data.packageName == "com.google.android.calendar" || data.header == "GOOGLE CALENDAR"
-        val isOutlook = data.packageName == "com.microsoft.office.outlook" || data.header == "CALENDARIO"
+        val isCalendar = data.header == "CALENDARIO" || data.header == "GOOGLE CALENDAR" || data.packageName == "com.google.android.calendar"
 
         when {
             isClock -> {
@@ -604,17 +610,14 @@ class CategoryFragment : Fragment() {
                 widgetView.isFocusable = true
             }
 
-            isGoogleCalendar -> {
+            isCalendar -> {
+                val env = viewModel.uiState.value.currentEnvironment
                 widgetView.setOnClickListener {
-                    FakeGoogleCalendarDialogFragment.newInstance().show(childFragmentManager, "fake_calendar")
-                }
-                widgetView.isClickable = true
-                widgetView.isFocusable = true
-            }
-
-            isOutlook -> {
-                widgetView.setOnClickListener {
-                    FakeOutlookDialogFragment.newInstance().show(childFragmentManager, "fake_outlook")
+                    if (env == Environment.GOOGLE) {
+                        FakeGoogleCalendarDialogFragment.newInstance().show(childFragmentManager, "fake_calendar")
+                    } else {
+                        FakeOutlookDialogFragment.newInstance().show(childFragmentManager, "fake_outlook")
+                    }
                 }
                 widgetView.isClickable = true
                 widgetView.isFocusable = true
@@ -731,6 +734,35 @@ class CategoryFragment : Fragment() {
     /**
      * Obtiene el slot (hueco) de aplicación para una categoría e índice específicos.
      */
+    private fun configureGenericIcon(iconView: ImageView?, data: CorpWidgetData) {
+        when {
+            data.folderPreviewPackages != null -> {
+                val sizeDp = if (data.opensGoogleFolder) 47 else 44
+                iconView?.setImageDrawable(
+                    FolderIconUtil.buildFolderPreviewIcon(
+                        requireContext(),
+                        data.folderPreviewPackages,
+                        sizeDp = sizeDp
+                    )
+                )
+                (iconView?.layoutParams as? LinearLayout.LayoutParams)?.apply {
+                    width = if (data.opensGoogleFolder) dpToPx(45) else dpToPx(42)
+                    height = if (data.opensGoogleFolder) dpToPx(45) else dpToPx(42)
+                    bottomMargin = dpToPx(2)
+                }?.let { iconView.layoutParams = it }
+            }
+
+            data.useRealAppIcon && data.packageName != null -> {
+                val realIcon = cachedAppIcon(data.packageName)
+                if (realIcon != null) iconView?.setImageDrawable(realIcon) else iconView?.setImageResource(
+                    data.iconRes
+                )
+            }
+
+            else -> iconView?.setImageResource(data.iconRes)
+        }
+    }
+
     private fun slotView(catName: String, idx: Int): FrameLayout {
         val saved = viewModel.getShortcut(catName, idx)
         return if (saved != null) buildSavedSlot(catName, idx, saved)

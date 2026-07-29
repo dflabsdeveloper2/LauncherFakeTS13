@@ -61,7 +61,8 @@
         android:id="@+id/iv_weather_main_icon"
         android:layout_width="120dp"
         android:layout_height="120dp"
-        android:src="@drawable/ic_weather_sun_cloud"
+        android:src="@drawable/ic_brightness"
+        app:tint="#FFD600"
         android:layout_marginTop="32dp"
         app:layout_constraintTop_toBottomOf="@id/tv_weather_province"
         app:layout_constraintStart_toStartOf="parent" />
@@ -70,7 +71,7 @@
         android:id="@+id/tv_weather_temp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="27°"
+        android:text="32°"
         android:textColor="@color/white"
         android:textSize="96sp"
         android:textStyle="bold"
@@ -102,7 +103,7 @@
             android:id="@+id/tv_weather_feels_like"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Sensación 30°"
+            android:text="Sensación 35°"
             android:textColor="#E0E0E0"
             android:textSize="16sp" />
 

@@ -131,9 +131,9 @@
 
     <!-- Weather Dialog -->
     <string name="weather_title_prefix">The weather in</string>
-    <string name="weather_city">Castelló de la Plana</string>
-    <string name="weather_province">Castellón province</string>
-    <string name="weather_description">Partly cloudy</string>
+    <string name="weather_city">Valencia</string>
+    <string name="weather_province">Valencia province</string>
+    <string name="weather_description">Sunny</string>
     <string name="weather_feels_like_prefix">Feels like</string>
     <string name="weather_rain_label">Rain</string>
     <string name="weather_wind_label">Wind</string>

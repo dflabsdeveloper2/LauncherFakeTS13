@@ -1,29 +1,29 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:gravity="center">
 
-    <TextClock
-        android:id="@+id/tv_corp_clock_time"
+    <FrameLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:format12Hour="h:mm"
-        android:format24Hour="HH:mm"
-        android:textColor="#1A1A2E"
-        android:textSize="22sp"
-        android:textStyle="bold" />
+        android:layout_marginBottom="2dp">
+        <ImageView
+            android:id="@+id/iv_corp_app_icon"
+            android:layout_width="25dp"
+            android:layout_height="25dp"
+            android:src="@drawable/ic_cat_mail" />
+    </FrameLayout>
 
-    <TextClock
-        android:id="@+id/tv_corp_clock_date"
+    <TextView
+        android:id="@+id/tv_corp_app_subtitle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:format12Hour="EEE · dd MMM"
-        android:format24Hour="EEE · dd MMM"
+        android:text="4 sin leer"
         android:textColor="#9CA3AF"
-        android:textSize="8sp"
-        android:textAllCaps="true" />
+        android:textSize="8sp" />
 
 </LinearLayout>

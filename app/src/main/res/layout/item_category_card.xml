@@ -6,9 +6,7 @@
     android:layout_height="wrap_content"
     android:orientation="vertical"
     android:background="@drawable/bg_category_card"
-    android:padding="5dp"
-    android:scaleX="0.9"
-    android:scaleY="0.9"
+    android:padding="8dp"
 >
 
     <!-- Header: title + collapse -->
@@ -19,16 +17,23 @@
         android:layout_marginHorizontal="12dp"
         android:gravity="center_vertical">
 
+        <View
+            android:layout_width="6dp"
+            android:layout_height="6dp"
+            android:background="@drawable/bg_badge"
+            android:backgroundTint="#1A4479"
+            android:layout_marginEnd="8dp" />
+
         <TextView
             android:id="@+id/tv_category_title"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:text="CATEGORY"
-            android:textColor="@color/dock_text_inactive"
-            android:textSize="11sp"
+            android:textColor="#1A1A2E"
+            android:textSize="12sp"
             android:textStyle="bold"
-            android:letterSpacing="0.08"
+            android:letterSpacing="0.02"
             android:maxLines="1"
             android:ellipsize="end" />
 
@@ -45,10 +50,8 @@
     <LinearLayout
         android:id="@+id/slots_row_top"
         android:layout_width="match_parent"
-        android:layout_marginTop="8dp"
-        android:scaleX="0.9"
-        android:scaleY="0.9"
-        android:layout_height="90dp"
+        android:layout_marginTop="10dp"
+        android:layout_height="96dp"
         android:orientation="horizontal" />
 
     <Space
@@ -60,9 +63,7 @@
     <LinearLayout
         android:id="@+id/slots_row_bottom"
         android:layout_width="match_parent"
-        android:layout_height="90dp"
-        android:scaleX="0.9"
-        android:scaleY="0.9"
+        android:layout_height="96dp"
         android:orientation="horizontal" />
 
 </LinearLayout>

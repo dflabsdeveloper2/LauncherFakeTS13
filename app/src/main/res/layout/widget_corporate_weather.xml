@@ -5,17 +5,18 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:gravity="center_vertical">
+    android:gravity="center">
 
     <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        android:gravity="center_vertical">
+        android:gravity="center_vertical"
+        android:layout_marginBottom="2dp">
 
         <ImageView
-            android:layout_width="24dp"
-            android:layout_height="24dp"
+            android:layout_width="22dp"
+            android:layout_height="22dp"
             android:src="@drawable/ic_brightness"
             app:tint="#1A4479" />
 
@@ -23,7 +24,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="4dp"
-            android:text="21°"
+            android:text="32°"
             android:textColor="#1A1A2E"
             android:textSize="20sp"
             android:textStyle="bold" />
@@ -33,9 +34,9 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="VALENCIA - 18°/24°"
+        android:text="VALENCIA · SOLEADO"
         android:textColor="#9CA3AF"
-        android:textSize="8sp"
+        android:textSize="7sp"
         android:textAllCaps="true" />
 
 </LinearLayout>

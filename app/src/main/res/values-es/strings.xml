@@ -71,9 +71,9 @@
 
     <!-- Weather Dialog -->
     <string name="weather_title_prefix">El tiempo en</string>
-    <string name="weather_city">Castelló de la Plana</string>
-    <string name="weather_province">Castellón provincia</string>
-    <string name="weather_description">Intervalos nubosos</string>
+    <string name="weather_city">Valencia</string>
+    <string name="weather_province">Valencia provincia</string>
+    <string name="weather_description">Soleado</string>
     <string name="weather_feels_like_prefix">Sensación</string>
     <string name="weather_rain_label">Lluvia</string>
     <string name="weather_wind_label">Viento</string>
