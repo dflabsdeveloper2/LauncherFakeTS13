@@ -383,15 +383,9 @@ class MainActivity : AppCompatActivity() {
                 val dx = e2.rawX - e1.rawX
                 val dy = e2.rawY - e1.rawY
                 if (abs(dx) <= abs(dy) || abs(dx) < dpToPx(80) || abs(velocityX) < 400) return false
-                if (dx < 0 && !isDesktopVisible) {
-                    showDesktop()
-                    return true
-                }
-                if (dx > 0 && isDesktopVisible) {
-                    hideDesktop()
-                    return true
-                }
-                return false
+                
+                RemoteModeDialog.newInstance().show(supportFragmentManager, "remote_mode")
+                return true
             }
         })
     }
