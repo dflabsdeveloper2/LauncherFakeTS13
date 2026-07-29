@@ -145,7 +145,6 @@ class CategoryFragment : Fragment() {
 
             val rowTop = card.findViewById<LinearLayout>(R.id.slots_row_top)
             val rowBot = card.findViewById<LinearLayout>(R.id.slots_row_bottom)
-            val spacer = card.findViewById<View>(R.id.rows_spacer)
 
             // Título de categoría - Long press para eliminar si es personalizable
             card.findViewById<TextView>(R.id.tv_category_title).apply {
@@ -153,15 +152,6 @@ class CategoryFragment : Fragment() {
                 if (!isHardcoded) {
                     setOnLongClickListener { showDeleteCategoryDialog(catName); true }
                 }
-            }
-
-            // Botón para colapsar/expandir categoría
-            card.findViewById<View>(R.id.btn_category_collapse).setOnClickListener {
-                val show = rowTop.visibility != View.VISIBLE
-                val vis = if (show) View.VISIBLE else View.GONE
-                rowTop.visibility = vis
-                rowBot.visibility = vis
-                spacer.visibility = vis
             }
 
             if (isHardcoded) {
