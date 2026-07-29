@@ -16,7 +16,7 @@ import com.orbys.launcherfakets13.ui.dialog.MicrosoftValidationDialog
 class FakeOutlookDialogFragment : DialogFragment() {
 
     override fun onCreateDialog(savedInstanceState: Bundle?): Dialog {
-        return Dialog(requireContext()).apply {
+        return Dialog(requireContext(), R.style.CustomDialogTheme).apply {
             requestWindowFeature(Window.FEATURE_NO_TITLE)
             setContentView(R.layout.dialog_fake_outlook)
 

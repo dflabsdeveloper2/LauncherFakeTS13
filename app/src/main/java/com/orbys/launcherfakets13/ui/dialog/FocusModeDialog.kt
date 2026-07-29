@@ -49,7 +49,7 @@ class FocusModeDialog : DialogFragment() {
 
         view.findViewById<View>(R.id.btn_exit_focus_mode).setOnClickListener { dismiss() }
 
-        return Dialog(requireContext()).apply {
+        return Dialog(requireContext(), R.style.CustomDialogTheme).apply {
             requestWindowFeature(Window.FEATURE_NO_TITLE)
             setContentView(view)
             window?.setBackgroundDrawableResource(android.R.color.transparent)
@@ -59,6 +59,8 @@ class FocusModeDialog : DialogFragment() {
     override fun onStart() {
         super.onStart()
         dialog?.window?.apply {
+            clearFlags(WindowManager.LayoutParams.FLAG_DIM_BEHIND)
+            setElevation(0f)
             setFlags(
                 WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS,
                 WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS

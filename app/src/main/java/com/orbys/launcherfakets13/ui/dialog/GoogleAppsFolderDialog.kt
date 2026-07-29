@@ -50,7 +50,7 @@ class GoogleAppsFolderDialog : DialogFragment() {
 
         view.findViewById<View>(R.id.btn_close_folder).setOnClickListener { dismiss() }
 
-        return MaterialAlertDialogBuilder(requireContext())
+        return MaterialAlertDialogBuilder(requireContext(), R.style.CustomDialogTheme)
             .setView(view)
             .create()
             .also { dialog -> dialog.window?.setBackgroundDrawableResource(R.drawable.bg_dialog_rounded) }

@@ -30,7 +30,7 @@ class WallpaperOptionsDialog : DialogFragment() {
 
         view.findViewById<View>(R.id.btn_close_wallpaper).setOnClickListener { dismiss() }
 
-        return MaterialAlertDialogBuilder(requireContext())
+        return MaterialAlertDialogBuilder(requireContext(), R.style.CustomDialogTheme)
             .setView(view)
             .create()
             .also { dialog ->

@@ -45,7 +45,7 @@ class NameSelectorDialog : DialogFragment() {
         view.findViewById<View>(R.id.btn_close).setOnClickListener { dismiss() }
         view.findViewById<View>(R.id.btn_spin_again).setOnClickListener { spin() }
 
-        return MaterialAlertDialogBuilder(requireContext())
+        return MaterialAlertDialogBuilder(requireContext(), R.style.CustomDialogTheme)
             .setView(view)
             .create()
             .also { dialog ->

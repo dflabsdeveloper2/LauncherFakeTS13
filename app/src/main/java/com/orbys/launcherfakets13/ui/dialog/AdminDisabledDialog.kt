@@ -21,7 +21,7 @@ class AdminDisabledDialog : DialogFragment() {
             dismiss()
         }
 
-        return MaterialAlertDialogBuilder(requireContext())
+        return MaterialAlertDialogBuilder(requireContext(), R.style.CustomDialogTheme)
             .setView(view)
             .create()
             .also { dialog ->

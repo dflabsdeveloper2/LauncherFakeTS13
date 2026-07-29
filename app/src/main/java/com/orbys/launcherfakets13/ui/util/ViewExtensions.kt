@@ -21,6 +21,8 @@ val Float.dp: Float
  */
 fun DialogFragment.setupDialogSize(widthFractionRes: Int, heightFractionRes: Int? = null) {
     dialog?.window?.let { window ->
+        window.clearFlags(WindowManager.LayoutParams.FLAG_DIM_BEHIND)
+        window.setElevation(0f)
         val metrics = resources.displayMetrics
         val width = (metrics.widthPixels * resources.getFraction(widthFractionRes, 1, 1)).toInt()
         val height = if (heightFractionRes != null) {
