@@ -77,8 +77,7 @@ class MainViewModel @Inject constructor(
         DefaultShortcuts.defaults[env]?.forEach { (category, shortcuts) ->
             shortcuts.forEachIndexed { index, shortcut ->
                 if (getShortcutUseCase(category, index) == null) {
-                    val label = shortcut.labelRes?.let { context.getString(it) } ?: shortcut.label
-                    setShortcutUseCase(category, index, shortcut.packageName, label)
+                    setShortcutUseCase(category, index, shortcut.packageName, shortcut.label)
                 }
             }
         }
@@ -190,8 +189,7 @@ class MainViewModel @Inject constructor(
             // Aplicar shortcuts por defecto del entorno
             DefaultShortcuts.defaults[environment]?.forEach { (category, shortcuts) ->
                 shortcuts.forEachIndexed { index, shortcut ->
-                    val label = shortcut.labelRes?.let { context.getString(it) } ?: shortcut.label
-                    setShortcutUseCase(category, index, shortcut.packageName, label)
+                    setShortcutUseCase(category, index, shortcut.packageName, shortcut.label)
                 }
             }
 

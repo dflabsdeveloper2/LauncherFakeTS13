@@ -1,6 +1,5 @@
 package com.orbys.launcherfakets13.data.repository
 
-import com.orbys.launcherfakets13.R
 import com.orbys.launcherfakets13.domain.model.Environment
 import com.orbys.launcherfakets13.domain.model.Shortcut
 
@@ -12,75 +11,75 @@ object DefaultShortcuts {
     val defaults: Map<Environment, Map<String, List<Shortcut>>> = mapOf(
         Environment.GOOGLE to mapOf(
             "General" to listOf(
-                Shortcut("com.google.android.deskclock", "Hora", R.string.shortcut_time),
-                Shortcut("com.google.android.calendar", "Calendario", R.string.shortcut_calendar),
-                Shortcut("com.google.android.deskclock", "Tiempo", R.string.shortcut_weather),
+                Shortcut("com.google.android.deskclock", "Hora"),
+                Shortcut("com.google.android.calendar", "Calendario"),
+                Shortcut("com.google.android.deskclock", "Tiempo"),
             ),
             "Aula" to listOf(
-                Shortcut("com.google.android.deskclock", "Temporizador", R.string.shortcut_timer),
-                Shortcut("com.orbys.selector", "Selector de alumnos", R.string.shortcut_student_selector),
-                Shortcut("com.orbys.noise", "Medidor de ruido", R.string.shortcut_noise_meter),
-                Shortcut("com.orbys.translate", "Orbys Translate", R.string.shortcut_translate)
+                Shortcut("com.google.android.deskclock", "Temporizador"),
+                Shortcut("com.orbys.selector", "Selector de alumnos"),
+                Shortcut("com.orbys.noise", "Medidor de ruido"),
+                Shortcut("com.orbys.translate", "Orbys Translate")
             ),
             "Trabajo" to listOf(
-                Shortcut("com.google.android.gm", "Gmail", R.string.shortcut_gmail),
-                Shortcut("com.google.android.apps.docs", "Google Drive", R.string.shortcut_drive),
-                Shortcut("com.google.android.apps.meetings", "Meet", R.string.shortcut_meet),
-                Shortcut("com.google.android.apps.docs.editors.docs", "Docs", R.string.shortcut_docs)
+                Shortcut("com.google.android.gm", "Gmail"),
+                Shortcut("com.google.android.apps.docs", "Google Drive"),
+                Shortcut("com.google.android.apps.meetings", "Meet"),
+                Shortcut("com.google.android.apps.docs.editors.docs", "Docs")
             ),
             "Colaboración" to listOf(
-                Shortcut("com.orbys.orbysai", "Orbys AI", R.string.shortcut_orbys_ai),
-                Shortcut("com.orbys.aiselector", "Selector", R.string.shortcut_selector),
-                Shortcut("com.orbys.eshare", "Eshare", R.string.shortcut_eshare)
+                Shortcut("com.orbys.orbysai", "Orbys AI"),
+                Shortcut("com.orbys.aiselector", "Selector"),
+                Shortcut("com.orbys.eshare", "Eshare")
             )
         ),
         Environment.OFFICE to mapOf(
             "General" to listOf(
-                Shortcut("com.google.android.deskclock", "Hora", R.string.shortcut_time),
-                Shortcut("com.google.android.calendar", "Calendario", R.string.shortcut_calendar),
-                Shortcut("com.google.android.deskclock", "Tiempo", R.string.shortcut_weather),
+                Shortcut("com.google.android.deskclock", "Hora"),
+                Shortcut("com.google.android.calendar", "Calendario"),
+                Shortcut("com.google.android.deskclock", "Tiempo"),
             ),
             "Aula" to listOf(
-                Shortcut("com.google.android.deskclock", "Temporizador", R.string.shortcut_timer),
-                Shortcut("com.orbys.aitranslate", "Orbys Translate", R.string.shortcut_translate)
+                Shortcut("com.google.android.deskclock", "Temporizador"),
+                Shortcut("com.orbys.aitranslate", "Orbys Translate")
             ),
             "Trabajo" to listOf(
-                Shortcut("com.microsoft.office.outlook", "Outlook", R.string.shortcut_outlook),
-                Shortcut("com.microsoft.skydrive", "OneDrive", R.string.shortcut_onedrive),
-                Shortcut("com.microsoft.teams", "Teams", R.string.shortcut_teams),
-                Shortcut("com.microsoft.office.word", "Word", R.string.shortcut_word)
+                Shortcut("com.microsoft.office.outlook", "Outlook"),
+                Shortcut("com.microsoft.skydrive", "OneDrive"),
+                Shortcut("com.microsoft.teams", "Teams"),
+                Shortcut("com.microsoft.office.word", "Word")
             ),
             "Colaboración" to listOf(
-                Shortcut("com.orbys.orbysai", "Orbys AI", R.string.shortcut_orbys_ai),
-                Shortcut("com.orbys.aiselector", "Selector", R.string.shortcut_selector),
-                Shortcut("com.orbys.eshare", "Eshare", R.string.shortcut_eshare)
+                Shortcut("com.orbys.orbysai", "Orbys AI"),
+                Shortcut("com.orbys.aiselector", "Selector"),
+                Shortcut("com.orbys.eshare", "Eshare")
             )
         ),
         Environment.CORPORATE to mapOf(
             "General" to listOf(
-                Shortcut("com.google.android.deskclock", "Hora", R.string.shortcut_time),
-                Shortcut("com.google.android.calendar", "Calendario", R.string.shortcut_calendar),
-                Shortcut("com.google.android.deskclock", "Tiempo", R.string.shortcut_weather),
+                Shortcut("com.google.android.deskclock", "Hora"),
+                Shortcut("com.google.android.calendar", "Calendario"),
+                Shortcut("com.google.android.deskclock", "Tiempo"),
             ),
             "Sala" to listOf(
-                Shortcut("com.google.android.deskclock", "Temporizador", R.string.shortcut_timer),
-                Shortcut("com.orbys.videocall", "Teams", R.string.shortcut_teams),
-                Shortcut("com.orbys.eshare", "Eshare", R.string.shortcut_eshare),
+                Shortcut("com.google.android.deskclock", "Temporizador"),
+                Shortcut("com.orbys.videocall", "Teams"),
+                Shortcut("com.orbys.eshare", "Eshare"),
             ),
             "Trabajo" to listOf(
-                Shortcut("com.microsoft.office.outlook", "Correo", R.string.shortcut_mail),
-                Shortcut("com.microsoft.skydrive", "Almacenamiento", R.string.shortcut_storage),
-                Shortcut("com.microsoft.office.word", "Documentos", R.string.shortcut_documents),
+                Shortcut("com.microsoft.office.outlook", "Correo"),
+                Shortcut("com.microsoft.skydrive", "Almacenamiento"),
+                Shortcut("com.microsoft.office.word", "Documentos"),
             ),
             "Colaboración" to listOf(
-                Shortcut("com.orbys.orbysai", "Orbys AI", R.string.shortcut_orbys_ai),
-                Shortcut("com.orbys.aiselector", "Selector", R.string.shortcut_selector),
-                Shortcut("com.skg.writer", "Pizarra", R.string.shortcut_whiteboard)
+                Shortcut("com.orbys.orbysai", "Orbys AI"),
+                Shortcut("com.orbys.aiselector", "Selector"),
+                Shortcut("com.skg.writer", "Pizarra")
             )
         ),
         Environment.SHOWROOM to mapOf(
             "General" to listOf(
-                Shortcut("com.example.sampleds", "Digital Signage", R.string.shortcut_showroom_ds)
+                Shortcut("com.example.sampleds", "Digital Signage")
             )
         )
     )
