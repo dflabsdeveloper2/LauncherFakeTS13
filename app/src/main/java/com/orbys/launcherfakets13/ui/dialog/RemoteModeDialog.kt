@@ -27,7 +27,7 @@ class RemoteModeDialog : DialogFragment() {
             .setView(view)
             .create()
             .also { dialog ->
-                dialog.window?.setBackgroundDrawableResource(R.drawable.bg_dialog_rounded)
+                dialog.window?.setBackgroundDrawableResource(R.drawable.bg_dialog_remote)
                 dialog.window?.setGravity(Gravity.CENTER)
                 dialog.window?.attributes = dialog.window?.attributes?.apply {
                     y -= 30.dp

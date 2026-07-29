@@ -62,6 +62,13 @@
         android:orientation="vertical"
         android:padding="16dp">
 
+        <ImageView
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_marginBottom="2dp"
+            android:src="@drawable/ic_google"
+            android:contentDescription="@null" />
+
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -81,12 +88,12 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
+            android:layout_marginTop="12dp"
             android:layout_marginStart="@dimen/google_login_field_margin_horizontal"
             android:layout_marginEnd="@dimen/google_login_field_margin_horizontal"
             android:background="@drawable/bg_google_login_field"
             android:gravity="center"
-            android:padding="10dp"
+            android:padding="8dp"
             android:text="nombre@centro.edu"
             android:textColor="#5F6368"
             android:textSize="@dimen/text_size_body_secondary" />
@@ -95,15 +102,15 @@
             android:id="@+id/btn_google_next"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
+            android:layout_marginTop="8dp"
             android:background="@drawable/bg_name_selector_button"
             android:clickable="true"
             android:focusable="true"
             android:gravity="center"
             android:paddingStart="28dp"
-            android:paddingTop="8dp"
+            android:paddingTop="4dp"
             android:paddingEnd="28dp"
-            android:paddingBottom="8dp"
+            android:paddingBottom="4dp"
             android:text="@string/btn_next"
             android:textAllCaps="true"
             android:textColor="#FFFFFF"
@@ -113,7 +120,7 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
+            android:layout_marginTop="4dp"
             android:gravity="center"
             android:paddingHorizontal="32dp"
             android:text="@string/google_workspace_sync_msg"
