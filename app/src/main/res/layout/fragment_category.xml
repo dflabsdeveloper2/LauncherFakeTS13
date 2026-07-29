@@ -9,10 +9,8 @@
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
         android:fillViewport="true"
-        android:clipToPadding="false"
+        android:clipToPadding="true"
         android:overScrollMode="never"
-        android:paddingStart="48dp"
-        android:paddingEnd="48dp"
         android:paddingBottom="24dp"
         android:scrollbars="none">
 
