@@ -230,75 +230,87 @@ class CategoryFragment : Fragment() {
             Environment.CORPORATE -> when (catName) {
                 "General" -> listOf(
                     CorpWidgetData(
-                        getString(R.string.widget_clock),
+                        "RELOJ",
                         R.drawable.ic_recents,
                         R.layout.widget_corporate_clock,
-                        packageName = "com.google.android.deskclock"
+                        headerIconRes = R.drawable.ic_clock
                     ),
                     CorpWidgetData(
-                        getString(R.string.widget_agenda),
+                        "AGENDA",
                         R.drawable.ic_cat_calendar,
-                        R.layout.widget_corporate_generic,
-                        packageName = "com.google.android.calendar"
+                        R.layout.widget_corporate_calendar,
+                        headerIconRes = R.drawable.ic_cat_calendar
                     ),
                     CorpWidgetData(
-                        getString(R.string.widget_weather),
+                        "CLIMA",
                         R.drawable.ic_cat_weather,
-                        R.layout.widget_corporate_weather
+                        R.layout.widget_corporate_weather,
+                        headerIconRes = R.drawable.ic_brightness
                     ),
                     CorpWidgetData(
-                        getString(R.string.widget_focus),
+                        "CONCENTRACIÓN",
                         R.drawable.ic_cat_focus,
-                        R.layout.widget_corporate_generic,
-                        packageName = "com.android.settings"
+                        R.layout.widget_corporate_focus,
+                        headerIconRes = R.drawable.ic_not_disturb
                     )
                 )
 
                 "Sala" -> listOf(
                     CorpWidgetData(
-                        getString(R.string.widget_timer),
+                        "TEMPORIZADOR",
                         R.drawable.ic_cat_timer,
-                        R.layout.widget_corporate_generic,
-                        packageName = "com.google.android.deskclock"
+                        R.layout.widget_corporate_timer,
+                        headerIconRes = R.drawable.ic_cat_timer
                     ),
                     CorpWidgetData(
-                        getString(R.string.widget_videocall),
+                        "VIDEOLLAMADA",
                         R.drawable.ic_cat_teams,
-                        R.layout.widget_corporate_generic,
-                        packageName = "com.google.android.apps.tachyon"
+                        R.layout.widget_corporate_videocall,
+                        headerIconRes = R.drawable.ic_cat_teams,
+                        packageName = "com.microsoft.teams"
                     ),
                     CorpWidgetData(
-                        getString(R.string.widget_eshare),
+                        "ESHARE",
                         R.drawable.ic_cat_mirroring,
-                        R.layout.widget_corporate_generic,
+                        R.layout.widget_corporate_app,
+                        subtitle = "Compartir pantalla",
                         packageName = "com.ecloud.eshare.server"
+                    ),
+                    CorpWidgetData(
+                        "UNIRSE POR QR",
+                        R.drawable.ic_qr,
+                        R.layout.widget_corporate_qr,
+                        headerIconRes = R.drawable.ic_qr
                     )
                 )
 
                 "Trabajo" -> listOf(
                     CorpWidgetData(
-                        getString(R.string.widget_mail),
+                        "CORREO",
                         R.drawable.ic_cat_mail,
-                        R.layout.widget_corporate_generic,
+                        R.layout.widget_corporate_app,
+                        subtitle = "4 sin leer",
                         packageName = "com.google.android.gm"
                     ),
                     CorpWidgetData(
-                        getString(R.string.widget_storage),
+                        "ALMACENAMIENTO",
                         R.drawable.ic_cat_drive,
-                        R.layout.widget_corporate_generic,
+                        R.layout.widget_corporate_app,
+                        subtitle = "Recientes",
                         packageName = "com.google.android.apps.docs"
                     ),
                     CorpWidgetData(
-                        getString(R.string.widget_docs),
+                        "DOCUMENTOS",
                         R.drawable.ic_cat_doc,
-                        R.layout.widget_corporate_generic,
+                        R.layout.widget_corporate_app,
+                        subtitle = "3 recientes",
                         packageName = "com.google.android.apps.docs.editors.docs"
                     ),
                     CorpWidgetData(
-                        getString(R.string.widget_notes),
+                        "NOTAS",
                         R.drawable.ic_cat_note,
-                        R.layout.widget_corporate_generic,
-                        packageName = "com.google.android.apps.docs.editors.docs"
+                        R.layout.widget_corporate_notes,
+                        headerIconRes = R.drawable.ic_cat_note
                     )
                 )
                 // CDD/EDLA: icono fijo de Play Store + carpeta de apps de Google, sustituyendo
