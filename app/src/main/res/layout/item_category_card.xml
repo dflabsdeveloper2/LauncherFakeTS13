@@ -18,11 +18,11 @@
         android:gravity="center_vertical">
 
         <View
-            android:layout_width="6dp"
-            android:layout_height="6dp"
+            android:layout_width="8dp"
+            android:layout_height="8dp"
             android:background="@drawable/bg_badge"
             android:backgroundTint="#1A4479"
-            android:layout_marginEnd="8dp" />
+            android:layout_marginEnd="10dp" />
 
         <TextView
             android:id="@+id/tv_category_title"
@@ -31,7 +31,7 @@
             android:layout_weight="1"
             android:text="CATEGORY"
             android:textColor="#1A1A2E"
-            android:textSize="12sp"
+            android:textSize="18sp"
             android:textStyle="bold"
             android:letterSpacing="0.02"
             android:maxLines="1"

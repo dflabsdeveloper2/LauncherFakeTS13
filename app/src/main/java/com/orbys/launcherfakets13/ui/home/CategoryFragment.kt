@@ -520,17 +520,21 @@ class CategoryFragment : Fragment() {
             Environment.SHOWROOM -> when (catName) {
                 "General" -> listOf(
                     CorpWidgetData(
-                        getString(R.string.widget_clock),
-                        R.drawable.ic_recents,
-                        R.layout.widget_corporate_clock,
+                        header = "RELOJ",
+                        iconRes = R.drawable.ic_recents,
+                        layoutRes = R.layout.widget_corporate_clock,
+                        headerIconRes = R.drawable.ic_info,
                         packageName = "com.google.android.deskclock"
                     ),
+                    null,
                     CorpWidgetData(
-                        "Digital signage",
-                        R.drawable.ic_ops,
-                        R.layout.widget_corporate_generic,
+                        header = "DIGITAL SIGNAGE",
+                        iconRes = R.drawable.ic_play,
+                        layoutRes = R.layout.widget_showroom_ds,
+                        headerIconRes = R.drawable.ic_play,
                         packageName = "com.example.sampleds"
-                    ), null, null
+                    ),
+                    null
                 )
 
                 else -> emptyList()
@@ -539,13 +543,20 @@ class CategoryFragment : Fragment() {
 
         // Infla y posiciona los widgets en la rejilla de 2x2
         widgets.forEachIndexed { i, data ->
+            if (data == null && env == Environment.SHOWROOM) return@forEachIndexed
+
             val view =
                 if (data != null) buildCorporateWidget(data) else FrameLayout(requireContext())
 
             // Tamaño estándar de 90dp, pero la carpeta de Google se hace 3dp más grande (93dp)
             val currentSlotPx = if (data?.opensGoogleFolder == true) dpToPx(93) else slotPx
 
-            val lp = LinearLayout.LayoutParams(currentSlotPx, currentSlotPx)
+            val lp = if (env == Environment.SHOWROOM && data != null) {
+                LinearLayout.LayoutParams(dpToPx(182), slotPx)
+            } else {
+                LinearLayout.LayoutParams(currentSlotPx, currentSlotPx)
+            }
+
             if (i % 2 == 1) lp.marginStart = gapPx
             view.layoutParams = lp
             if (i < 2) rowTop.addView(view) else rowBot.addView(view)
@@ -607,6 +618,9 @@ class CategoryFragment : Fragment() {
             } else {
                 iconView?.setImageResource(data.iconRes)
             }
+        } else if (data.layoutRes == R.layout.widget_showroom_ds) {
+            content.findViewById<TextView>(R.id.tv_showroom_ds_subtitle)?.text = data.title ?: "Digital signage"
+            content.findViewById<ImageView>(R.id.iv_showroom_ds_icon)?.setImageResource(data.iconRes)
         }
 
         container.addView(content)
