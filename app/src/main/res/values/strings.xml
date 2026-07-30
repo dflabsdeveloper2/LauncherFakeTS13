@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name" translatable="false">LauncherFakeTs13</string>
+    <string name="app_name" translatable="false">RemoteTS16</string>
     <string name="search_hint">Search on Google</string>
     <string name="no_shortcuts_available">This app has no quick shortcuts</string>
     <string name="action_split_screen">Split screen</string>
