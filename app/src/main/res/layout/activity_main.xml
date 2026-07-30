@@ -105,8 +105,7 @@
                 android:layout_height="24dp"
                 android:layout_marginEnd="8dp"
                 android:src="@drawable/ic_usb"
-                android:visibility="visible"
-                app:tint="@color/blue_accent" />
+                android:visibility="visible" />
 
             <ImageView
                 android:id="@+id/iv_ethernet"
@@ -114,8 +113,7 @@
                 android:layout_height="24dp"
                 android:layout_marginEnd="8dp"
                 android:src="@drawable/ic_ethernet"
-                android:visibility="visible"
-                app:tint="@color/blue_accent" />
+                android:visibility="visible" />
 
             <ImageView
                 android:id="@+id/iv_wifi"
@@ -123,25 +121,22 @@
                 android:layout_height="24dp"
                 android:layout_marginEnd="8dp"
                 android:src="@drawable/ic_wifi"
-                android:visibility="visible"
-                app:tint="@color/blue_accent" />
+                android:visibility="visible" />
 
             <ImageView
                 android:id="@+id/iv_bluetooth"
                 android:layout_width="24dp"
                 android:layout_height="24dp"
                 android:layout_marginEnd="8dp"
-                android:src="@drawable/ic_headphones"
-                android:visibility="visible"
-                app:tint="@color/blue_accent" />
+                android:src="@drawable/ic_bluetooth"
+                android:visibility="visible" />
 
             <ImageView
                 android:id="@+id/iv_hotspot"
                 android:layout_width="24dp"
                 android:layout_height="24dp"
                 android:src="@drawable/ic_hotspot"
-                android:visibility="visible"
-                app:tint="@color/blue_accent" />
+                android:visibility="visible" />
 
         </LinearLayout>
 
