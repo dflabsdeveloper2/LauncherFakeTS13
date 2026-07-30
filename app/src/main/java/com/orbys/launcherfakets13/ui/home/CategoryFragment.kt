@@ -280,21 +280,21 @@ class CategoryFragment : Fragment() {
                         R.drawable.ic_cat_mail,
                         R.layout.widget_corporate_app,
                         subtitle = "4 sin leer",
-                        packageName = "com.google.android.gm"
+                        packageName = "com.microsoft.office.outlook"
                     ),
                     CorpWidgetData(
                         "ALMACENAMIENTO",
                         R.drawable.ic_cat_drive,
                         R.layout.widget_corporate_app,
                         subtitle = "Recientes",
-                        packageName = "com.google.android.apps.docs"
+                        packageName = "com.microsoft.skydrive"
                     ),
                     CorpWidgetData(
                         "DOCUMENTOS",
                         R.drawable.ic_cat_doc,
                         R.layout.widget_corporate_app,
                         subtitle = "3 recientes",
-                        packageName = "com.google.android.apps.docs.editors.docs"
+                        packageName = "com.microsoft.office.word"
                     ),
                     CorpWidgetData(
                         "NOTAS",
