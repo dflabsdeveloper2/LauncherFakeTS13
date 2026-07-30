@@ -26,7 +26,7 @@
                 android:layout_height="wrap_content"
                 android:letterSpacing="0.05"
                 android:text="@string/timer_header"
-                android:textColor="#1A2363"
+                android:textColor="@color/environment_unselected_title"
                 android:textSize="@dimen/text_size_header_label"
                 android:textStyle="bold" />
 
@@ -34,7 +34,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/timer_subtitle"
-                android:textColor="#000000"
+                android:textColor="@color/black"
                 android:textSize="@dimen/text_size_header_title"
                 android:textStyle="bold" />
         </LinearLayout>
@@ -50,7 +50,7 @@
             android:focusable="true"
             android:gravity="center"
             android:text="✕"
-            android:textColor="#5F6368"
+            android:textColor="@color/gray_800"
             android:textSize="12sp"
             android:textStyle="bold" />
     </RelativeLayout>
@@ -63,7 +63,7 @@
         android:layout_marginTop="4dp"
         android:layout_marginBottom="4dp"
         android:gravity="center"
-        android:textColor="#1A1A2E"
+        android:textColor="@color/widget_label_primary"
         android:textSize="@dimen/timer_time_text_size"
         android:textStyle="bold"
         tools:text="10:00" />
@@ -88,7 +88,7 @@
             android:paddingVertical="8dp"
             android:tag="1"
             android:text="1 min"
-            android:textColor="#5F6368"
+            android:textColor="@color/gray_800"
             android:textSize="9sp"
             android:textStyle="bold" />
 
@@ -104,7 +104,7 @@
             android:paddingVertical="8dp"
             android:tag="3"
             android:text="3 min"
-            android:textColor="#5F6368"
+            android:textColor="@color/gray_800"
             android:textSize="9sp"
             android:textStyle="bold" />
 
@@ -120,7 +120,7 @@
             android:paddingVertical="8dp"
             android:tag="5"
             android:text="5 min"
-            android:textColor="#5F6368"
+            android:textColor="@color/gray_800"
             android:textSize="9sp"
             android:textStyle="bold" />
 
@@ -136,7 +136,7 @@
             android:paddingVertical="8dp"
             android:tag="10"
             android:text="10 min"
-            android:textColor="#5F6368"
+            android:textColor="@color/gray_800"
             android:textSize="9sp"
             android:textStyle="bold" />
 
@@ -152,7 +152,7 @@
             android:paddingVertical="8dp"
             android:tag="15"
             android:text="15 min"
-            android:textColor="#5F6368"
+            android:textColor="@color/gray_800"
             android:textSize="9sp"
             android:textStyle="bold" />
     </LinearLayout>
@@ -176,7 +176,7 @@
             android:paddingHorizontal="20dp"
             android:paddingVertical="10dp"
             android:text="- 30 S"
-            android:textColor="#1A1A2E"
+            android:textColor="@color/widget_label_primary"
             android:textSize="9sp"
             android:textStyle="bold" />
 
@@ -191,7 +191,7 @@
             android:paddingHorizontal="20dp"
             android:paddingVertical="10dp"
             android:text="+ 30 S"
-            android:textColor="#1A1A2E"
+            android:textColor="@color/widget_label_primary"
             android:textSize="9sp"
             android:textStyle="bold" />
     </LinearLayout>
@@ -215,7 +215,7 @@
             android:paddingVertical="10dp"
             android:text="@string/btn_reset"
             android:textAllCaps="true"
-            android:textColor="#1A1A2E"
+            android:textColor="@color/widget_label_primary"
             android:textSize="@dimen/text_size_button"
             android:textStyle="bold" />
 
@@ -231,7 +231,7 @@
             android:paddingVertical="10dp"
             android:text="@string/btn_start"
             android:textAllCaps="true"
-            android:textColor="#FFFFFF"
+            android:textColor="@color/white"
             android:textSize="@dimen/text_size_button"
             android:textStyle="bold" />
     </LinearLayout>

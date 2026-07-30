@@ -44,7 +44,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="@string/login_required_subtitle"
-                    android:textColor="#D9E8FF"
+                    android:textColor="@color/google_blue_extra_light"
                     android:textSize="11sp" />
 
             </LinearLayout>
@@ -86,7 +86,7 @@
             android:text="@string/login_to_use_google_calendar"
             android:textStyle="bold"
             android:textSize="18sp"
-            android:textColor="#1F2937" />
+            android:textColor="@color/gray_900" />
 
         <TextView
             android:layout_width="wrap_content"
@@ -94,7 +94,7 @@
             android:layout_marginTop="8dp"
             android:text="@string/account_validation_needed"
             android:textSize="13sp"
-            android:textColor="#94A3B8" />
+            android:textColor="@color/gray_500" />
 
         <Button
             android:id="@+id/btnValidate"

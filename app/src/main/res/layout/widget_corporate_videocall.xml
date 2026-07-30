@@ -11,14 +11,14 @@
         android:layout_width="34dp"
         android:layout_height="34dp"
         android:src="@drawable/ic_cat_teams"
-        app:tint="#1A4479"
+        app:tint="@color/blue_accent"
         android:layout_marginBottom="8dp"/>
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="TEAMS · ZOOM · MEET"
-        android:textColor="#9CA3AF"
+        android:textColor="@color/widget_label_secondary"
         android:textSize="6sp"
         android:textStyle="bold"
         android:textAllCaps="true" />

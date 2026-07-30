@@ -22,7 +22,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="CATEGORY"
-            android:textColor="#1A1A2E"
+            android:textColor="@color/widget_label_primary"
             android:textSize="14sp"
             android:textStyle="bold"
             android:maxLines="1"

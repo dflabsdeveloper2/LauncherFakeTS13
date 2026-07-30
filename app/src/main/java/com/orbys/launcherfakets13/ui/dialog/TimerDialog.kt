@@ -97,7 +97,7 @@ class TimerDialog : DialogFragment() {
                 chip.setTextColor(Color.WHITE)
                 chip.background = ContextCompat.getDrawable(requireContext(), R.drawable.bg_name_selector_button)
             } else {
-                chip.setTextColor(Color.parseColor(COLOR_CHIP_TEXT))
+                chip.setTextColor(ContextCompat.getColor(requireContext(), R.color.gray_800))
                 chip.background = ContextCompat.getDrawable(requireContext(), R.drawable.bg_timer_chip_unselected)
             }
         }
@@ -157,7 +157,6 @@ class TimerDialog : DialogFragment() {
 
     companion object {
         private const val DEFAULT_SECONDS = 10 * 60
-        private const val COLOR_CHIP_TEXT = "#5F6368"
 
         fun newInstance() = TimerDialog()
     }

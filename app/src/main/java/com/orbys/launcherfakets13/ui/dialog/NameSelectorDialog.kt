@@ -13,6 +13,7 @@ import android.view.WindowManager
 import android.widget.HorizontalScrollView
 import android.widget.LinearLayout
 import android.widget.TextView
+import androidx.core.content.ContextCompat
 import androidx.fragment.app.DialogFragment
 import com.google.android.material.dialog.MaterialAlertDialogBuilder
 import com.orbys.launcherfakets13.R
@@ -95,8 +96,8 @@ class NameSelectorDialog : DialogFragment() {
     private fun addToHistory(name: String) {
         for (i in 0 until chipsContainer.childCount) {
             val chip = chipsContainer.getChildAt(i) as TextView
-            chip.setTextColor(Color.parseColor(COLOR_CHIP_TEXT))
-            chip.background = pillDrawable(Color.parseColor(COLOR_CHIP_BG))
+            chip.setTextColor(ContextCompat.getColor(requireContext(), R.color.gray_600))
+            chip.background = pillDrawable(ContextCompat.getColor(requireContext(), R.color.gray_150))
         }
 
         val chip = TextView(requireContext()).apply {
@@ -104,7 +105,7 @@ class NameSelectorDialog : DialogFragment() {
             textSize = 14f
             setPadding(dp(20), dp(10), dp(20), dp(10))
             setTextColor(Color.WHITE)
-            background = pillDrawable(Color.parseColor(COLOR_ACCENT))
+            background = pillDrawable(ContextCompat.getColor(requireContext(), R.color.blue_accent))
             layoutParams = LinearLayout.LayoutParams(
                 LinearLayout.LayoutParams.WRAP_CONTENT,
                 LinearLayout.LayoutParams.WRAP_CONTENT
@@ -136,10 +137,6 @@ class NameSelectorDialog : DialogFragment() {
 
     companion object {
         private const val ARG_NAMES = "arg_names"
-
-        private const val COLOR_ACCENT = "#1A4479"
-        private const val COLOR_CHIP_BG = "#EEF0F3"
-        private const val COLOR_CHIP_TEXT = "#9AA0A6"
 
         val DEFAULT_NAMES = listOf("Diego", "Álvaro", "Marta", "Lucía", "Pablo")
 

@@ -26,7 +26,7 @@
                 android:layout_height="wrap_content"
                 android:letterSpacing="0.05"
                 android:text="@string/ms_validation_header"
-                android:textColor="#1A2363"
+                android:textColor="@color/environment_unselected_title"
                 android:textSize="@dimen/text_size_header_label"
                 android:textStyle="bold" />
 
@@ -34,7 +34,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/app_validation_choice"
-                android:textColor="#000000"
+                android:textColor="@color/black"
                 android:textSize="@dimen/text_size_header_title"
                 android:textStyle="bold" />
         </LinearLayout>
@@ -50,7 +50,7 @@
             android:focusable="true"
             android:gravity="center"
             android:text="✕"
-            android:textColor="#5F6368"
+            android:textColor="@color/gray_800"
             android:textSize="12sp"
             android:textStyle="bold" />
     </RelativeLayout>
@@ -73,7 +73,7 @@
                 android:layout_marginBottom="12dp"
                 android:lineSpacingExtra="2dp"
                 android:text="@string/ms_auth_explanation"
-                android:textColor="#6B7280"
+                android:textColor="@color/dock_text_inactive"
                 android:textSize="@dimen/text_size_body_secondary" />
 
             <!-- Banner Microsoft Authenticator -->
@@ -107,7 +107,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="Microsoft Authenticator"
-                        android:textColor="#FFFFFF"
+                        android:textColor="@color/white"
                         android:textSize="14sp"
                         android:textStyle="bold" />
 
@@ -117,7 +117,7 @@
                         android:layout_height="wrap_content"
                         android:layout_marginTop="2dp"
                         android:text="@string/ms_sync_msg"
-                        android:textColor="#A9B7E0"
+                        android:textColor="@color/microsoft_blue_light"
                         android:textSize="@dimen/text_size_footer" />
 
                 </LinearLayout>
@@ -128,7 +128,7 @@
                     android:layout_height="wrap_content"
                     android:text="@string/btn_use_authenticator"
                     android:textAllCaps="true"
-                    android:textColor="#FFFFFF"
+                    android:textColor="@color/white"
                     android:textSize="@dimen/text_size_footer"
                     android:textStyle="bold" />
 
@@ -141,7 +141,7 @@
                 android:layout_marginBottom="8dp"
                 android:letterSpacing="0.05"
                 android:text="@string/or_validate_individually"
-                android:textColor="#1A4479"
+                android:textColor="@color/blue_accent"
                 android:textSize="@dimen/text_size_footer"
                 android:textStyle="bold" />
 
@@ -182,7 +182,7 @@
                             android:ellipsize="end"
                             android:maxLines="1"
                             android:text="Outlook"
-                            android:textColor="#1A1A2E"
+                            android:textColor="@color/widget_label_primary"
                             android:textSize="11sp"
                             android:textStyle="bold" />
 
@@ -191,7 +191,7 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:text="@string/not_validated_status"
-                            android:textColor="#8A8F98"
+                            android:textColor="@color/status_not_validated"
                             android:textSize="8sp" />
 
                     </LinearLayout>
@@ -207,7 +207,7 @@
                         android:paddingVertical="6dp"
                         android:text="@string/btn_validate"
                         android:textAllCaps="true"
-                        android:textColor="#FFFFFF"
+                        android:textColor="@color/white"
                         android:textSize="8sp"
                         android:textStyle="bold" />
 
@@ -245,7 +245,7 @@
                             android:ellipsize="end"
                             android:maxLines="1"
                             android:text="OneDrive"
-                            android:textColor="#1A1A2E"
+                            android:textColor="@color/widget_label_primary"
                             android:textSize="11sp"
                             android:textStyle="bold" />
 
@@ -254,7 +254,7 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:text="@string/not_validated_status"
-                            android:textColor="#8A8F98"
+                            android:textColor="@color/status_not_validated"
                             android:textSize="8sp" />
 
                     </LinearLayout>
@@ -270,7 +270,7 @@
                         android:paddingVertical="6dp"
                         android:text="@string/btn_validate"
                         android:textAllCaps="true"
-                        android:textColor="#FFFFFF"
+                        android:textColor="@color/white"
                         android:textSize="8sp"
                         android:textStyle="bold" />
 
@@ -307,7 +307,7 @@
                             android:ellipsize="end"
                             android:maxLines="1"
                             android:text="Teams"
-                            android:textColor="#1A1A2E"
+                            android:textColor="@color/widget_label_primary"
                             android:textSize="11sp"
                             android:textStyle="bold" />
 
@@ -316,7 +316,7 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:text="@string/not_validated_status"
-                            android:textColor="#8A8F98"
+                            android:textColor="@color/status_not_validated"
                             android:textSize="8sp" />
 
                     </LinearLayout>
@@ -332,7 +332,7 @@
                         android:paddingVertical="6dp"
                         android:text="@string/btn_validate"
                         android:textAllCaps="true"
-                        android:textColor="#FFFFFF"
+                        android:textColor="@color/white"
                         android:textSize="8sp"
                         android:textStyle="bold" />
 
@@ -378,7 +378,7 @@
                             android:ellipsize="end"
                             android:maxLines="1"
                             android:text="Word"
-                            android:textColor="#1A1A2E"
+                            android:textColor="@color/widget_label_primary"
                             android:textSize="11sp"
                             android:textStyle="bold" />
 
@@ -387,7 +387,7 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:text="@string/not_validated_status"
-                            android:textColor="#8A8F98"
+                            android:textColor="@color/status_not_validated"
                             android:textSize="8sp" />
 
                     </LinearLayout>
@@ -403,7 +403,7 @@
                         android:paddingVertical="6dp"
                         android:text="@string/btn_validate"
                         android:textAllCaps="true"
-                        android:textColor="#FFFFFF"
+                        android:textColor="@color/white"
                         android:textSize="8sp"
                         android:textStyle="bold" />
 
@@ -441,7 +441,7 @@
                             android:ellipsize="end"
                             android:maxLines="1"
                             android:text="Calendario"
-                            android:textColor="#1A1A2E"
+                            android:textColor="@color/widget_label_primary"
                             android:textSize="11sp"
                             android:textStyle="bold" />
 
@@ -450,7 +450,7 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:text="@string/not_validated_status"
-                            android:textColor="#8A8F98"
+                            android:textColor="@color/status_not_validated"
                             android:textSize="8sp" />
 
                     </LinearLayout>
@@ -466,7 +466,7 @@
                         android:paddingVertical="6dp"
                         android:text="@string/btn_validate"
                         android:textAllCaps="true"
-                        android:textColor="#FFFFFF"
+                        android:textColor="@color/white"
                         android:textSize="8sp"
                         android:textStyle="bold" />
 

@@ -52,8 +52,8 @@ class EnvironmentAdapter(
         if (isSelected) {
             holder.card.setCardBackgroundColor(ctx.getColor(R.color.environment_selected_bg))
             holder.title.setTextColor(ctx.getColor(R.color.white))
-            holder.category.setTextColor(ctx.getColor(R.color.white_65))
-            holder.footer.setTextColor(ctx.getColor(R.color.white_65))
+            holder.category.setTextColor(ctx.getColor(R.color.white_alpha_65))
+            holder.footer.setTextColor(ctx.getColor(R.color.white_alpha_65))
             holder.icon.background.setTint(ctx.getColor(R.color.environment_badge_selected_bg))
             holder.badge.visibility = View.VISIBLE
             // Quitar el filtro de color si el icono tiene sus propios colores definidos

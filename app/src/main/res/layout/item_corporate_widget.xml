@@ -22,7 +22,7 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:text="HEADER"
-            android:textColor="#9CA3AF"
+            android:textColor="@color/widget_label_secondary"
             android:textSize="6sp"
             android:textStyle="bold"
             android:textAllCaps="true" />
@@ -32,7 +32,7 @@
             android:layout_width="12dp"
             android:layout_height="12dp"
             android:src="@drawable/ic_recents"
-            app:tint="#1A4479" />
+            app:tint="@color/blue_accent" />
 
     </LinearLayout>
 

@@ -1,60 +1,106 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <!-- Brand / Base Palette -->
+    <color name="blue_orbys">#1A2363</color>
+    <color name="blue_accent">#1A4479</color>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
-    <color name="teal_200">#FF03DAC5</color>
-    <color name="teal_700">#FF018786</color>
 
-    <!-- Launcher general -->
-    <color name="launcher_bg">#0D0D0D</color>
+    <!-- Neutral Palette -->
+    <color name="gray_100">#F8F9FA</color>
+    <color name="gray_150">#EEF0F3</color>
+    <color name="gray_200">#F1F3F4</color>
+    <color name="gray_250">#E5E7EB</color>
+    <color name="gray_300">#E8EAED</color>
+    <color name="gray_400">#DADCE0</color>
+    <color name="gray_500">#B0BEC5</color>
+    <color name="gray_600">#9AA0A6</color>
+    <color name="gray_650">#6B7280</color>
+    <color name="gray_700">#80868B</color>
+    <color name="gray_800">#5F6368</color>
+    <color name="gray_900">#1F2937</color>
 
-    <!-- Dock -->
-    <color name="dock_bg_light">#FFFFFFFF</color>
-    <color name="item_selected">#2aaae1</color>
-    <color name="dock_logo_color">#1A2363</color>
-    <color name="dock_text_active">#1A2363</color>
-    <color name="dock_text_inactive">#6B7280</color>
-    <color name="dock_divider">#E5E7EB</color>
+    <!-- Alphas -->
+    <color name="black_alpha_80">#CC000000</color>
+    <color name="white_alpha_95">#F2FFFFFF</color>
+    <color name="white_alpha_65">#A6FFFFFF</color>
+    <color name="white_alpha_25">#40FFFFFF</color>
+    <color name="white_alpha_20">#33FFFFFF</color>
+    <color name="white_alpha_12">#20FFFFFF</color>
+    <color name="gray_900_alpha_90">#E6121820</color>
 
-    <!-- App drawer -->
-    <color name="drawer_bg">#F9FAFB</color>
+    <!-- Semantic Aliases -->
+    <color name="dock_bg_light">@color/white</color>
+    <color name="dock_logo_color">@color/blue_orbys</color>
+    <color name="dock_text_active">@color/blue_orbys</color>
+    <color name="dock_text_inactive">@color/gray_650</color>
+    <color name="dock_divider">@color/gray_250</color>
+    <color name="drawer_bg">@color/gray_100</color>
     <color name="drawer_text">#111827</color>
-    <color name="drawer_handle">#6B7280</color>
+    <color name="drawer_handle">@color/gray_650</color>
+    <color name="status_not_validated">#8A8F98</color>
+    <color name="divider_color">@color/gray_300</color>
+    <color name="bg_overlay_dim">@color/black_alpha_80</color>
+    <color name="bg_dialog_subcontent">#F8F9FE</color>
+    <color name="bg_widget_corporate">#F0F4F8</color>
+    <color name="text_dim">#666666</color>
+    <color name="item_selected">#2aaae1</color>
 
-    <color name="blue2_50_100">#1A4479</color>
-
-    <!-- Categories and Slots -->
+    <!-- Features -->
     <color name="slot_bg_saved">#F0F2F5</color>
     <color name="slot_bg_empty">#EAECF0</color>
     <color name="slot_add_icon_tint">#9CA3AF</color>
-
-    <!-- Widgets -->
     <color name="widget_border_edit">#5C9EFF</color>
     <color name="widget_btn_confirm_bg">#1B5E20</color>
     <color name="widget_btn_delete_bg">#B71C1C</color>
     <color name="widget_label_primary">#1A1A2E</color>
     <color name="widget_label_secondary">#9CA3AF</color>
     <color name="widget_label_tertiary">#C0C0C0</color>
-
-    <!-- Add Cards -->
     <color name="add_card_bg">#EEF0F5</color>
     <color name="add_card_text">#9CA3AF</color>
-
-
-
-    <!-- Fondos de tarjeta de entorno -->
     <color name="environment_selected_bg">#003E7E</color>
     <color name="environment_unselected_bg">#F5F7FA</color>
-    <color name="environment_unselected_title">#1A2363</color>
+    <color name="environment_unselected_title">@color/blue_orbys</color>
+    <color name="environment_icon_unselected_tint">@color/blue_orbys</color>
     <color name="environment_badge_bg">#E2E8F0</color>
     <color name="environment_badge_selected_bg">#29FFFFFF</color>
-    <color name="environment_icon_unselected_tint">#1A2363</color>
-
-    <!-- Texto -->
-<!--    <color name="text_primary">#1A1A1A</color>
-    <color name="text_secondary">#6B7280</color>-->
-    <color name="white_65">#A6FFFFFF</color>
-
-    <!-- background -->
     <color name="screen_border_red">#FF0000</color>
+
+    <!-- Feature / Branding -->
+    <color name="google_blue">#1A73E8</color>
+    <color name="google_blue_light">#4D8CEB</color>
+    <color name="google_blue_extra_light">#D9E8FF</color>
+    <color name="microsoft_blue_light">#A9B7E0</color>
+    <color name="focus_mode_bg">#080C16</color>
+    <color name="focus_mode_accent">#7DEDD0</color>
+    <color name="focus_mode_text_dim">#5F6B80</color>
+    <color name="sonometer_accent">#F1585E</color>
+    <color name="notes_widget_bg">#FFD54F</color>
+    <color name="weather_sun_tint">#FFD600</color>
+    <color name="notification_red">#F44336</color>
+    <color name="error_red">#E53935</color>
+
+    <!-- Gradients -->
+    <color name="grad_corp_start">#E2E4EA</color>
+    <color name="grad_corp_center">#EDEEF2</color>
+    <color name="grad_corp_end">#F4F4F6</color>
+    <color name="grad_google_start">#D6F5E4</color>
+    <color name="grad_google_center">#EBF9F2</color>
+    <color name="grad_google_end">#F3FCF7</color>
+    <color name="grad_office_start">#E4E9FF</color>
+    <color name="grad_office_center">#EDF0FB</color>
+    <color name="grad_office_end">#F3F5FC</color>
+    <color name="grad_showroom_start">#F0E4FF</color>
+    <color name="grad_showroom_center">#F5F0FB</color>
+    <color name="grad_showroom_end">#F9F5FC</color>
+    <color name="weather_grad_start">#2A52BE</color>
+    <color name="weather_grad_end">#4169E1</color>
+
+    <!-- Branding / Specific Icons -->
+    <color name="android_green">#3DDC84</color>
+    <color name="edit_icon_dark">#0F0F0F</color>
+
+    <!-- Legacy / Material Design -->
+    <color name="teal_200">#FF03DAC5</color>
+    <color name="teal_700">#FF018786</color>
 </resources>

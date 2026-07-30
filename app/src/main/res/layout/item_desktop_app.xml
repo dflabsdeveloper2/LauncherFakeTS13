@@ -22,7 +22,7 @@
         android:lines="1"
         android:textColor="@color/white"
         android:textSize="11sp"
-        android:shadowColor="#B0000000"
+        android:shadowColor="@color/black_alpha_80"
         android:shadowDx="0"
         android:shadowDy="1"
         android:shadowRadius="3" />

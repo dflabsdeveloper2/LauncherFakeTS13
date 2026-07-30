@@ -12,8 +12,8 @@
         android:orientation="horizontal"
         android:gravity="center_vertical"
         android:layout_marginBottom="3dp">
-        <View android:layout_width="5dp" android:layout_height="5dp" android:background="@drawable/bg_badge" android:backgroundTint="#2AAAE1" android:layout_marginEnd="6dp"/>
-        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="09:30  Claustro s..." android:textColor="#1A1A2E" android:textSize="8sp" android:maxLines="1" android:ellipsize="end"/>
+        <View android:layout_width="5dp" android:layout_height="5dp" android:background="@drawable/bg_badge" android:backgroundTint="@color/item_selected" android:layout_marginEnd="6dp"/>
+        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="09:30  Claustro s..." android:textColor="@color/widget_label_primary" android:textSize="8sp" android:maxLines="1" android:ellipsize="end"/>
     </LinearLayout>
 
     <LinearLayout
@@ -22,8 +22,8 @@
         android:orientation="horizontal"
         android:gravity="center_vertical"
         android:layout_marginBottom="3dp">
-        <View android:layout_width="5dp" android:layout_height="5dp" android:background="@drawable/bg_badge" android:backgroundTint="#4CAF50" android:layout_marginEnd="6dp"/>
-        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="11:00  Tutoría 3.º B" android:textColor="#1A1A2E" android:textSize="8sp" android:maxLines="1" android:ellipsize="end"/>
+        <View android:layout_width="5dp" android:layout_height="5dp" android:background="@drawable/bg_badge" android:backgroundTint="@android:color/holo_green_dark" android:layout_marginEnd="6dp"/>
+        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="11:00  Tutoría 3.º B" android:textColor="@color/widget_label_primary" android:textSize="8sp" android:maxLines="1" android:ellipsize="end"/>
     </LinearLayout>
 
     <LinearLayout
@@ -31,8 +31,8 @@
         android:layout_height="wrap_content"
         android:orientation="horizontal"
         android:gravity="center_vertical">
-        <View android:layout_width="5dp" android:layout_height="5dp" android:background="@drawable/bg_badge" android:backgroundTint="#FFC107" android:layout_marginEnd="6dp"/>
-        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="12:30  Sesión lab..." android:textColor="#1A1A2E" android:textSize="8sp" android:maxLines="1" android:ellipsize="end"/>
+        <View android:layout_width="5dp" android:layout_height="5dp" android:background="@drawable/bg_badge" android:backgroundTint="@android:color/holo_orange_light" android:layout_marginEnd="6dp"/>
+        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="12:30  Sesión lab..." android:textColor="@color/widget_label_primary" android:textSize="8sp" android:maxLines="1" android:ellipsize="end"/>
     </LinearLayout>
 
 </LinearLayout>

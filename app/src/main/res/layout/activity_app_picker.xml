@@ -10,7 +10,7 @@
         android:id="@+id/scrim_bg"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="#CC000000"
+        android:background="@color/bg_overlay_dim"
         android:clickable="true"
         android:focusable="true" />
 
@@ -95,7 +95,7 @@
                     android:layout_width="15dp"
                     android:layout_height="15dp"
                     android:src="@drawable/ic_search"
-                    app:tint="#9CA3AF"
+                    app:tint="@color/slot_add_icon_tint"
                     android:contentDescription="Buscar"
                     android:layout_marginEnd="8dp" />
 
@@ -106,7 +106,7 @@
                     android:layout_weight="1"
                     android:background="@android:color/transparent"
                     android:hint="Buscar app…"
-                    android:textColorHint="#9CA3AF"
+                    android:textColorHint="@color/slot_add_icon_tint"
                     android:textColor="@color/drawer_text"
                     android:textSize="12sp"
                     android:inputType="text"

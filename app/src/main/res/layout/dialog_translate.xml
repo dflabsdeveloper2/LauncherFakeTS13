@@ -26,7 +26,7 @@
                 android:layout_height="wrap_content"
                 android:letterSpacing="0.05"
                 android:text="@string/translate_header"
-                android:textColor="#1A2363"
+                android:textColor="@color/environment_unselected_title"
                 android:textSize="@dimen/text_size_header_label"
                 android:textStyle="bold" />
 
@@ -34,7 +34,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/live_translation_subtitle"
-                android:textColor="#000000"
+                android:textColor="@color/black"
                 android:textSize="@dimen/text_size_header_title"
                 android:textStyle="bold" />
         </LinearLayout>
@@ -50,7 +50,7 @@
             android:focusable="true"
             android:gravity="center"
             android:text="✕"
-            android:textColor="#5F6368"
+            android:textColor="@color/gray_800"
             android:textSize="12sp"
             android:textStyle="bold" />
     </RelativeLayout>
@@ -75,7 +75,7 @@
             android:paddingEnd="8dp"
             android:paddingBottom="6dp"
             android:text="@string/lang_spanish"
-            android:textColor="#1A1A2E"
+            android:textColor="@color/widget_label_primary"
             android:textSize="@dimen/text_size_body_secondary"
             android:textStyle="bold" />
 
@@ -90,7 +90,7 @@
             android:focusable="true"
             android:gravity="center"
             android:text="⇄"
-            android:textColor="#1A4479"
+            android:textColor="@color/blue_accent"
             android:textSize="14sp"
             android:textStyle="bold" />
 
@@ -106,7 +106,7 @@
             android:paddingEnd="8dp"
             android:paddingBottom="6dp"
             android:text="@string/lang_english"
-            android:textColor="#1A1A2E"
+            android:textColor="@color/widget_label_primary"
             android:textSize="@dimen/text_size_body_secondary"
             android:textStyle="bold" />
 
@@ -129,7 +129,7 @@
             android:paddingBottom="6dp"
             android:text="@string/btn_translate"
             android:textAllCaps="true"
-            android:textColor="#FFFFFF"
+            android:textColor="@color/white"
             android:textSize="@dimen/text_size_body_secondary"
             android:textStyle="bold" />
 
@@ -154,8 +154,8 @@
             android:inputType="textMultiLine|textCapSentences"
             android:padding="12dp"
             android:text="Buenos días, hoy vamos a repasar las fracciones y a resolver un reto en equipo."
-            android:textColor="#1A1A2E"
-            android:textColorHint="#9AA0A6"
+            android:textColor="@color/widget_label_primary"
+            android:textColorHint="@color/gray_600"
             android:textCursorDrawable="@null"
             android:textSize="@dimen/text_size_body_secondary" />
 
@@ -169,7 +169,7 @@
             android:background="@drawable/bg_translate_target_panel"
             android:padding="12dp"
             android:text="Good morning, today we are going to review fractions and solve a team challenge."
-            android:textColor="#FFFFFF"
+            android:textColor="@color/white"
             android:textSize="@dimen/text_size_body_secondary" />
 
     </LinearLayout>
@@ -197,7 +197,7 @@
                 android:paddingEnd="12dp"
                 android:paddingBottom="6dp"
                 android:text="Buenos días, vamos a empezar."
-                android:textColor="#1A1A2E"
+                android:textColor="@color/widget_label_primary"
                 android:textSize="@dimen/text_size_footer" />
 
             <TextView
@@ -211,7 +211,7 @@
                 android:paddingEnd="12dp"
                 android:paddingBottom="6dp"
                 android:text="Abrid el libro por la página 24."
-                android:textColor="#1A1A2E"
+                android:textColor="@color/widget_label_primary"
                 android:textSize="@dimen/text_size_footer" />
 
             <TextView
@@ -224,7 +224,7 @@
                 android:paddingEnd="12dp"
                 android:paddingBottom="6dp"
                 android:text="Trabajad en parejas, por favor."
-                android:textColor="#1A1A2E"
+                android:textColor="@color/widget_label_primary"
                 android:textSize="@dimen/text_size_footer" />
 
         </LinearLayout>

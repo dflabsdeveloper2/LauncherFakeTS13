@@ -13,7 +13,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#080C16">
+    android:background="@color/focus_mode_bg">
 
     <TextView
         android:id="@+id/tv_focus_clock"
@@ -21,7 +21,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="64dp"
         android:fontFamily="sans-serif-light"
-        android:textColor="#FFFFFF"
+        android:textColor="@color/white"
         android:textSize="56sp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
@@ -36,7 +36,7 @@
         android:layout_marginTop="8dp"
         android:letterSpacing="0.15"
         android:text="@string/focus_mode_title"
-        android:textColor="#5F6B80"
+        android:textColor="@color/focus_mode_text_dim"
         android:textSize="13sp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
@@ -73,7 +73,7 @@
                 android:id="@+id/tv_focus_db_value"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:textColor="#7DEDD0"
+                android:textColor="@color/focus_mode_accent"
                 android:textSize="48sp"
                 android:textStyle="bold"
                 tools:text="41" />
@@ -84,7 +84,7 @@
                 android:layout_marginStart="4dp"
                 android:layout_marginBottom="8dp"
                 android:text="@string/unit_db"
-                android:textColor="#7DEDD0"
+                android:textColor="@color/focus_mode_accent"
                 android:textSize="20sp"
                 android:textStyle="bold" />
 
@@ -96,7 +96,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="8dp"
             android:letterSpacing="0.1"
-            android:textColor="#5F6B80"
+            android:textColor="@color/focus_mode_text_dim"
             android:textSize="13sp"
             android:textStyle="bold"
             tools:text="AMBIENTE TRANQUILO" />
@@ -118,7 +118,7 @@
         android:paddingBottom="14dp"
         android:text="@string/btn_exit_focus_mode"
         android:textAllCaps="true"
-        android:textColor="#FFFFFF"
+        android:textColor="@color/white"
         android:textSize="13sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"

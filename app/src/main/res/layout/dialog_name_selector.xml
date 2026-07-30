@@ -26,7 +26,7 @@
                 android:layout_height="wrap_content"
                 android:letterSpacing="0.05"
                 android:text="@string/student_selector_header"
-                android:textColor="#1A2363"
+                android:textColor="@color/environment_unselected_title"
                 android:textSize="@dimen/text_size_header_label"
                 android:textStyle="bold" />
 
@@ -34,7 +34,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/who_is_next_label"
-                android:textColor="#000000"
+                android:textColor="@color/black"
                 android:textSize="@dimen/text_size_header_title"
                 android:textStyle="bold" />
         </LinearLayout>
@@ -58,7 +58,7 @@
                 android:padding="7dp"
                 android:src="@drawable/ic_edit"
                 android:contentDescription="@null"
-                app:tint="#5F6368" />
+                app:tint="@color/gray_800" />
 
             <TextView
                 android:id="@+id/btn_close"
@@ -69,7 +69,7 @@
                 android:focusable="true"
                 android:gravity="center"
                 android:text="✕"
-                android:textColor="#5F6368"
+                android:textColor="@color/gray_800"
                 android:textSize="12sp"
                 android:textStyle="bold" />
         </LinearLayout>
@@ -87,7 +87,7 @@
         android:maxLines="1"
         android:paddingStart="16dp"
         android:paddingEnd="16dp"
-        android:textColor="#1A1A2E"
+        android:textColor="@color/widget_label_primary"
         android:textSize="@dimen/name_selector_result_text_size"
         android:textStyle="bold"
         tools:text="Diego" />
@@ -113,7 +113,7 @@
         android:layout_width="match_parent"
         android:layout_height="1dp"
         android:layout_marginBottom="16dp"
-        android:background="#E8EAED" />
+        android:background="@color/divider_color" />
 
     <FrameLayout
         android:layout_width="match_parent"
@@ -133,7 +133,7 @@
             android:paddingBottom="10dp"
             android:text="@string/btn_pick_again"
             android:textAllCaps="true"
-            android:textColor="#FFFFFF"
+            android:textColor="@color/white"
             android:textSize="@dimen/text_size_button"
             android:textStyle="bold" />
     </FrameLayout>

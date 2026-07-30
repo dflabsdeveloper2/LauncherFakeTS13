@@ -13,6 +13,7 @@ import android.view.WindowManager
 import android.widget.LinearLayout
 import android.widget.TextView
 import androidx.core.view.WindowCompat
+import androidx.core.content.ContextCompat
 import androidx.fragment.app.DialogFragment
 import com.orbys.launcherfakets13.R
 import com.orbys.launcherfakets13.services.overlay.DockOverlayService
@@ -88,7 +89,7 @@ class FocusModeDialog : DialogFragment() {
                 background = GradientDrawable().apply {
                     shape = GradientDrawable.RECTANGLE
                     cornerRadius = dp(6).toFloat()
-                    setColor(Color.parseColor(COLOR_BAR))
+                    setColor(ContextCompat.getColor(requireContext(), R.color.focus_mode_accent))
                 }
                 layoutParams = LinearLayout.LayoutParams(dp(10), dp(MIN_BAR_DP)).apply {
                     marginStart = dp(5)
@@ -150,7 +151,6 @@ class FocusModeDialog : DialogFragment() {
         private const val BAR_COUNT = 13
         private const val MIN_BAR_DP = 10
         private const val MAX_BAR_DP = 90
-        private const val COLOR_BAR = "#7DEDD0"
 
         fun newInstance() = FocusModeDialog()
     }

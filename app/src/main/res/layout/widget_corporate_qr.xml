@@ -11,7 +11,7 @@
         android:layout_width="24dp"
         android:layout_height="24dp"
         android:src="@drawable/ic_qr"
-        app:tint="#1A1A2E" />
+        app:tint="@color/widget_label_primary" />
 
     <LinearLayout
         android:layout_width="wrap_content"
@@ -24,7 +24,7 @@
             android:layout_height="wrap_content"
             android:gravity="center"
             android:text="4192"
-            android:textColor="#1A1A2E"
+            android:textColor="@color/widget_label_primary"
             android:textSize="10sp"
             android:textStyle="bold" />
 
@@ -33,7 +33,7 @@
             android:layout_height="wrap_content"
             android:paddingHorizontal="2dp"
             android:text="orbys.live"
-            android:textColor="#9CA3AF"
+            android:textColor="@color/widget_label_secondary"
             android:textSize="7sp" />
     </LinearLayout>
 

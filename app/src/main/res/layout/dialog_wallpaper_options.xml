@@ -33,7 +33,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/wallpaper_title"
-                android:textColor="#000000"
+                android:textColor="@color/black"
                 android:textSize="@dimen/text_size_header_title"
                 android:textStyle="bold" />
         </LinearLayout>
@@ -49,7 +49,7 @@
             android:focusable="true"
             android:gravity="center"
             android:text="✕"
-            android:textColor="#5F6368"
+            android:textColor="@color/gray_800"
             android:textSize="12sp"
             android:textStyle="bold" />
     </RelativeLayout>
@@ -59,7 +59,7 @@
         android:layout_height="wrap_content"
         android:text="@string/environment_desc"
         android:textSize="@dimen/text_size_body_secondary"
-        android:textColor="#666666"
+        android:textColor="@color/text_dim"
         android:lineSpacingMultiplier="1.2"
         android:layout_marginBottom="24dp" />
 

@@ -24,7 +24,7 @@
         android:maxLines="2"
         android:ellipsize="end"
         android:text="Title"
-        android:textColor="#9CA3AF"
+        android:textColor="@color/widget_label_secondary"
         android:textSize="9sp" />
 
 </LinearLayout>

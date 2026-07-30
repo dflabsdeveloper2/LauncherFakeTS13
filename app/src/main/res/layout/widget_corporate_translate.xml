@@ -10,7 +10,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="ES ↔ EN"
-        android:textColor="#1A1A2E"
+        android:textColor="@color/widget_label_primary"
         android:textSize="15sp"
         android:textStyle="bold"
         android:layout_marginBottom="2dp"/>
@@ -19,7 +19,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="&quot;Buenos días, hoy repasamos...&quot;"
-        android:textColor="#9CA3AF"
+        android:textColor="@color/widget_label_secondary"
         android:textSize="7sp"
         android:maxLines="2"
         android:ellipsize="end" />

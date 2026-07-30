@@ -26,7 +26,7 @@
                 android:layout_height="wrap_content"
                 android:letterSpacing="0.05"
                 android:text="@string/noise_meter_header"
-                android:textColor="#1A2363"
+                android:textColor="@color/environment_unselected_title"
                 android:textSize="10sp"
                 android:textStyle="bold" />
 
@@ -34,7 +34,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/sonometer_title"
-                android:textColor="#000000"
+                android:textColor="@color/black"
                 android:textSize="24sp"
                 android:textStyle="bold" />
         </LinearLayout>
@@ -50,7 +50,7 @@
             android:focusable="true"
             android:gravity="center"
             android:text="✕"
-            android:textColor="#5F6368"
+            android:textColor="@color/gray_800"
             android:textSize="14sp"
             android:textStyle="bold" />
     </RelativeLayout>
@@ -78,7 +78,7 @@
             android:id="@+id/tv_noise_db_value"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textColor="#1A1A2E"
+            android:textColor="@color/widget_label_primary"
             android:textSize="20sp"
             android:textStyle="bold"
             tools:text="57 dB" />
@@ -89,7 +89,7 @@
             android:layout_marginStart="8dp"
             android:layout_marginEnd="8dp"
             android:text="·"
-            android:textColor="#B0B4BA"
+            android:textColor="@color/gray_500"
             android:textSize="20sp"
             android:textStyle="bold" />
 
@@ -98,7 +98,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:letterSpacing="0.05"
-            android:textColor="#5F6368"
+            android:textColor="@color/gray_800"
             android:textSize="12sp"
             android:textStyle="bold"
             tools:text="ALTO" />

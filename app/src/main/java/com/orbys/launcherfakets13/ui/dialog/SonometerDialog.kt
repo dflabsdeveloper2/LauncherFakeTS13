@@ -11,6 +11,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.widget.LinearLayout
 import android.widget.TextView
+import androidx.core.content.ContextCompat
 import androidx.fragment.app.DialogFragment
 import com.google.android.material.dialog.MaterialAlertDialogBuilder
 import com.orbys.launcherfakets13.R
@@ -69,7 +70,7 @@ class SonometerDialog : DialogFragment() {
                 background = GradientDrawable().apply {
                     shape = GradientDrawable.RECTANGLE
                     cornerRadius = dpToPx(14).toFloat()
-                    setColor(Color.parseColor(COLOR_BAR))
+                    setColor(ContextCompat.getColor(requireContext(), R.color.sonometer_accent))
                 }
                 layoutParams = LinearLayout.LayoutParams(dpToPx(40), dpToPx(MIN_BAR_DP)).apply {
                     marginStart = dpToPx(6)
@@ -116,7 +117,6 @@ class SonometerDialog : DialogFragment() {
         private const val BAR_COUNT = 5
         private const val MIN_BAR_DP = 20
         private const val MAX_BAR_DP = 130
-        private const val COLOR_BAR = "#F1585E"
 
         fun newInstance() = SonometerDialog()
     }

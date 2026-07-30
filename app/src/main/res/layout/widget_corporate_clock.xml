@@ -12,7 +12,7 @@
         android:layout_height="wrap_content"
         android:format12Hour="h:mm"
         android:format24Hour="HH:mm"
-        android:textColor="#1A1A2E"
+        android:textColor="@color/widget_label_primary"
         android:textSize="22sp"
         android:textStyle="bold" />
 
@@ -22,7 +22,7 @@
         android:layout_height="wrap_content"
         android:format12Hour="EEE · dd MMM"
         android:format24Hour="EEE · dd MMM"
-        android:textColor="#9CA3AF"
+        android:textColor="@color/widget_label_secondary"
         android:textSize="8sp"
         android:textAllCaps="true" />
 
