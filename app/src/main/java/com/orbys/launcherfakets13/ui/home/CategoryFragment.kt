@@ -308,7 +308,7 @@ class CategoryFragment : Fragment() {
                 "Colaboración" -> listOf(
                     playStoreWidgetData(),
                     googleAppsFolderWidgetData(),
-                    null,
+                    supportWidgetData(),
                     null
                 )
 
@@ -404,7 +404,7 @@ class CategoryFragment : Fragment() {
                 "Colaboración" -> listOf(
                     playStoreWidgetData(),
                     googleAppsFolderWidgetData(),
-                    null,
+                    supportWidgetData(),
                     null
                 )
 
@@ -500,7 +500,7 @@ class CategoryFragment : Fragment() {
                 "Colaboración" -> listOf(
                     playStoreWidgetData(),
                     googleAppsFolderWidgetData(),
-                    null,
+                    supportWidgetData(),
                     null
                 )
 
@@ -611,6 +611,9 @@ class CategoryFragment : Fragment() {
         } else if (data.layoutRes == R.layout.widget_showroom_ds) {
             content.findViewById<TextView>(R.id.tv_showroom_ds_subtitle)?.text = data.title ?: "Digital signage"
             content.findViewById<ImageView>(R.id.iv_showroom_ds_icon)?.setImageResource(data.iconRes)
+        } else if (data.layoutRes == R.layout.widget_corporate_support) {
+            content.findViewById<TextView>(R.id.tv_support_footer)?.text = data.subtitle ?: getString(R.string.widget_support_footer)
+            content.findViewById<ImageView>(R.id.iv_support_main_icon)?.setImageResource(data.iconRes)
         }
 
         container.addView(content)
@@ -752,6 +755,13 @@ class CategoryFragment : Fragment() {
             "com.google.android.apps.photos" to R.drawable.ic_brand_photos
         ),
         disabledByAdmin = true
+    )
+
+    private fun supportWidgetData() = CorpWidgetData(
+        header = getString(R.string.widget_support),
+        iconRes = R.drawable.ic_support,
+        layoutRes = R.layout.widget_corporate_support,
+        headerIconRes = R.drawable.ic_headphones
     )
 
     /**

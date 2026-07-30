@@ -231,4 +231,6 @@
     <string name="who_is_next_label">¿A quién le toca?</string>
     <string name="timer_header">//TEMPORIZADOR</string>
     <string name="translate_header">//ORBYS TRANSLATE</string>
+    <string name="widget_support">SOPORTE</string>
+    <string name="widget_support_footer">FAQ-TELÉFONO-CHAT</string>
 </resources>
