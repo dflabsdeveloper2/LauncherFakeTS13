@@ -201,6 +201,15 @@
     <string name="widget_showroom_ds_label">Digital signage</string>
     <string name="unit_db" translatable="false">dB</string>
 
+    <!-- Calendar Widget Events -->
+    <string name="calendar_event_corp_1" translatable="false">09:30  Reunion eq..</string>
+    <string name="calendar_event_corp_2" translatable="false">11:00 Revisar proy...</string>
+    <string name="calendar_event_corp_3" translatable="false">12:30  Cliente a...</string>
+
+    <string name="calendar_event_edu_1" translatable="false">09:30  Claustro s...</string>
+    <string name="calendar_event_edu_2" translatable="false">11:00  Tutoría 3.º B</string>
+    <string name="calendar_event_edu_3" translatable="false">12:30  Sesión lab...</string>
+
     <!-- Shortcuts -->
     <string name="shortcut_time">Time</string>
     <string name="shortcut_calendar">Calendar</string>

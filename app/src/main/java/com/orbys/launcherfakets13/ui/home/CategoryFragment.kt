@@ -615,6 +615,17 @@ class CategoryFragment : Fragment() {
         } else if (data.layoutRes == R.layout.widget_corporate_support) {
             content.findViewById<TextView>(R.id.tv_support_footer)?.text = data.subtitle ?: getString(R.string.widget_support_footer)
             content.findViewById<ImageView>(R.id.iv_support_main_icon)?.setImageResource(data.iconRes)
+        } else if (data.layoutRes == R.layout.widget_corporate_calendar) {
+            val env = viewModel.uiState.value.currentEnvironment
+            if (env == Environment.CORPORATE) {
+                content.findViewById<TextView>(R.id.tv_calendar_event_1)?.text = getString(R.string.calendar_event_corp_1)
+                content.findViewById<TextView>(R.id.tv_calendar_event_2)?.text = getString(R.string.calendar_event_corp_2)
+                content.findViewById<TextView>(R.id.tv_calendar_event_3)?.text = getString(R.string.calendar_event_corp_3)
+            } else {
+                content.findViewById<TextView>(R.id.tv_calendar_event_1)?.text = getString(R.string.calendar_event_edu_1)
+                content.findViewById<TextView>(R.id.tv_calendar_event_2)?.text = getString(R.string.calendar_event_edu_2)
+                content.findViewById<TextView>(R.id.tv_calendar_event_3)?.text = getString(R.string.calendar_event_edu_3)
+            }
         }
 
         container.addView(content)

@@ -10,8 +10,7 @@
     <ImageView
         android:layout_width="24dp"
         android:layout_height="24dp"
-        android:src="@drawable/ic_qr"
-        app:tint="@color/widget_label_primary" />
+        android:src="@drawable/ic_qr" />
 
     <LinearLayout
         android:layout_width="wrap_content"

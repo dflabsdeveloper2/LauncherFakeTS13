@@ -10,8 +10,8 @@
 
     <ImageView
         android:id="@+id/iv_corp_generic_icon"
-        android:layout_width="30dp"
-        android:layout_height="30dp"
+        android:layout_width="25dp"
+        android:layout_height="25dp"
         android:src="@drawable/ic_tune"
         android:contentDescription="@null"
         android:layout_marginBottom="8dp"/>
@@ -25,6 +25,6 @@
         android:ellipsize="end"
         android:text="Title"
         android:textColor="@color/widget_label_secondary"
-        android:textSize="9sp" />
+        android:textSize="7sp" />
 
 </LinearLayout>
