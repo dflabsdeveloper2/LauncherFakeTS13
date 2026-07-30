@@ -80,13 +80,13 @@ class RecentsController(
         loadRecentApps()
         onVisibilityChanged(true)
 
-        binding.root.post {
-            binding.root.animate()
-                .translationY(0f)
-                .alpha(1f)
-                .setDuration(300)
-                .setInterpolator(DecelerateInterpolator())
-                .start()
+        newView.post {
+            _binding?.root?.animate()
+                ?.translationY(0f)
+                ?.alpha(1f)
+                ?.setDuration(300)
+                ?.setInterpolator(DecelerateInterpolator())
+                ?.start()
         }
     }
 
@@ -115,7 +115,8 @@ class RecentsController(
     }
 
     private fun setupRecyclerView() {
-        binding.rvRecentsApps.layoutManager = GridLayoutManager(context, 5)
+        val b = _binding ?: return
+        b.rvRecentsApps.layoutManager = GridLayoutManager(context, 5)
         adapter = RecentsAdapter(
             apps = emptyList(),
             onAppClick = { app ->
@@ -132,11 +133,11 @@ class RecentsController(
                 }
             }
         )
-        binding.rvRecentsApps.adapter = adapter
+        b.rvRecentsApps.adapter = adapter
     }
 
     private fun setupClearAllSlider() {
-        binding.sbClearAll.setOnSeekBarChangeListener(object : SeekBar.OnSeekBarChangeListener {
+        _binding?.sbClearAll?.setOnSeekBarChangeListener(object : SeekBar.OnSeekBarChangeListener {
             override fun onProgressChanged(seekBar: SeekBar?, progress: Int, fromUser: Boolean) {
                 if (progress >= 95) {
                     clearAllApps()
