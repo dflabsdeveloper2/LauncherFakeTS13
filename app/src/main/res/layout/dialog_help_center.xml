@@ -1,0 +1,581 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:paddingBottom="24dp"
+    android:background="@drawable/bg_dialog_rounded">
+
+    <!-- Header -->
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:paddingStart="24dp"
+        android:paddingEnd="24dp">
+
+        <TextView
+            android:id="@+id/btn_close_help"
+            android:layout_width="@dimen/dialog_close_button_size"
+            android:layout_height="@dimen/dialog_close_button_size"
+            android:layout_alignParentEnd="true"
+            android:layout_centerVertical="true"
+            android:background="@drawable/bg_name_selector_close"
+            android:clickable="true"
+            android:contentDescription="@string/cancel"
+            android:focusable="true"
+            android:gravity="center"
+            android:text="✕"
+            android:textColor="@color/gray_800"
+            android:textSize="12sp"
+            android:textStyle="bold" />
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_centerVertical="true"
+            android:layout_marginEnd="14dp"
+            android:layout_toStartOf="@id/btn_close_help"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:letterSpacing="0.05"
+                android:text="@string/help_center_header"
+                android:textColor="@color/blue_accent"
+                android:textSize="@dimen/text_size_header_label"
+                android:textStyle="bold" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="2dp"
+                android:text="@string/help_center_title"
+                android:textColor="@color/widget_label_primary"
+                android:textSize="@dimen/text_size_header_title"
+                android:textStyle="bold" />
+
+        </LinearLayout>
+
+    </RelativeLayout>
+
+    <!-- Tabs -->
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="18dp"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/tab_help_faq"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="8dp"
+            android:background="@drawable/bg_name_selector_button"
+            android:clickable="true"
+            android:focusable="true"
+            android:paddingStart="16dp"
+            android:paddingTop="10dp"
+            android:paddingEnd="16dp"
+            android:paddingBottom="10dp"
+            android:text="@string/tab_faq"
+            android:textColor="@color/white"
+            android:textSize="@dimen/text_size_body_secondary"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/tab_help_phone"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginEnd="8dp"
+            android:background="@drawable/bg_timer_chip_unselected"
+            android:clickable="true"
+            android:focusable="true"
+            android:paddingStart="16dp"
+            android:paddingTop="10dp"
+            android:paddingEnd="16dp"
+            android:paddingBottom="10dp"
+            android:text="@string/tab_phone"
+            android:textColor="@color/gray_800"
+            android:textSize="@dimen/text_size_body_secondary"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/tab_help_chat"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:background="@drawable/bg_timer_chip_unselected"
+            android:clickable="true"
+            android:focusable="true"
+            android:paddingStart="16dp"
+            android:paddingTop="10dp"
+            android:paddingEnd="16dp"
+            android:paddingBottom="10dp"
+            android:text="@string/tab_chat"
+            android:textColor="@color/gray_800"
+            android:textSize="@dimen/text_size_body_secondary"
+            android:textStyle="bold" />
+
+    </LinearLayout>
+
+    <!-- Content -->
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:layout_marginStart="24dp"
+        android:layout_marginEnd="24dp"
+        android:layout_marginTop="18dp">
+
+        <!-- Content: FAQ -->
+        <LinearLayout
+            android:id="@+id/layout_help_faq"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:visibility="visible">
+
+            <ScrollView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:scrollbars="none">
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <!-- Q1 -->
+                    <LinearLayout
+                        android:id="@+id/row_faq_1"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:clickable="true"
+                        android:focusable="true"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal"
+                        android:paddingTop="14dp"
+                        android:paddingBottom="14dp">
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="@string/faq_q1"
+                            android:textColor="@color/widget_label_primary"
+                            android:textSize="@dimen/text_size_body_secondary"
+                            android:textStyle="bold" />
+                        <TextView
+                            android:id="@+id/tv_faq_toggle_1"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="−"
+                            android:textColor="@color/blue_accent"
+                            android:textSize="16sp"
+                            android:textStyle="bold" />
+                    </LinearLayout>
+                    <TextView
+                        android:id="@+id/tv_faq_desc_1"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="14dp"
+                        android:lineSpacingExtra="3dp"
+                        android:text="@string/faq_a1"
+                        android:textColor="@color/gray_650"
+                        android:textSize="@dimen/text_size_footer"
+                        android:visibility="visible" />
+                    <View android:layout_width="match_parent" android:layout_height="1dp" android:background="@color/divider_color" />
+
+                    <!-- Q2 -->
+                    <LinearLayout
+                        android:id="@+id/row_faq_2"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:clickable="true"
+                        android:focusable="true"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal"
+                        android:paddingTop="14dp"
+                        android:paddingBottom="14dp">
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="@string/faq_q2"
+                            android:textColor="@color/widget_label_primary"
+                            android:textSize="@dimen/text_size_body_secondary"
+                            android:textStyle="bold" />
+                        <TextView
+                            android:id="@+id/tv_faq_toggle_2"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="+"
+                            android:textColor="@color/blue_accent"
+                            android:textSize="16sp"
+                            android:textStyle="bold" />
+                    </LinearLayout>
+                    <TextView
+                        android:id="@+id/tv_faq_desc_2"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="14dp"
+                        android:lineSpacingExtra="3dp"
+                        android:text="@string/faq_a2"
+                        android:textColor="@color/gray_650"
+                        android:textSize="@dimen/text_size_footer"
+                        android:visibility="gone" />
+                    <View android:layout_width="match_parent" android:layout_height="1dp" android:background="@color/divider_color" />
+
+                    <!-- Q3 -->
+                    <LinearLayout
+                        android:id="@+id/row_faq_3"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:clickable="true"
+                        android:focusable="true"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal"
+                        android:paddingTop="14dp"
+                        android:paddingBottom="14dp">
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="@string/faq_q3"
+                            android:textColor="@color/widget_label_primary"
+                            android:textSize="@dimen/text_size_body_secondary"
+                            android:textStyle="bold" />
+                        <TextView
+                            android:id="@+id/tv_faq_toggle_3"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="+"
+                            android:textColor="@color/blue_accent"
+                            android:textSize="16sp"
+                            android:textStyle="bold" />
+                    </LinearLayout>
+                    <TextView
+                        android:id="@+id/tv_faq_desc_3"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="14dp"
+                        android:lineSpacingExtra="3dp"
+                        android:text="@string/faq_a3"
+                        android:textColor="@color/gray_650"
+                        android:textSize="@dimen/text_size_footer"
+                        android:visibility="gone" />
+                    <View android:layout_width="match_parent" android:layout_height="1dp" android:background="@color/divider_color" />
+
+                    <!-- Q4 -->
+                    <LinearLayout
+                        android:id="@+id/row_faq_4"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:clickable="true"
+                        android:focusable="true"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal"
+                        android:paddingTop="14dp"
+                        android:paddingBottom="14dp">
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="@string/faq_q4"
+                            android:textColor="@color/widget_label_primary"
+                            android:textSize="@dimen/text_size_body_secondary"
+                            android:textStyle="bold" />
+                        <TextView
+                            android:id="@+id/tv_faq_toggle_4"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="+"
+                            android:textColor="@color/blue_accent"
+                            android:textSize="16sp"
+                            android:textStyle="bold" />
+                    </LinearLayout>
+                    <TextView
+                        android:id="@+id/tv_faq_desc_4"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="14dp"
+                        android:lineSpacingExtra="3dp"
+                        android:text="@string/faq_a4"
+                        android:textColor="@color/gray_650"
+                        android:textSize="@dimen/text_size_footer"
+                        android:visibility="gone" />
+                    <View android:layout_width="match_parent" android:layout_height="1dp" android:background="@color/divider_color" />
+
+                    <!-- Q5 -->
+                    <LinearLayout
+                        android:id="@+id/row_faq_5"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:clickable="true"
+                        android:focusable="true"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal"
+                        android:paddingTop="14dp"
+                        android:paddingBottom="14dp">
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="@string/faq_q5"
+                            android:textColor="@color/widget_label_primary"
+                            android:textSize="@dimen/text_size_body_secondary"
+                            android:textStyle="bold" />
+                        <TextView
+                            android:id="@+id/tv_faq_toggle_5"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="+"
+                            android:textColor="@color/blue_accent"
+                            android:textSize="16sp"
+                            android:textStyle="bold" />
+                    </LinearLayout>
+                    <TextView
+                        android:id="@+id/tv_faq_desc_5"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="4dp"
+                        android:lineSpacingExtra="3dp"
+                        android:text="@string/faq_a5"
+                        android:textColor="@color/gray_650"
+                        android:textSize="@dimen/text_size_footer"
+                        android:visibility="gone" />
+
+                </LinearLayout>
+            </ScrollView>
+
+        </LinearLayout>
+
+        <!-- Content: Phone -->
+        <LinearLayout
+            android:id="@+id/layout_help_phone"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:visibility="gone">
+
+            <!-- Europe -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/bg_ms_app_row"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                android:padding="6dp">
+                <ImageView
+                    android:layout_width="24dp"
+                    android:layout_height="24dp"
+                    android:src="@drawable/flag_for_european_union" />
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="10dp"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:letterSpacing="0.05"
+                        android:text="@string/support_region_europe"
+                        android:textColor="@color/status_not_validated"
+                        android:textSize="@dimen/text_size_header_label"
+                        android:textStyle="bold" />
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="1dp"
+                        android:text="+34 900 123 456"
+                        android:textColor="@color/widget_label_primary"
+                        android:textSize="11sp"
+                        android:textStyle="bold" />
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="1dp"
+                        android:text="@string/support_hours_europe"
+                        android:textColor="@color/status_not_validated"
+                        android:textSize="8sp" />
+                </LinearLayout>
+            </LinearLayout>
+
+            <!-- China -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="6dp"
+                android:background="@drawable/bg_ms_app_row"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                android:padding="6dp">
+                <ImageView
+                    android:layout_width="24dp"
+                    android:layout_height="24dp"
+                    android:src="@drawable/flag_for_china" />
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="10dp"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:letterSpacing="0.05"
+                        android:text="@string/support_region_china"
+                        android:textColor="@color/status_not_validated"
+                        android:textSize="@dimen/text_size_header_label"
+                        android:textStyle="bold" />
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="1dp"
+                        android:text="+86 400 821 5566"
+                        android:textColor="@color/widget_label_primary"
+                        android:textSize="11sp"
+                        android:textStyle="bold" />
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="1dp"
+                        android:text="@string/support_hours_china"
+                        android:textColor="@color/status_not_validated"
+                        android:textSize="8sp" />
+                </LinearLayout>
+            </LinearLayout>
+
+            <!-- Colombia -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="6dp"
+                android:background="@drawable/bg_ms_app_row"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                android:padding="6dp">
+                <ImageView
+                    android:layout_width="24dp"
+                    android:layout_height="24dp"
+                    android:src="@drawable/flag_for_colombia" />
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="10dp"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:letterSpacing="0.05"
+                        android:text="@string/support_region_colombia"
+                        android:textColor="@color/status_not_validated"
+                        android:textSize="@dimen/text_size_header_label"
+                        android:textStyle="bold" />
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="1dp"
+                        android:text="+57 1 508 2233"
+                        android:textColor="@color/widget_label_primary"
+                        android:textSize="11sp"
+                        android:textStyle="bold" />
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="1dp"
+                        android:text="@string/support_hours_colombia"
+                        android:textColor="@color/status_not_validated"
+                        android:textSize="8sp" />
+                </LinearLayout>
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <!-- Content: Chat -->
+        <LinearLayout
+            android:id="@+id/layout_help_chat"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:visibility="gone">
+
+            <ScrollView
+                android:id="@+id/scroll_chat"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:scrollbars="none">
+                <LinearLayout
+                    android:id="@+id/ll_chat_messages"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:paddingBottom="8dp">
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="start"
+                        android:background="@drawable/bg_help_chat_bubble_assistant"
+                        android:paddingStart="16dp"
+                        android:paddingTop="12dp"
+                        android:paddingEnd="16dp"
+                        android:paddingBottom="12dp"
+                        android:text="@string/chat_assistant_intro"
+                        android:textColor="@color/widget_label_primary"
+                        android:textSize="@dimen/text_size_body_secondary" />
+                </LinearLayout>
+            </ScrollView>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                android:background="@drawable/bg_help_chat_input"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                android:paddingStart="18dp"
+                android:paddingEnd="6dp">
+                <EditText
+                    android:id="@+id/et_chat_input"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:background="@null"
+                    android:hint="@string/chat_input_hint"
+                    android:imeOptions="actionSend"
+                    android:inputType="text"
+                    android:maxLines="1"
+                    android:paddingTop="14dp"
+                    android:paddingBottom="14dp"
+                    android:textColor="@color/widget_label_primary"
+                    android:textColorHint="@color/gray_600"
+                    android:textCursorDrawable="@null"
+                    android:textSize="@dimen/text_size_body_primary"
+                    android:autofillHints="" />
+                <ImageView
+                    android:id="@+id/btn_chat_send"
+                    android:layout_width="36dp"
+                    android:layout_height="36dp"
+                    android:layout_marginStart="8dp"
+                    android:layout_gravity="center"
+                    android:background="@drawable/bg_help_send_button"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:padding="8dp"
+                    android:src="@drawable/ic_send"
+                    android:contentDescription="@string/btn_start" />
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </FrameLayout>
+
+</LinearLayout>

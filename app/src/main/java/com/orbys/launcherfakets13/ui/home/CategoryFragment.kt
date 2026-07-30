@@ -34,6 +34,7 @@ import com.orbys.launcherfakets13.ui.dialog.FakeOutlookDialogFragment
 import com.orbys.launcherfakets13.ui.dialog.FocusModeDialog
 import com.orbys.launcherfakets13.ui.dialog.GoogleAppsFolderDialog
 import com.orbys.launcherfakets13.ui.dialog.GoogleLoginDialog
+import com.orbys.launcherfakets13.ui.dialog.HelpCenterDialog
 import com.orbys.launcherfakets13.ui.dialog.MicrosoftValidationDialog
 import com.orbys.launcherfakets13.ui.dialog.NameSelectorDialog
 import com.orbys.launcherfakets13.ui.dialog.RemoteModeDialog
@@ -626,11 +627,20 @@ class CategoryFragment : Fragment() {
         val isTranslate = data.header == getString(R.string.widget_orbys_translate) || data.header == "TRADUCTOR" || data.header == "ORBYS TRANSLATE"
         val isFocus = data.header == getString(R.string.widget_focus) || data.header == "CONCENTRACIÓN"
         val isCalendar = data.header == "CALENDARIO" || data.header == "GOOGLE CALENDAR" || data.packageName == "com.google.android.calendar"
+        val isSupport = data.header == getString(R.string.widget_support) || data.header == "SOPORTE"
 
         when {
             isClock -> {
                 widgetView.setOnClickListener {
                     ClockDialog.newInstance().show(childFragmentManager, "clock_dialog")
+                }
+                widgetView.isClickable = true
+                widgetView.isFocusable = true
+            }
+
+            isSupport -> {
+                widgetView.setOnClickListener {
+                    HelpCenterDialog.newInstance().show(childFragmentManager, "help_center")
                 }
                 widgetView.isClickable = true
                 widgetView.isFocusable = true
@@ -761,7 +771,7 @@ class CategoryFragment : Fragment() {
         header = getString(R.string.widget_support),
         iconRes = R.drawable.ic_support,
         layoutRes = R.layout.widget_corporate_support,
-        headerIconRes = R.drawable.ic_headphones
+        headerIconRes = R.drawable.ic_support,
     )
 
     /**
