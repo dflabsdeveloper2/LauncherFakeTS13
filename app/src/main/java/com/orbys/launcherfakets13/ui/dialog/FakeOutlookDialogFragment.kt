@@ -21,7 +21,7 @@ class FakeOutlookDialogFragment : DialogFragment() {
             setContentView(R.layout.dialog_fake_outlook)
 
             window?.apply {
-                setBackgroundDrawable(ColorDrawable(Color.TRANSPARENT))
+                setBackgroundDrawableResource(R.drawable.bg_dialog_fake_google)
                 setLayout(
                     ViewGroup.LayoutParams.WRAP_CONTENT,
                     ViewGroup.LayoutParams.WRAP_CONTENT

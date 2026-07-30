@@ -26,7 +26,7 @@ class ClockDialog : DialogFragment() {
             .setView(view)
             .create()
             .also { dialog ->
-                dialog.window?.setBackgroundDrawableResource(android.R.color.transparent)
+                dialog.window?.setBackgroundDrawableResource(R.drawable.bg_dialog_rounded)
                 dialog.window?.setGravity(Gravity.CENTER)
             }
     }

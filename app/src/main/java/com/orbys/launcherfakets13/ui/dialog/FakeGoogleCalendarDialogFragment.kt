@@ -21,7 +21,7 @@ class FakeGoogleCalendarDialogFragment : DialogFragment() {
             setContentView(R.layout.dialog_fake_google_calendar)
 
             window?.apply {
-                setBackgroundDrawable(ColorDrawable(Color.TRANSPARENT))
+                setBackgroundDrawableResource(R.drawable.bg_dialog_fake_google)
                 setLayout(
                     ViewGroup.LayoutParams.WRAP_CONTENT,
                     ViewGroup.LayoutParams.WRAP_CONTENT

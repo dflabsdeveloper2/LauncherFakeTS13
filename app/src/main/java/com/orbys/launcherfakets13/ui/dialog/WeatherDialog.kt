@@ -25,7 +25,7 @@ class WeatherDialog : DialogFragment() {
             .setView(view)
             .create()
             .also { dialog ->
-                dialog.window?.setBackgroundDrawableResource(android.R.color.transparent)
+                dialog.window?.setBackgroundDrawableResource(R.drawable.bg_weather_dialog)
                 dialog.window?.setGravity(Gravity.CENTER)
             }
     }

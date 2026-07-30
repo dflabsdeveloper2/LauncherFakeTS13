@@ -22,8 +22,9 @@
 
     <style name="CustomDialogTheme" parent="Theme.MaterialComponents.Light.Dialog.Alert">
         <item name="android:windowBackground">@android:color/transparent</item>
-        <item name="android:windowElevation">0dp</item>
-        <item name="android:backgroundDimEnabled">false</item>
+        <item name="android:windowElevation">8dp</item>
+        <item name="android:backgroundDimEnabled">true</item>
+        <item name="android:backgroundDimAmount">0.5</item>
     </style>
 
     <style name="AppDrawerTheme" parent="Theme.MaterialComponents.BottomSheetDialog">
