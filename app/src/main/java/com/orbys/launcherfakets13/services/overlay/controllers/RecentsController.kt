@@ -1,6 +1,7 @@
 package com.orbys.launcherfakets13.services.overlay.controllers
 
 import android.content.Context
+import android.content.Intent
 import android.graphics.PixelFormat
 import android.view.Gravity
 import android.view.LayoutInflater
@@ -14,6 +15,7 @@ import androidx.recyclerview.widget.GridLayoutManager
 import com.orbys.launcherfakets13.databinding.ViewRecentsOverlayBinding
 import com.orbys.launcherfakets13.services.overlay.DockOverlayService
 import com.orbys.launcherfakets13.ui.common.RecentsAdapter
+import com.orbys.launcherfakets13.ui.dialog.RemoteModeActivity
 import com.orbys.launcherfakets13.ui.util.dp
 import com.orbys.launcherfakets13.util.RecentsHelper
 
@@ -121,16 +123,12 @@ class RecentsController(
             apps = emptyList(),
             onAppClick = { app ->
                 val intent = context.packageManager.getLaunchIntentForPackage(app.packageName)
-                    ?.addFlags(android.content.Intent.FLAG_ACTIVITY_NEW_TASK)
+                    ?.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK)
                 intent?.let { context.startActivity(it) }
                 hideAnimated()
             },
-            onDeleteClick = { app ->
-                RecentsHelper.killApk(app.taskId) { success ->
-                    if (success) {
-                        loadRecentApps()
-                    }
-                }
+            onDeleteClick = { _ ->
+                showRemoteMode()
             }
         )
         b.rvRecentsApps.adapter = adapter
@@ -159,21 +157,15 @@ class RecentsController(
     }
 
     private fun clearAllApps() {
-        val apps = RecentsHelper.getRecentBackgroundApps(context) ?: emptyList()
-        var remaining = apps.size
-        if (remaining == 0) {
-            hideAnimated()
-            return
+        showRemoteMode()
+    }
+
+    private fun showRemoteMode() {
+        hideAnimated()
+        val intent = Intent(context, RemoteModeActivity::class.java).apply {
+            addFlags(Intent.FLAG_ACTIVITY_NEW_TASK)
         }
-        
-        apps.forEach { app ->
-            RecentsHelper.killApk(app.taskId) {
-                remaining--
-                if (remaining <= 0) {
-                    hideAnimated()
-                }
-            }
-        }
+        context.startActivity(intent)
     }
 
     override fun removeView() {
