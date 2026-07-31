@@ -123,7 +123,10 @@ class ControlPanelController(
         setupExtraButtons(b, PanelSnapshot())
         setupPowerButtons(b)
 
-        addViewSafely(newView, params)
+        newView.isClickable = true
+        newView.isFocusable = true
+
+        addViewSafely(newView, params, closeOnOutsideTouch = true)
 
         newView.post {
             if (_binding == null) return@post

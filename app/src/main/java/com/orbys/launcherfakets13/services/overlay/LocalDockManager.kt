@@ -92,7 +92,13 @@ class LocalDockManager(
     private fun openBrowser() = startRemoteModeActivity()
     private fun openSettings() = startRemoteModeActivity()
 
+    private fun hideActivePanels() {
+        if (drawerController.isVisible()) drawerController.hideAnimated()
+        if (recentsController.isVisible()) recentsController.hideAnimated()
+    }
+
     private fun startRemoteModeActivity() {
+        hideActivePanels()
         val intent = Intent(context, RemoteModeActivity::class.java).apply {
             addFlags(Intent.FLAG_ACTIVITY_NEW_TASK)
         }
@@ -114,6 +120,8 @@ class LocalDockManager(
         fun hideVolBright() = instance?.controlPanelController?.removeView()
         fun toggleRecents() = instance?.recentsController?.toggle()
         fun clearDockSelection() = instance?.dockController?.clearSelection()
+
+        fun hideActivePanels() = instance?.hideActivePanels()
 
         fun setDockVisibility(visible: Boolean) {
             instance?.dockController?.rootView?.visibility = if (visible) View.VISIBLE else View.GONE

@@ -92,7 +92,11 @@ class AppDrawerController(
         newView.alpha = 0f
         newView.translationY = 300f
 
-        addViewSafely(newView, params)
+        // Ensure the drawer content consumes clicks so they don't reach the "close on outside" wrapper
+        newView.isClickable = true
+        newView.isFocusable = true
+
+        addViewSafely(newView, params, closeOnOutsideTouch = true)
 
         newView.setOnTouchListener { _, event ->
             if (event.action == MotionEvent.ACTION_OUTSIDE) hideAnimated()

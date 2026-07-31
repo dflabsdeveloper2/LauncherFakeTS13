@@ -4,6 +4,7 @@ import android.content.Context
 import android.view.View
 import android.view.ViewGroup
 import android.view.WindowManager
+import android.widget.FrameLayout
 import android.util.Log
 
 abstract class BaseOverlayController(
@@ -14,20 +15,38 @@ abstract class BaseOverlayController(
         context.applicationContext.getSystemService(Context.WINDOW_SERVICE) as WindowManager
     
     var rootView: View? = null
+    protected var wrapperView: FrameLayout? = null
     protected var layoutParams: WindowManager.LayoutParams? = null
 
-    open fun isVisible(): Boolean = rootView?.isAttachedToWindow == true
+    open fun isVisible(): Boolean = (rootView?.isAttachedToWindow == true) || (wrapperView?.isAttachedToWindow == true)
 
-    protected fun addViewSafely(view: View, params: WindowManager.LayoutParams) {
+    protected fun addViewSafely(
+        view: View, 
+        params: WindowManager.LayoutParams,
+        closeOnOutsideTouch: Boolean = false
+    ) {
         try {
             if (container != null) {
                 if (view.parent != null) {
                     (view.parent as ViewGroup).removeView(view)
                 }
-                container.addView(view)
+
+                if (closeOnOutsideTouch) {
+                    val wrapper = FrameLayout(context).apply {
+                        layoutParams = ViewGroup.LayoutParams(
+                            ViewGroup.LayoutParams.MATCH_PARENT,
+                            ViewGroup.LayoutParams.MATCH_PARENT
+                        )
+                        setOnClickListener { removeView() }
+                    }
+                    wrapper.addView(view)
+                    container.addView(wrapper)
+                    wrapperView = wrapper
+                } else {
+                    container.addView(view)
+                }
+                
                 rootView = view
-                // We might need a different way to handle positioning if not using WindowManager
-                // For now, let's keep it simple.
             } else {
                 detachCurrentView()
                 windowManager.addView(view, params)
@@ -56,7 +75,10 @@ abstract class BaseOverlayController(
     protected fun removeViewImmediate(view: View) {
         try {
             if (container != null) {
-                container.removeView(view)
+                val toRemove = wrapperView ?: view
+                if (toRemove.parent === container) {
+                    container.removeView(toRemove)
+                }
             } else {
                 windowManager.removeViewImmediate(view)
             }
@@ -70,6 +92,7 @@ abstract class BaseOverlayController(
         removeViewImmediate(view)
         Log.d("OverlayController", "View removed successfully")
         rootView = null
+        wrapperView = null
         layoutParams = null
     }
 

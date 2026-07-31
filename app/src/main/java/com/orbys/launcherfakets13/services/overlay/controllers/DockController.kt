@@ -78,10 +78,12 @@ class DockController(
         binding.dockToggleHandle.setOnClickListener { expand() }
 
         binding.tabBack.setOnClickListener {
+            LocalDockManager.hideActivePanels()
             SystemActionHelper.performBack(context)
         }
 
         binding.tabHome.setOnClickListener {
+            LocalDockManager.hideActivePanels()
             selectTab(R.id.tab_home)
             context.startActivity(Intent(context, MainActivity::class.java).apply {
                 addCategory(Intent.CATEGORY_HOME)
