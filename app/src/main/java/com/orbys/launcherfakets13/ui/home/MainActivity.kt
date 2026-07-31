@@ -24,7 +24,6 @@ import androidx.activity.OnBackPressedCallback
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.activity.viewModels
 import androidx.appcompat.app.AlertDialog
-import androidx.core.app.NotificationManagerCompat
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.Lifecycle
 import androidx.lifecycle.lifecycleScope
@@ -78,10 +77,6 @@ class MainActivity : AppCompatActivity() {
     ) {
         if (Settings.canDrawOverlays(this)) DockOverlayService.start(this)
     }
-
-    private val notificationListenerPermissionLauncher = registerForActivityResult(
-        ActivityResultContracts.StartActivityForResult()
-    ) { }
 
     // Handles ACTION_APPWIDGET_BIND result (user confirmed binding)
     private val widgetPickerLauncher = registerForActivityResult(
@@ -228,7 +223,6 @@ class MainActivity : AppCompatActivity() {
         super.onStart()
         Broadcaster.sendOpen(this)
         startDockService()
-        requestNotificationListenerAccessIfNeeded()
         registerReceiver(connectivityReceiver, ConnectivityReceiver.getGeneralFilter(), RECEIVER_NOT_EXPORTED)
         registerReceiver(connectivityReceiver, ConnectivityReceiver.getMediaFilter(), RECEIVER_NOT_EXPORTED)
 
@@ -334,26 +328,6 @@ class MainActivity : AppCompatActivity() {
                 .setNegativeButton(R.string.cancel, null)
                 .show()
         }
-    }
-
-    /** CDD 3.8.1/H-SR-3: sin esto, LauncherNotificationListenerService nunca se conecta y los
-     *  badges de notificación en los iconos quedan siempre a cero. No es un permiso normal:
-     *  el usuario debe concederlo explícitamente desde Ajustes (no se puede pre-conceder vía
-     *  privapp-permissions.xml como el resto de permisos privilegiados de esta app). */
-    private fun requestNotificationListenerAccessIfNeeded() {
-        val granted = NotificationManagerCompat.getEnabledListenerPackages(this).contains(packageName)
-        if (granted) return
-
-        AlertDialog.Builder(this)
-            .setTitle(R.string.notification_listener_permission_title)
-            .setMessage(R.string.notification_listener_permission_msg)
-            .setPositiveButton(R.string.go_to_settings) { _, _ ->
-                notificationListenerPermissionLauncher.launch(
-                    Intent(Settings.ACTION_NOTIFICATION_LISTENER_SETTINGS)
-                )
-            }
-            .setNegativeButton(R.string.cancel, null)
-            .show()
     }
 
     private fun openFileManager() {

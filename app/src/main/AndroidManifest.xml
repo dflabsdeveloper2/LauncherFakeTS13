@@ -152,16 +152,6 @@
             </intent-filter>
         </receiver>
 
-        <!-- CDD 3.8.1/H-SR-3: badges de notificación en los iconos de apps. Requiere que el
-             usuario conceda acceso a notificaciones desde Ajustes (ver MainActivity). -->
-        <service
-            android:name=".services.LauncherNotificationListenerService"
-            android:exported="true"
-            android:permission="android.permission.BIND_NOTIFICATION_LISTENER_SERVICE">
-            <intent-filter>
-                <action android:name="android.service.notification.NotificationListenerService" />
-            </intent-filter>
-        </service>
 
     </application>
 
