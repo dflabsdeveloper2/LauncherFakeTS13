@@ -16,7 +16,7 @@ import androidx.core.view.WindowCompat
 import androidx.core.content.ContextCompat
 import androidx.fragment.app.DialogFragment
 import com.orbys.launcherfakets13.R
-import com.orbys.launcherfakets13.services.overlay.DockOverlayService
+import com.orbys.launcherfakets13.services.overlay.LocalDockManager
 import java.util.Calendar
 import kotlin.random.Random
 
@@ -70,13 +70,13 @@ class FocusModeDialog : DialogFragment() {
             setLayout(bounds.width(), bounds.height())
             WindowCompat.setDecorFitsSystemWindows(this, false)
         }
-        DockOverlayService.setDockVisibility(false)
+        LocalDockManager.setDockVisibility(false)
         startClock()
         startMeter()
     }
 
     override fun onDestroyView() {
-        DockOverlayService.setDockVisibility(true)
+        LocalDockManager.setDockVisibility(true)
         clockRunnable?.let { handler.removeCallbacks(it) }
         meterRunnable?.let { handler.removeCallbacks(it) }
         super.onDestroyView()

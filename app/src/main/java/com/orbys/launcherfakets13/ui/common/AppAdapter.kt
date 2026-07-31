@@ -10,7 +10,6 @@ import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.orbys.launcherfakets13.R
 import com.orbys.launcherfakets13.domain.model.AppInfo
-import com.orbys.launcherfakets13.util.NotificationBadgeStore
 
 class AppAdapter(
     private val apps: List<AppInfo>,
@@ -26,7 +25,6 @@ class AppAdapter(
     class ViewHolder(view: View) : RecyclerView.ViewHolder(view) {
         val icon: ImageView = view.findViewById(R.id.iv_app_icon)
         val name: TextView = view.findViewById(R.id.tv_app_name)
-        val badge: TextView = view.findViewById(R.id.tv_notification_badge)
         val actionsLayout: LinearLayout = view.findViewById(R.id.ll_app_actions)
         val btnSplit: View = view.findViewById(R.id.btn_action_split)
         val btnInfo: View = view.findViewById(R.id.btn_action_info)
@@ -44,14 +42,6 @@ class AppAdapter(
         val app = apps[position]
         holder.icon.setImageDrawable(app.icon)
         holder.name.text = app.label
-
-        val notificationCount = NotificationBadgeStore.countFor(app.packageName.toString())
-        if (notificationCount > 0) {
-            holder.badge.visibility = View.VISIBLE
-            holder.badge.text = if (notificationCount > 99) "99+" else notificationCount.toString()
-        } else {
-            holder.badge.visibility = View.GONE
-        }
 
         val isSelected = selectedPosition == position
         

@@ -297,4 +297,11 @@
 
     </LinearLayout>
 
+    <!-- Container for dock and other local "overlays" -->
+    <FrameLayout
+        android:id="@+id/local_overlay_container"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:elevation="10dp" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

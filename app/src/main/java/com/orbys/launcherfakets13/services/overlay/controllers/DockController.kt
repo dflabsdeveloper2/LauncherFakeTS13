@@ -9,22 +9,25 @@ import android.view.LayoutInflater
 import android.util.Log
 import android.view.View
 import android.view.WindowManager
+import android.view.ViewGroup
+import android.widget.FrameLayout
 import androidx.core.content.ContextCompat
 import com.orbys.launcherfakets13.R
 import com.orbys.launcherfakets13.databinding.ViewDockOverlayBinding
-import com.orbys.launcherfakets13.services.overlay.DockOverlayService
+import com.orbys.launcherfakets13.services.overlay.LocalDockManager
 import com.orbys.launcherfakets13.ui.home.MainActivity
 import com.orbys.launcherfakets13.ui.util.dp
 import com.orbys.launcherfakets13.util.SystemActionHelper
 
 class DockController(
     context: Context,
+    container: ViewGroup?,
     private val onAppsTabClick: () -> Unit,
     private val onFilesTabClick: () -> Unit,
     private val onPizarraTabClick: () -> Unit,
     private val onBrowserTabClick: () -> Unit,
     private val onSettingsTabClick: () -> Unit
-) : BaseOverlayController(context) {
+) : BaseOverlayController(context, container) {
 
     private var _binding: ViewDockOverlayBinding? = null
     private val binding get() = _binding ?: throw IllegalStateException("DockController binding is null. Is the view showing?")
@@ -55,6 +58,16 @@ class DockController(
             y = dockMargin
         }
 
+        if (container != null) {
+            newView.layoutParams = FrameLayout.LayoutParams(
+                ViewGroup.LayoutParams.WRAP_CONTENT,
+                ViewGroup.LayoutParams.WRAP_CONTENT,
+                Gravity.BOTTOM or Gravity.CENTER_HORIZONTAL
+            ).apply {
+                bottomMargin = dockMargin
+            }
+        }
+
         setupInteractions()
         updateTabUI(activeTabId)
         
@@ -77,7 +90,7 @@ class DockController(
         }
 
         binding.tabRecents.setOnClickListener {
-            DockOverlayService.toggleRecents()
+            LocalDockManager.toggleRecents()
         }
 
         binding.tabApps.setOnClickListener {
@@ -111,7 +124,7 @@ class DockController(
     }
 
     fun expand() {
-        // Self-heal: the view can be gone (e.g. DockOverlayService.refreshUI() removed it
+        // Self-heal: the view can be gone (e.g. LocalDockManager.refreshUI() removed it
         // without a matching re-show) while isExpanded is left stale from before. Recreating
         // it here already leaves the dock expanded (its default state), so there's nothing left to do.
         if (_binding == null) {
@@ -127,8 +140,14 @@ class DockController(
         isExpanded = true
         b.dockToggleHandle.visibility = View.GONE
         b.dockPanel.visibility = View.VISIBLE
-        layoutParams?.y = 20.dp
-        updateViewSafely()
+        
+        if (container != null) {
+            (b.root.layoutParams as? FrameLayout.LayoutParams)?.bottomMargin = 20.dp
+            b.root.requestLayout()
+        } else {
+            layoutParams?.y = 20.dp
+            updateViewSafely()
+        }
     }
 
     fun collapse() {
@@ -146,8 +165,14 @@ class DockController(
         isExpanded = false
         b.dockPanel.visibility = View.GONE
         b.dockToggleHandle.visibility = View.VISIBLE
-        layoutParams?.y = 0
-        updateViewSafely()
+        
+        if (container != null) {
+            (b.root.layoutParams as? FrameLayout.LayoutParams)?.bottomMargin = 0
+            b.root.requestLayout()
+        } else {
+            layoutParams?.y = 0
+            updateViewSafely()
+        }
     }
 
     fun selectTab(tabId: Int) {

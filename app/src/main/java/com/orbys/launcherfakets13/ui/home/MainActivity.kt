@@ -33,7 +33,7 @@ import com.orbys.launcherfakets13.databinding.ActivityMainBinding
 import com.orbys.launcherfakets13.domain.model.Environment
 import com.orbys.launcherfakets13.services.ConnectivityReceiver
 import com.orbys.launcherfakets13.services.Broadcaster
-import com.orbys.launcherfakets13.services.overlay.DockOverlayService
+import com.orbys.launcherfakets13.services.overlay.LocalDockManager
 import com.orbys.launcherfakets13.ui.dialog.AdminDisabledDialog
 import com.orbys.launcherfakets13.ui.dialog.ClockDialog
 import com.orbys.launcherfakets13.ui.dialog.EnvironmentSelectorDialog
@@ -68,15 +68,9 @@ class MainActivity : AppCompatActivity() {
     private val appWidgetManager: AppWidgetManager by lazy { AppWidgetManager.getInstance(this) }
 
     private var currentEnviroment = Environment.OFFICE
+    private var localDockManager: LocalDockManager? = null
 
     // ── Activity result launchers ─────────────────────────────────────────────
-
-
-    private val overlayPermissionLauncher = registerForActivityResult(
-        ActivityResultContracts.StartActivityForResult()
-    ) {
-        if (Settings.canDrawOverlays(this)) DockOverlayService.start(this)
-    }
 
     // Handles ACTION_APPWIDGET_BIND result (user confirmed binding)
     private val widgetPickerLauncher = registerForActivityResult(
@@ -167,6 +161,8 @@ class MainActivity : AppCompatActivity() {
 
         onBackPressedDispatcher.addCallback(this, desktopBackCallback)
 
+        localDockManager = LocalDockManager(this, findViewById(R.id.local_overlay_container))
+
         try {
             Log.d("API_INTERNA", "Checking SKG internal api,   SN: ${skgSettings()?.serialNumber}, }")
         }catch ( e: Exception) {
@@ -222,7 +218,6 @@ class MainActivity : AppCompatActivity() {
     override fun onStart() {
         super.onStart()
         Broadcaster.sendOpen(this)
-        startDockService()
         registerReceiver(connectivityReceiver, ConnectivityReceiver.getGeneralFilter(), RECEIVER_NOT_EXPORTED)
         registerReceiver(connectivityReceiver, ConnectivityReceiver.getMediaFilter(), RECEIVER_NOT_EXPORTED)
 
@@ -238,9 +233,13 @@ class MainActivity : AppCompatActivity() {
     override fun onStop() {
         super.onStop()
         Broadcaster.sendClose(this)
-        DockOverlayService.stop(this)
         unregisterReceiver(connectivityReceiver)
         unregisterReceiver(packageReceiver)
+    }
+
+    override fun onDestroy() {
+        localDockManager?.onDestroy()
+        super.onDestroy()
     }
 
     override fun onResume() {
@@ -308,25 +307,6 @@ class MainActivity : AppCompatActivity() {
         window.insetsController?.let {
             it.hide(WindowInsets.Type.navigationBars() or WindowInsets.Type.statusBars())
             it.systemBarsBehavior = WindowInsetsController.BEHAVIOR_SHOW_TRANSIENT_BARS_BY_SWIPE
-        }
-    }
-
-    private fun startDockService() {
-        if (Settings.canDrawOverlays(this)) {
-            DockOverlayService.start(this)
-        } else {
-            AlertDialog.Builder(this)
-                .setTitle(R.string.overlay_permission_title)
-                .setMessage(R.string.overlay_permission_msg)
-                .setPositiveButton(R.string.go_to_settings) { _, _ ->
-                    overlayPermissionLauncher.launch(
-                        Intent(Settings.ACTION_MANAGE_OVERLAY_PERMISSION).apply {
-                            data = "package:$packageName".toUri()
-                        }
-                    )
-                }
-                .setNegativeButton(R.string.cancel, null)
-                .show()
         }
     }
 

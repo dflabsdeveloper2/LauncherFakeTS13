@@ -2,10 +2,14 @@ package com.orbys.launcherfakets13.services.overlay.controllers
 
 import android.content.Context
 import android.view.View
+import android.view.ViewGroup
 import android.view.WindowManager
 import android.util.Log
 
-abstract class BaseOverlayController(protected val context: Context) {
+abstract class BaseOverlayController(
+    protected val context: Context,
+    protected val container: ViewGroup? = null
+) {
     protected val windowManager: WindowManager = 
         context.applicationContext.getSystemService(Context.WINDOW_SERVICE) as WindowManager
     
@@ -16,14 +20,20 @@ abstract class BaseOverlayController(protected val context: Context) {
 
     protected fun addViewSafely(view: View, params: WindowManager.LayoutParams) {
         try {
-            // Detach any stale window only - NOT the virtual removeView(), which subclasses override
-            // with extra teardown (e.g. nulling their own ViewBinding field). Calling that here would
-            // wipe out state the subclass's show() just set up right before this call.
-            detachCurrentView()
-
-            windowManager.addView(view, params)
-            rootView = view
-            layoutParams = params
+            if (container != null) {
+                if (view.parent != null) {
+                    (view.parent as ViewGroup).removeView(view)
+                }
+                container.addView(view)
+                rootView = view
+                // We might need a different way to handle positioning if not using WindowManager
+                // For now, let's keep it simple.
+            } else {
+                detachCurrentView()
+                windowManager.addView(view, params)
+                rootView = view
+                layoutParams = params
+            }
             Log.d("OverlayController", "View added: ${view.javaClass.simpleName} (Title: ${params.title})")
         } catch (e: Exception) {
             Log.e("OverlayController", "Error adding view: ${e.message}")
@@ -31,6 +41,7 @@ abstract class BaseOverlayController(protected val context: Context) {
     }
 
     protected fun updateViewSafely() {
+        if (container != null) return // In-app views don't use updateViewLayout
         val view = rootView ?: return
         val params = layoutParams ?: return
         if (view.isAttachedToWindow) {
@@ -42,19 +53,24 @@ abstract class BaseOverlayController(protected val context: Context) {
         }
     }
 
+    protected fun removeViewImmediate(view: View) {
+        try {
+            if (container != null) {
+                container.removeView(view)
+            } else {
+                windowManager.removeViewImmediate(view)
+            }
+        } catch (e: Exception) {
+            Log.e("OverlayController", "Error in removeViewImmediate: ${e.message}")
+        }
+    }
+
     private fun detachCurrentView() {
         val view = rootView ?: return
-        try {
-            windowManager.removeViewImmediate(view)
-            Log.d("OverlayController", "View removed successfully")
-        } catch (e: Exception) {
-            if (e.message?.contains("not attached to window manager") == false) {
-                Log.e("OverlayController", "Error removing view: ${e.message}")
-            }
-        } finally {
-            rootView = null
-            layoutParams = null
-        }
+        removeViewImmediate(view)
+        Log.d("OverlayController", "View removed successfully")
+        rootView = null
+        layoutParams = null
     }
 
     open fun removeView() {

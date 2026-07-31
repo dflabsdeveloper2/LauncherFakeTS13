@@ -11,7 +11,10 @@ import android.view.Gravity
 import android.view.KeyEvent
 import android.view.LayoutInflater
 import android.view.MotionEvent
+import android.view.View
+import android.view.ViewGroup
 import android.view.WindowManager
+import android.widget.FrameLayout
 import android.widget.SeekBar
 import androidx.core.content.ContextCompat
 import com.orbys.launcherfakets13.R
@@ -37,7 +40,10 @@ private data class PanelSnapshot(
     val isTouchSoundEnabled: Boolean = false
 )
 
-class ControlPanelController(context: Context) : BaseOverlayController(context) {
+class ControlPanelController(
+    context: Context,
+    container: ViewGroup? = null
+) : BaseOverlayController(context, container) {
 
     private var _binding: ViewVolBrightOverlayBinding? = null
     private val binding get() = _binding ?: throw IllegalStateException("ControlPanelController binding is null. Is the view showing?")
@@ -91,6 +97,22 @@ class ControlPanelController(context: Context) : BaseOverlayController(context) 
                 x = sidebarW
             }
             y = sidebarY
+        }
+
+        if (container != null) {
+            newView.layoutParams = FrameLayout.LayoutParams(
+                260.dp,
+                ViewGroup.LayoutParams.WRAP_CONTENT,
+                (if (fromRight) Gravity.END else Gravity.START) or Gravity.TOP
+            ).apply {
+                topMargin = sidebarY
+                if (fromRight) marginEnd = sidebarW else marginStart = sidebarW
+            }
+            if (fromRight) {
+                b.root.background = ContextCompat.getDrawable(context, R.drawable.bg_side_panel_right)
+            } else {
+                b.root.background = ContextCompat.getDrawable(context, R.drawable.bg_sidebar_panel)
+            }
         }
 
         // El panel se muestra ya mismo con valores neutros (ver PanelSnapshot) — la lectura real

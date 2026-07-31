@@ -2,17 +2,16 @@ package com.orbys.launcherfakets13.services.overlay.controllers
 
 import android.content.Context
 import android.content.Intent
-import android.content.pm.LauncherApps
 import android.graphics.PixelFormat
-import android.provider.Settings
 import android.view.Gravity
 import android.view.LayoutInflater
 import android.view.MotionEvent
 import android.view.View
+import android.view.ViewGroup
 import android.view.WindowManager
 import android.view.animation.AccelerateInterpolator
 import android.view.animation.DecelerateInterpolator
-import androidx.core.net.toUri
+import android.widget.FrameLayout
 import androidx.core.widget.doOnTextChanged
 import androidx.recyclerview.widget.GridLayoutManager
 import com.orbys.launcherfakets13.data.repository.AppShortcutsRepositoryImpl
@@ -23,17 +22,16 @@ import com.orbys.launcherfakets13.domain.usecase.GetAppShortcutsUseCase
 import com.orbys.launcherfakets13.domain.usecase.GetInstalledAppsUseCase
 import com.orbys.launcherfakets13.domain.usecase.LaunchAppShortcutUseCase
 import com.orbys.launcherfakets13.ui.common.AppAdapter
-import com.orbys.launcherfakets13.ui.common.AppShortcutsMenu
 import com.orbys.launcherfakets13.ui.dialog.RemoteModeActivity
 import com.orbys.launcherfakets13.ui.util.dp
-import com.orbys.launcherfakets13.util.AppLauncherHelper
 
 class AppDrawerController(
     context: Context,
+    container: ViewGroup?,
     private val getDockView: () -> View?,
     private val onAppLaunched: () -> Unit,
     private val onVisibilityChanged: (Boolean) -> Unit
-) : BaseOverlayController(context) {
+) : BaseOverlayController(context, container) {
 
     private var _binding: ViewMenuAppsBinding? = null
     private val binding get() = _binding ?: throw IllegalStateException("AppDrawerController binding is null. Is the view showing?")
@@ -81,6 +79,16 @@ class AppDrawerController(
             y = dockH + dockMarY + gap
         }
 
+        if (container != null) {
+            newView.layoutParams = FrameLayout.LayoutParams(
+                dockW,
+                screenH / 2,
+                Gravity.BOTTOM or Gravity.CENTER_HORIZONTAL
+            ).apply {
+                bottomMargin = dockH + dockMarY + gap
+            }
+        }
+
         newView.alpha = 0f
         newView.translationY = 300f
 
@@ -120,7 +128,7 @@ class AppDrawerController(
 
         view.postDelayed({
             if (view.isAttachedToWindow) {
-                windowManager.removeViewImmediate(view)
+                removeViewImmediate(view)
             }
         }, 240)
         _binding = null

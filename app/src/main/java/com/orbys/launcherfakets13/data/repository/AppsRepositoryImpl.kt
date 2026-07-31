@@ -97,7 +97,7 @@ class AppsRepositoryImpl @Inject constructor(private val context: Context) : App
         /**
          * Lanza la enumeración en un hilo de fondo si la caché aún está fría, para que
          * esté lista antes de que el usuario llegue a abrir el cajón de apps. Ver
-         * DockOverlayService.onCreate().
+         * LocalDockManager.init.
          */
         fun prefetch(context: Context) {
             if (cachedApps != null) return

@@ -16,8 +16,6 @@
     <uses-permission android:name="android.permission.READ_MEDIA_IMAGES" />
     <uses-permission android:name="android.permission.MANAGE_EXTERNAL_STORAGE" />
 
-    <!-- System / UI -->
-    <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW" />
     <uses-permission android:name="android.permission.WRITE_SETTINGS" />
     <uses-permission android:name="android.permission.SET_WALLPAPER" />
     <uses-permission android:name="android.permission.POST_NOTIFICATIONS" />
@@ -132,16 +130,6 @@
                 <action android:name="android.content.pm.action.CONFIRM_PIN_APPWIDGET" />
             </intent-filter>
         </activity>
-
-        <!-- Overlay Service -->
-        <service
-            android:name=".services.overlay.DockOverlayService"
-            android:exported="false"
-            android:foregroundServiceType="specialUse">
-            <property
-                android:name="android.app.PROPERTY_SPECIAL_USE_FGS_SUBTYPE"
-                android:value="launcher_overlay_dock" />
-        </service>
 
         <!-- Remaps AppWidget IDs after a backup restore, so saved widgets survive it -->
         <receiver

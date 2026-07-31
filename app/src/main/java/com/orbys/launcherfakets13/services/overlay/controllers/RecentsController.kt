@@ -7,13 +7,15 @@ import android.view.Gravity
 import android.view.LayoutInflater
 import android.view.MotionEvent
 import android.view.View
+import android.view.ViewGroup
 import android.view.WindowManager
+import android.widget.FrameLayout
 import android.view.animation.AccelerateInterpolator
 import android.view.animation.DecelerateInterpolator
 import android.widget.SeekBar
 import androidx.recyclerview.widget.GridLayoutManager
 import com.orbys.launcherfakets13.databinding.ViewRecentsOverlayBinding
-import com.orbys.launcherfakets13.services.overlay.DockOverlayService
+import com.orbys.launcherfakets13.services.overlay.LocalDockManager
 import com.orbys.launcherfakets13.ui.common.RecentsAdapter
 import com.orbys.launcherfakets13.ui.dialog.RemoteModeActivity
 import com.orbys.launcherfakets13.ui.util.dp
@@ -24,9 +26,10 @@ import com.orbys.launcherfakets13.util.RecentsHelper
  */
 class RecentsController(
     context: Context,
+    container: ViewGroup?,
     private val getDockView: () -> View?,
     private val onVisibilityChanged: (Boolean) -> Unit
-) : BaseOverlayController(context) {
+) : BaseOverlayController(context, container) {
 
     private var _binding: ViewRecentsOverlayBinding? = null
     private val binding get() = _binding ?: throw IllegalStateException("RecentsController binding is null. Is the view showing?")
@@ -65,6 +68,16 @@ class RecentsController(
             title = "OrbysRecents"
             gravity = Gravity.BOTTOM or Gravity.CENTER_HORIZONTAL
             y = dockH + dockMarY + gap
+        }
+
+        if (container != null) {
+            newView.layoutParams = FrameLayout.LayoutParams(
+                500.dp,
+                300.dp,
+                Gravity.BOTTOM or Gravity.CENTER_HORIZONTAL
+            ).apply {
+                bottomMargin = dockH + dockMarY + gap
+            }
         }
 
         newView.alpha = 0f
@@ -108,12 +121,12 @@ class RecentsController(
 
         view.postDelayed({
             if (view.isAttachedToWindow) {
-                windowManager.removeViewImmediate(view)
+                removeViewImmediate(view)
             }
         }, 240)
         _binding = null
 
-        DockOverlayService.clearDockSelection()
+        LocalDockManager.clearDockSelection()
     }
 
     private fun setupRecyclerView() {
